@@ -23,3 +23,5 @@ const runScriptForElement = (requiredElementSelector, callback) => {
   });
   observer.observe(document.body, observerOptions);
 };
+
+export default runScriptForElement;
