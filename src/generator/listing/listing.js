@@ -1,5 +1,5 @@
 import "./listing.scss";
-import runScriptForElement from "../../common/runScriptForElement";
+import { runScriptForElement } from "../../chill";
 
 const listing = () => {
   runScriptForElement("body", () => {

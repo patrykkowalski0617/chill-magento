@@ -4,3 +4,5 @@ export const nnColors = {
   gray: "#707070",
   white: "#ffffff",
 };
+
+export { default as runScriptForElement } from "./runScriptForElement";
