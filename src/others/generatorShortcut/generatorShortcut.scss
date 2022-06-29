@@ -1,0 +1,7 @@
+@import "../../chill/variables.scss";
+#chill-generator-shortcut > a {
+  color: $base-color;
+}
+#chill-generator-shortcut:hover > a {
+  color: $base-color-mark;
+}

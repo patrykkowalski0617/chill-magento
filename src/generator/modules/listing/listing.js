@@ -1,9 +1,9 @@
 import "./listing.scss";
-import { runScriptForElement } from "../../chill";
+import { runScriptForElement, nnColors } from "../../../chill";
 
 const listing = () => {
   runScriptForElement("body", () => {
-    console.log("success");
+    console.log(nnColors);
   });
 };
 

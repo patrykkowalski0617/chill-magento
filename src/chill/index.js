@@ -1,8 +1,2 @@
-export const nnColors = {
-  red: "#ff444f",
-  black: "#383838",
-  gray: "#707070",
-  white: "#ffffff",
-};
-
 export { default as runScriptForElement } from "./runScriptForElement";
+export { default as nnColors } from "./nnColors";
