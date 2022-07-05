@@ -1,8 +1,5 @@
 import "./menu.scss";
-import { runScriptForElement } from "../../../chill";
 
-const menu = () => {
-  runScriptForElement("", () => {});
-};
+const menu = () => {};
 
 export default menu;

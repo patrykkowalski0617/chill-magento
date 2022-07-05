@@ -1,8 +1,5 @@
 import "./html.scss";
-import { runScriptForElement } from "../../../chill";
 
-const html = () => {
-  runScriptForElement("", () => {});
-};
+const html = () => {};
 
 export default html;

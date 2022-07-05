@@ -1,8 +1,5 @@
 import "./htmlExt.scss";
-import { runScriptForElement } from "../../../chill";
 
-const htmlExt = () => {
-  runScriptForElement("", () => {});
-};
+const htmlExt = () => {};
 
 export default htmlExt;

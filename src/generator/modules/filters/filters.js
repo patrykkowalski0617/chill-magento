@@ -1,8 +1,5 @@
 import "./filters.scss";
-import { runScriptForElement } from "../../../chill";
 
-const filters = () => {
-  runScriptForElement("", () => {});
-};
+const filters = () => {};
 
 export default filters;
