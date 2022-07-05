@@ -16,6 +16,7 @@ import menu from "./generator/modules/menu/menu";
 import html from "./generator/modules/html/html";
 import htmlExt from "./generator/modules/htmlExt/htmlExt";
 import footer from "./generator/modules/footer/footer";
+import manageNewModules from "./generator/others/manageNewModule/manageNewModule";
 
 // others
 runScriptForElement(".data-row .action-menu", () => {
@@ -41,4 +42,7 @@ runScriptForElement(".module__content", () => {
   html();
   htmlExt();
   footer();
+});
+runScriptForElement(".btn_add-module", () => {
+  manageNewModules();
 });
