@@ -1,0 +1,80 @@
+@import "../../../chill/variables.scss";
+
+// Product list
+.ui-dialog .ui-dialog-content {
+  max-height: 50vh;
+  overflow-y: 50vh;
+}
+.bannerHero-subModule {
+  width: 100%;
+}
+#products-container-fix-position {
+  position: fixed !important;
+  top: 0 !important;
+  transform: none !important;
+  width: 450px !important;
+  min-width: auto;
+  left: 88px !important;
+  &.right {
+    right: 0;
+    left: auto !important;
+    .position-btn {
+      left: -44px;
+      right: auto;
+      transform: rotate(180deg);
+    }
+  }
+  .position-btn {
+    position: absolute;
+    right: -44px;
+    top: 0;
+    width: 40px;
+    height: 37px;
+  }
+  .ui-dialog-titlebar {
+    padding: 5px 3rem;
+    cursor: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .missing-category {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+    line-height: 1;
+    border-bottom: #ddd solid 1px;
+    button {
+      padding: 1px 3px !important;
+      height: 23px;
+      background-color: $base-color;
+      border-radius: 3px;
+      border: none;
+      &.copied {
+        background-color: $base-color-mark;
+      }
+      &.add-filters {
+        width: 140px;
+        &::after {
+          content: " + add filtres";
+        }
+      }
+    }
+  }
+
+  .ui-dialog-titlebar-close,
+  .popup-window .magento_close,
+  .fade .popup .close {
+    position: static;
+  }
+
+  .ui-dialog-content {
+    max-height: 200px;
+    overflow-y: scroll;
+    padding: 10px;
+    border: 2px $base-color solid;
+  }
+}

@@ -1,23 +1,25 @@
-import { renderFixButtons, setColor, nnColors } from "../commonVariables";
+import { renderFixButtons } from "../commonVariables";
 import { getModuleElements } from "./variables";
 
-const footer = (isNewModule) => {
+const templateModule = (isNewModule) => {
   const fix = (module) => {
-    const actions = ["defaultFix"];
+    const actions = [
+      "defaultFix",
+      "otherFix",
+      { btnSetName: "userSetting", actions: ["setting1", "setting2"] },
+    ];
     const chillBtns = renderFixButtons({
       generatorModule: module,
       actions,
     });
-    const { bg, font, fontHover, btn } = getModuleElements(module);
-    const defaultFix = () => {
-      bg.forEach((el) => setColor(el, nnColors.white));
-      font.forEach((el) => setColor(el, nnColors.black));
-      fontHover.forEach((el) => {
-        setColor(el, nnColors.black);
-      });
-      btn.forEach((el) => setColor(el, nnColors.red));
-    };
+    const { someElemntInModule } = getModuleElements(module);
 
+    const defaultFix = () => {
+      console.log("defaultFix");
+    };
+    const otherFix = () => {
+      console.log("otherFix");
+    };
     if (isNewModule) {
       defaultFix();
     }
@@ -29,6 +31,9 @@ const footer = (isNewModule) => {
           case "defaultFix":
             defaultFix();
             break;
+          case "otherFix":
+            otherFix();
+            break;
 
           default:
             break;
@@ -38,11 +43,11 @@ const footer = (isNewModule) => {
   };
 
   document
-    .querySelectorAll(".module__footer:not(.already-chilled)")
+    .querySelectorAll(".module__module-name:not(.already-chilled)")
     .forEach((module) => {
       module.classList.add("already-chilled");
       fix(module);
     });
 };
 
-export default footer;
+export default templateModule;

@@ -1,12 +1,18 @@
-// Add action buttons in module. Function returns buttons
-const addChillActions = (
+import "./renderFixButtons.scss";
+
+// Renders buttons in module. Returns buttons
+const renderFixButtons = ({
   generatorModule,
   actions,
-  directSelector = ".module__content"
-) => {
-  generatorModule.querySelector(directSelector).insertAdjacentHTML(
+  otherRenderContainer,
+}) => {
+  const container = otherRenderContainer
+    ? otherRenderContainer
+    : generatorModule.querySelector(".module__content");
+
+  container.insertAdjacentHTML(
     "afterbegin",
-    `<div class="chill-actions">
+    `<div class="chill-btn-container">
              ${
                actions
                  ? actions
@@ -22,4 +28,4 @@ const addChillActions = (
   return generatorModule.querySelectorAll(".chill-btn");
 };
 
-export default addChillActions;
+export default renderFixButtons;
