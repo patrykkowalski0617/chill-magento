@@ -27,9 +27,9 @@ import addSynopsis from "./generator/others/addSynopsis/addSynopsis";
 // others
 runScriptForElement(".data-row .action-menu", () => {
   sortLpList();
-  openLpBtn();
   changeLpEvent();
 });
+openLpBtn();
 runScriptForElement('[name="url"]', manageFilterURL);
 generatorShortcut();
 
