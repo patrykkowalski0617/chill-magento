@@ -1,5 +1,6 @@
 import { renderFixButtons, setColor, nnColors } from "../commonVariables";
 import { getModuleElements } from "./variables";
+import "./footer.scss";
 
 const footer = (isNewModule) => {
   const fix = (module) => {

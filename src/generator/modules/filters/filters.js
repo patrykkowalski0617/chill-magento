@@ -5,6 +5,7 @@ import {
   fliterTemplate,
   generateFilters,
 } from "./variables";
+import "./filters.scss";
 
 const filters = (isNewModule) => {
   const fix = (module) => {

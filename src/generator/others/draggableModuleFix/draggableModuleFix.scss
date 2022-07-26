@@ -1,0 +1,20 @@
+body #lpGenerator {
+  .module__bar {
+    position: relative;
+    padding-left: 20px;
+    .btn_drag-and-drop {
+      padding-left: 10px;
+      align-items: center;
+      display: flex;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      height: 100%;
+      cursor: move;
+      z-index: 9;
+      i {
+        display: none;
+      }
+    }
+  }
+}

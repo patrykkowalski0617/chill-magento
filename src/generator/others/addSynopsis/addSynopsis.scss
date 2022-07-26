@@ -1,0 +1,66 @@
+@import "../../../chill/variables.scss";
+
+.chill-generator-synopsis {
+  position: relative;
+  z-index: 999;
+  max-height: calc(100vh - 480px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 1px;
+  min-width: 100%;
+  &:hover {
+    width: fit-content;
+    overflow-x: visible;
+    .chill-generator-synopsis-btn {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+.chill-generator-synopsis-btn {
+  position: relative;
+  &.page-top {
+    z-index: 999999;
+    text-decoration: none;
+    border: 1px #383838 solid;
+    border-bottom: 3px #383838 solid;
+    font-weight: 600;
+    &:hover {
+      text-decoration: none;
+      color: #383838;
+    }
+    &::after {
+      display: none;
+    }
+  }
+  &:focus {
+    background-color: $base-color;
+    color: #000;
+  }
+  &:hover {
+    background-color: $base-color-mark;
+    &::after {
+      box-shadow: $base-color-mark -7px 0px 16px inset;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: -1px;
+    top: 0;
+    bottom: 0;
+    width: 15px;
+    box-shadow: $base-color -7px 0px 16px inset;
+  }
+  margin-top: -1px;
+  background-color: $base-color;
+  border-color: #383838;
+  color: #000;
+  display: block;
+  width: 100%;
+  min-width: 100%;
+  padding: 5px;
+  text-align: left;
+  white-space: nowrap;
+}

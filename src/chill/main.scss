@@ -1,6 +1,9 @@
 @import "../chill/variables.scss";
 
 body {
+  #lpGenerator {
+    background: honeydew !important;
+  }
   .menu-wrapper .logo::after {
     content: "CHILL";
     display: block;
@@ -16,6 +19,20 @@ body {
     transform-origin: center;
     font-weight: bold;
     text-decoration: none;
+  }
+  &.chill-is-working::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999999999999;
+    background-color: $base-color-mark;
+    opacity: 0.5;
+  }
+  #lpModules > :nth-child(even) .module__bar {
+    background-color: #00b7ff;
   }
 }
 

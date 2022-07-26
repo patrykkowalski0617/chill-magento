@@ -1,0 +1,40 @@
+@import "../../../chill/variables.scss";
+
+body #lpGenerator {
+  .block_buttons {
+    background: honeydew;
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .btn {
+      position: static;
+    }
+  }
+  .add-adjusted-module-btn {
+    transition: none;
+    height: 25px;
+    width: 200px;
+    display: flex;
+    text-align: center;
+    color: #383838;
+    background: $base-color;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    i {
+      font-size: 25px;
+    }
+    &:hover {
+      transform: none;
+      background: $base-color-mark;
+    }
+  }
+  .module {
+    margin-bottom: 0;
+    background-color: honeydew;
+    form {
+      background-color: #f6f6f6;
+    }
+  }
+}

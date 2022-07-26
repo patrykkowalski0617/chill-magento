@@ -3,6 +3,7 @@ const navInspect = ({
   animationClassName,
   animOnload = true,
 }) => {
+  console.log("navInspect");
   const synopsisBtns = document.querySelectorAll(
     ".chill-generator-synopsis-btn"
   );

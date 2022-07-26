@@ -1,0 +1,31 @@
+body #lpGenerator {
+  .filter .js-filter-input {
+    height: 20px;
+    font-size: 13px;
+  }
+  .filter {
+    margin-bottom: 2px;
+    padding: 0;
+  }
+  .filter__wrapper .module__element {
+    width: 50%;
+  }
+  .js-filter-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    .disable-content_cover {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: 999999999999999999999;
+    }
+  }
+  .filter__wrapper {
+    height: 200px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+  }
+}

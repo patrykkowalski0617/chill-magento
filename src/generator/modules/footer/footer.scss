@@ -1,0 +1,8 @@
+body #lpGenerator {
+  .notice-message {
+    width: 100%;
+    &.false-msg .message-text {
+      background-color: red !important;
+    }
+  }
+}
