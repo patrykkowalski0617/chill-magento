@@ -4,6 +4,7 @@ import {
   getModuleElements,
   generateMenu,
   assigningProducts,
+  menuTemplate,
 } from "./variables";
 
 const menu = (isNewModule) => {

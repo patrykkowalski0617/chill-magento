@@ -1,6 +1,6 @@
 // import listing from "../../../modules/listing/listing";
-// import filters from "../../../modules/filters/filters";
-// import menu from "../../../modules/menu/menu";
+import filters from "../../../modules/filters/filters";
+import menu from "../../../modules/menu/menu";
 // import html from "../../../modules/html/html";
 // import htmlExt from "../../../modules/htmlExt/htmlExt";
 import footer from "../../../modules/footer/footer";
@@ -17,25 +17,25 @@ const fixNewModule = () => {
 
   switch (moduleName()) {
     case "products":
-      listing(generatorModule, true);
+      listing(true);
       break;
     case "products_new":
-      listing(generatorModule, true);
+      listing(true);
       break;
     case "filters":
-      filters(generatorModule, true);
+      filters(true);
       break;
     case "menu":
-      menu(generatorModule, true);
+      menu(true);
       break;
     case "html":
-      html(generatorModule, true);
+      html(true);
       break;
     case "html_extended":
-      htmlExt(generatorModule, true);
+      htmlExt(true);
       break;
     case "footer":
-      footer(generatorModule, true);
+      footer(true);
       break;
   }
 };
