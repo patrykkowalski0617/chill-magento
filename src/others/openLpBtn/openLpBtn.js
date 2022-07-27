@@ -1,5 +1,5 @@
 import "./openLpBtn.scss";
-import { runScriptForElement } from "../../chill";
+import { onElementReady } from "../../chill";
 
 const openLpBtn = () => {
   const openLpEvent = (e) => {
@@ -46,7 +46,7 @@ const openLpBtn = () => {
   const openLpRest = () => {
     setTimeout(openLp, 1000);
   };
-  runScriptForElement('[data-action="grid-filter-reset"]', () => {
+  onElementReady('[data-action="grid-filter-reset"]', () => {
     const clearBtn = document.querySelector(
       '[data-action="grid-filter-reset"]'
     );
@@ -67,7 +67,7 @@ const openLpBtn = () => {
     });
   };
 
-  runScriptForElement(".data-row .action-menu", () => {
+  onElementReady(".data-row .action-menu", () => {
     openLp();
     changeLpEvent();
   });

@@ -1,4 +1,4 @@
-import { runScriptForElement } from "../../../../chill";
+import { onElementReady } from "../../../../chill";
 import { menuTemplate } from "../../menu/variables";
 import {
   getModuleElements,
@@ -39,7 +39,7 @@ const generateFilters = (module) => {
       // 5.1. Get all categories (menu is empty, so all categories are not assigned)
       menuModule.querySelector("#categories-btn").click();
 
-      runScriptForElement(".missing-category", () => {
+      onElementReady(".missing-category", () => {
         // 5.2. When categories are loaded let categoriesList has assigned value.
         // get menu content back and save menu module
 
@@ -69,12 +69,12 @@ const generateFilters = (module) => {
         if (noticeMsg) {
           noticeMsg.remove();
         }
-        runScriptForElement(".notice-message", () => {
+        onElementReady(".notice-message", () => {
           location.reload();
         });
       });
     };
-    runScriptForElement(".notice-message", generateFiltres);
+    onElementReady(".notice-message", generateFiltres);
   } else {
     alert("CHILL: Aby wygenerować filtry, potrzebny jest moduł menu :)");
   }

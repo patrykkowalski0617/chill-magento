@@ -1,4 +1,4 @@
-const runScriptForElement = (requiredElementSelector, callback) => {
+const onElementReady = (requiredElementSelector, callback) => {
   const observerOptions = {
     childList: true,
     attributes: true,
@@ -24,4 +24,4 @@ const runScriptForElement = (requiredElementSelector, callback) => {
   observer.observe(document.body, observerOptions);
 };
 
-export default runScriptForElement;
+export default onElementReady;

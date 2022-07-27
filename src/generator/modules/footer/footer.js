@@ -1,4 +1,5 @@
-import { renderFixButtons, setColor, nnColors } from "../commonVariables";
+import { renderFixButtons } from "../../../chill";
+import { setColor, nnColors } from "../commonVariables";
 import { getModuleElements } from "./variables";
 import "./footer.scss";
 

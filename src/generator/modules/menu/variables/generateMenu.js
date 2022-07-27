@@ -1,5 +1,5 @@
 import { getModuleElements, menuTemplate, menuCategories } from "./";
-import { runScriptForElement } from "../../../../chill";
+import { onElementReady } from "../../../../chill";
 
 const generateMenu = (module) => {
   const { menuWrapper, saveModuleBtn, noticeMsg } = getModuleElements(module);
@@ -25,7 +25,7 @@ const generateMenu = (module) => {
     //     // 5.1. Get all categories (menu is empty, so all categories are not assigned)
     module.querySelector("#categories-btn").click();
 
-    runScriptForElement(".missing-category", () => {
+    onElementReady(".missing-category", () => {
       //       // 5.2. When categories are loaded window.categoriesList has assigned value.
       //       // Filtr menu array (variable menuCategories) based on categoriesList
       const filterNewMenu = (menuCategories) => {
@@ -184,12 +184,12 @@ const generateMenu = (module) => {
       if (noticeMsg) {
         noticeMsg.remove();
       }
-      runScriptForElement(".notice-message", () => {
+      onElementReady(".notice-message", () => {
         location.reload();
       });
       // 8. New manu is ready
     });
   };
-  runScriptForElement(".notice-message", doAfterNoticeMsg);
+  onElementReady(".notice-message", doAfterNoticeMsg);
 };
 export default generateMenu;

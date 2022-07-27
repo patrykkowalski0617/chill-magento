@@ -39,7 +39,7 @@ const htmlModuleScripts = {
       resizeIframe(iframe);
     };
   
-    const runScriptForElement = (requiredElementSelector, callback) => {
+    const onElementReady = (requiredElementSelector, callback) => {
       const observerOptions = {
         childList: true,
         attributes: true,
@@ -65,7 +65,7 @@ const htmlModuleScripts = {
       observer.observe(document.body, observerOptions);
     };
   
-    runScriptForElement(".landing-page-iframe", script);
+    onElementReady(".landing-page-iframe", script);
   </script>  
     `,
   observer: `
@@ -76,7 +76,7 @@ const htmlModuleScripts = {
       );
     };
   
-    const runScriptForElement = (requiredElementSelector, callback) => {
+    const onElementReady = (requiredElementSelector, callback) => {
       const observerOptions = {
         childList: true,
         attributes: true,
@@ -101,7 +101,7 @@ const htmlModuleScripts = {
       });
       observer.observe(document.body, observerOptions);
     };
-    runScriptForElement(".landing-page", script);
+    onElementReady(".landing-page", script);
   
     // requiredElementSelector - check if element with this selector has been rendered
     // callback - callback

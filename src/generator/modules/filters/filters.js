@@ -1,4 +1,4 @@
-import { renderFixButtons } from "../commonVariables";
+import { renderFixButtons } from "../../../chill";
 import {
   getModuleElements,
   basicFilters,

@@ -1,4 +1,4 @@
-import { runScriptForElement } from "../../chill";
+import { onElementReady } from "../../chill";
 
 const sortLpList = () => {
   const sortLpList = () => {
@@ -8,7 +8,7 @@ const sortLpList = () => {
     lpSort.click();
   };
 
-  runScriptForElement(
+  onElementReady(
     "#container > div > div.admin__data-grid-wrap > table > tbody > tr:nth-child(1) > td:nth-child(2) > div",
     sortLpList
   );

@@ -21,7 +21,7 @@ const renderFixButtons = ({
                          `<button class='chill-btn'>${action}</button>`
                      )
                      .join("")
-                 : ""
+                 : console.error("No actions provide")
              }
             </div>`
   );

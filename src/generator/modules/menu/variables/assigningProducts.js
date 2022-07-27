@@ -1,5 +1,5 @@
 import { getModuleElements } from "./";
-import { runScriptForElement } from "../../../../chill";
+import { onElementReady } from "../../../../chill";
 
 const assigningProducts = (module) => {
   let containerPosition = "left";
@@ -156,7 +156,7 @@ const assigningProducts = (module) => {
       };
       copyCategoryBtnActions();
     };
-    runScriptForElement(
+    onElementReady(
       ".missing-product__dialog-box.ui-dialog-content",
       missingProductActions
     );
