@@ -1,14 +1,14 @@
-import "./listing.scss";
+import "../listing/listing.scss";
 import { moduleFix } from "../../../chill";
 import {
-  defaultFix,
   bezpiecznik,
   existingModuleCallback,
   newModuleCallback,
-} from "./actions";
+} from "../listing/actions";
+import { defaultFix } from "./actions";
 
-const listing = moduleFix({
-  moduleClass: "module__products",
+const listingNew = moduleFix({
+  moduleClass: "module__products_new",
   actions: [
     ["defaultFix", defaultFix],
     ["bezpiecznik", bezpiecznik],
@@ -17,4 +17,4 @@ const listing = moduleFix({
   existingModuleCallback,
 });
 
-export default listing;
+export default listingNew;

@@ -1,7 +1,7 @@
 import { renderFixButtons } from "./";
 
 const moduleFix =
-  ({ moduleClass, actions, newModuleCallback, existingModulesCallback }) =>
+  ({ moduleClass, actions, newModuleCallback, existingModuleCallback }) =>
   (isNewModule) => {
     const fix = (module, isNewModule) => {
       const btnsNames = actions.map((action) => action[0]);
@@ -14,18 +14,18 @@ const moduleFix =
         actions[0][1](module);
       }
 
-      if (isNewModule) {
-        newModuleCallback(module);
-      }
-
-      existingModulesCallback(module);
-
       actions.forEach((action, i) => {
         chillBtns[i].addEventListener("click", (e) => {
           e.preventDefault();
           action[1](module);
         });
       });
+
+      if (isNewModule) {
+        newModuleCallback(module);
+      }
+
+      existingModuleCallback(module);
     };
     document
       .querySelectorAll(`.${moduleClass}:not(.already-chilled)`)

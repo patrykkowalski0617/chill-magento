@@ -23,12 +23,12 @@
   &.page-top {
     z-index: 999999;
     text-decoration: none;
-    border: 1px #383838 solid;
-    border-bottom: 3px #383838 solid;
+    border: 1px $base-color-txt solid;
+    border-bottom: 3px $base-color-txt solid;
     font-weight: 600;
     &:hover {
       text-decoration: none;
-      color: #383838;
+      color: $base-color-txt;
     }
     &::after {
       display: none;
@@ -36,7 +36,7 @@
   }
   &:focus {
     background-color: $base-color;
-    color: #000;
+    color: $base-color-txt;
   }
   &:hover {
     background-color: $base-color-mark;
@@ -55,8 +55,8 @@
   }
   margin-top: -1px;
   background-color: $base-color;
-  border-color: #383838;
-  color: #000;
+  border-color: $base-color-txt;
+  color: $base-color-txt;
   display: block;
   width: 100%;
   min-width: 100%;

@@ -11,6 +11,7 @@ import markExectResult from "./others/markExectResult/markExectResult";
 
 // generator/modules
 import listing from "./generator/modules/listing/listing";
+import listingNew from "./generator/modules/listingNew/listingNew";
 import filters from "./generator/modules/filters/filters";
 import menu from "./generator/modules/menu/menu";
 import html from "./generator/modules/html/html";
@@ -39,6 +40,7 @@ onElementReady('[data-action="grid-filter-apply"]', markExectResult);
 // generator/modules
 onElementReady(".module__content", () => {
   listing();
+  listingNew();
   filters();
   menu();
   html();

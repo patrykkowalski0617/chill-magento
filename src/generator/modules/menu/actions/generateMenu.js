@@ -1,4 +1,4 @@
-import { getModuleElements, menuTemplate, menuCategories } from "./";
+import { getModuleElements, menuTemplate, menuCategories } from "../variables";
 import { onElementReady } from "../../../../chill";
 
 const generateMenu = (module) => {

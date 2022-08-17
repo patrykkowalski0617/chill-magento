@@ -1,10 +1,10 @@
 import "./menu.scss";
 import { moduleFix } from "../../../chill";
-import { generateMenu } from "./variables";
 import {
   defaultFix,
-  existingModulesCallback,
+  existingModuleCallback,
   newModuleCallback,
+  generateMenu,
 } from "./actions";
 
 const menu = moduleFix({
@@ -14,7 +14,7 @@ const menu = moduleFix({
     ["generateMenu", generateMenu],
   ],
   newModuleCallback,
-  existingModulesCallback,
+  existingModuleCallback,
 });
 
 export default menu;

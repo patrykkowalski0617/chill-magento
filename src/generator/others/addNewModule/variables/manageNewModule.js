@@ -1,5 +1,5 @@
 const manageNewModule = (fixNewModule) => {
-  const addNewModuleSaveBtn = document.querySelector(
+  const addnewModuleaveBtn = document.querySelector(
     ".btn_save.module__button.module__button_save.btn_select-module"
   );
   // const addNewModuleCancelBtn = document.querySelector(
@@ -7,7 +7,7 @@ const manageNewModule = (fixNewModule) => {
   // );
 
   const clickDelay = 400;
-  addNewModuleSaveBtn.addEventListener("click", () => {
+  addnewModuleaveBtn.addEventListener("click", () => {
     setTimeout(fixNewModule, clickDelay);
   });
   // addNewModuleCancelBtn.addEventListener("click", () => {

@@ -1,4 +1,5 @@
-// import listing from "../../../modules/listing/listing";
+import listing from "../../../modules/listing/listing";
+import listingNew from "../../../modules/listingNew/listingNew";
 import filters from "../../../modules/filters/filters";
 import menu from "../../../modules/menu/menu";
 // import html from "../../../modules/html/html";
@@ -20,7 +21,7 @@ const fixNewModule = () => {
       listing(true);
       break;
     case "products_new":
-      listing(true);
+      listingNew(true);
       break;
     case "filters":
       filters(true);

@@ -1,3 +1,5 @@
+@import "../../../chill/variables.scss";
+
 body .scroll-top {
   position: fixed;
   bottom: 10px;
@@ -7,10 +9,10 @@ body .scroll-top {
   text-decoration: none;
   width: auto;
   height: auto;
-  color: #383838;
+  color: $base-color-txt;
   &:hover {
     text-decoration: none;
-    color: #383838;
+    color: $base-color-txt;
   }
   &:focus {
     padding: 20px;
