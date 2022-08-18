@@ -1,4 +1,5 @@
 import { renderFixButtons } from "./";
+import "./moduleFix.scss";
 
 const moduleFix =
   ({ moduleClass, actions, newModuleCallback, existingModuleCallback }) =>
@@ -9,7 +10,14 @@ const moduleFix =
         generatorModule: module,
         actions: btnsNames,
       });
-
+      module
+        .querySelector(".chill-btn-container")
+        .insertAdjacentHTML(
+          "afterbegin",
+          `<span class="module__title">${
+            module.querySelector(".module__title").innerText
+          }</span>`
+        );
       if (isNewModule && actions[0][0] === "defaultFix") {
         actions[0][1](module);
       }
@@ -21,11 +29,12 @@ const moduleFix =
         });
       });
 
-      if (isNewModule) {
+      if (isNewModule && newModuleCallback) {
         newModuleCallback(module);
       }
-
-      existingModuleCallback(module);
+      if (existingModuleCallback) {
+        existingModuleCallback(module);
+      }
     };
     document
       .querySelectorAll(`.${moduleClass}:not(.already-chilled)`)

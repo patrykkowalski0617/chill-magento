@@ -5,6 +5,8 @@ import {
   existingModuleCallback,
   newModuleCallback,
   generateMenu,
+  hideSubcategories,
+  categoryList,
 } from "./actions";
 
 const menu = moduleFix({
@@ -12,6 +14,8 @@ const menu = moduleFix({
   actions: [
     ["defaultFix", defaultFix],
     ["generateMenu", generateMenu],
+    ["hideSubcategories", hideSubcategories],
+    ["categoryList", categoryList],
   ],
   newModuleCallback,
   existingModuleCallback,

@@ -1,7 +1,6 @@
 @import "./variables.scss";
 
-.chill-btn,
-.chill-btn:focus {
+.chill-btn {
   background-color: $base-color;
   color: $base-color-txt;
   margin: 0 5px 0 0;
@@ -12,8 +11,13 @@
   font-weight: 600;
   border: 0;
   border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:focus,
   &:hover {
     background-color: $base-color-mark;
+    outline: none;
   }
 }
 

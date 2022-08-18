@@ -1,0 +1,11 @@
+.menu-hide-subcategories .js-subcategory {
+  height: 77px;
+  overflow: hidden;
+}
+.menu-hide-subcategories .chill-btn-container button:nth-child(4) {
+  font-size: 0;
+  &::before {
+    content: "Show Subcategories";
+    font-size: initial;
+  }
+}

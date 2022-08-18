@@ -1,4 +1,6 @@
-export const getModuleElements = (module) => {
+import { nnColors } from "../../../../chill";
+
+const defaultFix = (module) => {
   const bg = module.querySelectorAll(
     '[id^="footer_color_background"], [id^="footer_color_background"] + input'
   );
@@ -11,5 +13,13 @@ export const getModuleElements = (module) => {
   const btn = module.querySelectorAll(
     '[id^="footer_color_button"], [id^="footer_color_button"] + input'
   );
-  return { bg, font, fontHover, btn };
+
+  bg.forEach((el) => (el.value = nnColors.white));
+  font.forEach((el) => (el.value = nnColors.black));
+  fontHover.forEach((el) => {
+    el.value = nnColors.black;
+  });
+  btn.forEach((el) => (el.value = nnColors.red));
 };
+
+export default defaultFix;

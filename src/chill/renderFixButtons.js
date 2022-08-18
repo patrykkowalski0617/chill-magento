@@ -25,7 +25,7 @@ const renderFixButtons = ({
              }
             </div>`
   );
-  return generatorModule.querySelectorAll(".chill-btn");
+  return container.querySelectorAll(".chill-btn");
 };
 
 export default renderFixButtons;

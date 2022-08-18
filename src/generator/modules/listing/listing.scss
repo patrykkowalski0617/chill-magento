@@ -13,13 +13,7 @@
   border: 3px solid $base-color;
   border-image: initial;
   border-radius: 3px;
-  width: 18%;
-  &.new-gids {
-    width: 16%;
-  }
-  &.gids-to-update {
-    width: 19%;
-  }
+  width: 200px;
   resize: none;
   white-space: nowrap;
   overflow: hidden;

@@ -1,0 +1,29 @@
+.top-bar-added {
+  #back,
+  #delete,
+  #clone,
+  #preview,
+  button[data-index="save"] {
+    display: none;
+  }
+  #lpModules + .block.block_buttons {
+    display: none;
+  }
+  #lpGenerator > :first-child {
+    display: none;
+  }
+  .page-main-actions .page-actions._fixed .page-actions-inner::before {
+    font-size: 1.8rem;
+    max-width: 30%;
+  }
+  #lpModules {
+    margin-bottom: 0;
+  }
+  .change-btn-txt {
+    font-size: 0;
+    &::before {
+      content: "Rozwiń moduły";
+      font-size: initial;
+    }
+  }
+}

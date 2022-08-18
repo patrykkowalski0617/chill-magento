@@ -1,31 +1,33 @@
 import "./chill/main.scss";
 import { onElementReady } from "./chill";
-
-// others
-import sortLpList from "./others/sortLpList/sortLpList";
-import openLpBtn from "./others/openLpBtn/openLpBtn";
-import generatorShortcut from "./others/generatorShortcut/generatorShortcut";
-import changeLpEvent from "./others/changeLpEvent/changeLpEvent";
-import manageFilterURL from "./others/manageFilterURL/manageFilterURL";
-import markExectResult from "./others/markExectResult/markExectResult";
-
-// generator/modules
-import listing from "./generator/modules/listing/listing";
-import listingNew from "./generator/modules/listingNew/listingNew";
-import filters from "./generator/modules/filters/filters";
-import menu from "./generator/modules/menu/menu";
-import html from "./generator/modules/html/html";
-import footer from "./generator/modules/footer/footer";
-import bannerHero from "./generator/modules/bannerHero/bannerHero";
-
-// generator/others
-import navInspect from "./generator/others/navInspect/navInspect";
-import scrollToTopBtn from "./generator/others/scrollToTopBtn/scrollToTopBtn";
-import draggableModuleFix from "./generator/others/draggableModuleFix/draggableModuleFix";
-import clickBarToCollapse from "./generator/others/clickBarToCollapse/clickBarToCollapse";
-import addAdjustedModule from "./generator/others/addAdjustedModule/addAdjustedModule";
-import addSynopsis from "./generator/others/addSynopsis/addSynopsis";
-import addNewModule from "./generator/others/addNewModule/addNewModule";
+import {
+  sortLpList,
+  openLpBtn,
+  generatorShortcut,
+  changeLpEvent,
+  manageFilterURL,
+  markExectResult,
+} from "./others";
+import {
+  listing,
+  listingNew,
+  filters,
+  menu,
+  html,
+  footer,
+  bannerHero,
+} from "./generator/modules";
+import {
+  navInspect,
+  scrollToTopBtn,
+  draggableModuleFix,
+  clickBarToCollapse,
+  addAdjustedModule,
+  addSynopsis,
+  addNewModule,
+  topBar,
+  stickyModuleHeaders,
+} from "./generator/others";
 
 // others
 onElementReady(".data-row .action-menu", () => {
@@ -58,6 +60,8 @@ onElementReady(".module__bar", clickBarToCollapse);
 onElementReady(".module__content", () => {
   addAdjustedModule();
   addSynopsis();
+  topBar();
+  stickyModuleHeaders();
 });
 
 navInspect({
