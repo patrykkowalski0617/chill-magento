@@ -8,11 +8,11 @@ const renderFixButtons = ({
 }) => {
   const container = otherRenderContainer
     ? otherRenderContainer
-    : generatorModule.querySelector(".module__content");
+    : generatorModule.querySelector(".module__content .chill-btn-container");
 
   container.insertAdjacentHTML(
     "afterbegin",
-    `<div class="chill-btn-container">
+    `
              ${
                actions
                  ? actions
@@ -23,7 +23,7 @@ const renderFixButtons = ({
                      .join("")
                  : console.error("No actions provide")
              }
-            </div>`
+            `
   );
   return container.querySelectorAll(".chill-btn");
 };

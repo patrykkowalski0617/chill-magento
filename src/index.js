@@ -1,5 +1,9 @@
 import "./chill/main.scss";
-import { onElementReady } from "./chill";
+import {
+  onElementReady,
+  renderFixButtonsContainer,
+  renderModulTitles,
+} from "./chill";
 import {
   sortLpList,
   openLpBtn,
@@ -41,6 +45,8 @@ onElementReady('[data-action="grid-filter-apply"]', markExectResult);
 
 // generator/modules
 onElementReady(".module__content", () => {
+  renderFixButtonsContainer(".module__content");
+
   listing();
   listingNew();
   filters();
@@ -48,6 +54,8 @@ onElementReady(".module__content", () => {
   html();
   footer();
   bannerHero();
+
+  renderModulTitles();
 });
 onElementReady(".btn_add-module", () => {
   addNewModule();
@@ -58,6 +66,7 @@ onElementReady("#container", scrollToTopBtn);
 draggableModuleFix();
 onElementReady(".module__bar", clickBarToCollapse);
 onElementReady(".module__content", () => {
+  renderFixButtonsContainer(".page-actions-buttons");
   addAdjustedModule();
   addSynopsis();
   topBar();

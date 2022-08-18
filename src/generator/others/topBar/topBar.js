@@ -56,7 +56,9 @@ const topBar = () => {
   ];
   const chillBtns = renderFixButtons({
     actions: actions.map((action) => action[0]),
-    otherRenderContainer: document.querySelector(".page-actions-buttons"),
+    otherRenderContainer: document.querySelector(
+      ".page-actions-buttons .chill-btn-container "
+    ),
   });
 
   actions.forEach((action, i) => {

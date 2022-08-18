@@ -2,18 +2,17 @@ import "./stickyModuleHeaders.scss";
 import { eventThrottle } from "../../../chill";
 
 const stickyModuleHeaders = () => {
-  const headers = document.querySelectorAll(
-    ".chill-btn-container:not(.page-actions-buttons .chill-btn-container)"
-  );
+  const modules = document.querySelectorAll(".module ");
 
   function manageSticky() {
-    headers.forEach((header, i) => {
-      const sticky = header.parentElement.offsetTop;
+    modules.forEach((module) => {
+      const moduleContent = module.querySelector(".module__content");
+      const sticky = moduleContent.offsetTop;
 
-      if (window.pageYOffset + 150 > sticky) {
-        header.classList.add("sticky");
+      if (window.pageYOffset + 100 > sticky) {
+        module.classList.add("sticky");
       } else {
-        header.classList.remove("sticky");
+        module.classList.remove("sticky");
       }
     });
   }

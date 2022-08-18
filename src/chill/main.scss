@@ -3,6 +3,9 @@
 body {
   #lpGenerator {
     background: honeydew !important;
+    textarea {
+      max-width: 90%;
+    }
   }
   .menu-wrapper .logo::after {
     content: "CHILL";
@@ -34,8 +37,12 @@ body {
   #lpModules > :nth-child(even) .module__bar {
     background-color: #00b7ff;
   }
+  .page-actions._fixed {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
 }
 
 html {
-  scroll-padding-top: 85px;
+  scroll-padding-top: 20px;
 }

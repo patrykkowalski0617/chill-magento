@@ -1,23 +1,28 @@
-import { renderFixButtons } from "./";
+import { saveModule, deleteModule, renderFixButtons } from "./";
+// import { addSynopsis } from "../generator/others";
+
 import "./moduleFix.scss";
 
 const moduleFix =
   ({ moduleClass, actions, newModuleCallback, existingModuleCallback }) =>
   (isNewModule) => {
+    actions.unshift(["saveModule", saveModule], ["deleteModule", deleteModule]);
     const fix = (module, isNewModule) => {
       const btnsNames = actions.map((action) => action[0]);
+      if (isNewModule) {
+        module
+          .querySelector(".module__content")
+          .insertAdjacentHTML(
+            "afterbegin",
+            `<div class="chill-btn-container"></div>`
+          );
+        // addSynopsis();
+      }
       const chillBtns = renderFixButtons({
         generatorModule: module,
         actions: btnsNames,
       });
-      module
-        .querySelector(".chill-btn-container")
-        .insertAdjacentHTML(
-          "afterbegin",
-          `<span class="module__title">${
-            module.querySelector(".module__title").innerText
-          }</span>`
-        );
+
       if (isNewModule && actions[0][0] === "defaultFix") {
         actions[0][1](module);
       }

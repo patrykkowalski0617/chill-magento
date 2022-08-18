@@ -1,12 +1,17 @@
-.chill-btn-container.sticky {
-  position: fixed;
-  top: 66px;
-  z-index: 1;
-  background: #029dd1;
-  left: 80px;
-  padding: 5px 0 5px 15px;
-  .module__title {
-    display: block;
-    padding-right: 10px;
+.module {
+  &.sticky {
+    .chill-btn-container {
+      position: fixed;
+      top: 47px;
+      z-index: 1;
+      background: #029dd1;
+      left: 80px;
+      padding: 5px 0 5px 15px;
+      height: 45px;
+      .module__title {
+        display: block;
+        padding-right: 10px;
+      }
+    }
   }
 }

@@ -6,15 +6,15 @@ const addAdjustedModule = () => {
   if (customBtns) {
     customBtns.forEach((btn) => btn.remove());
   }
-
-  modules.forEach((el, i) => {
-    if (i < modules.length) {
-      const isLastChild = i === modules.length - 1;
-      const customBtn = `<div class="block block_buttons block_buttons-custom">
+  const customBtn = `<div class="block block_buttons block_buttons-custom">
             <a href="" class="btn btn_center add-adjusted-module-btn" title="Dodaj moduł">
                 <i class="btn__icon material-icons"></i>
             </a>
         </div>`;
+  modules.forEach((el, i) => {
+    if (i < modules.length) {
+      const isLastChild = i === modules.length - 1;
+
       el.insertAdjacentHTML("afterbegin", customBtn);
       const btn = el.querySelector(".add-adjusted-module-btn");
       btn.addEventListener("click", (e) => {
@@ -54,5 +54,19 @@ const addAdjustedModule = () => {
       });
     }
   });
+  document
+    .querySelector("#lpGenerator")
+    .insertAdjacentHTML("beforeend", customBtn);
+  document
+    .querySelector(
+      "#lpGenerator > .block_buttons-custom .add-adjusted-module-btn"
+    )
+    .addEventListener("click", (e) => {
+      e.preventDefault();
+      setTimeout(() => {
+        document.querySelector(".module_new").scrollIntoView();
+      }, 500);
+      document.querySelector(".btn_add-module").click();
+    });
 };
 export default addAdjustedModule;
