@@ -54,10 +54,18 @@ const topBar = () => {
       },
     ],
   ];
+
+  document
+    .querySelector(".page-actions-buttons")
+    .insertAdjacentHTML(
+      "afterbegin",
+      `<div class="chill-btn-container"></div>`
+    );
+
   const chillBtns = renderFixButtons({
     actions: actions.map((action) => action[0]),
     otherRenderContainer: document.querySelector(
-      ".page-actions-buttons .chill-btn-container "
+      ".page-actions-buttons .chill-btn-container"
     ),
   });
 

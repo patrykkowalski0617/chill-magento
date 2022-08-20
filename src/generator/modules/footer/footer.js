@@ -1,4 +1,4 @@
-import { moduleFix } from "../../../chill";
+import { moduleFix } from "../../common";
 import { defaultFix } from "./actions";
 
 import "./footer.scss";

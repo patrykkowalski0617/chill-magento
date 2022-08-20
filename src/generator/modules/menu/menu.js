@@ -1,5 +1,5 @@
 import "./menu.scss";
-import { moduleFix } from "../../../chill";
+import { moduleFix } from "../../common";
 import {
   defaultFix,
   existingModuleCallback,

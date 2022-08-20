@@ -1,12 +1,10 @@
-import { saveModule, deleteModule, renderFixButtons } from "./";
-// import { addSynopsis } from "../generator/others";
+import { renderFixButtons } from "../../chill";
 
 import "./moduleFix.scss";
 
 const moduleFix =
   ({ moduleClass, actions, newModuleCallback, existingModuleCallback }) =>
   (isNewModule) => {
-    actions.unshift(["saveModule", saveModule], ["deleteModule", deleteModule]);
     const fix = (module, isNewModule) => {
       const btnsNames = actions.map((action) => action[0]);
       if (isNewModule) {
@@ -16,7 +14,6 @@ const moduleFix =
             "afterbegin",
             `<div class="chill-btn-container"></div>`
           );
-        // addSynopsis();
       }
       const chillBtns = renderFixButtons({
         generatorModule: module,

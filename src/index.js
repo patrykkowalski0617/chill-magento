@@ -1,9 +1,5 @@
-import "./chill/main.scss";
-import {
-  onElementReady,
-  renderFixButtonsContainer,
-  renderModulTitles,
-} from "./chill";
+import "./main.scss";
+import { onElementReady, renderModulTitles } from "./chill";
 import {
   sortLpList,
   openLpBtn,
@@ -12,6 +8,7 @@ import {
   manageFilterURL,
   markExectResult,
 } from "./others";
+import { renderModuleHeader } from "./generator/common";
 import {
   listing,
   listingNew,
@@ -45,7 +42,7 @@ onElementReady('[data-action="grid-filter-apply"]', markExectResult);
 
 // generator/modules
 onElementReady(".module__content", () => {
-  renderFixButtonsContainer(".module__content");
+  renderModuleHeader();
 
   listing();
   listingNew();
@@ -66,7 +63,6 @@ onElementReady("#container", scrollToTopBtn);
 draggableModuleFix();
 onElementReady(".module__bar", clickBarToCollapse);
 onElementReady(".module__content", () => {
-  renderFixButtonsContainer(".page-actions-buttons");
   addAdjustedModule();
   addSynopsis();
   topBar();
