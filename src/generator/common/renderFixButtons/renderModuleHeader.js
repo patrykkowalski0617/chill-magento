@@ -1,4 +1,4 @@
-import { renderFixButtons } from "../../chill";
+import { renderFixButtons } from "../../../chill";
 import "./renderModuleHeader.scss";
 
 const renderModuleHeader = () => {
@@ -7,7 +7,7 @@ const renderModuleHeader = () => {
   const reloadPage = () => {
     setTimeout(() => {
       location.reload();
-    }, 200);
+    }, 500);
   };
   const deleteModule = (module) => {
     module.querySelector(".module__button_remove").click();
@@ -16,7 +16,9 @@ const renderModuleHeader = () => {
 
   const saveModule = (module) => {
     module.querySelector(".module__button_save").click();
-    reloadPage();
+    if (!module.classList.contains("module_saved")) {
+      reloadPage();
+    }
   };
   const btnsFunctions = [deleteModule, saveModule];
 

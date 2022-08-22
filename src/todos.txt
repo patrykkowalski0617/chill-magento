@@ -1,3 +1,5 @@
 - jak byś robił jakies aktualizacje we wtyczce to możesz dla asteriska dać padding 20px 10px
 bo na mobile ten tekst jest na krawedzi
-
+- funkcja przeładowująca stronę kiedy dodaje się moduł
+- nie robić "pozostałe" jeśli są animowane ikony
+- Podgląd zamiast Otwórz na liście lp

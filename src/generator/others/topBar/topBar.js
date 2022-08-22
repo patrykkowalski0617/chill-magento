@@ -8,9 +8,8 @@ const topBar = () => {
   const oryginalBtnPreview = document.querySelector("#preview");
   const actions = [
     [
-      "Zwiń moduły",
+      "Zwiń/rozwiń moduły",
       (btn) => {
-        btn.classList.toggle("change-btn-txt");
         document.querySelector(".btn_toggle-all").click();
       },
     ],

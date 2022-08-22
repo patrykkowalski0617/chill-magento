@@ -13,5 +13,14 @@
         padding-right: 10px;
       }
     }
+    &.sticky-msg {
+      .notice-message {
+        position: fixed;
+        top: 92px;
+        z-index: 999;
+        left: 88px;
+        width: calc(100% - 88px) !important;
+      }
+    }
   }
 }

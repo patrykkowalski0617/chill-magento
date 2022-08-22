@@ -1,5 +1,4 @@
-import { renderFixButtons } from "../../chill";
-
+import { renderFixButtons } from "../../../chill";
 import "./moduleFix.scss";
 
 const moduleFix =

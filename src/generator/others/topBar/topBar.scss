@@ -19,11 +19,4 @@
   #lpModules {
     margin-bottom: 0;
   }
-  .page-actions-inner .change-btn-txt {
-    font-size: 0;
-    &::before {
-      content: "Rozwiń moduły";
-      font-size: initial;
-    }
-  }
 }
