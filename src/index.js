@@ -2,9 +2,8 @@ import "./main.scss";
 import { onElementReady, renderModulTitles } from "./chill";
 import {
   sortLpList,
-  openLpBtn,
+  openLpAndEditLp,
   generatorShortcut,
-  changeLpEvent,
   manageFilterURL,
   markExectResult,
 } from "./others";
@@ -33,9 +32,9 @@ import {
 // others
 onElementReady(".data-row .action-menu", () => {
   sortLpList();
-  changeLpEvent();
+  openLpAndEditLp();
 });
-openLpBtn();
+
 onElementReady('[name="url"]', manageFilterURL);
 generatorShortcut();
 onElementReady('[data-action="grid-filter-apply"]', markExectResult);

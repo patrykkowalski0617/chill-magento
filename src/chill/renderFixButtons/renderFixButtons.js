@@ -13,6 +13,9 @@ const renderFixButtons = ({
   actions.forEach((action) => {
     const btn = document.createElement("button");
     btn.classList.add("chill-btn");
+    if (action === "defaultFixInvisible") {
+      btn.classList.add("chill-btn-invisible");
+    }
     btn.innerHTML = action;
     container.appendChild(btn);
     btns.push(btn);

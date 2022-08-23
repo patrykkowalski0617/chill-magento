@@ -5,7 +5,7 @@ import {
   filtersData,
   basicFilters,
   fliterTemplate,
-} from "./";
+} from "../variables";
 
 const generateFilters = (module) => {
   const dependencyMenu = module.querySelector(

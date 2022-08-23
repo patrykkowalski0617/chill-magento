@@ -1,7 +1,7 @@
-import "./openLpBtn.scss";
+import "./openLpAndEditLp.scss";
 import { onElementReady } from "../../chill";
 
-const openLpBtn = () => {
+const openLpAndEditLp = () => {
   const openLpEvent = (e) => {
     e.preventDefault();
     const domainEl =
@@ -27,7 +27,7 @@ const openLpBtn = () => {
       el.insertAdjacentHTML(
         "beforeend",
         `<li>
-                    <a class="action-menu-item open" target="_blank" href="">Otwórz</a>
+                    <a class="action-menu-item open" target="_blank" href="">Podgląd</a>
                   </li>`
       );
       el.querySelector(".action-menu-item.open").removeEventListener(
@@ -57,7 +57,7 @@ const openLpBtn = () => {
 
   const changeLpEvent = () => {
     const table = document.querySelector(".admin__data-grid-outer-wrap");
-    table.addEventListener("click", (e) => {
+    table.addEventListener("dblclick", (e) => {
       const row = e.target.parentNode;
       if (row.classList.contains("data-row")) {
         row.querySelector(".action-menu > :first-child a").click();
@@ -67,10 +67,8 @@ const openLpBtn = () => {
     });
   };
 
-  onElementReady(".data-row .action-menu", () => {
-    openLp();
-    changeLpEvent();
-  });
+  openLp();
+  changeLpEvent();
 };
 
-export default openLpBtn;
+export default openLpAndEditLp;

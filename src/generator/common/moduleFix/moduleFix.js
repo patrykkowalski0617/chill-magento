@@ -19,7 +19,11 @@ const moduleFix =
         actions: btnsNames,
       });
 
-      if (isNewModule && actions[0][0] === "defaultFix") {
+      if (
+        isNewModule &&
+        (actions[0][0] === "defaultFix" ||
+          actions[0][0] === "defaultFixInvisible")
+      ) {
         actions[0][1](module);
       }
 

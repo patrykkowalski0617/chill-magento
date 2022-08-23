@@ -19,6 +19,9 @@
     background-color: $base-color-mark;
     outline: none;
   }
+  &.chill-btn-invisible {
+    display: none;
+  }
 }
 
 .chill-btn-container {
