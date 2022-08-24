@@ -1,5 +1,7 @@
+@import "../../../chill/variables.scss";
 .module {
   &.sticky {
+    margin-top: 55px;
     .chill-btn-container {
       position: fixed;
       top: 52px;
@@ -31,5 +33,11 @@
         width: calc(100% - 88px) !important;
       }
     }
+  }
+}
+.chill-generator-synopsis-btn.synopsis-btn-mark {
+  background-color: $base-color-mark !important;
+  &::after {
+    box-shadow: $base-color-mark -7px 0px 16px inset;
   }
 }

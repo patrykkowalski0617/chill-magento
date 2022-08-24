@@ -16,9 +16,10 @@ import {
   html,
   footer,
   bannerHero,
+  banner,
+  htmlExtended,
 } from "./generator/modules";
 import {
-  navInspect,
   scrollToTopBtn,
   draggableModuleFix,
   clickBarToCollapse,
@@ -51,6 +52,8 @@ onElementReady(".module__content", () => {
   html();
   footer();
   bannerHero();
+  banner();
+  htmlExtended();
 
   renderModulTitles();
 });
@@ -69,9 +72,4 @@ onElementReady(".module__content", () => {
   stickyModuleHeaders();
 });
 
-navInspect({
-  elementsSelector: ".module__bar",
-  animationClassName: "module__bar-in-view-port",
-  animOnload: true,
-});
 onElementReady(".admin__control-textarea", mainLpCss);

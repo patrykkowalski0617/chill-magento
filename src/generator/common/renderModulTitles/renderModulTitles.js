@@ -1,14 +1,22 @@
 const renderModulTitles = (providedModule) => {
   const modules = document.querySelectorAll(".module");
   const renderTitle = (module) => {
-    module
-      .querySelector(".chill-btn-container")
-      .insertAdjacentHTML(
-        "afterbegin",
-        `<span class="module__title">${
-          module.querySelector(".module__title").innerText
-        }</span>`
-      );
+    const modulOryginalTitle = module.querySelector(".module__title").innerText;
+    const chillHeaderModuleTitle = module.querySelector(
+      ".chill-btn-container .module__title"
+    );
+    if (!chillHeaderModuleTitle) {
+      module
+        .querySelector(".chill-btn-container")
+        .insertAdjacentHTML(
+          "afterbegin",
+          `<span class="module__title"></span>`
+        );
+      module.querySelector(".chill-btn-container .module__title").innerHTML =
+        modulOryginalTitle;
+    } else {
+      chillHeaderModuleTitle.innerHTML = modulOryginalTitle;
+    }
   };
 
   if (!providedModule) {

@@ -1,6 +1,9 @@
 @import "./chill/variables.scss";
 
 body {
+  .sticky-header {
+    top: 58px;
+  }
   #lpGenerator {
     background: honeydew !important;
     textarea {

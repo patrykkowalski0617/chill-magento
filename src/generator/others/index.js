@@ -1,4 +1,3 @@
-export { default as navInspect } from "./navInspect/navInspect";
 export { default as scrollToTopBtn } from "./scrollToTopBtn/scrollToTopBtn";
 export { default as draggableModuleFix } from "./draggableModuleFix/draggableModuleFix";
 export { default as clickBarToCollapse } from "./clickBarToCollapse/clickBarToCollapse";

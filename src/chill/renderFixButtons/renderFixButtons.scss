@@ -11,13 +11,15 @@
   font-weight: 600;
   border: 0;
   border-radius: 3px;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  &:focus,
+  &:focus {
+    background-color: $base-color;
+    outline: none;
+  }
   &:hover {
     background-color: $base-color-mark;
-    outline: none;
   }
   &.chill-btn-invisible {
     display: none;

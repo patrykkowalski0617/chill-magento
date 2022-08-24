@@ -1,0 +1,32 @@
+.module__menu:not(.menu-show-hidden-elements) {
+  .js-subcategory {
+    height: 77px;
+    overflow: hidden;
+  }
+  .menu-subModule h1 {
+    display: none;
+  }
+  .module__content.module__form > .cf {
+    > :nth-child(3),
+    > :nth-child(4),
+    > :nth-child(5),
+    > :nth-child(6),
+    > :nth-child(7),
+    > :nth-child(8),
+    > :nth-child(9),
+    > :nth-child(10),
+    > :nth-child(11),
+    > :nth-child(12) {
+      display: none;
+    }
+  }
+}
+.module__menu:not(.menu-show-hidden-elements)
+  .chill-btn-container
+  button:nth-child(6) {
+  font-size: 0;
+  &::before {
+    content: "Show Hidden Elements";
+    font-size: initial;
+  }
+}

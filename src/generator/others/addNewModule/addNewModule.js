@@ -1,14 +1,13 @@
 import {
   confirmSelectedNewModuleImmediately,
-  fixNewModule,
-  manageNewModule,
+  manageAddingModule,
 } from "./variables";
 
 const addNewModule = () => {
   const addModuleBtn = document.querySelector(".btn_add-module");
   const clickHandler = () => {
     confirmSelectedNewModuleImmediately();
-    manageNewModule(fixNewModule);
+    manageAddingModule();
   };
   const clickDelay = 40;
 

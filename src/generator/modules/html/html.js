@@ -4,11 +4,18 @@ import {
   existingModuleCallback,
   newModuleCallback,
   updateHtml,
+  onSave,
 } from "./actions";
 
 const html = moduleFix({
   moduleClass: "module__html",
   actions: [
+    [
+      "moduleTitle",
+      (module) => {
+        updateHtml("comment", module);
+      },
+    ],
     [
       "lpTitle",
       (module) => {
@@ -34,6 +41,12 @@ const html = moduleFix({
       },
     ],
     [
+      "lpIframe",
+      (module) => {
+        updateHtml("lpIframe", module);
+      },
+    ],
+    [
       "script",
       (module) => {
         updateHtml("script", module);
@@ -46,12 +59,6 @@ const html = moduleFix({
       },
     ],
     [
-      "comment",
-      (module) => {
-        updateHtml("comment", module);
-      },
-    ],
-    [
       "nbspFix",
       (module) => {
         updateHtml("nbspFix", module);
@@ -61,12 +68,6 @@ const html = moduleFix({
       "tipBtn",
       (module) => {
         updateHtml("tipBtn", module);
-      },
-    ],
-    [
-      "lpIframe",
-      (module) => {
-        updateHtml("lpIframe", module);
       },
     ],
     [
@@ -90,6 +91,7 @@ const html = moduleFix({
   ],
   newModuleCallback,
   existingModuleCallback,
+  onSave,
 });
 
 export default html;

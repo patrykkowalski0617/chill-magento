@@ -16,12 +16,20 @@ const stickyModuleHeaders = () => {
       }
       const elementsAboveViewport = document.querySelectorAll(".sticky");
       if (elementsAboveViewport.length) {
+        // mark last sticky header
         document
           .querySelectorAll(".sticky-last-element")
           .forEach((el) => el.classList.remove("sticky-last-element"));
         elementsAboveViewport[elementsAboveViewport.length - 1].classList.add(
           "sticky-last-element"
         );
+        // mark synopsis btn
+        document
+          .querySelectorAll(".synopsis-btn-mark")
+          .forEach((el) => el.classList.remove("synopsis-btn-mark"));
+        document
+          .querySelectorAll(".chill-generator-synopsis-btn:not(.page-top)")
+          [elementsAboveViewport.length - 1].classList.add("synopsis-btn-mark");
       }
     });
   }
