@@ -5,6 +5,9 @@ const generateMenu = (module) => {
   const { menuWrapper, saveModuleBtn, noticeMsg } = getModuleElements(module);
   const moduleId = module.dataset.moduleId;
   const minItemsQuantityInSubcategory = 4;
+  const areAnimatedIcons = module.querySelector(
+    "[for^=products_animated_icons] .input__checkbox:checked"
+  );
 
   // 1. Blur page
   document.body.classList.add("chill-is-working");
@@ -72,10 +75,11 @@ const generateMenu = (module) => {
               const { itemsQuantity, subcategoryOther } = subcategory;
 
               return (
-                itemsQuantity &&
-                subcategoryOther !== "force" &&
-                (itemsQuantity > minItemsQuantityInSubcategory ||
-                  subcategoryOther === "not-allowed")
+                (itemsQuantity &&
+                  subcategoryOther !== "force" &&
+                  (itemsQuantity > minItemsQuantityInSubcategory ||
+                    subcategoryOther === "not-allowed")) ||
+                areAnimatedIcons
               );
             }
           );

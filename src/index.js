@@ -18,6 +18,7 @@ import {
   bannerHero,
   banner,
   htmlExtended,
+  tips,
 } from "./generator/modules";
 import {
   scrollToTopBtn,
@@ -54,6 +55,7 @@ onElementReady(".module__content", () => {
   bannerHero();
   banner();
   htmlExtended();
+  tips();
 
   renderModulTitles();
 });

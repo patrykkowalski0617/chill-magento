@@ -8,6 +8,7 @@ import {
   banner,
   bannerHero,
   htmlExtended,
+  tips,
 } from "../../../modules";
 import { renderModuleHeader, renderModulTitles } from "../../../common";
 import {
@@ -62,6 +63,8 @@ const addingModuleHandler = () => {
       banner(true);
     case "module__banner_hero":
       bannerHero(true);
+    case "module__tip":
+      tips(true);
       break;
     default:
       console.log("module has no chill fixes");

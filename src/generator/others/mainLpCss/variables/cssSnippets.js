@@ -3,7 +3,7 @@ const cssSnippets = {
     /* asterisks */
     .lp-asterisk {
       text-align: center;
-      padding: 20px 0px;
+      padding: 20px 10px;
       max-width: 760px;
       margin: auto;
     }

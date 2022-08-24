@@ -1,4 +1,5 @@
 import { renderFixButtons } from "../../../chill";
+import addSynopsis from "../../others/addSynopsis/addSynopsis";
 import "./moduleFix.scss";
 
 const moduleFix =
@@ -49,12 +50,13 @@ const moduleFix =
         });
       }
 
-      if (onDelete) {
-        const deleteBtn = module.querySelector(".module__button_remove");
-        deleteBtn.addEventListener("click", () => {
+      const deleteBtn = module.querySelector(".module__button_remove");
+      deleteBtn.addEventListener("click", () => {
+        if (onDelete) {
           onDelete(module);
-        });
-      }
+        }
+        addSynopsis(1000);
+      });
     };
 
     document

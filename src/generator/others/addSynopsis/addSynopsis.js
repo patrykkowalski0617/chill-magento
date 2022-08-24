@@ -1,6 +1,6 @@
 import "./addSynopsis.scss";
 
-const addSynopsis = () => {
+const addSynopsis = (functionDelay = 100) => {
   if (!document.querySelector(".chill-generator-synopsis")) {
     const sideMenu = document.querySelector(".admin__menu");
     sideMenu.insertAdjacentHTML(
@@ -43,7 +43,7 @@ const addSynopsis = () => {
   };
   setTimeout(() => {
     makeSynopsis();
-  }, 100);
+  }, functionDelay);
 };
 
 export default addSynopsis;

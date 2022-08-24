@@ -7,3 +7,4 @@ export { default as footer } from "./footer/footer";
 export { default as bannerHero } from "./bannerHero/bannerHero";
 export { default as banner } from "./banner/banner";
 export { default as htmlExtended } from "./htmlExtended/htmlExtended";
+export { default as tips } from "./tips/tips";
