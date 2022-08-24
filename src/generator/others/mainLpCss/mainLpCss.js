@@ -7,9 +7,9 @@ const mainLpCss = () => {
   );
   const chillBtns = renderFixButtons({
     actions: [
-      "Standard",
+      "defaultFix",
       "Zielona apla",
-      "Menu z jedną kategorią",
+      "Stare menu z jedną kategorią",
       "Inny color w baner hero",
     ],
     otherRenderContainer: document.querySelector(

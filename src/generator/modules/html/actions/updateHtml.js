@@ -16,7 +16,7 @@ const updateContent = (htmlSnippet, module, begin = false) => {
 const updateHtml = (action, module) => {
   switch (action) {
     case "bannerUpd":
-      updateContent(htmlSnippets.banner, module);
+      updateContent(htmlSnippets.bannerUpd, module);
       break;
     case "runClock24Before":
       updateContent(htmlSnippets.runClock24Before, module);

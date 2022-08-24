@@ -14,6 +14,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  border: 3px solid $base-color;
   &:focus {
     background-color: $base-color;
     outline: none;
