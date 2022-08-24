@@ -1,6 +1,6 @@
-const renderModulTitles = () => {
+const renderModulTitles = (providedModule) => {
   const modules = document.querySelectorAll(".module");
-  modules.forEach((module) => {
+  const renderTitle = (module) => {
     module
       .querySelector(".chill-btn-container")
       .insertAdjacentHTML(
@@ -9,7 +9,15 @@ const renderModulTitles = () => {
           module.querySelector(".module__title").innerText
         }</span>`
       );
-  });
+  };
+
+  if (!providedModule) {
+    modules.forEach((module) => {
+      renderTitle(module);
+    });
+  } else {
+    renderTitle(providedModule);
+  }
 };
 
 export default renderModulTitles;

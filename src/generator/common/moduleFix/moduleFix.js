@@ -1,4 +1,6 @@
 import { renderFixButtons } from "../../../chill";
+import { renderModuleHeader, renderModulTitles } from "../";
+import stickyModuleHeaders from "../../others/stickyModuleHeaders/stickyModuleHeaders";
 import "./moduleFix.scss";
 
 const moduleFix =
@@ -7,12 +9,9 @@ const moduleFix =
     const fix = (module, isNewModule) => {
       const btnsNames = actions.map((action) => action[0]);
       if (isNewModule) {
-        module
-          .querySelector(".module__content")
-          .insertAdjacentHTML(
-            "afterbegin",
-            `<div class="chill-btn-container"></div>`
-          );
+        renderModuleHeader(module);
+        stickyModuleHeaders();
+        renderModulTitles(module);
       }
       const chillBtns = renderFixButtons({
         generatorModule: module,
@@ -36,8 +35,7 @@ const moduleFix =
 
       if (isNewModule && newModuleCallback) {
         newModuleCallback(module);
-      }
-      if (existingModuleCallback) {
+      } else if (existingModuleCallback) {
         existingModuleCallback(module);
       }
     };

@@ -1,4 +1,3 @@
-import "../listing/listing.scss";
 import { moduleFix } from "../../common";
 import {
   bezpiecznik,

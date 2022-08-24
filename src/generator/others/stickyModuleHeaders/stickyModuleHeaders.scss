@@ -2,18 +2,27 @@
   &.sticky {
     .chill-btn-container {
       position: fixed;
-      top: 47px;
+      top: 52px;
       z-index: 20;
       background: #029dd1;
-      left: 80px;
-      padding: 5px 0 5px 15px;
+      left: 88px;
+      padding: 0 5px 5px 5px;
+      width: calc(100% - 88px);
+      min-height: 45px;
       height: 45px;
+      overflow: hidden;
+      &:hover {
+        height: auto;
+      }
       .module__title {
-        display: block;
+        display: flex;
         padding-right: 10px;
+        height: 35px;
+        align-items: center;
+        margin: 5px 0 0 0;
       }
     }
-    &.sticky-msg {
+    &.sticky-last-element {
       .notice-message {
         position: fixed;
         top: 92px;

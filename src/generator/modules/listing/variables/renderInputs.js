@@ -1,4 +1,5 @@
 import { clearTextAreaOnKey, formatExcel } from "./";
+import "./renderInputs.scss";
 const renderInputs = (module) => {
   const gidsInput = module.querySelector("textarea");
 

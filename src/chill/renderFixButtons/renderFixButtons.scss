@@ -3,7 +3,7 @@
 .chill-btn {
   background-color: $base-color;
   color: $base-color-txt;
-  margin: 0 5px 0 0;
+  margin: 5px 5px 0 0;
   padding: 0 10px;
   height: 35px;
   line-height: 12px;
@@ -23,12 +23,11 @@
     display: none;
   }
 }
-
 .chill-btn-container {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
 }
 .module .chill-btn-container {
   margin-bottom: 15px;

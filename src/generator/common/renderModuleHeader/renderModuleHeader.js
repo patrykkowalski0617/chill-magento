@@ -1,13 +1,13 @@
 import { renderFixButtons } from "../../../chill";
 import "./renderModuleHeader.scss";
 
-const renderModuleHeader = () => {
+const renderModuleHeader = (providedModule) => {
   const modules = document.querySelectorAll(".module");
 
   const reloadPage = () => {
     setTimeout(() => {
       location.reload();
-    }, 500);
+    }, 1000);
   };
   const deleteModule = (module) => {
     module.querySelector(".module__button_remove").click();
@@ -22,7 +22,7 @@ const renderModuleHeader = () => {
   };
   const btnsFunctions = [deleteModule, saveModule];
 
-  modules.forEach((module) => {
+  const renderHeader = (module) => {
     module
       .querySelector(".module__content")
       .insertAdjacentHTML(
@@ -39,7 +39,14 @@ const renderModuleHeader = () => {
         btnsFunctions[i](module);
       });
     });
-  });
+  };
+  if (!providedModule) {
+    modules.forEach((module) => {
+      renderHeader(module);
+    });
+  } else {
+    renderHeader(providedModule);
+  }
 };
 
 export default renderModuleHeader;

@@ -1,4 +1,4 @@
-@import "../../../chill/variables.scss";
+@import "../../../../chill/variables.scss";
 
 .chill-gids-input {
   background-color: $base-color;
@@ -7,7 +7,7 @@
   line-height: 12px !important;
   font-size: 15px !important;
   color: $base-color-txt !important;
-  margin: 0 5px 0 0;
+  margin: 5px 5px 0 0;
   padding: 8px;
   border-width: 0px;
   border: 3px solid $base-color;

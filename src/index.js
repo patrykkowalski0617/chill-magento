@@ -1,5 +1,5 @@
 import "./main.scss";
-import { onElementReady, renderModulTitles } from "./chill";
+import { onElementReady } from "./chill";
 import {
   sortLpList,
   openLpAndEditLp,
@@ -7,7 +7,7 @@ import {
   manageFilterURL,
   markExectResult,
 } from "./others";
-import { renderModuleHeader } from "./generator/common";
+import { renderModuleHeader, renderModulTitles } from "./generator/common";
 import {
   listing,
   listingNew,
@@ -27,6 +27,7 @@ import {
   addNewModule,
   topBar,
   stickyModuleHeaders,
+  mainLpCss,
 } from "./generator/others";
 
 // others
@@ -73,3 +74,4 @@ navInspect({
   animationClassName: "module__bar-in-view-port",
   animOnload: true,
 });
+onElementReady(".admin__control-textarea", mainLpCss);

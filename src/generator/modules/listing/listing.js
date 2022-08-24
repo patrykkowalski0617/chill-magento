@@ -1,4 +1,3 @@
-import "./listing.scss";
 import { moduleFix } from "../../common";
 import {
   defaultFix,
