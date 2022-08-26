@@ -75,11 +75,10 @@ const generateMenu = (module) => {
               const { itemsQuantity, subcategoryOther } = subcategory;
 
               return (
-                (itemsQuantity &&
-                  subcategoryOther !== "force" &&
-                  (itemsQuantity > minItemsQuantityInSubcategory ||
-                    subcategoryOther === "not-allowed")) ||
-                areAnimatedIcons
+                itemsQuantity &&
+                subcategoryOther !== "force" &&
+                (itemsQuantity > minItemsQuantityInSubcategory ||
+                  subcategoryOther === "not-allowed")
               );
             }
           );
