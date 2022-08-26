@@ -4,6 +4,7 @@ import {
   bezpiecznik,
   existingModuleCallback,
   newModuleCallback,
+  hideElements,
 } from "./actions";
 
 const listing = moduleFix({
@@ -11,6 +12,7 @@ const listing = moduleFix({
   actions: [
     ["defaultFix", defaultFix],
     ["bezpiecznik", bezpiecznik],
+    ["hideElements", hideElements],
   ],
   newModuleCallback,
   existingModuleCallback,

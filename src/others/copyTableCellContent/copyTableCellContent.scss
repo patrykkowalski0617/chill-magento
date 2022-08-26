@@ -1,0 +1,17 @@
+@import "../../chill/variables.scss";
+
+.data-grid-cell-content {
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "'Ctrl + click' to copy";
+    display: none;
+    font-size: 10px;
+    border-bottom: $base-color 3px solid;
+  }
+  &:hover {
+    &::after {
+      display: block;
+    }
+  }
+}

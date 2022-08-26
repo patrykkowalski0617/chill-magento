@@ -24,20 +24,22 @@ const openLpAndEditLp = () => {
 
   const openLp = () => {
     const addOpenBtn = (el) => {
-      el.insertAdjacentHTML(
-        "beforeend",
-        `<li>
+      if (!el.querySelector(".action-menu-item.open")) {
+        el.insertAdjacentHTML(
+          "beforeend",
+          `<li>
                     <a class="action-menu-item open" target="_blank" href="">Podgląd</a>
                   </li>`
-      );
-      el.querySelector(".action-menu-item.open").removeEventListener(
-        "click",
-        openLpEvent
-      );
-      el.querySelector(".action-menu-item.open").addEventListener(
-        "click",
-        openLpEvent
-      );
+        );
+        el.querySelector(".action-menu-item.open").removeEventListener(
+          "click",
+          openLpEvent
+        );
+        el.querySelector(".action-menu-item.open").addEventListener(
+          "click",
+          openLpEvent
+        );
+      }
     };
     document.querySelectorAll(".data-row .action-menu").forEach((el) => {
       addOpenBtn(el);
@@ -54,20 +56,41 @@ const openLpAndEditLp = () => {
     clearBtn.removeEventListener("click", openLpRest);
     clearBtn.addEventListener("click", openLpRest);
   });
+  onElementReady("[data-action='grid-filter-apply']", () => {
+    const applyFilter = document.querySelector(
+      "[data-action='grid-filter-apply']"
+    );
+
+    applyFilter.removeEventListener("click", openLpRest);
+    applyFilter.addEventListener("click", openLpRest);
+  });
+  onElementReady('[name="url"]', () => {
+    document.querySelector('[name="url"]').addEventListener("keyup", (e) => {
+      if (e.which === 13) {
+        openLpRest();
+      }
+    });
+  });
 
   const changeLpEvent = () => {
     const table = document.querySelector(".admin__data-grid-outer-wrap");
-    table.addEventListener("dblclick", (e) => {
-      const row = e.target.parentNode;
-      if (row.classList.contains("data-row")) {
-        row.querySelector(".action-menu > :first-child a").click();
-      } else if (row.parentNode.classList.contains("data-row")) {
-        row.parentNode.querySelector(".action-menu > :first-child a").click();
+    table.addEventListener("click", (e) => {
+      if (!e.ctrlKey) {
+        const row = e.target.parentNode;
+        if (row.classList.contains("data-row")) {
+          row.querySelector(".action-menu > :first-child a").click();
+        } else if (row.parentNode.classList.contains("data-row")) {
+          row.parentNode.querySelector(".action-menu > :first-child a").click();
+        }
       }
     });
   };
-
-  openLp();
+  if (
+    document.querySelector(".page-title").innerText ===
+    "Zarządzaj Landig Page`ami"
+  ) {
+    openLp();
+  }
   changeLpEvent();
 };
 

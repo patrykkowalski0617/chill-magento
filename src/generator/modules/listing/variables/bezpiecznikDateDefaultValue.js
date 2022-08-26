@@ -1,3 +1,4 @@
+import { markInputs } from "../../../../chill";
 import { selectors } from "./";
 
 const bezpiecznikDateDefaultValue = (module) => {
@@ -14,6 +15,7 @@ const bezpiecznikDateDefaultValue = (module) => {
   };
   dateInput.value = `${date5minLaterData.year}-${date5minLaterData.month}-${date5minLaterData.day}`;
   timeInput.value = `${date5minLaterData.houres}:${date5minLaterData.minutes}`;
+  markInputs([dateInput, timeInput]);
 };
 
 export default bezpiecznikDateDefaultValue;

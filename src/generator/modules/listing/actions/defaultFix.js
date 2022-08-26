@@ -3,24 +3,26 @@ import {
   textAreaDefaultText,
   selectors,
 } from "../variables";
-import { nnColors } from "../../../../chill";
+import { markInputs, nnColors } from "../../../../chill";
 
 const defaultFix = (module) => {
   bezpiecznikDateDefaultValue(module);
   textAreaDefaultText(module);
 
-  module
-    .querySelectorAll(`${selectors.features}, ${selectors.badgeAdserver}`)
-    .forEach((el) => {
-      if (!el.checked) {
-        el.click();
-      }
-    });
+  const checkboxes = module.querySelectorAll(
+    `${selectors.features}, ${selectors.badgeAdserver}, ${selectors.dynaminPage}`
+  );
+  checkboxes.forEach((el) => {
+    if (!el.checked) {
+      el.click();
+    }
+  });
 
   const el = module.querySelector(selectors.sorting);
   const setCheckbox = (el, shouldBeOff) => {
     if (shouldBeOff) {
       el.click();
+      markInputs([el]);
     }
   };
   if (module.querySelector('[id^="products_template"]').value !== "slider") {
@@ -29,30 +31,37 @@ const defaultFix = (module) => {
     setCheckbox(el, el.checked);
   }
 
-  module
-    .querySelectorAll(
-      `${selectors.priceColor}, ${selectors.couponColorBg}, ${selectors.sortingArrow}`
-    )
-    .forEach((el) => {
-      el.value = nnColors.red;
-    });
-  module
-    .querySelectorAll(
-      `${selectors.color}, ${selectors.savePriceColor}, ${selectors.sortingColor1}, ${selectors.sortingColor2}, ${selectors.sortingBorder}`
-    )
-    .forEach((el) => {
-      el.value = nnColors.black;
-    });
-  module.querySelectorAll(`${selectors.oldPriceColor}`).forEach((el) => {
+  const redInputs = module.querySelectorAll(
+    `${selectors.priceColor}, ${selectors.couponColorBg}, ${selectors.sortingArrow}`
+  );
+  const blackInputs = module.querySelectorAll(
+    `${selectors.color}, ${selectors.savePriceColor}, ${selectors.sortingColor1}, ${selectors.sortingColor2}, ${selectors.sortingBorder}`
+  );
+  const grayInputs = module.querySelectorAll(`${selectors.oldPriceColor}`);
+  const whiteInputs = module.querySelectorAll(
+    `${selectors.bgColor}, ${selectors.couponColor}, ${selectors.sortingColorBg}`
+  );
+
+  redInputs.forEach((el) => {
+    el.value = nnColors.red;
+  });
+  blackInputs.forEach((el) => {
+    el.value = nnColors.black;
+  });
+  grayInputs.forEach((el) => {
     el.value = nnColors.gray;
   });
-  module
-    .querySelectorAll(
-      `${selectors.bgColor}, ${selectors.couponColor}, ${selectors.sortingColorBg}`
-    )
-    .forEach((el) => {
-      el.value = nnColors.white;
-    });
+  whiteInputs.forEach((el) => {
+    el.value = nnColors.white;
+  });
+
+  markInputs([
+    ...redInputs,
+    ...blackInputs,
+    ...grayInputs,
+    ...whiteInputs,
+    ...Array.from(checkboxes).map((checkboxe) => checkboxe.parentElement),
+  ]);
 };
 
 export default defaultFix;

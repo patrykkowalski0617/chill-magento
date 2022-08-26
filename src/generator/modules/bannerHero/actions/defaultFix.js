@@ -1,3 +1,5 @@
+import { markInputs } from "../../../../chill";
+
 const defaultFix = (module) => {
   const tytulPrzyciskuTimera = module.querySelector(
     '[id^="banner_hero_timer_button_text"]'
@@ -57,8 +59,8 @@ const defaultFix = (module) => {
 
   allEl.forEach(({ el, elVal }) => {
     el.value = elVal;
-    el.classList.add("filled");
   });
+  markInputs(allEl.map(({ el }) => el));
 };
 
 export default defaultFix;

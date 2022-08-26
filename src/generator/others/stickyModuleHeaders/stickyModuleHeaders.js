@@ -30,6 +30,10 @@ const stickyModuleHeaders = () => {
         document
           .querySelectorAll(".chill-generator-synopsis-btn:not(.page-top)")
           [elementsAboveViewport.length - 1].classList.add("synopsis-btn-mark");
+      } else {
+        document
+          .querySelectorAll(".synopsis-btn-mark")
+          .forEach((el) => el.classList.remove("synopsis-btn-mark"));
       }
     });
   }

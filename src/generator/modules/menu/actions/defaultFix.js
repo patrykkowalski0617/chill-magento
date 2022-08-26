@@ -1,3 +1,4 @@
+import { markInputs } from "../../../../chill";
 import { getModuleElements } from "../variables";
 
 const defaultFix = (module) => {
@@ -5,13 +6,9 @@ const defaultFix = (module) => {
   requiredSwitches.forEach((el) => {
     if (!el.checked) {
       el.click();
-      el.parentNode.classList.add("filled");
-      el.parentNode.classList.remove("touched");
-    } else {
-      el.parentNode.classList.add("touched");
-      el.parentNode.classList.remove("filled");
     }
   });
+  markInputs(Array.from(requiredSwitches).map((el) => el.parentNode));
 };
 
 export default defaultFix;

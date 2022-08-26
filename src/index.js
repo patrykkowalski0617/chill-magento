@@ -6,6 +6,7 @@ import {
   generatorShortcut,
   manageFilterURL,
   markExectResult,
+  copyTableCellContent,
 } from "./others";
 import { renderModuleHeader, renderModulTitles } from "./generator/common";
 import {
@@ -36,9 +37,12 @@ import {
 onElementReady(".data-row .action-menu", () => {
   sortLpList();
   openLpAndEditLp();
+  copyTableCellContent();
 });
 
-onElementReady('[name="url"]', manageFilterURL);
+onElementReady('[name="url"]', () => {
+  manageFilterURL();
+});
 generatorShortcut();
 onElementReady('[data-action="grid-filter-apply"]', markExectResult);
 

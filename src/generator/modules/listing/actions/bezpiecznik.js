@@ -1,3 +1,4 @@
+import { markInputs } from "../../../../chill";
 import { selectors } from "../variables";
 
 const bezpiecznik = (module) => {
@@ -12,5 +13,6 @@ const bezpiecznik = (module) => {
   dateInput.classList.add("filled");
   timeInput.value = dateFrom.substr(11);
   timeInput.classList.add("filled");
+  markInputs([timeInput, dateInput]);
 };
 export default bezpiecznik;

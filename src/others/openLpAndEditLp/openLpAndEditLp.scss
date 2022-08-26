@@ -8,7 +8,7 @@
   }
 }
 .action-menu {
-  border: 3px solid $base-color-mark;
+  border: 3px solid $base-color;
 }
 .data-row {
   cursor: pointer;
@@ -38,7 +38,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  overflow: hidden;
 }
 .data-grid .data-grid-actions-cell {
   position: relative;

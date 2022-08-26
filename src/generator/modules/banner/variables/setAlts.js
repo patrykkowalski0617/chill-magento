@@ -1,4 +1,6 @@
+import { markInputs } from "../../../../chill";
 import { addBanerTitle } from "./";
+
 const setAlts = ({ module, dataString = "", defaultVal = true }) => {
   const altInput = module.querySelector("[id^='banner_alt']");
   const altRWDInput = module.querySelector("[id^='banner_rwd_alt']");
@@ -9,6 +11,7 @@ const setAlts = ({ module, dataString = "", defaultVal = true }) => {
   altInput.value = `${defaultVal ? val : ""}${dataString}`;
   altRWDInput.value = "";
   addBanerTitle(module);
+  markInputs([altInput, altRWDInput]);
 };
 
 export default setAlts;

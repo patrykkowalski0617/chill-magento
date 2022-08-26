@@ -1,4 +1,4 @@
-import { nnColors } from "../../../../chill";
+import { markInputs, nnColors } from "../../../../chill";
 
 const defaultFix = (module) => {
   const bg = module.querySelectorAll(
@@ -19,6 +19,8 @@ const defaultFix = (module) => {
     el.value = nnColors.black;
   });
   lines.forEach((el) => (el.value = nnColors.red));
+
+  markInputs([...bg, ...font, ...link, ...lines]);
 };
 
 export default defaultFix;

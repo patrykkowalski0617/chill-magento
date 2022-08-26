@@ -1,0 +1,4 @@
+- standardize file structure
+- instruction / doc
+- titles for chill btns
+- copy for avery input and txt area

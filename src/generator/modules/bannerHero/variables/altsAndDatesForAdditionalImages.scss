@@ -1,0 +1,11 @@
+.module__banner_hero {
+  .input__text.input__image.input_required {
+    min-height: 30px !important;
+  }
+  [id^="additional_images-wrapper"] > div > div > div {
+    > :nth-child(3),
+    > :nth-child(4) {
+      display: inline-flex !important;
+    }
+  }
+}

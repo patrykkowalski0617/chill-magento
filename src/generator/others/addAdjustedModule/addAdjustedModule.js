@@ -7,7 +7,7 @@ const addAdjustedModule = () => {
     customBtns.forEach((btn) => btn.remove());
   }
   const customBtn = `<div class="block block_buttons block_buttons-custom">
-            <a href="" class="btn btn_center add-adjusted-module-btn" title="Dodaj moduł">
+            <a href="" class="btn btn_center add-adjusted-module-btn" title="Dodaj moduł w tym miejscu">
                 <i class="btn__icon material-icons"></i>
             </a>
         </div>`;

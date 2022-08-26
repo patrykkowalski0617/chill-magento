@@ -4,6 +4,7 @@ const selectors = {
   badgeAdserver:
     'input[id^="products_badge"]:not([id^="products_badge_generated"]):not([type="text"])',
   sorting: 'input[id^="products_sorting"]',
+  dynaminPage: 'input[id^="products_dynamic_page_"]:not([type="text"])',
   // Colors
   bgColor:
     '[id^="products_color_background"], [id^="products_color_background"] + input',

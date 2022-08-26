@@ -1,5 +1,9 @@
+import { copyContent } from "../../chill";
+import "./manageFilterURL.scss";
+
 const manageFilterURL = () => {
   const urlInput = document.querySelector('[name="url"]');
+
   if (urlInput) {
     urlInput.addEventListener("paste", (e) => {
       const value = e.clipboardData.getData("Text");
@@ -12,6 +16,12 @@ const manageFilterURL = () => {
         setTimeout(() => {
           urlInput.value = newValue;
         }, 0);
+      }
+    });
+    urlInput.title = "'Ctrl + click' to copy";
+    urlInput.addEventListener("click", (e) => {
+      if (e.ctrlKey) {
+        copyContent(e.target);
       }
     });
   }
