@@ -1,7 +1,7 @@
 @import "../../chill/variables.scss";
 
 [id^="notice-"] > span::after {
-  content: " 'Ctrl + click' to copy";
+  content: " 'Alt + click' to copy";
   color: $base-color-mark;
   border-bottom: $base-color 3px solid;
 }

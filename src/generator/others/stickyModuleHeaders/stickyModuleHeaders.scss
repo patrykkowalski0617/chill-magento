@@ -1,11 +1,12 @@
 @import "../../../chill/variables.scss";
 .module {
   .module__content {
-    border: 2px solid #ccc;
+    border: 2px solid #ddd;
   }
   &.sticky {
     .module__content.module__form {
       padding-bottom: 70px;
+      background-color: #d3efd9 !important;
     }
     .chill-btn-container {
       position: fixed;

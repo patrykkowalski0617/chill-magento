@@ -9,7 +9,7 @@ const stickyModuleHeaders = () => {
       const moduleContent = module.querySelector(".module__content");
       const sticky = moduleContent.offsetTop;
 
-      if (window.pageYOffset + 100 > sticky) {
+      if (window.pageYOffset + 200 > sticky) {
         module.classList.add("sticky");
       } else {
         module.classList.remove("sticky");

@@ -4,7 +4,7 @@ const copyTableCellContent = () => {
   const table = document.querySelector(".admin__data-grid-outer-wrap");
 
   table.addEventListener("click", (e) => {
-    if (e.target.classList.contains("data-grid-cell-content") && e.ctrlKey) {
+    if (e.target.classList.contains("data-grid-cell-content") && e.altKey) {
       copyContent(e.target);
     }
   });

@@ -69,13 +69,14 @@ onElementReady(".btn_add-module", () => {
 
 // generator/others
 onElementReady("#container", scrollToTopBtn);
-draggableModuleFix();
+
 onElementReady(".module__bar", clickBarToCollapse);
 onElementReady(".module__content", () => {
   addAdjustedModule();
   addSynopsis();
   topBar();
   stickyModuleHeaders();
+  draggableModuleFix();
 });
 
 onElementReady(".admin__control-textarea", mainLpCss);

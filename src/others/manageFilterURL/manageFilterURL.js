@@ -18,9 +18,9 @@ const manageFilterURL = () => {
         }, 0);
       }
     });
-    urlInput.title = "'Ctrl + click' to copy";
+    urlInput.title = "'Alt + click' to copy";
     urlInput.addEventListener("click", (e) => {
-      if (e.ctrlKey) {
+      if (e.altKey) {
         copyContent(e.target);
       }
     });

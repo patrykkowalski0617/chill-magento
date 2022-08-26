@@ -12,30 +12,30 @@ const addSynopsis = (functionDelay = 100) => {
   const synopsis = document.querySelector(".chill-generator-synopsis");
   const makeSynopsis = () => {
     synopsis.innerHTML = `<a href="#container" class="chill-generator-synopsis-btn page-top">TOP</a>`;
-    document.querySelectorAll(".module__bar").forEach((el) => {
-      const moduleTitle = el.querySelector(".module__title").innerHTML;
-      var btn = document.createElement("BUTTON");
+    document.querySelectorAll(".module").forEach((module) => {
+      if (!module.classList.contains("chill-synopsis-dragend-event-added")) {
+        module.addEventListener("dragend", () => {
+          addSynopsis();
+        });
+        module.classList.add("chill-synopsis-dragend-event-added");
+      }
+
+      const moduleBar = module.querySelector(".module__bar");
+      const moduleTitle = moduleBar.querySelector(".module__title").innerHTML;
+      const btn = document.createElement("BUTTON");
       btn.innerHTML = moduleTitle;
       btn.classList.add("chill-generator-synopsis-btn");
       btn.addEventListener("click", () => {
-        let moduleEl = el.parentElement.parentElement;
-        moduleEl = moduleEl.classList.contains("module_saved")
-          ? el.parentElement.parentElement
-          : el.parentElement;
-        const rest = () => {
-          moduleEl.scrollIntoView();
-          moduleEl.classList.add("mark");
-          setTimeout(() => {
-            moduleEl.classList.remove("mark");
-          }, 200);
+        const scrollToModule = () => {
+          module.scrollIntoView();
         };
-        if (moduleEl.querySelector(".module__form").style.display === "none") {
-          moduleEl.querySelector(".module__bar").click();
+        if (module.querySelector(".module__form").style.display === "none") {
+          module.querySelector(".module__bar").click();
           setTimeout(() => {
-            rest();
+            scrollToModule();
           }, 500);
         } else {
-          rest();
+          scrollToModule();
         }
       });
       synopsis.appendChild(btn);
