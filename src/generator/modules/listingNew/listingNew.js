@@ -1,10 +1,10 @@
 import { moduleFix } from "../../common";
+import { bezpiecznik } from "../listing/actions";
 import {
-  bezpiecznik,
+  defaultFix,
   existingModuleCallback,
   newModuleCallback,
-} from "../listing/actions";
-import { defaultFix } from "./actions";
+} from "./actions";
 
 const listingNew = moduleFix({
   moduleClass: "module__products_new",
