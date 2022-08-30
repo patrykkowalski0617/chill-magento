@@ -6,7 +6,6 @@
   &.sticky {
     .module__content.module__form {
       padding-bottom: 70px;
-      background-color: #d3efd9 !important;
     }
     .chill-btn-container {
       position: fixed;
@@ -32,6 +31,9 @@
       }
     }
     &.sticky-last-element {
+      .module__content.module__form {
+        background-color: #d3efd9 !important;
+      }
       .notice-message {
         position: fixed;
         top: 97px;
