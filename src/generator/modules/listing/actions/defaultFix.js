@@ -2,6 +2,7 @@ import {
   bezpiecznikDateDefaultValue,
   textAreaDefaultText,
   selectors,
+  fillCouponCode,
 } from "../variables";
 import { markInputs, nnColors } from "../../../../chill";
 
@@ -55,16 +56,7 @@ const defaultFix = (module) => {
     el.value = nnColors.white;
   });
 
-  const codeInput = module.querySelector(
-    "[id^=products_new_coupon_code_], [id^=products_coupon_code_]"
-  );
-  const codeInputSource = document.querySelector(
-    "[id^=banner_hero_promo_code_]"
-  );
-  if (codeInputSource) {
-    codeInput.value = codeInputSource.value;
-    markInputs([codeInput]);
-  }
+  fillCouponCode(module);
 
   markInputs([
     ...redInputs,

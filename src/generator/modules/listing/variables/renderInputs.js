@@ -1,15 +1,25 @@
-import { clearTextAreaOnKey, formatExcel } from "./";
+import { clearTextAreaOnKey, formatExcel, excelHeaders } from "./";
 import "./renderInputs.scss";
 const renderInputs = (module) => {
   const gidsInput = module.querySelector("textarea");
-
+  const headersMarks = JSON.stringify(excelHeaders)
+    .replaceAll('"', "")
+    .replaceAll("[", " ")
+    .replaceAll("]", " ")
+    .replaceAll("{", " ")
+    .replaceAll("}", " ")
+    .replaceAll(" , ", " | ");
   module.querySelector(".chill-btn-container").insertAdjacentHTML(
     "beforeend",
     `
-          <textarea class="chill-gids-input new-gids" placeholder="Nowe gidy" title="Skopiuj i wklej tabelę z Excela. Oznaczenia kolumn: gid: g, rabat procentowy: p, rabat kwotowy: r, cena: c, priorytet kolejności: l, kod rabatowy: k, cena minimalna: m"></textarea>
-          <textarea class="chill-gids-input gids-to-delete" placeholder="Gidy do usunięcia" title="Wklej gidy do usunięcia odzielone przecinkami (akceptowalne białe znaki) lub tabelę z Excela. Oznaczenia kolumn: gid: g"></textarea>
-          <textarea class="chill-gids-input gids-to-add" placeholder="Gidy do dodania" title="Skopiuj i wklej tabelę z Excela. Oznaczenia kolumn: gid: g, rabat procentowy: p, rabat kwotowy: r, cena: c, priorytet kolejności: l, kod rabatowy: k, cena minimalna: m"></textarea>
-          <textarea class="chill-gids-input gids-to-update" placeholder="Gidy do aktualizacji" title="Skopiuj i wklej tabelę z Excela. Oznaczenia kolumn: gid: g, rabat procentowy: p, rabat kwotowy: r, cena: c, priorytet kolejności: l, kod rabatowy: k, cena minimalna: m"></textarea>
+          <textarea class="chill-gids-input new-gids" placeholder="Nowe gidy" title="Skopiuj i wklej tabelę z Excela. Oznaczenia kolumn: 
+          ${headersMarks}"></textarea>
+          <textarea class="chill-gids-input gids-to-delete" placeholder="Gidy do usunięcia" title="Wklej gidy do usunięcia odzielone przecinkami (akceptowalne białe znaki) lub tabelę z Excela. Oznaczenia kolumny: 
+          ${excelHeaders[0].gid}"></textarea>
+          <textarea class="chill-gids-input gids-to-add" placeholder="Gidy do dodania" title="Skopiuj i wklej tabelę z Excela. Oznaczenia kolumn: 
+          ${headersMarks}"></textarea>
+          <textarea class="chill-gids-input gids-to-update" placeholder="Gidy do aktualizacji" title="Skopiuj i wklej tabelę z Excela. Oznaczenia kolumn:
+          ${headersMarks}"></textarea>
           
           `
   );
@@ -45,6 +55,7 @@ const renderInputs = (module) => {
     const customGidsInput = module.querySelector(
       ".chill-gids-input.gids-to-update"
     );
+
     customGidsInput.addEventListener("paste", (e) => {
       const listWithChanges = formatExcel(e.clipboardData.getData("Text"));
 
@@ -72,13 +83,17 @@ const renderInputs = (module) => {
 
       const listArrOfObj = makeObjects(actualGids);
       const listWithChangesArrOfObj = makeObjects(listWithChanges);
-
-      const newListArrOfObj = listArrOfObj.map((el) => {
+      const changedGids = [];
+      const notChangedGids = [];
+      const newListArrOfObj = listArrOfObj.map((el, i) => {
         const newObj = listWithChangesArrOfObj.find(
           (_el) => el.gid === _el.gid
         );
         if (newObj) {
           const { gid, proc, disc, price, lp, code, min } = newObj;
+          if (Number(gid)) {
+            changedGids.push(gid);
+          }
           return {
             gid: gid !== "" ? gid : el.gid,
             proc: proc !== "" ? proc : el.proc,
@@ -89,9 +104,18 @@ const renderInputs = (module) => {
             min: min !== "" ? min : el.min,
           };
         } else {
+          notChangedGids.push(el.gid);
           return el;
         }
       });
+      console.log(
+        `
+Gidy do aktualizacji:
+- zaktualizowano ${changedGids.length}: ${changedGids.join(",")}
+- nie zaktualizowano ${notChangedGids.length}: ${notChangedGids.join(",")}
+        `,
+        { changedGids, notChangedGids }
+      );
       const newList = newListArrOfObj
         .map((el) => {
           const { gid, proc, disc, price, lp, code, min } = el;
@@ -101,7 +125,10 @@ const renderInputs = (module) => {
 
       setTimeout(() => {
         gidsInput.value = newList;
-        clearTextAreaOnKey(customGidsInput);
+        clearTextAreaOnKey(
+          customGidsInput,
+          `${changedGids.length} zaktualizowanych`
+        );
       }, 100);
     });
   };
@@ -113,7 +140,10 @@ const renderInputs = (module) => {
     );
     customGidsInput.addEventListener("paste", (e) => {
       const pastedData = e.clipboardData.getData("Text");
-      const gidsToDelete = !pastedData.includes("g")
+      const conditions = excelHeaders[0].gid;
+      const gidsToDelete = !conditions.some((condition) =>
+        pastedData.includes(condition)
+      )
         ? pastedData
             .trim()
             .replace(/\s/g, "")
@@ -121,18 +151,31 @@ const renderInputs = (module) => {
             .filter((el) => el.length)
             .map((item) => item.replace(";", ""))
         : formatExcel(pastedData)
-            .split(",,,,,,;")
-            .map((item) => item.replace(",,,,,,", ""))
-            .splice(1);
+            .split(",,,,,,")
+            .map((el) => el.replace(";", ""))
+            .filter((el) => el.length)
+            .slice(1);
+      const deletedGids = [];
       const actualGids = gidsInput.value.split(";");
       const newGids = actualGids.filter((item) => {
         const gid = Number(item) ? item : item.substring(0, item.indexOf(","));
-        return !gidsToDelete.some((i) => gid.includes(i));
+        const condition = !gidsToDelete.some((i) => gid.includes(i));
+        if (!condition) {
+          deletedGids.push(gid);
+        }
+        return condition;
       });
+      console.log(
+        `
+Gidy do usunięcia:
+- usunięto ${deletedGids.length}: ${deletedGids.join(",")}
+`,
+        { deletedGids }
+      );
 
       setTimeout(() => {
         gidsInput.value = newGids.join(";");
-        clearTextAreaOnKey(customGidsInput);
+        clearTextAreaOnKey(customGidsInput, `usunięto ${deletedGids.length}`);
       }, 100);
     });
   };

@@ -1,3 +1,5 @@
+import { excelHeaders } from "./";
+
 const formatExcel = (excelTable, withoutHeaders = false) => {
   const rows = excelTable
     .replace(/"((?:[^"]*(?:\r\n|\n\r|\n|\r))+[^"]+)"/gm, function (match, p1) {
@@ -14,26 +16,29 @@ const formatExcel = (excelTable, withoutHeaders = false) => {
     // Split each line into rows
     .split(/\r\n|\n\r|\n|\r/g)
     .map((el) => el.split("\t"));
-  const dataSigns = [
-    { gid: "g" },
-    { proc: "p" },
-    { disc: "r" },
-    { price: "c" },
-    { priority: "l" },
-    { code: "k" },
-    { min: "m" },
-  ];
 
-  const dataIndexes = dataSigns.map((el) => {
-    const index = rows[0].indexOf(Object.values(el)[0]);
+  const dataIndexes = excelHeaders.map((el) => {
+    const validStrings = Object.values(el).flat();
+    const tableHeaders = rows[0].map((tableHeader) =>
+      tableHeader.toLowerCase()
+    );
+    const stringToFind = validStrings.find(
+      (string) => tableHeaders.indexOf(string) >= 0
+    );
+
+    const index = tableHeaders.indexOf(stringToFind);
     return {
       ...el,
       index,
     };
   });
 
-  const filtredRows = rows.map((el) =>
+  const filtredRows = rows.map((el, i) =>
     dataIndexes.map((_el) => (el[_el.index] ? el[_el.index] : ""))
+  );
+
+  filtredRows[0] = filtredRows[0].map((headerName, i) =>
+    headerName.length ? Object.values(excelHeaders[i]).flat()[0] : ""
   );
 
   const newValue = filtredRows

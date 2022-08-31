@@ -1,6 +1,7 @@
 import { markInputs } from "../../../../chill";
 import {
   bezpiecznikDateDefaultValue,
+  fillCouponCode,
   textAreaDefaultText,
 } from "../../listing/variables";
 
@@ -14,6 +15,8 @@ const defaultFix = (module) => {
   maximumItemsInput.value = 7;
 
   markInputs([maximumItemsInput]);
+
+  fillCouponCode(module);
 };
 
 export default defaultFix;

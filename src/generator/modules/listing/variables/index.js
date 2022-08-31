@@ -6,3 +6,5 @@ export { default as updateModuleTitle } from "./updateModuleTitle";
 export { default as selectors } from "./selectors";
 export { default as bezpiecznikDateDefaultValue } from "./bezpiecznikDateDefaultValue";
 export { default as textAreaDefaultText } from "./textAreaDefaultText";
+export { default as excelHeaders } from "./excelHeaders";
+export { default as fillCouponCode } from "./fillCouponCode";
