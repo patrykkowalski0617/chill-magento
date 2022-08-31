@@ -2,7 +2,7 @@ import { excelHeaders } from "./";
 
 const formatExcel = (excelTable, withoutHeaders = false) => {
   const rows = excelTable
-    .replace(/"((?:[^"]*(?:\r\n|\n\r|\n|\r))+[^"]+)"/gm, function (match, p1) {
+    .replace(/"((?:[^"]*(?:\r\n|\n\r|\n|\r))+[^"]+)"/gm, (match, p1) => {
       // This function runs for each cell with multi lined text.
       return (
         p1
@@ -15,7 +15,8 @@ const formatExcel = (excelTable, withoutHeaders = false) => {
     })
     // Split each line into rows
     .split(/\r\n|\n\r|\n|\r/g)
-    .map((el) => el.split("\t"));
+    .map((el) => el.split("\t"))
+    .map((el) => el.map((el) => el.replaceAll(",", ".")));
 
   const dataIndexes = excelHeaders.map((el) => {
     const validStrings = Object.values(el).flat();
