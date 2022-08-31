@@ -16,7 +16,7 @@ const formatExcel = (excelTable, withoutHeaders = false) => {
     // Split each line into rows
     .split(/\r\n|\n\r|\n|\r/g)
     .map((el) => el.split("\t"))
-    .map((el) => el.map((el) => el.replaceAll(",", ".")));
+    .map((el) => el.map((el) => el.replaceAll(",", ".").trim()));
 
   const dataIndexes = excelHeaders.map((el) => {
     const validStrings = Object.values(el).flat();
