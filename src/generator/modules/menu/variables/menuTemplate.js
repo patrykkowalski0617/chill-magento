@@ -1,3 +1,62 @@
+const templateNowyTestFl_subCat = (categoryId, subcategoryId) => `
+<div class="menu__row">
+<label class="module__label">Szablon</label>
+<div style="position: relative">
+  <select
+    class="template-options input__subcategory input__select module__select"
+    data-input-name="template"
+    name="parameters[menu][${categoryId}][submenu][${subcategoryId}][template]"
+    value="1"
+  >
+    <option value="1">nowy-test-fl</option>
+  </select>
+</div>
+<label class="module__label">Maksymalna liczba produktów</label
+><input
+  class="input__text input__subcategory"
+  data-input-name="maxProducts"
+  type="number"
+  min="0"
+  name="parameters[menu][${categoryId}][submenu][${subcategoryId}][max_products]"
+  value="7"
+/>
+</div>
+`;
+const templateNowyTestFl_cat = (categoryId) => `
+<div class="menu__row">
+  <label class="module__label">Szablon</label>
+  <div style="position: relative">
+    <select
+      class="template-options input__category module__select input__select"
+      data-input-name="template"
+      name="parameters[menu][${categoryId}][template]"
+    >
+      <option value="-1">- brak -</option>
+      <option value="1" selected="">nowy-test-fl</option>
+      <option value="2">odkurzacz</option>
+      <option value="3">Przykładowy kafel z obrazkiem</option>
+      <option value="4">Przykładowy kafel</option>
+      <option value="5">lodowki</option>
+      <option value="6">ekspresy</option>
+      <option value="7">Szablon z obrazkiem (zmienna) PK</option></select
+    ><i
+      class="input__icon input__icon_select material-icons"
+      style="top: 10px; right: 15px"
+      ></i
+    >
+  </div>
+  <label class="module__label">Maksymalna liczba produktów</label
+  ><input
+    class="input__text input__category"
+    type="number"
+    min="0"
+    name="parameters[menu][${categoryId}][max_products]"
+    data-input-name="maxProducts"
+    value="7"
+  />
+</div>
+
+`;
 const menuTemplate = {
   emptyCategory: `
       <div class="module__category module__element_one-third js-module">
@@ -84,6 +143,7 @@ const menuTemplate = {
             />
             ${codes}
           </div>
+          ${templateNowyTestFl_subCat(categoryId, subcategoryId)}
         </div>
       </div>
     `
@@ -97,6 +157,7 @@ const menuTemplate = {
     />
     <div class="menu__category js-components-cat visible">
       <div class="menu__row cf js-components">${codes}</div>
+      ${templateNowyTestFl_cat(categoryId)}
     </div>
   `,
   code: (

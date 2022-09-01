@@ -21,7 +21,7 @@ const generateMenu = (module) => {
   document.body.classList.add("chill-is-working");
 
   sessionStorage.setItem("menuSaved", menuWrapper.innerHTML);
-  // 2. If manu has notice message - remover it
+  // 2. If menu has notice message - remover it
 
   if (noticeMsg) {
     noticeMsg.remove();
@@ -36,7 +36,7 @@ const generateMenu = (module) => {
   // 5. Generate new menu
   const generateMenu = () => {
     // 5.1. Get all categories (menu is empty, so all categories are not assigned)
-    menuModule.querySelector("#categories-btn").click();
+    module.querySelector("#categories-btn").click();
 
     onElementReady(".missing-category", () => {
       //       // 5.2. When categories are loaded window.categoriesList has assigned value.
@@ -199,11 +199,11 @@ const generateMenu = (module) => {
       if (noticeMsg) {
         noticeMsg.remove();
       }
-      runScriptForElement(".notice-message", () => {
+      onElementReady(".notice-message", () => {
         location.reload();
       });
 
-      // 8. New manu is ready
+      // 8. New menu is ready
     });
   };
   onElementReady(".notice-message", generateMenu);
