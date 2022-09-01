@@ -10,9 +10,12 @@ const generateMenu = (module) => {
   );
 
   // 1. Blur page
+
   document.body.classList.add("chill-is-working");
 
-  // 2. If manu has notice message remove it
+  sessionStorage.setItem("menuSaved", menuWrapper.innerHTML);
+  // 2. If manu has notice message - remover it
+
   if (noticeMsg) {
     noticeMsg.remove();
   }
@@ -24,13 +27,13 @@ const generateMenu = (module) => {
   saveModuleBtn.click();
 
   // 5. Generate new menu
-  const doAfterNoticeMsg = () => {
-    //     // 5.1. Get all categories (menu is empty, so all categories are not assigned)
-    module.querySelector("#categories-btn").click();
+  const generateMenu = () => {
+    // 5.1. Get all categories (menu is empty, so all categories are not assigned)
+    menuModule.querySelector("#categories-btn").click();
 
-    onElementReady(".missing-category", () => {
-      //       // 5.2. When categories are loaded window.categoriesList has assigned value.
-      //       // Filtr menu array (variable menuCategories) based on categoriesList
+    runScriptForElement(".missing-category", () => {
+      // 5.2. When categories are loaded let categoriesList has assigned value.
+      // Filtr menu array (variable menuCategories) based on categoriesList
       const filterNewMenu = (menuCategories) => {
         const filterCodes = (codes) => {
           // map codes and add products quantity for each code
@@ -75,11 +78,10 @@ const generateMenu = (module) => {
               const { itemsQuantity, subcategoryOther } = subcategory;
 
               return (
-                (itemsQuantity &&
-                  subcategoryOther !== "force" &&
-                  (itemsQuantity > minItemsQuantityInSubcategory ||
-                    subcategoryOther === "not-allowed")) ||
-                areAnimatedIcons
+                itemsQuantity &&
+                subcategoryOther !== "force" &&
+                (itemsQuantity > minItemsQuantityInSubcategory ||
+                  subcategoryOther === "not-allowed")
               );
             }
           );
@@ -132,7 +134,7 @@ const generateMenu = (module) => {
       };
       const newCategories = filterNewMenu(menuCategories);
 
-      //       // 5.3. Map filtred menu array and return html
+      // 5.3. Map filtred menu array and return html
       const mapNewMenu = () => {
         const codesMap = (categoryId, subcategoryId, codes, direct) =>
           codes
@@ -182,18 +184,21 @@ const generateMenu = (module) => {
         return categories;
       };
       menuWrapper.innerHTML = mapNewMenu();
+
       // 6. Save new menu
       saveModuleBtn.click();
+
       // 7. When menu is saved - reload page
       if (noticeMsg) {
         noticeMsg.remove();
       }
-      onElementReady(".notice-message", () => {
+      runScriptForElement(".notice-message", () => {
         location.reload();
       });
+
       // 8. New manu is ready
     });
   };
-  onElementReady(".notice-message", doAfterNoticeMsg);
+  onElementReady(".notice-message", generateMenu);
 };
 export default generateMenu;
