@@ -9,6 +9,7 @@ const mainLpCss = () => {
     actions: [
       "defaultFix",
       "Zielona apla",
+      "payback",
       "Stare menu z jedną kategorią",
       "Inny color w baner hero",
     ],
@@ -42,8 +43,10 @@ const mainLpCss = () => {
       } else if (i === 1) {
         updateInput(btn, input, cssSnippets.greenApla);
       } else if (i === 2) {
-        updateInput(btn, input, cssSnippets.singleCategoryInOldMenu);
+        updateInput(btn, input, cssSnippets.payback);
       } else if (i === 3) {
+        updateInput(btn, input, cssSnippets.singleCategoryInOldMenu);
+      } else if (i === 4) {
         updateInput(btn, input, cssSnippets.bannerColor);
       }
       input.classList.add("filled");
