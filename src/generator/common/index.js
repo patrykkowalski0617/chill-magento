@@ -1,3 +1,3 @@
-export { default as renderModuleHeader } from "./renderModuleHeader/renderModuleHeader";
+export { default as renderModuleHeaders } from "./renderModuleHeaders/renderModuleHeaders";
 export { default as moduleFix } from "./moduleFix/moduleFix";
-export { default as renderModulTitles } from "./renderModulTitles/renderModulTitles";
+export { default as renderModuleTitles } from "./renderModuleTitles/renderModuleTitles";

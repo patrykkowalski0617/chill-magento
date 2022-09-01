@@ -1,7 +1,7 @@
 import { renderFixButtons } from "../../../chill";
-import "./renderModuleHeader.scss";
+import "./renderModuleHeaders.scss";
 
-const renderModuleHeader = (providedModule) => {
+const renderModuleHeaders = (providedModule) => {
   const modules = document.querySelectorAll(".module:not(.module_new)");
   if (modules.length) {
     const deleteModule = (module) => {
@@ -40,8 +40,8 @@ const renderModuleHeader = (providedModule) => {
       renderHeader(providedModule);
     }
   } else {
-    console.log("renderModuleHeader: no modules");
+    console.log("renderModuleHeaders: no modules");
   }
 };
 
-export default renderModuleHeader;
+export default renderModuleHeaders;

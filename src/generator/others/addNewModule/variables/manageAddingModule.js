@@ -10,7 +10,7 @@ import {
   htmlExtended,
   tips,
 } from "../../../modules";
-import { renderModuleHeader, renderModulTitles } from "../../../common";
+import { renderModuleHeaders, renderModuleTitles } from "../../../common";
 import {
   addSynopsis,
   addAdjustedModule,
@@ -31,8 +31,8 @@ const addingModuleHandler = () => {
   const providedModule = document.querySelector(
     ".module:not(.chill-header-added)"
   );
-  renderModuleHeader(providedModule);
-  renderModulTitles(providedModule);
+  renderModuleHeaders(providedModule);
+  renderModuleTitles(providedModule);
   addSynopsis();
   addAdjustedModule();
   clickBarToCollapse();

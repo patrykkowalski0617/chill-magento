@@ -1,4 +1,4 @@
-const renderModulTitles = (providedModule) => {
+const renderModuleTitles = (providedModule) => {
   const modules = document.querySelectorAll(".module");
   const renderTitle = (module) => {
     const modulOryginalTitle = module.querySelector(".module__title").innerText;
@@ -28,4 +28,4 @@ const renderModulTitles = (providedModule) => {
   }
 };
 
-export default renderModulTitles;
+export default renderModuleTitles;

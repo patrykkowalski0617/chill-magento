@@ -1,11 +1,11 @@
-import { renderModulTitles } from "../../../common";
+import { renderModuleTitles } from "../../../common";
 import { addSynopsis } from "../../../others";
 import { updateModuleTitle } from "../variables";
 
 const onSave = (module) => {
   updateModuleTitle(module, "HTML");
   addSynopsis();
-  renderModulTitles(module);
+  renderModuleTitles(module);
 };
 
 export default onSave;

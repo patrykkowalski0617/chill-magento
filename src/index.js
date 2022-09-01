@@ -8,7 +8,7 @@ import {
   markExectResult,
   copyTableCellContent,
 } from "./others";
-import { renderModuleHeader, renderModulTitles } from "./generator/common";
+import { renderModuleHeaders, renderModuleTitles } from "./generator/common";
 import {
   listing,
   listingNew,
@@ -35,9 +35,14 @@ import {
 
 // others
 onElementReady(".data-row .action-menu", () => {
-  sortLpList();
-  openLpAndEditLp();
-  copyTableCellContent();
+  if (
+    document.querySelector(".page-title").innerText ===
+    "Zarządzaj Landig Page`ami"
+  ) {
+    sortLpList();
+    openLpAndEditLp();
+    copyTableCellContent();
+  }
 });
 
 onElementReady('[name="url"]', () => {
@@ -48,7 +53,7 @@ onElementReady('[data-action="grid-filter-apply"]', markExectResult);
 
 // generator/modules
 onElementReady(".module__content", () => {
-  renderModuleHeader();
+  renderModuleHeaders();
 
   listing();
   listingNew();
@@ -61,7 +66,7 @@ onElementReady(".module__content", () => {
   htmlExtended();
   tips();
 
-  renderModulTitles();
+  renderModuleTitles();
 });
 onElementReady(".btn_add-module", () => {
   addNewModule();

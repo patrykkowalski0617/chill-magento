@@ -2,6 +2,7 @@ import "./openLpAndEditLp.scss";
 import { onElementReady } from "../../chill";
 
 const openLpAndEditLp = () => {
+  document.body.classList.add("hide-first-element-in-action-menu");
   const openLpEvent = (e) => {
     e.preventDefault();
     const domainEl =
@@ -85,12 +86,9 @@ const openLpAndEditLp = () => {
       }
     });
   };
-  if (
-    document.querySelector(".page-title").innerText ===
-    "Zarządzaj Landig Page`ami"
-  ) {
-    openLp();
-  }
+
+  openLp();
+
   changeLpEvent();
 };
 
