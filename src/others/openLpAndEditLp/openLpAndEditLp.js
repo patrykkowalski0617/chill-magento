@@ -75,7 +75,7 @@ const openLpAndEditLp = () => {
   const changeLpEvent = () => {
     const table = document.querySelector(".admin__data-grid-outer-wrap");
     table.addEventListener("click", (e) => {
-      if (!e.ctrlKey) {
+      if (!e.altKey) {
         const row = e.target.parentNode;
         if (row.classList.contains("data-row")) {
           row.querySelector(".action-menu > :first-child a").click();

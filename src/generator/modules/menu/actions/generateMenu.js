@@ -1,4 +1,9 @@
-import { getModuleElements, menuTemplate, menuCategories } from "../variables";
+import {
+  getModuleElements,
+  menuTemplate,
+  menuCategories_newMenu,
+  menuCategories,
+} from "../variables";
 import { onElementReady } from "../../../../chill";
 
 const generateMenu = (module) => {
@@ -8,7 +13,9 @@ const generateMenu = (module) => {
   const areAnimatedIcons = module.querySelector(
     "[for^=products_animated_icons] .input__checkbox:checked"
   );
-
+  const allCategories = areAnimatedIcons
+    ? menuCategories_newMenu
+    : menuCategories;
   // 1. Blur page
 
   document.body.classList.add("chill-is-working");
@@ -31,10 +38,10 @@ const generateMenu = (module) => {
     // 5.1. Get all categories (menu is empty, so all categories are not assigned)
     menuModule.querySelector("#categories-btn").click();
 
-    runScriptForElement(".missing-category", () => {
-      // 5.2. When categories are loaded let categoriesList has assigned value.
-      // Filtr menu array (variable menuCategories) based on categoriesList
-      const filterNewMenu = (menuCategories) => {
+    onElementReady(".missing-category", () => {
+      //       // 5.2. When categories are loaded window.categoriesList has assigned value.
+      //       // Filtr menu array (variable allCategories) based on categoriesList
+      const filterNewMenu = (allCategories) => {
         const filterCodes = (codes) => {
           // map codes and add products quantity for each code
           const codesWithQuntity = codes.map((code) => {
@@ -130,9 +137,9 @@ const generateMenu = (module) => {
             .filter((category) => category.subcategories.length);
           return filtredCategories;
         };
-        return filterCategories(menuCategories);
+        return filterCategories(allCategories);
       };
-      const newCategories = filterNewMenu(menuCategories);
+      const newCategories = filterNewMenu(allCategories);
 
       // 5.3. Map filtred menu array and return html
       const mapNewMenu = () => {

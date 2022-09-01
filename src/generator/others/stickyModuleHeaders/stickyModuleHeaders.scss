@@ -1,7 +1,7 @@
 @import "../../../chill/variables.scss";
 .module {
   .module__content {
-    border: 2px solid #ccc;
+    border: 2px solid #ddd;
   }
   &.sticky {
     .module__content.module__form {
@@ -31,6 +31,9 @@
       }
     }
     &.sticky-last-element {
+      .module__content.module__form {
+        background-color: #d3efd9 !important;
+      }
       .notice-message {
         position: fixed;
         top: 97px;

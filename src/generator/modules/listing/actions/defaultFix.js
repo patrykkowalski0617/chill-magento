@@ -2,6 +2,7 @@ import {
   bezpiecznikDateDefaultValue,
   textAreaDefaultText,
   selectors,
+  fillCouponCode,
 } from "../variables";
 import { markInputs, nnColors } from "../../../../chill";
 
@@ -54,6 +55,8 @@ const defaultFix = (module) => {
   whiteInputs.forEach((el) => {
     el.value = nnColors.white;
   });
+
+  fillCouponCode(module);
 
   markInputs([
     ...redInputs,
