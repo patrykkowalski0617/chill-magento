@@ -140,10 +140,7 @@ Gidy do aktualizacji:
     );
     customGidsInput.addEventListener("paste", (e) => {
       const pastedData = e.clipboardData.getData("Text");
-      const conditions = excelHeaders[0].gid;
-      const gidsToDelete = !conditions.some((condition) =>
-        pastedData.includes(condition)
-      )
+      const gidsToDelete = pastedData.includes(",")
         ? pastedData
             .trim()
             .replace(/\s/g, "")
