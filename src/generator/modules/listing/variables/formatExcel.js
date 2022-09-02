@@ -19,15 +19,21 @@ const formatExcel = (excelTable, withoutHeaders = false) => {
     .map((el) => el.map((el) => el.replaceAll(",", ".").trim()));
 
   const dataIndexes = excelHeaders.map((el) => {
-    const validStrings = Object.values(el).flat();
+    const validStrings = Object.values(el).flat().slice(1);
+    const validMark = Object.values(el).flat()[0];
     const tableHeaders = rows[0].map((tableHeader) =>
       tableHeader.toLowerCase()
     );
-    const stringToFind = validStrings.find(
-      (string) => tableHeaders.indexOf(string) >= 0
-    );
 
-    const index = tableHeaders.indexOf(stringToFind);
+    const stringToFind = tableHeaders.find((tableHeader) =>
+      validStrings.some((validString) => tableHeader.includes(validString))
+    );
+    const indexOfValidMark = tableHeaders.indexOf(validMark);
+    const index =
+      indexOfValidMark >= 0
+        ? tableHeaders.indexOf(validMark)
+        : tableHeaders.indexOf(stringToFind);
+
     return {
       ...el,
       index,
