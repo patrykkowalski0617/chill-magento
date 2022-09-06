@@ -1,8 +1,10 @@
-const updateModuleTitle = (module) => {
+const updateModuleTitle = (module, isNewListing) => {
   const moduleTitleEl = module.querySelector(".module__title");
   const modId = module.dataset.moduleId;
 
-  moduleTitleEl.innerHTML = `Lista produktów ${modId ? modId : ""}`;
+  moduleTitleEl.innerHTML = `${isNewListing ? "Nowa l" : "L"}ista produktów ${
+    modId ? modId : ""
+  }`;
 };
 
 export default updateModuleTitle;

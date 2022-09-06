@@ -3,7 +3,7 @@ import { ofertaTygodnia } from "../variables";
 
 const newModuleCallback = (module) => {
   renderInputs(module);
-  updateModuleTitle(module);
+  updateModuleTitle(module, true);
   ofertaTygodnia(module);
 };
 
