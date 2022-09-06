@@ -40,12 +40,27 @@ const renderInputs = (module) => {
       ".chill-gids-input.gids-to-add"
     );
     customGidsInput.addEventListener("paste", (e) => {
-      const oldValue = gidsInput.value;
+      const oldValue = String(gidsInput.value);
       const newValue = formatExcel(e.clipboardData.getData("Text"), true);
 
+      const alreadyOnList = newValue
+        .split(";")
+        .map((item) => item.substring(0, item.indexOf(",")))
+        .filter((item) => (Number(item) ? oldValue.includes(item) : false));
+
+      console.log(
+        `Gidy [${
+          alreadyOnList.length
+        }] są już na lp i zostały dodane ponownie:  ${alreadyOnList.join(",")}`,
+        { alreadyOnList }
+      );
       setTimeout(() => {
         gidsInput.value = oldValue + ";" + newValue;
-        clearTextAreaOnKey(customGidsInput);
+        clearTextAreaOnKey(
+          customGidsInput,
+          `${alreadyOnList.length} doubli`,
+          alreadyOnList.length
+        );
       }, 100);
     });
   };
@@ -108,14 +123,7 @@ const renderInputs = (module) => {
           return el;
         }
       });
-      console.log(
-        `
-Gidy do aktualizacji:
-- zaktualizowano ${changedGids.length}: ${changedGids.join(",")}
-- nie zaktualizowano ${notChangedGids.length}: ${notChangedGids.join(",")}
-        `,
-        { changedGids, notChangedGids }
-      );
+
       const newList = newListArrOfObj
         .map((el) => {
           const { gid, proc, disc, price, lp, code, min } = el;
@@ -123,11 +131,25 @@ Gidy do aktualizacji:
         })
         .join(";");
 
+      const notFoundGids = listWithChangesArrOfObj
+        .filter((a) => !listArrOfObj.some((b) => b.gid.includes(a.gid)))
+        .map((c) => c.gid);
+
+      console.log(
+        `
+Gidy do aktualizacji:
+- zaktualizowano ${changedGids.length}: ${changedGids.join(",")}
+- nie zaktualizowano ${notChangedGids.length}: ${notChangedGids.join(",")}
+- nie znaleziono ${notFoundGids.length}: ${notFoundGids.join(",")}
+        `,
+        { changedGids, notChangedGids, notFoundGids }
+      );
       setTimeout(() => {
         gidsInput.value = newList;
         clearTextAreaOnKey(
           customGidsInput,
-          `${changedGids.length} zaktualizowanych`
+          `${changedGids.length} zaktualizowanych`,
+          notFoundGids.length
         );
       }, 100);
     });
@@ -153,8 +175,12 @@ Gidy do aktualizacji:
             .filter((el) => el.length)
             .slice(1);
       const deletedGids = [];
-      const actualGids = gidsInput.value.split(";");
-      const newGids = actualGids.filter((item) => {
+
+      const actualGidsData = gidsInput.value.split(";");
+      const actualGids = actualGidsData
+        .map((item) => item.substring(0, item.indexOf(",")))
+        .filter((item) => Number(item));
+      const newGids = actualGidsData.filter((item) => {
         const gid = Number(item) ? item : item.substring(0, item.indexOf(","));
         const condition = !gidsToDelete.some((i) => gid.includes(i));
         if (!condition) {
@@ -162,17 +188,26 @@ Gidy do aktualizacji:
         }
         return condition;
       });
+      const notFoundGids = gidsToDelete.filter((x) => !actualGids.includes(x));
+
       console.log(
         `
 Gidy do usunięcia:
-- usunięto ${deletedGids.length}: ${deletedGids.join(",")}
+- usunięto ${deletedGids.length} z ${gidsToDelete.length}: ${deletedGids.join(
+          ","
+        )}
+- nie znaleziono:  ${notFoundGids.join(",")}
 `,
-        { deletedGids }
+        { deletedGids, notFoundGids }
       );
 
       setTimeout(() => {
         gidsInput.value = newGids.join(";");
-        clearTextAreaOnKey(customGidsInput, `usunięto ${deletedGids.length}`);
+        clearTextAreaOnKey(
+          customGidsInput,
+          `usunięto ${deletedGids.length} z ${gidsToDelete.length}`,
+          notFoundGids.length
+        );
       }, 100);
     });
   };

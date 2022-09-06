@@ -28,4 +28,8 @@
       color: $base-color-txt !important;
     }
   }
+  &.custom-input-warn {
+    outline: #ff0000 2px solid;
+    color: #ff0000 !important;
+  }
 }
