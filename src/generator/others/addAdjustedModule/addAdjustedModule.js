@@ -42,11 +42,6 @@ const addAdjustedModule = () => {
                     .forEach((el, i) => {
                       el.value = i + 1;
                     });
-                  document
-                    .querySelectorAll(".module__button_save")
-                    .forEach((btn) => {
-                      btn.click();
-                    });
                 }, 1000);
               })
             );
