@@ -1,3 +1,5 @@
+// subcategoryOther valid values are: "not-allowed", "allowed" or "force"
+
 const menuCategories_newMenu = [
   {
     categoryName: "AGD wolnostojące",

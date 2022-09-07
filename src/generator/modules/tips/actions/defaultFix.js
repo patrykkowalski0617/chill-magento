@@ -1,4 +1,4 @@
-import { markInputs, nnColors } from "../../../../chill";
+import { markInputs, n24Colors, nnColors } from "../../../../chill";
 
 const defaultFix = ({ module, isN24 }) => {
   const bg = module.querySelectorAll(
@@ -13,12 +13,13 @@ const defaultFix = ({ module, isN24 }) => {
   const lines = module.querySelectorAll(
     '[id^="tip_color_lines"], [id^="tip_color_lines"] + input'
   );
-  bg.forEach((el) => (el.value = nnColors.white));
-  font.forEach((el) => (el.value = nnColors.black));
+
+  bg.forEach((el) => (el.value = !isN24 ? nnColors.white : n24Colors.white));
+  font.forEach((el) => (el.value = !isN24 ? nnColors.black : n24Colors.black));
   link.forEach((el) => {
-    el.value = nnColors.black;
+    el.value = !isN24 ? nnColors.black : n24Colors.blue;
   });
-  lines.forEach((el) => (el.value = nnColors.red));
+  lines.forEach((el) => (el.value = !isN24 ? nnColors.red : n24Colors.blue));
 
   markInputs([...bg, ...font, ...link, ...lines]);
 };
