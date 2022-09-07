@@ -1,6 +1,6 @@
 import { markInputs } from "../../../../chill";
 
-const defaultFix = (module) => {
+const defaultFix = ({ module }) => {
   const tytulPrzyciskuTimera = module.querySelector(
     '[id^="banner_hero_timer_button_text"]'
   );

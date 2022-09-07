@@ -5,8 +5,8 @@ import { defaultFixInvisible, generateFilters } from "./actions";
 const filters = moduleFix({
   moduleClass: "module__filters",
   actions: [
-    ["defaultFixInvisible", defaultFixInvisible],
-    ["generateFilters", generateFilters],
+    { btnName: "defaultFixInvisible", callback: defaultFixInvisible },
+    { btnName: "generateFilters", callback: generateFilters },
   ],
 });
 

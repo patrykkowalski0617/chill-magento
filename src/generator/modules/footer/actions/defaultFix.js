@@ -1,6 +1,6 @@
 import { markInputs, nnColors } from "../../../../chill";
 
-const defaultFix = (module) => {
+const defaultFix = ({ module }) => {
   const bg = module.querySelectorAll(
     '[id^="footer_color_background"], [id^="footer_color_background"] + input'
   );

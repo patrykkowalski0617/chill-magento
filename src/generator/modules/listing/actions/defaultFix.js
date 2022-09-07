@@ -6,7 +6,7 @@ import {
 } from "../variables";
 import { markInputs, nnColors } from "../../../../chill";
 
-const defaultFix = (module) => {
+const defaultFix = ({ module }) => {
   bezpiecznikDateDefaultValue(module);
   textAreaDefaultText(module);
 

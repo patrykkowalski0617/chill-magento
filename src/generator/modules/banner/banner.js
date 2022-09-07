@@ -12,10 +12,10 @@ import {
 const banner = moduleFix({
   moduleClass: "module__banner",
   actions: [
-    ["defaultFix", defaultFix],
-    ["bannerOryginal", bannerOryginal],
-    ["fromDate", fromDate],
-    ["steps", steps],
+    { btnName: "defaultFix", callback: defaultFix },
+    { btnName: "bannerOryginal", callback: bannerOryginal },
+    { btnName: "fromDate", callback: fromDate },
+    { btnName: "steps", callback: steps },
   ],
   existingModuleCallback,
   newModuleCallback,

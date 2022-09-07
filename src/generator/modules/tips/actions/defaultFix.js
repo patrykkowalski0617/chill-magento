@@ -1,6 +1,6 @@
 import { markInputs, nnColors } from "../../../../chill";
 
-const defaultFix = (module) => {
+const defaultFix = ({ module, isN24 }) => {
   const bg = module.querySelectorAll(
     '[id^="tip_color_background"], [id^="tip_color_background"] + input'
   );

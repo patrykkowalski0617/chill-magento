@@ -4,7 +4,7 @@ import {
   stepsFix,
 } from "../variables";
 
-const existingModuleCallback = (module) => {
+const existingModuleCallback = ({ module }) => {
   altsAndDatesForAdditionalImages(module);
   inputFileFix(module);
   stepsFix(module);

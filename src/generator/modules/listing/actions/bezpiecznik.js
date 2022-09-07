@@ -1,7 +1,7 @@
 import { markInputs } from "../../../../chill";
 import { selectors } from "../variables";
 
-const bezpiecznik = (module) => {
+const bezpiecznik = ({ module }) => {
   const dateFrom = document.querySelector('[name="date_from"]').value;
   const timeInput = module.querySelector(selectors.timeInput);
   const dateInput = module.querySelector(selectors.dateInput);

@@ -10,84 +10,84 @@ import {
 const html = moduleFix({
   moduleClass: "module__html",
   actions: [
-    [
-      "moduleTitle",
-      (module) => {
+    {
+      btnName: "moduleTitle",
+      callback: ({ module }) => {
         updateHtml("comment", module);
       },
-    ],
-    [
-      "lpTitle",
-      (module) => {
+    },
+    {
+      btnName: "lpTitle",
+      callback: ({ module }) => {
         updateHtml("lpTitle", module);
       },
-    ],
-    [
-      "asterisk",
-      (module) => {
+    },
+    {
+      btnName: "asterisk",
+      callback: ({ module }) => {
         updateHtml("asterisk", module);
       },
-    ],
-    [
-      "observer",
-      (module) => {
+    },
+    {
+      btnName: "observer",
+      callback: ({ module }) => {
         updateHtml("observer", module);
       },
-    ],
-    [
-      "YTIframe",
-      (module) => {
+    },
+    {
+      btnName: "YTIframe",
+      callback: ({ module }) => {
         updateHtml("YTIframe", module);
       },
-    ],
-    [
-      "lpIframe",
-      (module) => {
+    },
+    {
+      btnName: "lpIframe",
+      callback: ({ module }) => {
         updateHtml("lpIframe", module);
       },
-    ],
-    [
-      "script",
-      (module) => {
+    },
+    {
+      btnName: "script",
+      callback: ({ module }) => {
         updateHtml("script", module);
       },
-    ],
-    [
-      "style",
-      (module) => {
+    },
+    {
+      btnName: "style",
+      callback: ({ module }) => {
         updateHtml("style", module);
       },
-    ],
-    [
-      "nbspFix",
-      (module) => {
+    },
+    {
+      btnName: "nbspFix",
+      callback: ({ module }) => {
         updateHtml("nbspFix", module);
       },
-    ],
-    [
-      "tipBtn",
-      (module) => {
+    },
+    {
+      btnName: "tipBtn",
+      callback: ({ module }) => {
         updateHtml("tipBtn", module);
       },
-    ],
-    [
-      "bannerUpd",
-      (module) => {
+    },
+    {
+      btnName: "bannerUpd",
+      callback: ({ module }) => {
         updateHtml("bannerUpd", module);
       },
-    ],
-    [
-      "fakeMenu",
-      (module) => {
+    },
+    {
+      btnName: "fakeMenu",
+      callback: ({ module }) => {
         updateHtml("fakeMenu", module);
       },
-    ],
-    [
-      "max5InRow",
-      (module) => {
+    },
+    {
+      btnName: "max5InRow",
+      callback: ({ module }) => {
         updateHtml("max5InRow", module);
       },
-    ],
+    },
   ],
   newModuleCallback,
   existingModuleCallback,

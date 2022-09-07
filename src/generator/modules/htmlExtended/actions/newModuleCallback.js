@@ -1,6 +1,6 @@
 import { updateModuleTitle } from "../../html/variables";
 
-const newModuleCallback = (module) => {
+const newModuleCallback = ({ module }) => {
   updateModuleTitle(module, "HTML EXTENDED");
 };
 

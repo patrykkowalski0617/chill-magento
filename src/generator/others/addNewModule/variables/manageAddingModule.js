@@ -10,7 +10,11 @@ import {
   htmlExtended,
   tips,
 } from "../../../modules";
-import { renderModuleHeaders, renderModuleTitles } from "../../../common";
+import {
+  isN24 as isN24Fn,
+  renderModuleHeaders,
+  renderModuleTitles,
+} from "../../../common";
 import {
   addSynopsis,
   addAdjustedModule,
@@ -31,6 +35,8 @@ const addingModuleHandler = () => {
   const providedModule = document.querySelector(
     ".module:not(.chill-header-added)"
   );
+  const isN24 = isN24Fn();
+
   renderModuleHeaders(providedModule);
   renderModuleTitles(providedModule);
   addSynopsis();
@@ -38,33 +44,34 @@ const addingModuleHandler = () => {
   clickBarToCollapse();
   draggableModuleFix();
   stickyModuleHeaders();
+
   switch (moduleName()) {
     case "module__products":
-      listing(true);
+      listing({ isNewModule: true, isN24 });
       break;
     case "module__products_new":
-      listingNew(true);
+      listingNew({ isNewModule: true, isN24 });
       break;
     case "module__filters":
-      filters(true);
+      filters({ isNewModule: true, isN24 });
       break;
     case "module__menu":
-      menu(true);
+      menu({ isNewModule: true, isN24 });
       break;
     case "module__html":
-      html(true);
+      html({ isNewModule: true, isN24 });
       break;
     case "module__html_extended":
-      htmlExtended(true);
+      htmlExtended({ isNewModule: true, isN24 });
       break;
     case "module__footer":
-      footer(true);
+      footer({ isNewModule: true, isN24 });
     case "module__banner":
-      banner(true);
+      banner({ isNewModule: true, isN24 });
     case "module__banner_hero":
-      bannerHero(true);
+      bannerHero({ isNewModule: true, isN24 });
     case "module__tip":
-      tips(true);
+      tips({ isNewModule: true, isN24 });
       break;
     default:
       console.log("module has no chill fixes");

@@ -1,6 +1,6 @@
 import { assigningProducts } from "../variables";
 
-const existingModuleCallback = (module) => {
+const existingModuleCallback = ({ module }) => {
   assigningProducts(module);
 };
 

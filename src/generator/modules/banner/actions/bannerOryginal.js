@@ -1,5 +1,5 @@
 import { setAlts } from "../variables";
-const bannerOryginal = (module) => {
+const bannerOryginal = ({ module }) => {
   setAlts({ module, dataString: " update_banner-oryginal" });
 };
 

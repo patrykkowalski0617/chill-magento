@@ -1,5 +1,5 @@
 import { setAlts } from "../variables";
-const defaultFix = (module) => {
+const defaultFix = ({ module }) => {
   setAlts({ module });
 };
 

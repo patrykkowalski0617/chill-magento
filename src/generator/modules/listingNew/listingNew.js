@@ -9,8 +9,8 @@ import {
 const listingNew = moduleFix({
   moduleClass: "module__products_new",
   actions: [
-    ["defaultFix", defaultFix],
-    ["bezpiecznik", bezpiecznik],
+    { btnName: "defaultFix", callback: defaultFix },
+    { btnName: "bezpiecznik", callback: bezpiecznik },
   ],
   newModuleCallback,
   existingModuleCallback,

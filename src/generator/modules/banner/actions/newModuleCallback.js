@@ -1,6 +1,6 @@
 import { addBanerTitle } from "../variables";
 
-const newModuleCallback = (module) => {
+const newModuleCallback = ({ module }) => {
   addBanerTitle(module);
 };
 

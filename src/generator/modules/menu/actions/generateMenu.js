@@ -6,7 +6,7 @@ import {
 } from "../variables";
 import { onElementReady } from "../../../../chill";
 
-const generateMenu = (module) => {
+const generateMenu = ({ module }) => {
   const { menuWrapper, saveModuleBtn, noticeMsg } = getModuleElements(module);
   const moduleId = module.dataset.moduleId;
   const minItemsQuantityInSubcategory = 4;
