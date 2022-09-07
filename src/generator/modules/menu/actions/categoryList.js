@@ -1,6 +1,6 @@
 import "./categoryList.scss";
 
-const categoryList = (module) => {
+const categoryList = ({ module }) => {
   module.querySelector("#categories-btn").click();
 };
 

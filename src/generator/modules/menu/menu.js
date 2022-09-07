@@ -12,10 +12,10 @@ import {
 const menu = moduleFix({
   moduleClass: "module__menu",
   actions: [
-    ["defaultFix", defaultFix],
-    ["generateMenu", generateMenu],
-    ["hideElements", hideElements],
-    ["categoryList", categoryList],
+    { btnName: "defaultFix", callback: defaultFix },
+    { btnName: "generateMenu", callback: generateMenu },
+    { btnName: "hideElements", callback: hideElements },
+    { btnName: "categoryList", callback: categoryList },
   ],
   newModuleCallback,
   existingModuleCallback,

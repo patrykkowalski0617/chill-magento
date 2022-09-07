@@ -1,5 +1,5 @@
 import { getModuleElements, basicFilters, fliterTemplate } from "../variables";
-const defaultFixInvisible = (module) => {
+const defaultFixInvisible = ({ module }) => {
   const { filterContainer } = getModuleElements(module);
   basicFilters.forEach((el, i) => {
     filterContainer.insertAdjacentHTML(

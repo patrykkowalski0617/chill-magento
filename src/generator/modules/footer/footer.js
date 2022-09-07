@@ -5,7 +5,7 @@ import "./footer.scss";
 
 const footer = moduleFix({
   moduleClass: "module__footer",
-  actions: [["defaultFix", defaultFix]],
+  actions: [{ btnName: "defaultFix", callback: defaultFix }],
 });
 
 export default footer;

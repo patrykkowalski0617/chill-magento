@@ -8,7 +8,11 @@ import {
   markExectResult,
   copyTableCellContent,
 } from "./others";
-import { renderModuleHeaders, renderModuleTitles } from "./generator/common";
+import {
+  isN24 as isN24Fn,
+  renderModuleHeaders,
+  renderModuleTitles,
+} from "./generator/common";
 import {
   listing,
   listingNew,
@@ -55,16 +59,18 @@ onElementReady('[data-action="grid-filter-apply"]', markExectResult);
 onElementReady(".module__content", () => {
   renderModuleHeaders();
 
-  listing();
-  listingNew();
-  filters();
-  menu();
-  html();
-  footer();
-  bannerHero();
-  banner();
-  htmlExtended();
-  tips();
+  const isN24 = isN24Fn();
+
+  listing({ isN24 });
+  listingNew({ isN24 });
+  filters({ isN24 });
+  menu({ isN24 });
+  html({ isN24 });
+  footer({ isN24 });
+  bannerHero({ isN24 });
+  banner({ isN24 });
+  htmlExtended({ isN24 });
+  tips({ isN24 });
 
   renderModuleTitles();
 });

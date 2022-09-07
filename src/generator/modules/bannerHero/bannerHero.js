@@ -8,7 +8,7 @@ import {
 
 const bannerHero = moduleFix({
   moduleClass: "module__banner_hero",
-  actions: [["defaultFix", defaultFix]],
+  actions: [{ btnName: "defaultFix", callback: defaultFix }],
   existingModuleCallback,
   newModuleCallback,
 });

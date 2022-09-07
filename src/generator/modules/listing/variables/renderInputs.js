@@ -138,9 +138,11 @@ const renderInputs = (module) => {
       console.log(
         `
 Gidy do aktualizacji:
-- zaktualizowano ${changedGids.length}: ${changedGids.join(",")}
-- nie zaktualizowano ${notChangedGids.length}: ${notChangedGids.join(",")}
+- zaktualizowano (niezależnie od tego czy stara warotość była taka sama czy nie) ${
+          changedGids.length
+        }: ${changedGids.join(",")}
 - nie znaleziono ${notFoundGids.length}: ${notFoundGids.join(",")}
+- nie zaktualizowano ${notChangedGids.length}: ${notChangedGids.join(",")}
         `,
         { changedGids, notChangedGids, notFoundGids }
       );

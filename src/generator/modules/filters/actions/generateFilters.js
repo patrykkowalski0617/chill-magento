@@ -7,7 +7,7 @@ import {
   fliterTemplate,
 } from "../variables";
 
-const generateFilters = (module) => {
+const generateFilters = ({ module }) => {
   const dependencyMenu = module.querySelector(
     "[id^='menu_select_menu_dependency'] option"
   ).value;

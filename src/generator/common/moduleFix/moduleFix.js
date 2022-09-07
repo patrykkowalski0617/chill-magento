@@ -11,10 +11,13 @@ const moduleFix =
     onSave,
     onDelete,
   }) =>
-  (isNewModule) => {
-    const fix = (module, isNewModule) => {
+  ({ isNewModule, isN24 } = {}) => {
+    const fix = (module) => {
+      const actionsProps = { module, isN24 };
       if (actions) {
-        const btnsNames = actions.map((action) => action[0]);
+        const btnsNames = actions.map(({ btnName, n24Ready }) =>
+          n24Ready && isN24 ? btnName + " n24" : btnName
+        );
 
         const chillBtns = renderFixButtons({
           generatorModule: module,
@@ -23,37 +26,37 @@ const moduleFix =
 
         if (
           isNewModule &&
-          (actions[0][0] === "defaultFix" ||
-            actions[0][0] === "defaultFixInvisible")
+          (actions[0].btnName === "defaultFix" ||
+            actions[0].btnName === "defaultFixInvisible")
         ) {
-          actions[0][1](module);
+          actions[0].callback(actionsProps);
         }
 
-        actions.forEach((action, i) => {
+        actions.forEach(({ callback }, i) => {
           chillBtns[i].addEventListener("click", (e) => {
             e.preventDefault();
-            action[1](module);
+            callback(actionsProps);
           });
         });
       }
 
       if (isNewModule && newModuleCallback) {
-        newModuleCallback(module);
+        newModuleCallback(actionsProps);
       } else if (existingModuleCallback) {
-        existingModuleCallback(module);
+        existingModuleCallback(actionsProps);
       }
 
       if (onSave) {
         const saveBtn = module.querySelector(".module__button_save");
         saveBtn.addEventListener("click", () => {
-          onSave(module);
+          onSave(actionsProps);
         });
       }
 
       const deleteBtn = module.querySelector(".module__button_remove");
       deleteBtn.addEventListener("click", () => {
         if (onDelete) {
-          onDelete(module);
+          onDelete(actionsProps);
         }
         addSynopsis(1000);
       });
@@ -63,7 +66,7 @@ const moduleFix =
       .querySelectorAll(`.${moduleClass}:not(.already-chilled)`)
       .forEach((module) => {
         module.classList.add("already-chilled");
-        fix(module, isNewModule);
+        fix(module);
       });
   };
 

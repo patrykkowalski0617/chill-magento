@@ -5,12 +5,12 @@ import { updateHtml } from "../html/actions";
 const htmlExtended = moduleFix({
   moduleClass: "module__html_extended",
   actions: [
-    [
-      "moduleTitle",
-      (module) => {
+    {
+      btnName: "moduleTitle",
+      callback: (module) => {
         updateHtml("comment", module);
       },
-    ],
+    },
   ],
   newModuleCallback,
   existingModuleCallback,

@@ -1,6 +1,6 @@
 import { renderInputs, updateModuleTitle } from "../variables";
 
-const existingModuleCallback = (module) => {
+const existingModuleCallback = ({ module }) => {
   renderInputs(module);
   updateModuleTitle(module);
 };

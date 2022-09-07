@@ -1,5 +1,5 @@
 import { setAlts } from "../variables";
-const steps = (module) => {
+const steps = ({ module }) => {
   setAlts({
     module,
     dataString: " grafika_krokow",

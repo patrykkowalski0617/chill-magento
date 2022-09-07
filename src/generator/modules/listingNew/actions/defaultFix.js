@@ -5,7 +5,7 @@ import {
   textAreaDefaultText,
 } from "../../listing/variables";
 
-const defaultFix = (module) => {
+const defaultFix = ({ module }) => {
   bezpiecznikDateDefaultValue(module);
   textAreaDefaultText(module);
   const maximumItemsInput = module.querySelector(
