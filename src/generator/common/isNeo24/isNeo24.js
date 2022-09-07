@@ -3,7 +3,6 @@ const isNeo24 = () => {
 
   switch (shopSelect.value) {
     case "1":
-      console.log("isNeo24: selected shop Neonet");
       return false;
     case "2":
       return true;
