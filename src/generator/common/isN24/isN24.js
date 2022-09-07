@@ -7,7 +7,7 @@ const isNeo24 = () => {
     case "2":
       return true;
     default:
-      console.log("isNeo24: nie rozpoznano jaki to sklep");
+      console.log("isNeo24: shop was not recognized");
       return false;
   }
 };

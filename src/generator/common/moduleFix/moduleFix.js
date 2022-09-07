@@ -12,7 +12,7 @@ const moduleFix =
     onDelete,
   }) =>
   ({ isNewModule, isN24 } = {}) => {
-    const fix = (module, isNewModule) => {
+    const fix = (module) => {
       const actionsProps = { module, isN24 };
       if (actions) {
         const btnsNames = actions.map(({ btnName, n24Ready }) =>
@@ -64,9 +64,9 @@ const moduleFix =
 
     document
       .querySelectorAll(`.${moduleClass}:not(.already-chilled)`)
-      .forEach((module, isN24) => {
+      .forEach((module) => {
         module.classList.add("already-chilled");
-        fix(module, isNewModule, isN24);
+        fix(module);
       });
   };
 
