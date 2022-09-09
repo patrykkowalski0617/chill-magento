@@ -1,6 +1,6 @@
-import { markInputs, nnColors } from "../../../../chill";
+import { markInputs, n24Colors, nnColors } from "../../../../chill";
 
-const defaultFix = ({ module }) => {
+const defaultFix = ({ module, isN24 }) => {
   const bg = module.querySelectorAll(
     '[id^="footer_color_background"], [id^="footer_color_background"] + input'
   );
@@ -14,12 +14,12 @@ const defaultFix = ({ module }) => {
     '[id^="footer_color_button"], [id^="footer_color_button"] + input'
   );
 
-  bg.forEach((el) => (el.value = nnColors.white));
-  font.forEach((el) => (el.value = nnColors.black));
+  bg.forEach((el) => (el.value = !isN24 ? nnColors.white : n24Colors.white));
+  font.forEach((el) => (el.value = isN24 ? nnColors.black : n24Colors.black));
   fontHover.forEach((el) => {
-    el.value = nnColors.black;
+    el.value = !isN24 ? nnColors.black : n24Colors.blue;
   });
-  btn.forEach((el) => (el.value = nnColors.red));
+  btn.forEach((el) => (el.value = !isN24 ? nnColors.red : n24Colors.blue));
   markInputs([...bg, ...font, ...fontHover, ...btn]);
 };
 
