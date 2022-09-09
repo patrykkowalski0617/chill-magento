@@ -1,10 +1,10 @@
 const excelHeaders = [
-  { gid: ["g", "gid", "neoid", "twr_gidnumer"] },
-  { proc: ["p"] },
+  { gid: ["g", "gid", "neoid"] },
+  { proc: ["p", "proc"] },
   { disc: ["r", "wartość rabatu", "rabat"] },
   { price: ["c", "cena po rabacie"] },
-  { priority: ["l", "pozycja na lp", "pozycja lp", "poz"] },
+  { priority: ["l", "pozycja lp", "poz"] },
   { code: ["k", "kod"] },
-  { min: ["m", "cena minimalna", "cena min", "min", "nowa cena minimalna"] },
+  { min: ["m", "cena min", "min"] },
 ];
 export default excelHeaders;
