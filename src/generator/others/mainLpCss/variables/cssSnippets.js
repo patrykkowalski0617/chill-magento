@@ -1,6 +1,11 @@
 const cssSnippets = {
   mainCss: `
-/* >> mainCss start v1 >> >> >> */
+/* >> mainCss start v2 >> >> >> */
+
+/* increase letter-spacing in tabs */
+body [class*="tabScss-root"] {
+    letter-spacing: 0.6px;
+}
 
 /* asterisks */
 .lp-asterisk {

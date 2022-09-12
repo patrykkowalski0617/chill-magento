@@ -1419,6 +1419,11 @@ const menuCategories_newMenu = [
         codes: [{ categoryCode: "101482", codeName: "Hulajnogi" }],
       },
       {
+        subcategoryName: "Rowery elektryczne",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "101667", codeName: "Rowery elektryczne" }],
+      },
+      {
         subcategoryName: "Auta akumulatorowe",
         subcategoryOther: "not-allowed",
         codes: [{ categoryCode: "101500", codeName: "Auta akumulatorowe" }],
