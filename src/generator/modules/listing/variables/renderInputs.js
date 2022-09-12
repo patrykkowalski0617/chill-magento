@@ -164,7 +164,8 @@ Gidy do aktualizacji:
     );
     customGidsInput.addEventListener("paste", (e) => {
       const pastedData = e.clipboardData.getData("Text");
-      const gidsToDelete = pastedData.includes(",")
+      console.log("pastedData", pastedData);
+      const gidsToDelete = !pastedData.toLowerCase().includes("g")
         ? pastedData
             .trim()
             .replace(/\s/g, "")
@@ -184,7 +185,7 @@ Gidy do aktualizacji:
         .filter((item) => Number(item));
       const newGids = actualGidsData.filter((item) => {
         const gid = Number(item) ? item : item.substring(0, item.indexOf(","));
-        const condition = !gidsToDelete.some((i) => gid.includes(i));
+        const condition = !gidsToDelete.some((i) => gid === i);
         if (!condition) {
           deletedGids.push(gid);
         }
