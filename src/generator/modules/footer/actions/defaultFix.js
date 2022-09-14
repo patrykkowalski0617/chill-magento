@@ -17,7 +17,7 @@ const defaultFix = ({ module, isN24 }) => {
   bg.forEach((el) => (el.value = isN24 ? n24Colors.white : nnColors.white));
   font.forEach((el) => (el.value = isN24 ? n24Colors.black : nnColors.black));
   fontHover.forEach((el) => {
-    el.value = isN24 ? n24Colors.blue : nnColors.black;
+    el.value = isN24 ? n24Colors.black : nnColors.black;
   });
   btn.forEach((el) => (el.value = isN24 ? n24Colors.blue : nnColors.red));
   markInputs([...bg, ...font, ...fontHover, ...btn]);
