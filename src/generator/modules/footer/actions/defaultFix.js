@@ -14,12 +14,12 @@ const defaultFix = ({ module, isN24 }) => {
     '[id^="footer_color_button"], [id^="footer_color_button"] + input'
   );
 
-  bg.forEach((el) => (el.value = !isN24 ? nnColors.white : n24Colors.white));
-  font.forEach((el) => (el.value = isN24 ? nnColors.black : n24Colors.black));
+  bg.forEach((el) => (el.value = isN24 ? n24Colors.white : nnColors.white));
+  font.forEach((el) => (el.value = isN24 ? n24Colors.black : nnColors.black));
   fontHover.forEach((el) => {
-    el.value = !isN24 ? nnColors.black : n24Colors.black;
+    el.value = isN24 ? n24Colors.blue : nnColors.black;
   });
-  btn.forEach((el) => (el.value = !isN24 ? nnColors.red : n24Colors.blue));
+  btn.forEach((el) => (el.value = isN24 ? n24Colors.blue : nnColors.red));
   markInputs([...bg, ...font, ...fontHover, ...btn]);
 };
 
