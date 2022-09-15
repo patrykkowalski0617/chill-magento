@@ -1,5 +1,5 @@
 const excelHeaders = [
-  { gid: ["g", "gid", "neoid"] },
+  { gid: ["g", "gid", "neoid", "neo id"] },
   { proc: ["p", "proc"] },
   { disc: ["r", "rabat"] },
   { price: ["c", "cena po rabacie"] },
