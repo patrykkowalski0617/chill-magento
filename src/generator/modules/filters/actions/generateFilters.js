@@ -10,13 +10,13 @@ import {
 const generateFilters = ({ module }) => {
   const dependencyMenu = module.querySelector(
     "[id^='menu_select_menu_dependency'] option"
-  ).value;
-  const menuModule = document.querySelector(
-    `[data-module-id="${dependencyMenu}"]`
   );
-  const { filterContainer, saveFiltersBtn } = getModuleElements(module);
+  const menuModule = dependencyMenu
+    ? document.querySelector(`[data-module-id="${dependencyMenu.value}"]`)
+    : null;
 
   if (menuModule) {
+    const { filterContainer, saveFiltersBtn } = getModuleElements(module);
     // 1. Blur page
     document.body.classList.add("chill-is-working");
 
