@@ -49,6 +49,6 @@ body {
   .module__banner_hero form > div:nth-child(11) > div,
   [id^="products_new_promotion_id_"],
   [id^="banner_hero_promo_code_"] {
-    outline: 1px solid $base-color-mark;
+    outline: 2px solid $base-color-mark;
   }
 }

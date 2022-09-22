@@ -1,11 +1,12 @@
 .module__banner_hero {
   textarea {
-    min-height: 100px !important;
+    min-height: 40px !important;
   }
   .bannerHero-subModule {
     clear: both;
   }
-  .module__element.image__row.js-module {
+  .module__element.image__row.js-module,
+  .step.cf {
     margin-bottom: 30px;
     border: 1px #383838 solid;
     padding: 10px;
@@ -13,6 +14,39 @@
   }
   .input__wrapper {
     position: relative;
+  }
+  .image__header {
+    > :nth-child(2) {
+      width: 70% !important;
+      display: inline-flex !important;
+    }
+    [type="datetime-local"] {
+      height: 40px;
+      padding: 0 10px;
+    }
+  }
+  .step__row {
+    padding: 0;
+  }
+  .js-add-image,
+  .js-add-step {
+    width: 70%;
+    border-radius: inherit;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -15px auto 15px !important;
+    float: none !important;
+    &:hover {
+      transform: none;
+    }
+  }
+  .js-add-step {
+    margin-top: 15px !important;
+  }
+  .bannerHero-subModule .module__element_one-third {
+    width: 100%;
   }
   .module__element_half {
     padding: 0 15px 0 0;
