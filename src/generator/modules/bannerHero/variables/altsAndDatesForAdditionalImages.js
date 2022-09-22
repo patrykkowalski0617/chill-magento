@@ -11,12 +11,15 @@ const altsAndDatesForAdditionalImages = (module) => {
         let altsInput = module.querySelectorAll(
           ".input__text.input__image.input_required"
         );
+        const altVal = document.querySelector(
+          "[data-index='name'] .admin__control-text"
+        ).value;
         altsInput = altsInput[altsInput.length - 1];
         let dateInput = module.querySelectorAll(
           '[type="datetime-local"][name^="parameters[additional_images]"]'
         );
         dateInput = dateInput[dateInput.length - 1];
-        altsInput.value = "alt";
+        altsInput.value = altVal;
         const date = new Date();
         const dateObj = {
           day: String(date.getDate()).padStart(2, 0),
