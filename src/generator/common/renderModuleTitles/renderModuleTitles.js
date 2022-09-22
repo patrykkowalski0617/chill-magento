@@ -28,4 +28,4 @@ const renderModuleTitles = (providedModule) => {
   }
 };
 
-export default renderModuleTitles;
+export default setTimeout(renderModuleTitles, 700);
