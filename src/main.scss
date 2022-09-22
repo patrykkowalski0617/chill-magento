@@ -44,4 +44,11 @@ body {
     padding-top: 5px;
     padding-bottom: 5px;
   }
+  // "do not forget" inputs
+  .module__banner_hero form > div:nth-child(10) > div,
+  .module__banner_hero form > div:nth-child(11) > div,
+  [id^="products_new_promotion_id_"],
+  [id^="banner_hero_promo_code_"] {
+    outline: 1px solid $base-color-mark;
+  }
 }

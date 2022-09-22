@@ -1,0 +1,20 @@
+.module__banner_hero:not(.bannerHero-show-hidden-elements) {
+  .module__content.module__form {
+    > :nth-child(8),
+    > :nth-child(9),
+    > :nth-child(14),
+    > :nth-child(18),
+    .image__header > :nth-child(3) {
+      display: none !important;
+    }
+  }
+}
+.module__banner_hero:not(.bannerHero-show-hidden-elements)
+  .chill-btn-container
+  button:nth-child(5) {
+  font-size: 0;
+  &::before {
+    content: "Show Hidden Elements";
+    font-size: initial;
+  }
+}
