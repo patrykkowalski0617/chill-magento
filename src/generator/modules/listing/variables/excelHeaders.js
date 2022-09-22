@@ -1,8 +1,8 @@
 const excelHeaders = [
-  { gid: ["g", "gid", "neoid", "neo id"] },
+  { gid: ["g", "neoid", , "gid", "neo id"] },
   { proc: ["p", "proc"] },
   { disc: ["r", "rabat"] },
-  { price: ["c", "cena po rabacie"] },
+  { price: ["c", "cena po rabacie", "cena promo", "cena"] },
   { priority: ["l", "pozycja lp", "poz"] },
   { code: ["k", "kod"] },
   { min: ["m", "cena min", "min"] },
