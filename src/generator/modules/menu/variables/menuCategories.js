@@ -39,10 +39,7 @@ const menuCategories = [
       {
         subcategoryName: "Suszarki",
         subcategoryOther: "not-allowed",
-        codes: [
-          { categoryCode: "100034", codeName: "Suszarki" },
-          { categoryCode: "100020", codeName: "Suszarki" },
-        ],
+        codes: [{ categoryCode: "100020", codeName: "Suszarki" }],
       },
       {
         subcategoryName: "Kuchenki",
@@ -94,6 +91,11 @@ const menuCategories = [
         subcategoryName: "Pralko-suszarki",
         subcategoryOther: "not-allowed",
         codes: [{ categoryCode: "100033", codeName: "Pralko-suszarki" }],
+      },
+      {
+        subcategoryName: "Suszarki",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "100034", codeName: "Suszarki" }],
       },
       {
         subcategoryName: "Kuchnie mikrofalowe",
