@@ -34,10 +34,7 @@ const menuCategories_newMenu = [
       {
         subcategoryName: "Pralko-suszarki",
         subcategoryOther: "not-allowed",
-        codes: [
-          { categoryCode: "100033", codeName: "Pralko-suszarki" },
-          { categoryCode: "100019", codeName: "Pralko-suszarki" },
-        ],
+        codes: [{ categoryCode: "100019", codeName: "Pralko-suszarki" }],
       },
       {
         subcategoryName: "Suszarki",
@@ -92,6 +89,11 @@ const menuCategories_newMenu = [
         subcategoryName: "Pralki",
         subcategoryOther: "not-allowed",
         codes: [{ categoryCode: "100032", codeName: "Pralki do zabudowy" }],
+      },
+      {
+        subcategoryName: "Pralko-suszarki",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "100033", codeName: "Pralko-suszarki" }],
       },
       {
         subcategoryName: "Kuchnie mikrofalowe",
