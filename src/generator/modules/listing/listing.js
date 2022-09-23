@@ -5,6 +5,7 @@ import {
   existingModuleCallback,
   newModuleCallback,
   hideElements,
+  onSave,
 } from "./actions";
 
 const listing = moduleFix({
@@ -16,6 +17,7 @@ const listing = moduleFix({
   ],
   newModuleCallback,
   existingModuleCallback,
+  onSave,
 });
 
 export default listing;

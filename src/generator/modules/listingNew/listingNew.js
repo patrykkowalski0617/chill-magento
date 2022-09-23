@@ -5,6 +5,7 @@ import {
   existingModuleCallback,
   newModuleCallback,
 } from "./actions";
+import { onSave } from "../listing/actions";
 
 const listingNew = moduleFix({
   moduleClass: "module__products_new",
@@ -14,6 +15,7 @@ const listingNew = moduleFix({
   ],
   newModuleCallback,
   existingModuleCallback,
+  onSave,
 });
 
 export default listingNew;
