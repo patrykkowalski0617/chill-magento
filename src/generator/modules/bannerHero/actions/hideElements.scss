@@ -1,9 +1,13 @@
 .module__banner_hero:not(.bannerHero-show-hidden-elements) {
   .module__content.module__form {
+<<<<<<< HEAD
     div:nth-of-type(5),
     div:nth-of-type(6),
     div:nth-of-type(11),
     div:nth-of-type(15),
+=======
+    .input-to-hide,
+>>>>>>> a03031f3052ff05577b07ae829869054778b2785
     .image__header > :nth-child(3) {
       display: none !important;
     }
