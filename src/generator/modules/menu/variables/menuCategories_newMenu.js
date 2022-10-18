@@ -174,6 +174,7 @@ const menuCategories_newMenu = [
           { categoryCode: "101360", codeName: "Kable HDMI" },
           { categoryCode: "100127", codeName: "Akcesoria do TV" },
           { categoryCode: "100769", codeName: "Tunery DVB-T" },
+          { categoryCode: "101650", codeName: "Uchwyty" },
           { categoryCode: "100778", codeName: "Pozostałe" },
         ],
       },
