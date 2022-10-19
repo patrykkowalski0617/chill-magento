@@ -1,4 +1,4 @@
-const isNeo24 = () => {
+const isN24 = () => {
   const shopSelect = document.querySelector(".admin__control-select");
 
   switch (shopSelect.value) {
@@ -12,4 +12,4 @@ const isNeo24 = () => {
   }
 };
 
-export default isNeo24;
+export default isN24;

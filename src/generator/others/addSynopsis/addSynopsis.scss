@@ -1,5 +1,13 @@
 @import "../../../chill/variables.scss";
 
+.synopsis-tip {
+  background-image: url(https://www.neonet.pl/images24/promocje/chill-magento/img/synopsis_tip.PNG);
+  height: 212px;
+  width: 87px;
+  position: absolute;
+  right: 1px;
+  top: 31px;
+}
 .chill-generator-synopsis {
   position: relative;
   z-index: 999;
@@ -11,6 +19,7 @@
   &:hover {
     width: fit-content;
     overflow-x: visible;
+    padding-right: 87px;
     .chill-generator-synopsis-btn {
       &::after {
         display: none;
