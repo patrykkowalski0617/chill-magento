@@ -8,6 +8,7 @@ const mainLpCss = () => {
   const chillBtns = renderFixButtons({
     actions: [
       "defaultFix",
+      "hideNumbersInSideTips",
       "Zielona apla",
       "payback",
       "Stare menu z jedną kategorią",
@@ -41,12 +42,14 @@ const mainLpCss = () => {
       if (i === 0) {
         updateInput(btn, input, cssSnippets.mainCss);
       } else if (i === 1) {
-        updateInput(btn, input, cssSnippets.greenApla);
+        updateInput(btn, input, cssSnippets.hideNumbersInSideTips);
       } else if (i === 2) {
-        updateInput(btn, input, cssSnippets.payback);
+        updateInput(btn, input, cssSnippets.greenApla);
       } else if (i === 3) {
-        updateInput(btn, input, cssSnippets.singleCategoryInOldMenu);
+        updateInput(btn, input, cssSnippets.payback);
       } else if (i === 4) {
+        updateInput(btn, input, cssSnippets.singleCategoryInOldMenu);
+      } else if (i === 5) {
         updateInput(btn, input, cssSnippets.bannerColor);
       }
       input.classList.add("filled");
