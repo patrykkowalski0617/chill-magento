@@ -1,6 +1,6 @@
 const cssSnippets = {
   mainCss: `
-/* >> mainCss start v2 >> >> >> */
+/* >> mainCss start v3 >> >> >> */
 
 /* increase letter-spacing in tabs */
 body [class*="tabScss-root"] {
@@ -13,6 +13,9 @@ body [class*="tabScss-root"] {
   padding: 20px 10px;
   max-width: 760px;
   margin: auto;
+  font-size: 14px;
+  line-height: 21px;
+  color: rgb(56, 56, 56);
 }
 
 /* titles */
@@ -221,13 +224,15 @@ body
     [class*="footerScss-button"]) {
   margin: auto;
 }
-
-/* Hide numbers in side tips */
+/* << << << mainCss end << */
+  `,
+  hideNumbersInSideTips: `
+/* >> Hide numbers in side tips v1 >> >> >> */
 body [class*="promotionInfoScss-number"] {
   display: none;
 }
-/* << << << mainCss end << */
-  `,
+/* << << << Hide numbers in side tips end << */
+`,
   payback: `
 /* >> payback start v1 >> >> >> */
 [class*="savingsScss-discount__label"] {
