@@ -1,6 +1,39 @@
 const cssSnippets = {
   mainCss: `
-/* >> mainCss start v3 >> >> >> */
+/* >> mainCss start v4 >> >> >> */
+
+/* add "Sprawdź" before terms and condition link */
+body [class*="termsAndConditionScss-link"]{
+    position: relative;
+    padding-left: 52px;
+    font-size: 0px;
+}
+.termsAndConditionScss-link-1EB::before {
+  content: "Sprawdź ";  
+  color: #383838;
+  font-weight: lighter;
+  cursor: default;
+  position: absolute;
+  left: 0px;
+  font-size: 12px;
+}
+.termsAndConditionScss-link-1EB::after {
+  content: "regulamin";  
+  font-size: 12px;
+}
+@media (min-width: 1024px) {
+  body [class*="termsAndConditionScss-link"]{
+    position: relative;
+    padding-left: 57px;
+  }
+  .termsAndConditionScss-link-1EB::before {
+    font-size: 14px;
+  }
+  .termsAndConditionScss-link-1EB::after {
+    font-size: 14px;
+  }
+}
+
 
 /* increase letter-spacing in tabs */
 body [class*="tabScss-root"] {
