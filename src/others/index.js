@@ -4,3 +4,4 @@ export { default as generatorShortcut } from "./generatorShortcut/generatorShort
 export { default as manageFilterURL } from "./manageFilterURL/manageFilterURL";
 export { default as markExectResult } from "./markExectResult/markExectResult";
 export { default as copyTableCellContent } from "./copyTableCellContent/copyTableCellContent";
+export { default as version } from "./version/version";
