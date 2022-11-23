@@ -7,6 +7,7 @@ import {
   manageFilterURL,
   markExectResult,
   copyTableCellContent,
+  version,
 } from "./others";
 import {
   isN24 as isN24Fn,
@@ -54,6 +55,7 @@ onElementReady('[name="url"]', () => {
 });
 generatorShortcut();
 onElementReady('[data-action="grid-filter-apply"]', markExectResult);
+version();
 
 // generator/modules
 onElementReady(".module__content", () => {

@@ -14,4 +14,10 @@ module.exports = {
   action: {
     default_icon: "favicon.png",
   },
+  web_accessible_resources: [
+    {
+      resources: ["*.json"],
+      matches: ["<all_urls>"],
+    },
+  ],
 };
