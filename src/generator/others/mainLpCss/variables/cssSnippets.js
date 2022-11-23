@@ -1,39 +1,33 @@
 const cssSnippets = {
   mainCss: `
-/* >> mainCss start v4 >> >> >> */
+/* >> mainCss start v5 >> >> >> */
 
 /* add "Sprawdź" before terms and condition link */
 body [class*="termsAndConditionScss-link"]{
-    position: relative;
-    padding-left: 52px;
     font-size: 0px;
 }
-.termsAndConditionScss-link-1EB::before {
+body [class*="termsAndConditionScss-link"]::before {
   content: "Sprawdź ";  
   color: #383838;
   font-weight: lighter;
   cursor: default;
-  position: absolute;
-  left: 0px;
   font-size: 12px;
 }
-.termsAndConditionScss-link-1EB::after {
+body [class*="termsAndConditionScss-link"]::after {
   content: "regulamin";  
   font-size: 12px;
 }
+body [class*="termsAndConditionScss-link"]:hover {
+    text-decoration: none;
+}
 @media (min-width: 1024px) {
-  body [class*="termsAndConditionScss-link"]{
-    position: relative;
-    padding-left: 57px;
-  }
-  .termsAndConditionScss-link-1EB::before {
+  body [class*="termsAndConditionScss-link"]::before {
     font-size: 14px;
   }
-  .termsAndConditionScss-link-1EB::after {
+  body [class*="termsAndConditionScss-link"]::after {
     font-size: 14px;
   }
 }
-
 
 /* increase letter-spacing in tabs */
 body [class*="tabScss-root"] {
