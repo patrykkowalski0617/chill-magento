@@ -1,30 +1,33 @@
 const cssSnippets = {
   mainCss: `
-/* >> mainCss start v5 >> >> >> */
+/* >> mainCss start v7 >> >> >> */
 
 /* add "Sprawdź" before terms and condition link */
-body [class*="termsAndConditionScss-link"]{
+body a[class*="termsAndConditionScss-link"]{
     font-size: 0px;
 }
-body [class*="termsAndConditionScss-link"]::before {
+body a[class*="termsAndConditionScss-link"]::before {
   content: "Sprawdź ";  
   color: #383838;
   font-weight: lighter;
   cursor: default;
   font-size: 12px;
 }
-body [class*="termsAndConditionScss-link"]::after {
+body a[class*="termsAndConditionScss-link"]::after {
   content: "regulamin";  
   font-size: 12px;
 }
-body [class*="termsAndConditionScss-link"]:hover {
+body a[class*="termsAndConditionScss-link"]:hover {
     text-decoration: none;
 }
+body a[class*="termsAndConditionScss-link"]:hover::after {
+  text-decoration: underline;
+}
 @media (min-width: 1024px) {
-  body [class*="termsAndConditionScss-link"]::before {
+  body a[class*="termsAndConditionScss-link"]::before {
     font-size: 14px;
   }
-  body [class*="termsAndConditionScss-link"]::after {
+  body a[class*="termsAndConditionScss-link"]::after {
     font-size: 14px;
   }
 }
@@ -77,7 +80,7 @@ body [class*="heroBannerScss-banner__promotion"] {
   }
 }
 
-/* no idea what is it */
+/* no idea what it is */
 @media (min-width: 1600px) {
   body .productAttributesCss-attribute_landing-2dT,
   body .dataSectionCss-attribute-Web {
@@ -310,7 +313,8 @@ body [class*="promotionInfoScss-number"] {
 /* << << << bannerColor end << */
   `,
   singleCategoryInOldMenu: `
-/* >> singleCategoryInOldMenu start v1 >> >> >> */
+/* >> singleCategoryInOldMenu start v2 >> >> >> */
+[class*=primaryItemDesktopCss-neo24-selected-],
 [class*=primaryItemDesktopCss-root-],
 [class*=primaryItemMobileCss-button] {
   display: none;
