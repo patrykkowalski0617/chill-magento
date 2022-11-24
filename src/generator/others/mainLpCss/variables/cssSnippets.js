@@ -313,7 +313,7 @@ body [class*="promotionInfoScss-number"] {
 /* << << << bannerColor end << */
   `,
   singleCategoryInOldMenu: `
-/* >> singleCategoryInOldMenu start v1 >> >> >> */
+/* >> singleCategoryInOldMenu start v2 >> >> >> */
 [class*=primaryItemDesktopCss-neo24-selected-],
 [class*=primaryItemDesktopCss-root-],
 [class*=primaryItemMobileCss-button] {
