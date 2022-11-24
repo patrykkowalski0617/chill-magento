@@ -1,33 +1,33 @@
 const cssSnippets = {
   mainCss: `
-/* >> mainCss start v6 >> >> >> */
+/* >> mainCss start v7 >> >> >> */
 
 /* add "Sprawdź" before terms and condition link */
-body [class*="termsAndConditionScss-link"]{
+body a[class*="termsAndConditionScss-link"]{
     font-size: 0px;
 }
-body [class*="termsAndConditionScss-link"]::before {
+body a[class*="termsAndConditionScss-link"]::before {
   content: "Sprawdź ";  
   color: #383838;
   font-weight: lighter;
   cursor: default;
   font-size: 12px;
 }
-body [class*="termsAndConditionScss-link"]::after {
+body a[class*="termsAndConditionScss-link"]::after {
   content: "regulamin";  
   font-size: 12px;
 }
-body [class*="termsAndConditionScss-link"]:hover {
+body a[class*="termsAndConditionScss-link"]:hover {
     text-decoration: none;
 }
-body [class*="termsAndConditionScss-link"]:hover::after {
+body a[class*="termsAndConditionScss-link"]:hover::after {
   text-decoration: underline;
 }
 @media (min-width: 1024px) {
-  body [class*="termsAndConditionScss-link"]::before {
+  body a[class*="termsAndConditionScss-link"]::before {
     font-size: 14px;
   }
-  body [class*="termsAndConditionScss-link"]::after {
+  body a[class*="termsAndConditionScss-link"]::after {
     font-size: 14px;
   }
 }
