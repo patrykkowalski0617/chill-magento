@@ -80,7 +80,7 @@ body [class*="heroBannerScss-banner__promotion"] {
   }
 }
 
-/* no idea what is it */
+/* no idea what it is */
 @media (min-width: 1600px) {
   body .productAttributesCss-attribute_landing-2dT,
   body .dataSectionCss-attribute-Web {
@@ -314,6 +314,7 @@ body [class*="promotionInfoScss-number"] {
   `,
   singleCategoryInOldMenu: `
 /* >> singleCategoryInOldMenu start v1 >> >> >> */
+[class*=primaryItemDesktopCss-neo24-selected-],
 [class*=primaryItemDesktopCss-root-],
 [class*=primaryItemMobileCss-button] {
   display: none;
