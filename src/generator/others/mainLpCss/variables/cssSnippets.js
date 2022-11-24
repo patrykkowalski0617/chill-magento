@@ -1,6 +1,6 @@
 const cssSnippets = {
   mainCss: `
-/* >> mainCss start v5 >> >> >> */
+/* >> mainCss start v6 >> >> >> */
 
 /* add "Sprawdź" before terms and condition link */
 body [class*="termsAndConditionScss-link"]{
@@ -19,6 +19,9 @@ body [class*="termsAndConditionScss-link"]::after {
 }
 body [class*="termsAndConditionScss-link"]:hover {
     text-decoration: none;
+}
+body [class*="termsAndConditionScss-link"]:hover::after {
+  text-decoration: underline;
 }
 @media (min-width: 1024px) {
   body [class*="termsAndConditionScss-link"]::before {
