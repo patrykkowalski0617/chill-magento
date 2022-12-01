@@ -65,14 +65,9 @@ const renderInputs = (module) => {
           return notNumValues;
         };
 
-        const gidsWithLengthLessThanFife = () => {
-          return gidsOnly.filter((el) => el.length < 5);
-        };
-
         const _duplicates = duplicates();
         const _discountsEqOrLessThanZero = discountsEqOrLessThanZero();
         const _numberTypeInvalid = numberTypeInvalid();
-        const _gidsWithLengthLessThanFife = gidsWithLengthLessThanFife();
 
         console.log(
           `
@@ -86,11 +81,6 @@ Nowe gidy:
 - wartości inne niż liczbowe w polach dla wartości liczbowych: ${
             _numberTypeInvalid.length
               ? _numberTypeInvalid.join(", ")
-              : "nie znaleziono"
-          }
-- gidy zawierające mniej niż 6 znaków: ${
-            _gidsWithLengthLessThanFife.length
-              ? _gidsWithLengthLessThanFife.join(", ")
               : "nie znaleziono"
           }
 `
