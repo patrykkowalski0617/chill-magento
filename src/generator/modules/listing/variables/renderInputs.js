@@ -88,8 +88,7 @@ Nowe gidy:
         return (
           _duplicates === 0 &&
           !_discountsEqOrLessThanZero.length &&
-          !_numberTypeInvalid.length &&
-          !_gidsWithLengthLessThanFife.length
+          !_numberTypeInvalid.length
         );
       };
       const isBug = !validation(newValue);
