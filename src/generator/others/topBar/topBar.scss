@@ -20,3 +20,12 @@
     margin-bottom: 0;
   }
 }
+.page-actions-buttons .chill-btn-container {
+  .change-module-order-alter-txt {
+    font-size: 0;
+    &::before {
+      content: "Wróć do widoku edycji modułów";
+      font-size: 1.6rem;
+    }
+  }
+}
