@@ -52,7 +52,7 @@ const formatExcel = (excelTable, withoutHeaders = false) => {
     .map((el, i) => (withoutHeaders && !i ? "" : el.join(",")))
     .join(";")
     .replaceAll("%", "")
-    .replace(";,,,,,,", "");
+    .replaceAll(";,,,,,,", "");
   return withoutHeaders ? newValue.replace(";", "") : newValue;
 };
 
