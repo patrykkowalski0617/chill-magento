@@ -36,6 +36,7 @@ import {
   topBar,
   stickyModuleHeaders,
   mainLpCss,
+  pgUpPgDown,
 } from "./generator/others";
 
 // others
@@ -90,6 +91,7 @@ onElementReady(".module__content", () => {
   topBar();
   stickyModuleHeaders();
   draggableModuleFix();
+  pgUpPgDown();
 });
 
 onElementReady(".admin__control-textarea", mainLpCss);

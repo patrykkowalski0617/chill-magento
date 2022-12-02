@@ -25,6 +25,9 @@ const renderModuleHeaders = (providedModule) => {
         generatorModule: module,
       });
       chillBtns.forEach((btn, i) => {
+        if (i === 0) {
+          btn.classList.add("delete-btn");
+        }
         btn.addEventListener("click", (e) => {
           e.preventDefault();
           btnsFunctions[i](module);

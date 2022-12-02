@@ -8,9 +8,11 @@ const topBar = () => {
   const oryginalBtnPreview = document.querySelector("#preview");
   const actions = [
     [
-      "Zwiń/rozwiń moduły",
+      "Zmień kolejność modułów",
       (btn) => {
         document.querySelector(".btn_toggle-all").click();
+        document.querySelectorAll(".module")[0].scrollIntoView();
+        btn.classList.toggle("change-module-order-alter-txt");
       },
     ],
     [
