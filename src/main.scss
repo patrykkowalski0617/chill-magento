@@ -36,4 +36,8 @@ body {
   [id^="banner_hero_promo_code_"] {
     outline: 2px solid $base-color-mark;
   }
+  [id^="terms_and_condition_content_"],
+  [id^="terms_and_condition_extended_terms_content_"] {
+    height: 100px;
+  }
 }
