@@ -8,13 +8,13 @@ const clearTextAreaOnKey = (textarea, txt = "", isBug) => {
     }, 200);
     setTimeout(() => {
       textarea.value = "szczegóły: F12";
-    }, 1000);
+    }, 2000);
     setTimeout(() => {
       textarea.value = "";
       if (isBug) {
         textarea.classList.remove("custom-input-warn");
       }
-    }, 1800);
+    }, 3800);
   } else {
     setTimeout(() => {
       textarea.value = "";
