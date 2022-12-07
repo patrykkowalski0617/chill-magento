@@ -1,6 +1,20 @@
 const cssSnippets = {
   mainCss: `
-/* >> mainCss start v7 >> >> >> */
+/* >> mainCss start v8 >> >> >> */
+
+/* fix style for step without img */
+[class^="promotionInfoScss-wrapper-"] > div [class^="promotionInfoScss-text"] {
+  padding-left: 97px;
+}
+@media (min-width: 1024px) {
+  [class^="promotionInfoScss-wrapper-"]
+    > div
+    [class^="promotionInfoScss-text"] {
+    padding-left: 112px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
 
 /* add "Sprawdź" before terms and condition link */
 body a[class*="termsAndConditionScss-link"]{
