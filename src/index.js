@@ -94,4 +94,4 @@ onElementReady(".module__content", () => {
   pgUpPgDown();
 });
 
-onElementReady(".admin__control-textarea", mainLpCss);
+onElementReady(".admin__control-textarea[name=custom_css]", mainLpCss);
