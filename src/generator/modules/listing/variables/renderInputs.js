@@ -65,14 +65,35 @@ const renderInputs = (module) => {
           return notNumValues;
         };
 
+        const noMinPrice = () => {
+          const gidsWithDiscountAndNoMinPrice = listValueArr
+            .map((el) => {
+              const arr = el.split(",");
+              return {
+                gid: arr[0],
+                discountPercent: arr[1],
+                discount: arr[2],
+                minPrice: arr[6],
+              };
+            })
+            .filter((el) => {
+              return el.discount.length || el.discountPercent.length
+                ? !el.minPrice.length
+                : false;
+            });
+
+          return gidsWithDiscountAndNoMinPrice.map((el) => el.gid);
+        };
+
         const _duplicates = duplicates();
         const _discountsEqOrLessThanZero = discountsEqOrLessThanZero();
         const _numberTypeInvalid = numberTypeInvalid();
+        const _noMinPrice = noMinPrice();
 
         console.log(
           `
 Nowe gidy:
-- duble: ${_duplicates}
+- zdublowane gidy: ${_duplicates}
 - nieprawidłowy rabat kwotowy dla gidów: ${
             _discountsEqOrLessThanZero.length
               ? _discountsEqOrLessThanZero.join(", ")
@@ -83,12 +104,16 @@ Nowe gidy:
               ? _numberTypeInvalid.join(", ")
               : "nie znaleziono"
           }
+- gidy mające rabat kwotowy lub procentowy i nie posiadające ceny min: ${
+            _noMinPrice.length ? _noMinPrice.join(", ") : "nie znaleziono"
+          }
 `
         );
         return (
           _duplicates === 0 &&
           !_discountsEqOrLessThanZero.length &&
-          !_numberTypeInvalid.length
+          !_numberTypeInvalid.length &&
+          !_noMinPrice.length
         );
       };
       const isBug = !validation(newValue);
@@ -233,19 +258,21 @@ Gidy do aktualizacji:
     );
     customGidsInput.addEventListener("paste", (e) => {
       const pastedData = e.clipboardData.getData("Text");
-      console.log("pastedData", pastedData);
-      const gidsToDelete = !pastedData.toLowerCase().includes("g")
-        ? pastedData
-            .trim()
-            .replace(/\s/g, "")
-            .split(",")
-            .filter((el) => el.length)
-            .map((item) => item.replace(";", ""))
-        : formatExcel(pastedData)
-            .split(",,,,,,")
-            .map((el) => el.replace(";", ""))
-            .filter((el) => el.length)
-            .slice(1);
+
+      const gidsToDelete =
+        !pastedData.toLowerCase().includes("g") &&
+        !pastedData.toLowerCase().includes("neo")
+          ? pastedData
+              .trim()
+              .replace(/\s/g, "")
+              .split(",")
+              .filter((el) => el.length)
+              .map((item) => item.replace(";", ""))
+          : formatExcel(pastedData)
+              .split(",,,,,,")
+              .map((el) => el.replace(";", ""))
+              .filter((el) => el.length)
+              .slice(1);
       const deletedGids = [];
 
       const actualGidsData = gidsInput.value.split(";");
