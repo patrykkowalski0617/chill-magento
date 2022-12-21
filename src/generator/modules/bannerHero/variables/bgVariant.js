@@ -20,7 +20,7 @@ const bgVariant = (module) => {
 </div>
   `
   );
-  console.log("bgVariant");
+
   module
     .querySelector(".chill-bg_variant:not(.click-added)")
     .addEventListener("click", () => {
