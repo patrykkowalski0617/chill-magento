@@ -4,7 +4,9 @@ const clickBarToCollapse = () => {
       el.classList.add("collapse-ready");
       el.addEventListener("click", (e) => {
         e.preventDefault();
-        el.querySelector(".btn_toggle").click();
+        if (!el.classList.contains("block-collapse")) {
+          el.querySelector(".btn_toggle").click();
+        }
       });
     }
   });
