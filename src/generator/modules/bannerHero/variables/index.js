@@ -2,3 +2,4 @@ export { default as altsAndDatesForAdditionalImages } from "./altsAndDatesForAdd
 export { default as inputFileFix } from "./inputFileFix";
 export { default as stepsFix } from "./stepsFix";
 export { default as markElementsForHideElements } from "./markElementsForHideElements";
+export { default as bgVariant } from "./bgVariant";
