@@ -6,7 +6,7 @@ const fromDate = ({ module }) => {
   const year = date.getFullYear();
   setAlts({
     module,
-    dataString: ` update_banner from ${year}-${month}-${day}T00:00:00`,
+    dataString: `update_banner from ${year}-${month}-${day}T00:00:00`,
     defaultVal: false,
   });
 };
