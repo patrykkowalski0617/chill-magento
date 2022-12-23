@@ -309,15 +309,15 @@ const htmlSnippets = {
   maxFiveInRow();
 </script>
   `,
-  bannerUpd: `
-<!-- Banner update -->    
+  bannerUpd: `  
+<!-- Banner update -->
 <script>
   const update_banner = () => {
     const bannerHero = document.querySelector(
       "img[class^=heroBannerScss], img[alt~=update_banner-oryginal]"
     );
     const bannersToSwap = Array.from(
-      document.querySelectorAll("img[alt~=update_banner from]")
+      document.querySelectorAll("img[alt~=update_banner-from]")
     );
     const date = new Date();
     const curentTime = date.getTime();
@@ -332,9 +332,7 @@ const htmlSnippets = {
         .map((newBanner, i) => {
           const alt = newBanner.alt;
           const src = newBanner.src;
-          const altDate = alt.substr(
-            alt.indexOf("update_banner from") + 19
-          );
+          const altDate = alt.substr(alt.indexOf("update_banner-from") + 19);
           const startTime = new Date(altDate).getTime();
           if (isNaN(startTime)) {
             console.error(
@@ -364,13 +362,12 @@ const htmlSnippets = {
   update_banner();
 </script>
 <style>
-  img[class^="heroBannerScss"],
   img[alt~="update_banner-oryginal"],
-  .bannerCss-banner-2E-[alt~="from"] {
+  img[alt~="update_banner-from"] {
     display: none;
   }
-  img[alt~="update_banner-oryginal"].update_banner-display,
-  img[class^="heroBannerScss"].update_banner-display {
+
+  img.update_banner-display {
     display: block;
   }
 </style>
