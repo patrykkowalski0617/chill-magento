@@ -314,10 +314,10 @@ const htmlSnippets = {
 <script>
   const update_banner = () => {
     const bannerHero = document.querySelector(
-      "img[alt~=update_banner-oryginal]"
+      "img[class^=heroBannerScss], img[alt~=update_banner-oryginal]"
     );
     const bannersToSwap = Array.from(
-      document.querySelectorAll("img[class^=bannerCss-banner][alt~=from]")
+      document.querySelectorAll("img[alt~=update_banner from]")
     );
     const date = new Date();
     const curentTime = date.getTime();
