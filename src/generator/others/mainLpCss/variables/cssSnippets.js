@@ -1,7 +1,11 @@
 const cssSnippets = {
   mainCss: `
-/* >> mainCss start v8 >> >> >> */
+/* >> mainCss start v9 >> >> >> */
 
+/* justify availability buttons */
+[class^="availabilityButtonCss-btn"]{
+  width: unset !important;
+}
 /* fix style for step without img */
 [class^="promotionInfoScss-wrapper-"] > div [class^="promotionInfoScss-text"] {
   padding-left: 97px;
