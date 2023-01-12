@@ -3,8 +3,8 @@ const cssSnippets = {
 /* >> mainCss start v9 >> >> >> */
 
 /* justify availability buttons */
-[class^="availabilityButtonCss-btn"]{
-  width: unset !important;
+[class*="availabilityButtonCss-btn-"]{
+  width: unset;
 }
 /* fix style for step without img */
 [class^="promotionInfoScss-wrapper-"] > div [class^="promotionInfoScss-text"] {
