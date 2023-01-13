@@ -887,6 +887,29 @@ const menuCategories_newMenu = [
         codes: [{ categoryCode: "100159", codeName: "Tablety graficzne" }],
       },
       {
+        subcategoryName: "Drukarki atramentowe",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "100279", codeName: "Drukarki atramentowe" }],
+      },
+      {
+        subcategoryName: "Urządzenia wielofunkcyjne",
+        subcategoryOther: "not-allowed",
+        codes: [
+          { categoryCode: "100284", codeName: "Urządzenia wielofunkcyjne" },
+        ],
+      },
+      {
+        subcategoryName: "Drukarki laserowe",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "100281", codeName: "Drukarki laserowe" }],
+      },
+    ],
+  },
+  {
+    categoryName: "Akcesoria IT",
+    icon: "ico_it_accessories",
+    subcategories: [
+      {
         subcategoryName: "Głośniki komputerowe",
         subcategoryOther: "not-allowed",
         codes: [{ categoryCode: "100328", codeName: "Głośniki komputerowe" }],
@@ -1082,15 +1105,6 @@ const menuCategories_newMenu = [
         subcategoryName: "Czytniki kart SD",
         subcategoryOther: "not-allowed",
         codes: [{ categoryCode: "100406", codeName: "Czytniki kart SD" }],
-      },
-      {
-        subcategoryName: "Drukarki i urządzenia wielofunkcyjne",
-        subcategoryOther: "not-allowed",
-        codes: [
-          { categoryCode: "100279", codeName: "Drukarki atramentowe" },
-          { categoryCode: "100284", codeName: "Urządzenia wielofunkcyjne" },
-          { categoryCode: "100281", codeName: "Drukarki laserowe" },
-        ],
       },
       {
         subcategoryName: "Tonery",

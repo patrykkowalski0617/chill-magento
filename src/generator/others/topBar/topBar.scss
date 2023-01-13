@@ -29,3 +29,9 @@
     }
   }
 }
+.btn_toggle,
+.chill-generator-synopsis {
+  &.hidden {
+    display: none;
+  }
+}

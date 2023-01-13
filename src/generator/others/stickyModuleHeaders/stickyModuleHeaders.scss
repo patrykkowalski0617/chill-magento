@@ -23,14 +23,15 @@
         height: auto;
       }
       .module__title {
-        display: flex;
+        display: block;
         padding-right: 10px;
         height: 35px;
-        align-items: center;
+        line-height: 35px;
         margin: 5px 5px 0 0;
-        width: 350px;
+        width: 323px;
         white-space: nowrap;
         overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
     &.sticky-last-element {
