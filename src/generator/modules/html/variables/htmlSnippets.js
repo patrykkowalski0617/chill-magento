@@ -207,11 +207,13 @@ const htmlSnippets = {
 </script>  
 `,
   script: `
+<!-- script -->
 <script>
   
 </script>
   `,
   style: `
+<!-- style -->
 <style>
   
 </style>
