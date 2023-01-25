@@ -59,24 +59,31 @@ onElementReady('[data-action="grid-filter-apply"]', markExectResult);
 version();
 
 // generator/modules
-onElementReady(".module__content", () => {
-  renderModuleHeaders();
+onElementReady(
+  ".module__content",
+  () => {
+    setTimeout(() => {
+      renderModuleHeaders();
 
-  const isN24 = isN24Fn();
+      const isN24 = isN24Fn();
 
-  listing({ isN24 });
-  listingNew({ isN24 });
-  filters({ isN24 });
-  menu({ isN24 });
-  html({ isN24 });
-  footer({ isN24 });
-  bannerHero({ isN24 });
-  banner({ isN24 });
-  htmlExtended({ isN24 });
-  tips({ isN24 });
+      listing({ isN24 });
+      listingNew({ isN24 });
+      filters({ isN24 });
+      menu({ isN24 });
+      html({ isN24 });
+      footer({ isN24 });
+      bannerHero({ isN24 });
+      banner({ isN24 });
+      htmlExtended({ isN24 });
+      tips({ isN24 });
 
-  renderModuleTitles();
-});
+      renderModuleTitles();
+    });
+  },
+  // settimeout becouce in isN24 element .admin__control-select is undefined from time to time
+  100
+);
 onElementReady(".btn_add-module", () => {
   addNewModule();
 });
