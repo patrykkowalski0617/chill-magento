@@ -274,6 +274,15 @@ body
 }
 
 /* multirabaty - footer style */
+@media (min-width: 769px) {
+  .landing-page #lp-container-wrapper-2 #lp-sec-6 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 @media (min-width: 1100px) {
   .landing-page #lp-container-wrapper-2 #lp-sec-6 > :last-child {
     max-width: 400px;
@@ -282,6 +291,7 @@ body
     margin-top: -25px;
   }
 }
+
 /* << << << mainCss end << */
   `,
   hideNumbersInSideTips: `
