@@ -1,6 +1,6 @@
 const cssSnippets = {
   mainCss: `
-/* >> mainCss start v9 >> >> >> */
+/* >> mainCss start v10 >> >> >> */
 
 /* justify availability buttons */
 [class*="availabilityButtonCss-btn-"]{
@@ -271,6 +271,16 @@ body
     + [class*="footerScss-buttonContainer"]
     [class*="footerScss-button"]) {
   margin: auto;
+}
+
+/* multirabaty - footer style */
+@media (min-width: 1100px) {
+  .landing-page #lp-container-wrapper-2 #lp-sec-6 > :last-child {
+    max-width: 400px;
+    padding-right: 150px;
+    line-height: 1.4;
+    margin-top: -25px;
+  }
 }
 /* << << << mainCss end << */
   `,
