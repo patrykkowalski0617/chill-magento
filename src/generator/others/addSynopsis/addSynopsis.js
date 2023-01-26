@@ -11,7 +11,7 @@ const addSynopsis = (functionDelay = 100) => {
 
   const synopsis = document.querySelector(".chill-generator-synopsis");
   const makeSynopsis = () => {
-    synopsis.innerHTML = `<a href="#container" class="chill-generator-synopsis-btn page-top">TOP</a><div class="synopsis-tip"></div>`;
+    // synopsis.innerHTML = `<a href="#container" class="chill-generator-synopsis-btn page-top">TOP</a><div class="synopsis-tip"></div>`;
     document.querySelectorAll(".module").forEach((module) => {
       if (!module.classList.contains("chill-synopsis-dragend-event-added")) {
         module.addEventListener("dragend", () => {
