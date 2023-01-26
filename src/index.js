@@ -37,6 +37,7 @@ import {
   stickyModuleHeaders,
   mainLpCss,
   pgUpPgDown,
+  syntaxHighlight,
 } from "./generator/others";
 
 // others
@@ -99,5 +100,5 @@ onElementReady(".module__content", () => {
   draggableModuleFix();
   pgUpPgDown();
 });
-
+onElementReady("textarea[id^=html_content_]", syntaxHighlight);
 onElementReady(".admin__control-textarea[name=custom_css]", mainLpCss);
