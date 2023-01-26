@@ -59,10 +59,9 @@ onElementReady('[data-action="grid-filter-apply"]', markExectResult);
 version();
 
 // generator/modules
-onElementReady(
-  ".module__content",
-  () => {
-    setTimeout(() => {
+onElementReady(".module__content", () => {
+  setTimeout(
+    () => {
       renderModuleHeaders();
 
       const isN24 = isN24Fn();
@@ -79,11 +78,11 @@ onElementReady(
       tips({ isN24 });
 
       renderModuleTitles();
-    });
-  },
-  // settimeout becouce in isN24 element .admin__control-select is undefined from time to time
-  100
-);
+    },
+    // settimeout becouce in isN24 element .admin__control-select is undefined from time to time
+    100
+  );
+});
 onElementReady(".btn_add-module", () => {
   addNewModule();
 });
