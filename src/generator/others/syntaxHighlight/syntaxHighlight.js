@@ -2,34 +2,44 @@ import "./syntaxHighlight.scss";
 import { w3CodeColor } from "./variables";
 
 const syntaxHighlight = () => {
+  let keyIsDown = false;
   const codeTextareas = document.querySelectorAll(
-    "textarea[id^=html_content_], [id^=html_product_block_]"
+    `textarea[id^=html_content_], 
+    [id^=html_product_block_], 
+    [id^=terms_and_condition_content_],
+    [id^=terms_and_condition_extended_terms_content_]`
   );
-  codeTextareas.forEach((codeTextarea, i) => {
+  codeTextareas.forEach((codeTextarea) => {
     // hide oryginal inputs
     codeTextarea.style.display = "none";
 
     // create fake input
     const codeDiv = document.createElement("div");
     codeDiv.setAttribute("contenteditable", "true");
-    codeDiv.setAttribute("id", "chill-syntax-hl-container" + i);
     codeDiv.classList.add("chill-syntax-hl-container");
     codeTextarea.parentElement.appendChild(codeDiv);
+    const oryginalCode = codeTextarea.value;
     codeDiv.innerText = codeTextarea.value;
-    const myDiv = document.getElementById("chill-syntax-hl-container" + i);
-    const textarea = codeTextarea;
+
     // highlight function
     const hlt = (e) => {
-      console.log(!e.shiftKey, !e.ctrlKey, !e.altKey, e.key, e.code);
       if (
         !e.shiftKey &&
-        !e.ctrlKey &&
+        (!e.ctrlKey || (e.code === "KeyZ" && e.ctrlKey)) &&
         !e.altKey &&
         e.key !== "Shift" &&
         e.key !== "Control" &&
+        e.key !== "Alt" &&
+        e.key !== "ArrowRight" &&
+        e.key !== "ArrowUp" &&
+        e.key !== "ArrowDown" &&
+        e.key !== "ArrowLeft" &&
         e.code !== "Enter"
       ) {
-        textarea.value = myDiv.innerText;
+        // copy code from fake input to oryginal textarea
+        codeTextarea.value = codeDiv.innerText;
+
+        // get caret position
         function getCaretIndex(element) {
           let position = 0;
           const isSupported = typeof window.getSelection !== "undefined";
@@ -45,11 +55,18 @@ const syntaxHighlight = () => {
           }
           return position;
         }
-        const chars = getCaretIndex(myDiv);
+        const chars = getCaretIndex(codeDiv);
 
-        const code = textarea.value;
-        myDiv.innerText = textarea.value;
+        // copy code from oryginal textarea to fake input
+        codeDiv.innerText = codeTextarea.value;
 
+        // highlight syntax
+        w3CodeColor(codeDiv);
+
+        // focus fake input
+        codeDiv.focus();
+
+        // set caret
         function createRange(node, chars, range) {
           range = document.createRange();
 
@@ -83,7 +100,7 @@ const syntaxHighlight = () => {
         function setCurrentCursorPosition(chars) {
           var selection = window.getSelection();
 
-          var range = createRange(myDiv, {
+          var range = createRange(codeDiv, {
             count: chars,
           });
 
@@ -92,13 +109,25 @@ const syntaxHighlight = () => {
           selection.addRange(range);
         }
 
-        w3CodeColor(myDiv);
-
-        myDiv.focus();
         setCurrentCursorPosition(chars);
+      } else if (e.code === "Enter") {
+        // if Enter copy code from fake input to oryginal textarea only
+        codeTextarea.value = codeDiv.innerText;
       }
     };
-    codeDiv.addEventListener("keyup", hlt);
+    codeDiv.addEventListener("keyup", (e) => {
+      hlt(e);
+      keyIsDown = false;
+    });
+    // manage CTRL + Z
+    codeDiv.addEventListener("keydown", (e) => {
+      if (e.code === "KeyZ" && e.ctrlKey && !keyIsDown) {
+        console.log("e", e);
+        keyIsDown = true;
+        codeDiv.innerText = oryginalCode;
+        hlt(e);
+      }
+    });
 
     w3CodeColor(codeDiv);
   });
