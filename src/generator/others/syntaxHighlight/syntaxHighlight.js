@@ -122,7 +122,6 @@ const syntaxHighlight = () => {
     // manage CTRL + Z
     codeDiv.addEventListener("keydown", (e) => {
       if (e.code === "KeyZ" && e.ctrlKey && !keyIsDown) {
-        console.log("e", e);
         keyIsDown = true;
         codeDiv.innerText = oryginalCode;
         hlt(e);
