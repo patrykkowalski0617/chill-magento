@@ -57,11 +57,12 @@ const syntaxHighlight = () => {
         e.key !== "12" &&
         e.key !== "Backspace" &&
         e.key !== "Delete" &&
+        e.code !== "NumpadEnter" &&
         e.code !== "Enter"
       ) {
         // copy code from fake input to oryginal textarea
         codeTextarea.value = codeDiv.innerText;
-
+        console.log("e", e);
         // get caret position
         function getCaretIndex(element) {
           let position = 0;
@@ -135,6 +136,7 @@ const syntaxHighlight = () => {
         setCurrentCursorPosition(chars);
       } else if (
         e.code === "Enter" ||
+        e.code === "NumpadEnter" ||
         e.key === "Backspace" ||
         e.key === "Delete"
       ) {
