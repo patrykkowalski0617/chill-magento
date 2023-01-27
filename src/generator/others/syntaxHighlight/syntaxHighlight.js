@@ -33,7 +33,30 @@ const syntaxHighlight = () => {
         e.key !== "ArrowRight" &&
         e.key !== "ArrowUp" &&
         e.key !== "ArrowDown" &&
-        e.key !== "ArrowLeft" &&
+        e.key !== "CapsLock" &&
+        e.key !== "Fn" &&
+        e.key !== "NumLock" &&
+        e.key !== "End" &&
+        e.key !== "Home" &&
+        e.key !== "PageDown" &&
+        e.key !== "PageUp" &&
+        e.key !== "ContextMenu" &&
+        e.key !== "Escape" &&
+        e.key !== "PrintScreen" &&
+        e.key !== "F1" &&
+        e.key !== "F2" &&
+        e.key !== "F3" &&
+        e.key !== "F4" &&
+        e.key !== "F5" &&
+        e.key !== "F6" &&
+        e.key !== "F7" &&
+        e.key !== "F8" &&
+        e.key !== "F9" &&
+        e.key !== "F10" &&
+        e.key !== "11" &&
+        e.key !== "12" &&
+        e.key !== "Backspace" &&
+        e.key !== "Delete" &&
         e.code !== "Enter"
       ) {
         // copy code from fake input to oryginal textarea
@@ -110,7 +133,11 @@ const syntaxHighlight = () => {
         }
 
         setCurrentCursorPosition(chars);
-      } else if (e.code === "Enter") {
+      } else if (
+        e.code === "Enter" ||
+        e.key === "Backspace" ||
+        e.key === "Delete"
+      ) {
         // if Enter copy code from fake input to oryginal textarea only
         codeTextarea.value = codeDiv.innerText;
       }
