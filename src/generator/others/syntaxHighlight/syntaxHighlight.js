@@ -4,14 +4,14 @@ import { w3CodeColor } from "./variables";
 const syntaxHighlight = () => {
   let keyIsDown = false;
   const codeTextareas = document.querySelectorAll(
-    `textarea[id^=html_content_], 
-    [id^=html_product_block_], 
-    [id^=terms_and_condition_content_],
-    [id^=terms_and_condition_extended_terms_content_]`
+    `textarea[id^=html_content_]:not(.fake-input-is-ready),
+    [id^=html_product_block_]:not(.fake-input-is-ready),
+    [id^=terms_and_condition_content_]:not(.fake-input-is-ready),
+    [id^=terms_and_condition_extended_terms_content_]:not(.fake-input-is-ready)`
   );
   codeTextareas.forEach((codeTextarea) => {
     // hide oryginal inputs
-    codeTextarea.style.display = "none";
+    codeTextarea.classList.add("fake-input-is-ready");
 
     // create fake input
     const codeDiv = document.createElement("div");
@@ -62,7 +62,7 @@ const syntaxHighlight = () => {
       ) {
         // copy code from fake input to oryginal textarea
         codeTextarea.value = codeDiv.innerText;
-        console.log("e", e);
+
         // get caret position
         function getCaretIndex(element) {
           let position = 0;
