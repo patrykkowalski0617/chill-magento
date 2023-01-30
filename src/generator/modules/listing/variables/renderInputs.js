@@ -23,99 +23,97 @@ const renderInputs = (module) => {
           
           `
   );
+  const validation = (listValue) => {
+    const listValueArr = listValue.split(";").slice(1);
+    const gidsOnly = listValueArr.map((el) => el.slice(0, el.indexOf(",")));
+
+    const duplicates = () => {
+      return gidsOnly.length - Array.from(new Set(gidsOnly)).length;
+    };
+
+    const discountsEqOrLessThanZero = () => {
+      const gidsWithBugInDiscount = listValueArr
+        .map((el) => {
+          const arr = el.split(",");
+          return {
+            gid: arr[0],
+            discount: arr[2],
+          };
+        })
+        .filter((el) => {
+          return el.discount <= 0 && el.discount.length;
+        });
+
+      return gidsWithBugInDiscount.map((el) => el.gid);
+    };
+
+    const numberTypeInvalid = () => {
+      const rows = listValueArr.map((el) => {
+        return el.split(",");
+      });
+      const inputsThatRequireNumber = rows
+        .map((el) => el.filter((el, i) => i !== 5))
+        .flat();
+      const notNumValues = inputsThatRequireNumber.filter((el) => isNaN(el));
+      return notNumValues;
+    };
+
+    const noMinPrice = () => {
+      const gidsWithDiscountAndNoMinPrice = listValueArr
+        .map((el) => {
+          const arr = el.split(",");
+          return {
+            gid: arr[0],
+            discountPercent: arr[1],
+            discount: arr[2],
+            minPrice: arr[6],
+          };
+        })
+        .filter((el) => {
+          return el.discount.length || el.discountPercent.length
+            ? !el.minPrice.length
+            : false;
+        });
+
+      return gidsWithDiscountAndNoMinPrice.map((el) => el.gid);
+    };
+
+    const _duplicates = duplicates();
+    const _discountsEqOrLessThanZero = discountsEqOrLessThanZero();
+    const _numberTypeInvalid = numberTypeInvalid();
+    const _noMinPrice = noMinPrice();
+
+    console.log(
+      `
+Walidacja wklejanej listy:
+- zdublowane gidy: ${_duplicates}
+- nieprawidłowy rabat kwotowy dla gidów: ${
+        _discountsEqOrLessThanZero.length
+          ? _discountsEqOrLessThanZero.join(", ")
+          : "nie znaleziono"
+      }
+- wartości inne niż liczbowe w polach dla wartości liczbowych: ${
+        _numberTypeInvalid.length
+          ? _numberTypeInvalid.join(", ")
+          : "nie znaleziono"
+      }
+- gidy mające rabat kwotowy lub procentowy i nie posiadające ceny min: ${
+        _noMinPrice.length ? _noMinPrice.join(", ") : "nie znaleziono"
+      }
+`
+    );
+    return (
+      _duplicates === 0 &&
+      !_discountsEqOrLessThanZero.length &&
+      !_numberTypeInvalid.length &&
+      !_noMinPrice.length
+    );
+  };
   const newGids = () => {
     const customGidsInput = module.querySelector(".chill-gids-input.new-gids");
     customGidsInput.addEventListener("paste", (e) => {
       const newValue = formatExcel(e.clipboardData.getData("Text"));
 
-      const validation = (listValue) => {
-        const listValueArr = listValue.split(";").slice(1);
-        const gidsOnly = listValueArr.map((el) => el.slice(0, el.indexOf(",")));
-
-        const duplicates = () => {
-          return gidsOnly.length - Array.from(new Set(gidsOnly)).length;
-        };
-
-        const discountsEqOrLessThanZero = () => {
-          const gidsWithBugInDiscount = listValueArr
-            .map((el) => {
-              const arr = el.split(",");
-              return {
-                gid: arr[0],
-                discount: arr[2],
-              };
-            })
-            .filter((el) => {
-              return el.discount <= 0 && el.discount.length;
-            });
-
-          return gidsWithBugInDiscount.map((el) => el.gid);
-        };
-
-        const numberTypeInvalid = () => {
-          const rows = listValueArr.map((el) => {
-            return el.split(",");
-          });
-          const inputsThatRequireNumber = rows
-            .map((el) => el.filter((el, i) => i !== 5))
-            .flat();
-          const notNumValues = inputsThatRequireNumber.filter((el) =>
-            isNaN(el)
-          );
-          return notNumValues;
-        };
-
-        const noMinPrice = () => {
-          const gidsWithDiscountAndNoMinPrice = listValueArr
-            .map((el) => {
-              const arr = el.split(",");
-              return {
-                gid: arr[0],
-                discountPercent: arr[1],
-                discount: arr[2],
-                minPrice: arr[6],
-              };
-            })
-            .filter((el) => {
-              return el.discount.length || el.discountPercent.length
-                ? !el.minPrice.length
-                : false;
-            });
-
-          return gidsWithDiscountAndNoMinPrice.map((el) => el.gid);
-        };
-
-        const _duplicates = duplicates();
-        const _discountsEqOrLessThanZero = discountsEqOrLessThanZero();
-        const _numberTypeInvalid = numberTypeInvalid();
-        const _noMinPrice = noMinPrice();
-
-        console.log(
-          `
-Nowe gidy:
-- zdublowane gidy: ${_duplicates}
-- nieprawidłowy rabat kwotowy dla gidów: ${
-            _discountsEqOrLessThanZero.length
-              ? _discountsEqOrLessThanZero.join(", ")
-              : "nie znaleziono"
-          }
-- wartości inne niż liczbowe w polach dla wartości liczbowych: ${
-            _numberTypeInvalid.length
-              ? _numberTypeInvalid.join(", ")
-              : "nie znaleziono"
-          }
-- gidy mające rabat kwotowy lub procentowy i nie posiadające ceny min: ${
-            _noMinPrice.length ? _noMinPrice.join(", ") : "nie znaleziono"
-          }
-`
-        );
-        return (
-          _duplicates === 0 &&
-          !_discountsEqOrLessThanZero.length &&
-          !_numberTypeInvalid.length &&
-          !_noMinPrice.length
-        );
-      };
       const isBug = !validation(newValue);
       setTimeout(() => {
         gidsInput.value = newValue;
@@ -136,6 +134,9 @@ Nowe gidy:
     customGidsInput.addEventListener("paste", (e) => {
       const oldValue = String(gidsInput.value);
       const newValue = formatExcel(e.clipboardData.getData("Text"), true);
+      const newValueForValidation = formatExcel(
+        e.clipboardData.getData("Text")
+      );
 
       const alreadyOnList = newValue
         .split(";")
@@ -148,12 +149,15 @@ Nowe gidy:
         }] są już na lp i zostały dodane ponownie:  ${alreadyOnList.join(",")}`,
         { alreadyOnList }
       );
+      const isBug = !validation(newValueForValidation);
       setTimeout(() => {
         gidsInput.value = oldValue + ";" + newValue;
         clearTextAreaOnKey(
           customGidsInput,
-          `${alreadyOnList.length} doubli`,
-          alreadyOnList.length
+          isBug
+            ? `Błędy i ${alreadyOnList.length} doubli`
+            : `${alreadyOnList.length} doubli`,
+          alreadyOnList.length || isBug
         );
       }, 100);
     });
@@ -229,6 +233,8 @@ Nowe gidy:
         .filter((a) => !listArrOfObj.some((b) => b.gid.includes(a.gid)))
         .map((c) => c.gid);
 
+      const isBug = !validation(newList);
+
       console.log(
         `
 Gidy do aktualizacji:
@@ -244,8 +250,8 @@ Gidy do aktualizacji:
         gidsInput.value = newList;
         clearTextAreaOnKey(
           customGidsInput,
-          `${changedGids.length} zaktualizowanych`,
-          notFoundGids.length
+          isBug ? `Błędy na liście` : `${changedGids.length} zaktualizowanych`,
+          notFoundGids.length || isBug
         );
       }, 100);
     });
