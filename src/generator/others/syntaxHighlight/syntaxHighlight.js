@@ -25,7 +25,9 @@ const syntaxHighlight = () => {
     const hlt = (e) => {
       if (
         !e.shiftKey &&
-        (!e.ctrlKey || (e.code === "KeyZ" && e.ctrlKey)) &&
+        (!e.ctrlKey ||
+          (e.code === "KeyZ" && e.ctrlKey) ||
+          (e.code === "KeyV" && e.ctrlKey)) &&
         !e.altKey &&
         e.key !== "Shift" &&
         e.key !== "Control" &&
@@ -57,9 +59,14 @@ const syntaxHighlight = () => {
         e.key !== "12" &&
         e.key !== "Backspace" &&
         e.key !== "Delete" &&
-        e.code !== "NumpadEnter" &&
-        e.code !== "Enter"
+        e.code !== "Enter" &&
+        e.code !== "NumpadEnter"
       ) {
+        // manage paste event
+        if (e.type === "paste") {
+          const selection = window.getSelection();
+          selection.deleteFromDocument();
+        }
         // copy code from fake input to oryginal textarea
         codeTextarea.value = codeDiv.innerText;
 
@@ -140,7 +147,6 @@ const syntaxHighlight = () => {
         e.key === "Backspace" ||
         e.key === "Delete"
       ) {
-        // if Enter copy code from fake input to oryginal textarea only
         codeTextarea.value = codeDiv.innerText;
       }
     };
@@ -155,6 +161,10 @@ const syntaxHighlight = () => {
         codeDiv.innerText = oryginalCode;
         hlt(e);
       }
+    });
+    // manage paste event
+    codeDiv.addEventListener("paste", (e) => {
+      hlt(e);
     });
 
     w3CodeColor(codeDiv);

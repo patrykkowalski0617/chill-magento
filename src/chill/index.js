@@ -6,3 +6,5 @@ export { default as eventThrottle } from "./eventThrottle/eventThrottle";
 export { default as markInputs } from "./markInputs/markInputs";
 export { default as copyContent } from "./copyContent/copyContent";
 export { default as n24Colors } from "./n24Colors/n24Colors";
+export { default as errorFn } from "./errorFn/errorFn";
+export { default as endHeader } from "./endHeader/endHeader";

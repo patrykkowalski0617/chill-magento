@@ -12,14 +12,15 @@ const topBar = () => {
       (btn) => {
         document.querySelector(".btn_toggle-all").click();
         document.querySelectorAll(".module")[0].scrollIntoView();
-        btn.classList.toggle("change-module-order-alter-txt");
-        document
-          .querySelector(".chill-generator-synopsis")
-          .classList.toggle("hidden");
-        document.querySelectorAll(".module__bar").forEach((el) => {
-          el.classList.toggle("block-collapse");
-          el.querySelector(".btn_toggle").classList.toggle("hidden");
-        });
+        // btn.classList.toggle("change-module-order-alter-txt");
+        // document
+        //   .querySelector(".chill-generator-synopsis")
+        //   .classList.toggle("hidden");
+        document.body.classList.toggle("module-order-change-mode");
+        // document.querySelectorAll(".module__bar").forEach((el) => {
+        //   el.classList.toggle("block-collapse");
+        //   el.querySelector(".btn_toggle").classList.toggle("hidden");
+        // });
       },
     ],
     [

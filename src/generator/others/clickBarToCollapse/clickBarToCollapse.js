@@ -6,6 +6,7 @@ const clickBarToCollapse = () => {
         e.preventDefault();
         if (!el.classList.contains("block-collapse")) {
           el.querySelector(".btn_toggle").click();
+          document.body.classList.remove("module-order-change-mode");
         }
       });
     }

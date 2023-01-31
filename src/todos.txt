@@ -1,5 +1,0 @@
-- standardize file structure
-- instruction / doc
-- titles for chill btns
-- copy for every input and txt area
-- support for n24

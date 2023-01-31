@@ -57,6 +57,15 @@
     box-shadow: $base-color-mark -7px 0px 16px inset;
   }
 }
+.module-order-change-mode .chill-generator-synopsis-btn.synopsis-btn-mark {
+  background-color: $base-color !important;
+  &:hover {
+    background-color: $base-color-mark !important;
+  }
+  &::after {
+    box-shadow: none;
+  }
+}
 html {
   scroll-padding-top: 27px;
 }

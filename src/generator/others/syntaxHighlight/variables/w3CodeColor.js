@@ -388,6 +388,7 @@ const w3CodeColor = function (elmnt, mode) {
         rest = rest.substr(mypos[1]);
       }
     }
+
     rest = done + rest;
     for (i = 0; i < esc.length; i++) {
       rest = rest.replace("W3JSESCAPE", esc[i]);
@@ -620,8 +621,5 @@ const w3CodeColor = function (elmnt, mode) {
     return [-1, -1, func];
   }
 };
-// const x = document.querySelector(".chill-syntax-hl-container");
-
-// w3CodeColor(x);
 
 export default w3CodeColor;
