@@ -164,7 +164,8 @@ const syntaxHighlight = () => {
     });
     // manage paste event
     codeDiv.addEventListener("paste", (e) => {
-      hlt(e);
+      // hlt(e);
+      codeTextarea.value = codeDiv.innerText;
     });
 
     w3CodeColor(codeDiv);
