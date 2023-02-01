@@ -25,7 +25,6 @@ const syntaxHighlight = () => {
     // highlight function
     const hlt = (e) => {
       if (
-        codeDiv.innerText.length < inputMaxLength &&
         !e.shiftKey &&
         (!e.ctrlKey ||
           (e.code === "KeyZ" && e.ctrlKey) ||
@@ -71,78 +70,79 @@ const syntaxHighlight = () => {
         }
         // copy code from fake input to oryginal textarea
         codeTextarea.value = codeDiv.innerText;
-
-        // get caret position
-        function getCaretIndex(element) {
-          let position = 0;
-          const isSupported = typeof window.getSelection !== "undefined";
-          if (isSupported) {
-            const selection = window.getSelection();
-            if (selection.rangeCount !== 0) {
-              const range = window.getSelection().getRangeAt(0);
-              const preCaretRange = range.cloneRange();
-              preCaretRange.selectNodeContents(element);
-              preCaretRange.setEnd(range.endContainer, range.endOffset);
-              position = preCaretRange.toString().length;
-            }
-          }
-          return position;
-        }
-        const chars = getCaretIndex(codeDiv);
-
-        // copy code from oryginal textarea to fake input
-        codeDiv.innerText = codeTextarea.value;
-
-        // highlight syntax
-        w3CodeColor(codeDiv);
-
-        // focus fake input
-        codeDiv.focus();
-
-        // set caret
-        function createRange(node, chars, range) {
-          range = document.createRange();
-
-          range.selectNode(node);
-          range.setStart(node, 0);
-
-          if (chars.count === 0) {
-            range.setEnd(node, chars.count);
-          } else if (node && chars.count > 0) {
-            if (node.nodeType === Node.TEXT_NODE) {
-              if (node.textContent.length < chars.count) {
-                chars.count -= node.textContent.length;
-              } else {
-                range.setEnd(node, chars.count);
-                chars.count = 0;
+        if (codeDiv.innerText.length < inputMaxLength) {
+          // get caret position
+          function getCaretIndex(element) {
+            let position = 0;
+            const isSupported = typeof window.getSelection !== "undefined";
+            if (isSupported) {
+              const selection = window.getSelection();
+              if (selection.rangeCount !== 0) {
+                const range = window.getSelection().getRangeAt(0);
+                const preCaretRange = range.cloneRange();
+                preCaretRange.selectNodeContents(element);
+                preCaretRange.setEnd(range.endContainer, range.endOffset);
+                position = preCaretRange.toString().length;
               }
-            } else {
-              for (var lp = 0; lp < node.childNodes.length; lp++) {
-                range = createRange(node.childNodes[lp], chars, range);
+            }
+            return position;
+          }
+          const chars = getCaretIndex(codeDiv);
 
-                if (chars.count === 0) {
-                  break;
+          // copy code from oryginal textarea to fake input
+          codeDiv.innerText = codeTextarea.value;
+
+          // highlight syntax
+          w3CodeColor(codeDiv);
+
+          // focus fake input
+          codeDiv.focus();
+
+          // set caret
+          function createRange(node, chars, range) {
+            range = document.createRange();
+
+            range.selectNode(node);
+            range.setStart(node, 0);
+
+            if (chars.count === 0) {
+              range.setEnd(node, chars.count);
+            } else if (node && chars.count > 0) {
+              if (node.nodeType === Node.TEXT_NODE) {
+                if (node.textContent.length < chars.count) {
+                  chars.count -= node.textContent.length;
+                } else {
+                  range.setEnd(node, chars.count);
+                  chars.count = 0;
+                }
+              } else {
+                for (var lp = 0; lp < node.childNodes.length; lp++) {
+                  range = createRange(node.childNodes[lp], chars, range);
+
+                  if (chars.count === 0) {
+                    break;
+                  }
                 }
               }
             }
+
+            return range;
           }
 
-          return range;
+          function setCurrentCursorPosition(chars) {
+            var selection = window.getSelection();
+
+            var range = createRange(codeDiv, {
+              count: chars,
+            });
+
+            range.collapse(false);
+            selection.removeAllRanges();
+            selection.addRange(range);
+          }
+
+          setCurrentCursorPosition(chars);
         }
-
-        function setCurrentCursorPosition(chars) {
-          var selection = window.getSelection();
-
-          var range = createRange(codeDiv, {
-            count: chars,
-          });
-
-          range.collapse(false);
-          selection.removeAllRanges();
-          selection.addRange(range);
-        }
-
-        setCurrentCursorPosition(chars);
       } else if (
         e.code === "Enter" ||
         e.code === "NumpadEnter" ||
@@ -166,7 +166,6 @@ const syntaxHighlight = () => {
     });
     // manage paste event
     codeDiv.addEventListener("paste", (e) => {
-      // hlt(e);
       codeTextarea.value = codeDiv.innerText;
     });
     if (codeDiv.innerText.length < inputMaxLength) {
