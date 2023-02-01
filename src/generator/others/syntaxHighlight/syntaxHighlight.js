@@ -12,7 +12,7 @@ const syntaxHighlight = () => {
   );
   codeTextareas.forEach((codeTextarea) => {
     // hide oryginal inputs
-    codeTextarea.classList.add("fake-input-is-ready");
+    // codeTextarea.classList.add("fake-input-is-ready");
 
     // create fake input
     const codeDiv = document.createElement("div");
@@ -30,9 +30,7 @@ const syntaxHighlight = () => {
           (e.code === "KeyZ" && e.ctrlKey) ||
           (e.code === "KeyV" && e.ctrlKey)) &&
         !e.altKey &&
-        e.key !== "Shift" &&
         e.key !== "Control" &&
-        e.key !== "Alt" &&
         e.key !== "ArrowRight" &&
         e.key !== "ArrowUp" &&
         e.key !== "ArrowDown" &&
