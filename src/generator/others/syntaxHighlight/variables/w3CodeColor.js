@@ -1,3 +1,5 @@
+import "./w3CodeColor.scss";
+
 // https://www.w3schools.com/howto/howto_syntax_highlight.asp
 
 const w3CodeColor = function (elmnt, mode) {
@@ -19,6 +21,7 @@ const w3CodeColor = function (elmnt, mode) {
   var jsstringcolor = "brown";
   var jsnumbercolor = "red";
   var jspropertycolor = "black";
+
   elmntObj.style.fontFamily = "Consolas,'Courier New', monospace";
   if (!lang) {
     lang = "html";

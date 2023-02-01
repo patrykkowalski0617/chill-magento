@@ -3,6 +3,7 @@ import { w3CodeColor } from "./variables";
 
 const syntaxHighlight = () => {
   let keyIsDown = false;
+  const inputMaxLength = 40000;
   const codeTextareas = document.querySelectorAll(
     `textarea[id^=html_content_]:not(.fake-input-is-ready),
     [id^=html_product_block_]:not(.fake-input-is-ready),
@@ -24,6 +25,7 @@ const syntaxHighlight = () => {
     // highlight function
     const hlt = (e) => {
       if (
+        codeDiv.innerText.length < inputMaxLength &&
         !e.shiftKey &&
         (!e.ctrlKey ||
           (e.code === "KeyZ" && e.ctrlKey) ||
@@ -167,8 +169,9 @@ const syntaxHighlight = () => {
       // hlt(e);
       codeTextarea.value = codeDiv.innerText;
     });
-
-    w3CodeColor(codeDiv);
+    if (codeDiv.innerText.length < inputMaxLength) {
+      w3CodeColor(codeDiv);
+    }
   });
 };
 export default syntaxHighlight;

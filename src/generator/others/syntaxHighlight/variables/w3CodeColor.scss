@@ -1,0 +1,21 @@
+@import "../../../../chill/variables.scss";
+
+.chill-syntax-hl-container {
+  background-color: #190025;
+  color: rgb(243, 172, 154);
+  [style*="mediumblue"] {
+    color: rgb(223, 255, 93) !important;
+  }
+  [style*="brown"] {
+    color: #00be8f !important;
+  }
+  [style*="green"] {
+    color: rgb(0, 190, 0) !important;
+  }
+  [style*="red"] {
+    color: #68ffd9 !important;
+  }
+  [style*="black"] {
+    color: rgb(157, 233, 218) !important;
+  }
+}
