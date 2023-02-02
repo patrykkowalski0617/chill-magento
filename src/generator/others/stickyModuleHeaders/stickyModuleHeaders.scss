@@ -3,7 +3,7 @@
   .module__content {
     border: 2px solid #ddd;
   }
-  &.sticky {
+  &.sticky:not(.sortable-chosen) {
     .module__content.module__form {
       padding-bottom: 70px;
     }
@@ -51,6 +51,7 @@
     }
   }
 }
+
 .chill-generator-synopsis-btn.synopsis-btn-mark {
   background-color: $base-color-mark !important;
   &::after {
