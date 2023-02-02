@@ -24,7 +24,7 @@ const topBar = () => {
       },
     ],
     [
-      "Kolorowa skłania: nie",
+      "Kolorowa skłania: -",
       () => {
         let syntaxMode = JSON.parse(
           localStorage.getItem("magentoChill_syntaxMode")

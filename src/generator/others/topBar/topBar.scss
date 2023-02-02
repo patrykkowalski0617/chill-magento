@@ -41,6 +41,31 @@
     display: none;
   }
 }
+[class*="chill-syntax-highlight"] {
+  .page-actions-buttons .chill-btn-container {
+    & > :nth-child(2) {
+      font-size: 0;
+      &::before {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+.chill-syntax-highlight-0 {
+  .chill-syntax-hl-container {
+    display: none;
+  }
+  .oryginal-code-input {
+    display: block;
+  }
+  .page-actions-buttons .chill-btn-container {
+    & > :nth-child(2) {
+      &::before {
+        content: "Kolorowa skłania: nie";
+      }
+    }
+  }
+}
 .chill-syntax-highlight-1 {
   .chill-syntax-hl-container {
     display: block;
@@ -50,10 +75,8 @@
   }
   .page-actions-buttons .chill-btn-container {
     & > :nth-child(2) {
-      font-size: 0;
       &::before {
         content: "Kolorowa skłania: tak";
-        font-size: 1.6rem;
       }
     }
   }
@@ -67,10 +90,8 @@
   }
   .page-actions-buttons .chill-btn-container {
     & > :nth-child(2) {
-      font-size: 0;
       &::before {
         content: "Kolorowa skłania: obie";
-        font-size: 1.6rem;
       }
     }
   }
