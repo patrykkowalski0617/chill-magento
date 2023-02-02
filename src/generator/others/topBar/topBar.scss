@@ -13,8 +13,10 @@
     display: none;
   }
   .page-main-actions .page-actions._fixed .page-actions-inner::before {
-    font-size: 1.8rem;
-    max-width: 30%;
+    font-size: 1.6rem;
+    max-width: 23%;
+    position: relative;
+    top: 8px;
   }
   #lpModules {
     margin-bottom: 0;
@@ -37,5 +39,39 @@
 .chill-generator-synopsis {
   &.hidden {
     display: none;
+  }
+}
+.chill-syntax-highlight-1 {
+  .chill-syntax-hl-container {
+    display: block;
+  }
+  .oryginal-code-input {
+    display: none;
+  }
+  .page-actions-buttons .chill-btn-container {
+    & > :nth-child(2) {
+      font-size: 0;
+      &::before {
+        content: "Kolorowa skłania: tak";
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+.chill-syntax-highlight-2 {
+  .chill-syntax-hl-container {
+    display: block;
+  }
+  .oryginal-code-input {
+    display: block;
+  }
+  .page-actions-buttons .chill-btn-container {
+    & > :nth-child(2) {
+      font-size: 0;
+      &::before {
+        content: "Kolorowa skłania: obie";
+        font-size: 1.6rem;
+      }
+    }
   }
 }

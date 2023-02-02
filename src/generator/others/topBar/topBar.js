@@ -24,6 +24,24 @@ const topBar = () => {
       },
     ],
     [
+      "Kolorowa skłania: nie",
+      () => {
+        let syntaxMode = JSON.parse(
+          localStorage.getItem("magentoChill_syntaxMode")
+        );
+
+        document.body.classList.remove(`chill-syntax-highlight-${syntaxMode}`);
+        if (syntaxMode < 2) {
+          syntaxMode++;
+        } else {
+          syntaxMode = 0;
+        }
+        document.body.classList.add(`chill-syntax-highlight-${syntaxMode}`);
+        localStorage.setItem("magentoChill_syntaxMode", syntaxMode);
+      },
+    ],
+
+    [
       "Dodaj moduł",
       () => {
         setTimeout(() => {

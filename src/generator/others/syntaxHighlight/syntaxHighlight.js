@@ -2,17 +2,25 @@ import "./syntaxHighlight.scss";
 import { w3CodeColor } from "./variables";
 
 const syntaxHighlight = () => {
+  let syntaxMode = JSON.parse(localStorage.getItem("magentoChill_syntaxMode"));
+  if (!syntaxMode) {
+    syntaxMode = 0;
+    localStorage.setItem("magentoChill_syntaxMode", syntaxMode);
+  }
+
+  document.body.classList.add(`chill-syntax-highlight-${syntaxMode}`);
+
   let keyIsDown = false;
   const inputMaxLength = 40000;
   const codeTextareas = document.querySelectorAll(
-    `textarea[id^=html_content_]:not(.fake-input-is-ready),
-    [id^=html_product_block_]:not(.fake-input-is-ready),
-    [id^=terms_and_condition_content_]:not(.fake-input-is-ready),
-    [id^=terms_and_condition_extended_terms_content_]:not(.fake-input-is-ready)`
+    `textarea[id^=html_content_]:not(.oryginal-code-input),
+    [id^=html_product_block_]:not(.oryginal-code-input),
+    [id^=terms_and_condition_content_]:not(.oryginal-code-input),
+    [id^=terms_and_condition_extended_terms_content_]:not(.oryginal-code-input)`
   );
   codeTextareas.forEach((codeTextarea) => {
-    // hide oryginal inputs
-    // codeTextarea.classList.add("fake-input-is-ready");
+    // mark oryginal inputs
+    codeTextarea.classList.add("oryginal-code-input");
 
     // create fake input
     const codeDiv = document.createElement("div");
