@@ -270,6 +270,7 @@ const w3CodeColor = function (elmnt, mode) {
         if (rest.substring(e - 5, e + 1) == "&nbsp;") {
           loop = true;
           n = e + 1;
+          console.log("n", n);
         }
       }
       if (e == -1) {

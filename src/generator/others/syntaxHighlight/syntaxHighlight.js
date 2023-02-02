@@ -11,13 +11,19 @@ const syntaxHighlight = () => {
   document.body.classList.add(`chill-syntax-highlight-${syntaxMode}`);
 
   let keyIsDown = false;
-  const inputMaxLength = 40000;
+  const inputMaxLength = 20000;
   const codeTextareas = document.querySelectorAll(
     `textarea[id^=html_content_]:not(.oryginal-code-input),
     [id^=html_product_block_]:not(.oryginal-code-input),
     [id^=terms_and_condition_content_]:not(.oryginal-code-input),
     [id^=terms_and_condition_extended_terms_content_]:not(.oryginal-code-input)`
   );
+
+  function replaceNbsps(str) {
+    var re = new RegExp(String.fromCharCode(160), "g");
+    return str.replaceAll(re, " ");
+  }
+
   codeTextareas.forEach((codeTextarea) => {
     // mark oryginal inputs
     codeTextarea.classList.add("oryginal-code-input");
@@ -75,7 +81,7 @@ const syntaxHighlight = () => {
           selection.deleteFromDocument();
         }
         // copy code from fake input to oryginal textarea
-        codeTextarea.value = codeDiv.innerText;
+        codeTextarea.value = replaceNbsps(codeDiv.innerText);
         if (codeDiv.innerText.length < inputMaxLength) {
           // get caret position
           function getCaretIndex(element) {
@@ -155,7 +161,7 @@ const syntaxHighlight = () => {
         e.key === "Backspace" ||
         e.key === "Delete"
       ) {
-        codeTextarea.value = codeDiv.innerText;
+        codeTextarea.value = replaceNbsps(codeDiv.innerText);
       }
     };
     codeDiv.addEventListener("keyup", (e) => {
@@ -172,7 +178,7 @@ const syntaxHighlight = () => {
     });
     // manage paste event
     codeDiv.addEventListener("paste", (e) => {
-      codeTextarea.value = codeDiv.innerText;
+      codeTextarea.value = replaceNbsps(codeDiv.innerText);
     });
     if (codeDiv.innerText.length < inputMaxLength) {
       w3CodeColor(codeDiv);
