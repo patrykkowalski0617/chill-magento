@@ -13,25 +13,86 @@
     display: none;
   }
   .page-main-actions .page-actions._fixed .page-actions-inner::before {
-    font-size: 1.8rem;
-    max-width: 30%;
+    font-size: 1.6rem;
+    max-width: 23%;
+    position: relative;
+    top: 8px;
   }
   #lpModules {
     margin-bottom: 0;
   }
 }
-.page-actions-buttons .chill-btn-container {
-  .change-module-order-alter-txt {
-    font-size: 0;
-    &::before {
-      content: "Wróć do widoku edycji modułów";
-      font-size: 1.6rem;
+.module-order-change-mode {
+  .page-actions-buttons .chill-btn-container {
+    & > :first-child {
+      // .change-module-order-alter-txt {
+      font-size: 0;
+      &::before {
+        content: "Wróć do widoku edycji modułów";
+        font-size: 1.6rem;
+      }
     }
   }
 }
+
 .btn_toggle,
 .chill-generator-synopsis {
   &.hidden {
     display: none;
+  }
+}
+[class*="chill-syntax-highlight"] {
+  .page-actions-buttons .chill-btn-container {
+    & > :nth-child(2) {
+      font-size: 0;
+      &::before {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+.chill-syntax-highlight-0 {
+  .chill-syntax-hl-container {
+    display: none;
+  }
+  .oryginal-code-input {
+    display: block;
+  }
+  .page-actions-buttons .chill-btn-container {
+    & > :nth-child(2) {
+      &::before {
+        content: "Kolorowa skłania: nie";
+      }
+    }
+  }
+}
+.chill-syntax-highlight-1 {
+  .chill-syntax-hl-container {
+    display: block;
+  }
+  .oryginal-code-input {
+    display: none;
+  }
+  .page-actions-buttons .chill-btn-container {
+    & > :nth-child(2) {
+      &::before {
+        content: "Kolorowa skłania: tak";
+      }
+    }
+  }
+}
+.chill-syntax-highlight-2 {
+  .chill-syntax-hl-container {
+    display: block;
+  }
+  .oryginal-code-input {
+    display: block;
+  }
+  .page-actions-buttons .chill-btn-container {
+    & > :nth-child(2) {
+      &::before {
+        content: "Kolorowa skłania: tester";
+      }
+    }
   }
 }

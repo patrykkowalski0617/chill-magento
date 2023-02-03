@@ -12,16 +12,35 @@ const topBar = () => {
       (btn) => {
         document.querySelector(".btn_toggle-all").click();
         document.querySelectorAll(".module")[0].scrollIntoView();
-        btn.classList.toggle("change-module-order-alter-txt");
-        document
-          .querySelector(".chill-generator-synopsis")
-          .classList.toggle("hidden");
-        document.querySelectorAll(".module__bar").forEach((el) => {
-          el.classList.toggle("block-collapse");
-          el.querySelector(".btn_toggle").classList.toggle("hidden");
-        });
+        // btn.classList.toggle("change-module-order-alter-txt");
+        // document
+        //   .querySelector(".chill-generator-synopsis")
+        //   .classList.toggle("hidden");
+        document.body.classList.toggle("module-order-change-mode");
+        // document.querySelectorAll(".module__bar").forEach((el) => {
+        //   el.classList.toggle("block-collapse");
+        //   el.querySelector(".btn_toggle").classList.toggle("hidden");
+        // });
       },
     ],
+    [
+      "Kolorowa skłania: -",
+      () => {
+        let syntaxMode = JSON.parse(
+          localStorage.getItem("magentoChill_syntaxMode")
+        );
+
+        document.body.classList.remove(`chill-syntax-highlight-${syntaxMode}`);
+        if (syntaxMode < 2) {
+          syntaxMode++;
+        } else {
+          syntaxMode = 0;
+        }
+        document.body.classList.add(`chill-syntax-highlight-${syntaxMode}`);
+        localStorage.setItem("magentoChill_syntaxMode", syntaxMode);
+      },
+    ],
+
     [
       "Dodaj moduł",
       () => {

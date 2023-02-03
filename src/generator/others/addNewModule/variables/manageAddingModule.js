@@ -21,6 +21,7 @@ import {
   clickBarToCollapse,
   draggableModuleFix,
   stickyModuleHeaders,
+  syntaxHighlight,
 } from "../..";
 
 const addingModuleHandler = () => {
@@ -44,6 +45,7 @@ const addingModuleHandler = () => {
   clickBarToCollapse();
   draggableModuleFix();
   stickyModuleHeaders();
+  syntaxHighlight();
 
   switch (moduleName()) {
     case "module__products":

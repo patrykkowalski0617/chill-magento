@@ -3,7 +3,7 @@
   .module__content {
     border: 2px solid #ddd;
   }
-  &.sticky {
+  &.sticky:not(.sortable-chosen) {
     .module__content.module__form {
       padding-bottom: 70px;
     }
@@ -51,10 +51,20 @@
     }
   }
 }
+
 .chill-generator-synopsis-btn.synopsis-btn-mark {
   background-color: $base-color-mark !important;
   &::after {
     box-shadow: $base-color-mark -7px 0px 16px inset;
+  }
+}
+.module-order-change-mode .chill-generator-synopsis-btn.synopsis-btn-mark {
+  background-color: $base-color !important;
+  &:hover {
+    background-color: $base-color-mark !important;
+  }
+  &::after {
+    box-shadow: none;
   }
 }
 html {

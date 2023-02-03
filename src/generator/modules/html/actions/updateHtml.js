@@ -1,3 +1,4 @@
+import { w3CodeColor } from "../../../others/syntaxHighlight/variables";
 import { htmlSnippets } from "../variables";
 
 const updateContent = (htmlSnippet, module, begin = false) => {
@@ -61,6 +62,12 @@ const updateHtml = (action, module) => {
     default:
       break;
   }
+
+  // copy code to fake code input and highlight syntax
+  const codeDiv = module.querySelector(".chill-syntax-hl-container");
+  const codeTextarea = module.querySelector("textarea[id^=html_content_]");
+  codeDiv.innerText = codeTextarea.value;
+  w3CodeColor(codeDiv);
 };
 
 export default updateHtml;

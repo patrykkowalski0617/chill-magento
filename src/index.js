@@ -1,5 +1,5 @@
 import "./main.scss";
-import { onElementReady } from "./chill";
+import { endVars, onElementReady } from "./chill";
 import {
   sortLpList,
   openLpAndEditLp,
@@ -37,61 +37,67 @@ import {
   stickyModuleHeaders,
   mainLpCss,
   pgUpPgDown,
+  syntaxHighlight,
 } from "./generator/others";
 
-// others
-onElementReady(".data-row .action-menu", () => {
-  if (
-    document.querySelector(".page-title").innerText ===
-    "Zarządzaj Landig Page`ami"
-  ) {
-    sortLpList();
-    openLpAndEditLp();
-    copyTableCellContent();
-  }
+endVars(({ l51, l66, l62, l70, l94, l110, l111, l99, l102, l101, l53 }) => {
+  // others
+  onElementReady(l51, () => {
+    if (document.querySelector(l53).innerText === "Zarządzaj Landig Page`ami") {
+      sortLpList();
+      openLpAndEditLp();
+      copyTableCellContent();
+    }
+  });
+
+  onElementReady(l62, () => {
+    manageFilterURL();
+  });
+  generatorShortcut();
+  onElementReady(l66, markExectResult);
+  version();
+
+  // generator/modules
+  onElementReady(l70, () => {
+    setTimeout(
+      () => {
+        renderModuleHeaders();
+
+        const isN24 = isN24Fn();
+
+        listing({ isN24 });
+        listingNew({ isN24 });
+        filters({ isN24 });
+        menu({ isN24 });
+        html({ isN24 });
+        footer({ isN24 });
+        bannerHero({ isN24 });
+        banner({ isN24 });
+        htmlExtended({ isN24 });
+        tips({ isN24 });
+
+        renderModuleTitles();
+      },
+      // settimeout becouce in isN24 element .admin__control-select is undefined from time to time
+      100
+    );
+  });
+  onElementReady(l94, () => {
+    addNewModule();
+  });
+
+  // generator/others
+  onElementReady(l99, scrollToTopBtn);
+
+  onElementReady(l101, clickBarToCollapse);
+  onElementReady(l102, () => {
+    addAdjustedModule();
+    addSynopsis();
+    topBar();
+    stickyModuleHeaders();
+    draggableModuleFix();
+    pgUpPgDown();
+  });
+  onElementReady(l110, syntaxHighlight);
+  onElementReady(l111, mainLpCss);
 });
-
-onElementReady('[name="url"]', () => {
-  manageFilterURL();
-});
-generatorShortcut();
-onElementReady('[data-action="grid-filter-apply"]', markExectResult);
-version();
-
-// generator/modules
-onElementReady(".module__content", () => {
-  renderModuleHeaders();
-
-  const isN24 = isN24Fn();
-
-  listing({ isN24 });
-  listingNew({ isN24 });
-  filters({ isN24 });
-  menu({ isN24 });
-  html({ isN24 });
-  footer({ isN24 });
-  bannerHero({ isN24 });
-  banner({ isN24 });
-  htmlExtended({ isN24 });
-  tips({ isN24 });
-
-  renderModuleTitles();
-});
-onElementReady(".btn_add-module", () => {
-  addNewModule();
-});
-
-// generator/others
-onElementReady("#container", scrollToTopBtn);
-
-onElementReady(".module__bar", clickBarToCollapse);
-onElementReady(".module__content", () => {
-  addAdjustedModule();
-  addSynopsis();
-  topBar();
-  stickyModuleHeaders();
-  draggableModuleFix();
-  pgUpPgDown();
-});
-
-onElementReady(".admin__control-textarea[name=custom_css]", mainLpCss);
