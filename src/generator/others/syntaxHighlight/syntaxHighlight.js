@@ -8,8 +8,6 @@ const syntaxHighlight = () => {
     localStorage.setItem("magentoChill_syntaxMode", syntaxMode);
   }
 
-  document.body.classList.add(`chill-syntax-highlight-${syntaxMode}`);
-
   let keyIsDown = false;
   const inputMaxLength = 20000;
   const codeTextareas = document.querySelectorAll(
@@ -18,6 +16,10 @@ const syntaxHighlight = () => {
     [id^=terms_and_condition_content_]:not(.oryginal-code-input),
     [id^=terms_and_condition_extended_terms_content_]:not(.oryginal-code-input)`
   );
+  console.log("codeTextareas.length", codeTextareas);
+  if (codeTextareas.length) {
+    document.body.classList.add(`chill-syntax-highlight-${syntaxMode}`);
+  }
 
   function replaceNbsps(str) {
     var re = new RegExp(String.fromCharCode(160), "g");

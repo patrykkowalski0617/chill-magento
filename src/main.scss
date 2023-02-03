@@ -10,6 +10,13 @@ body {
       max-width: 90%;
     }
   }
+  .module {
+    .input__textarea_small,
+    [id^="terms_and_condition_content_"],
+    [id^="terms_and_condition_extended_terms_content_"] {
+      height: 150px;
+    }
+  }
   &.chill-is-working::before {
     content: "";
     position: fixed;
