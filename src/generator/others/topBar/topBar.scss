@@ -12,6 +12,10 @@
   #lpGenerator > :first-child {
     display: none;
   }
+  .page-main-actions._hidden .page-actions {
+    height: 52px;
+    overflow: auto;
+  }
   .page-main-actions .page-actions._fixed .page-actions-inner::before {
     font-size: 1.6rem;
     max-width: 23%;
