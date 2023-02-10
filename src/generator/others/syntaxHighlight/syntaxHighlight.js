@@ -8,9 +8,6 @@ const syntaxHighlight = () => {
     localStorage.setItem("magentoChill_syntaxMode", syntaxMode);
   }
 
-  document.body.classList.add(`chill-syntax-highlight-${syntaxMode}`);
-
-  let keyIsDown = false;
   const inputMaxLength = 20000;
   const codeTextareas = document.querySelectorAll(
     `textarea[id^=html_content_]:not(.oryginal-code-input),
@@ -18,6 +15,10 @@ const syntaxHighlight = () => {
     [id^=terms_and_condition_content_]:not(.oryginal-code-input),
     [id^=terms_and_condition_extended_terms_content_]:not(.oryginal-code-input)`
   );
+
+  if (codeTextareas.length) {
+    document.body.classList.add(`chill-syntax-highlight-${syntaxMode}`);
+  }
 
   function replaceNbsps(str) {
     var re = new RegExp(String.fromCharCode(160), "g");
@@ -33,12 +34,12 @@ const syntaxHighlight = () => {
     codeDiv.setAttribute("contenteditable", "true");
     codeDiv.classList.add("chill-syntax-hl-container");
     codeTextarea.parentElement.appendChild(codeDiv);
-    const oryginalCode = codeTextarea.value;
     codeDiv.innerText = codeTextarea.value;
 
     // highlight function
     const hlt = (e) => {
       if (
+        !(e.code === "KeyZ" && e.ctrlKey) &&
         !e.shiftKey &&
         (!e.ctrlKey ||
           (e.code === "KeyZ" && e.ctrlKey) ||
@@ -75,6 +76,7 @@ const syntaxHighlight = () => {
         e.code !== "Enter" &&
         e.code !== "NumpadEnter"
       ) {
+        console.log("hls");
         // manage paste event
         if (e.type === "paste") {
           const selection = window.getSelection();
@@ -161,21 +163,13 @@ const syntaxHighlight = () => {
         e.key === "Backspace" ||
         e.key === "Delete"
       ) {
+        console.log("hls 2");
         codeTextarea.value = replaceNbsps(codeDiv.innerText);
       }
     };
-    codeDiv.addEventListener("keyup", (e) => {
-      hlt(e);
-      keyIsDown = false;
-    });
-    // manage CTRL + Z
-    codeDiv.addEventListener("keydown", (e) => {
-      if (e.code === "KeyZ" && e.ctrlKey && !keyIsDown) {
-        keyIsDown = true;
-        codeDiv.innerText = oryginalCode;
-        hlt(e);
-      }
-    });
+
+    codeDiv.addEventListener("keyup", hlt);
+
     // manage paste event
     codeDiv.addEventListener("paste", (e) => {
       codeTextarea.value = replaceNbsps(codeDiv.innerText);
