@@ -10,7 +10,7 @@
   .action-menu {
     border: 3px solid $base-color;
   }
-  .hide-first-element-in-action-menu .data-row {
+  &.hide-first-element-in-action-menu .data-row {
     cursor: pointer;
     .action-menu > :first-child {
       display: none;
