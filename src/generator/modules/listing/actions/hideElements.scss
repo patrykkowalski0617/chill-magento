@@ -1,38 +1,40 @@
-.module__products:not(.listing-show-hidden-elements) {
-  form .cf {
-    > :nth-child(5),
-    > :nth-child(6),
-    > :nth-child(7),
-    > :nth-child(8),
-    > :nth-child(16),
-    > :nth-child(17),
-    > :nth-child(18),
-    > :nth-child(19),
-    > :nth-child(20),
-    > :nth-child(21),
-    > :nth-child(22),
-    > :nth-child(24),
-    > :nth-child(35),
-    > :nth-child(36),
-    > :nth-child(37),
-    > :nth-child(38),
-    > :nth-child(39),
-    > :nth-child(40) {
-      display: none !important;
+.chill-ch-loaded {
+  .module__products:not(.listing-show-hidden-elements) {
+    form .cf {
+      > :nth-child(5),
+      > :nth-child(6),
+      > :nth-child(7),
+      > :nth-child(8),
+      > :nth-child(16),
+      > :nth-child(17),
+      > :nth-child(18),
+      > :nth-child(19),
+      > :nth-child(20),
+      > :nth-child(21),
+      > :nth-child(22),
+      > :nth-child(24),
+      > :nth-child(35),
+      > :nth-child(36),
+      > :nth-child(37),
+      > :nth-child(38),
+      > :nth-child(39),
+      > :nth-child(40) {
+        display: none !important;
+      }
+    }
+    form .cf {
+      > :nth-child(34) {
+        width: 25% !important;
+      }
     }
   }
-  form .cf {
-    > :nth-child(34) {
-      width: 25% !important;
+  .module__products:not(.listing-show-hidden-elements)
+    .chill-btn-container
+    button:nth-child(6) {
+    font-size: 0;
+    &::before {
+      content: "Show Hidden Elements";
+      font-size: initial;
     }
-  }
-}
-.module__products:not(.listing-show-hidden-elements)
-  .chill-btn-container
-  button:nth-child(6) {
-  font-size: 0;
-  &::before {
-    content: "Show Hidden Elements";
-    font-size: initial;
   }
 }

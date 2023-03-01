@@ -1,9 +1,11 @@
-.chill-header-added {
-  .module__button_remove,
-  .module__button_save {
-    display: none;
+.chill-ch-loaded {
+  .chill-header-added {
+    .module__button_remove,
+    .module__button_save {
+      display: none;
+    }
   }
-}
-.delete-btn {
-  border-color: #ff00006f !important;
+  .delete-btn {
+    border-color: #ff00006f !important;
+  }
 }

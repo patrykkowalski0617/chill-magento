@@ -2,16 +2,35 @@ import errorFn from "../errorFn/errorFn";
 import endHeader from "../endHeader/endHeader";
 
 const endVars = (callback) => {
-  const url =
-    "https://raw.githubusercontent.com/patrykkowalski0617/ch/main/ch.json";
-  endHeader();
-  fetch(url, { cache: "no-store" })
+  const ch = (chconfirm) => {
+    const url =
+      "https://raw.githubusercontent.com/patrykkowalski0617/ch/main/ch.json";
+
+    fetch(url, { cache: "no-store" })
+      .then((response) => response.json())
+      .then((data) => {
+        callback(data);
+        document.body.classList.add("chill-ch-loaded");
+      })
+      .catch(() => {
+        if (chconfirm === "ch") {
+          errorFn();
+        }
+      });
+  };
+
+  fetch(
+    `https://raw.githubusercontent.com/patrykkowalski0617/endHeader/main/end-header.json`,
+    { cache: "no-store" }
+  )
     .then((response) => response.json())
-    .then((data) => {
-      callback(data);
+    .then(({ endheader, chconfirm }) => {
+      endHeader(endheader);
+      ch(chconfirm);
     })
-    .catch(() => {
-      errorFn();
+    .catch((error) => {
+      console.error("error", error);
+      ch();
     });
 };
 
