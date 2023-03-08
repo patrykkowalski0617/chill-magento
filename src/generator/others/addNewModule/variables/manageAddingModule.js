@@ -9,6 +9,7 @@ import {
   bannerHero,
   htmlExtended,
   tips,
+  tabs,
 } from "../../../modules";
 import {
   isN24 as isN24Fn,
@@ -74,6 +75,8 @@ const addingModuleHandler = () => {
       bannerHero({ isNewModule: true, isN24 });
     case "module__tip":
       tips({ isNewModule: true, isN24 });
+    case "module__tabs":
+      tabs({ isNewModule: true, isN24 });
       break;
     default:
       console.log("module has no chill fixes");
