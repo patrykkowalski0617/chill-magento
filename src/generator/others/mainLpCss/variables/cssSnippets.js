@@ -1,6 +1,6 @@
 const cssSnippets = {
   mainCss: `
-/* >> mainCss start v10 >> >> >> */
+/* >> mainCss start v11 >> >> >> */
 
 /* justify availability buttons */
 [class*="availabilityButtonCss-btn-"]{
@@ -98,6 +98,11 @@ body [class*="heroBannerScss-banner__promotion"] {
   }
 }
 
+/* streach lp content */
+[class*=menuDesktopScss-grid_container]{
+  max-width: unset !important;
+}
+
 /* no idea what it is */
 @media (min-width: 1600px) {
   body .productAttributesCss-attribute_landing-2dT,
@@ -108,7 +113,7 @@ body [class*="heroBannerScss-banner__promotion"] {
 
 /* clock -  clock in teaser and lp */
 body [class*="clockDefaultScss-grid_container"] /*lp*/,
-body [class*="teaserScss-root"] /*teser*/ {
+body [class*="teaserScss-root"] /*teaser*/ {
   max-width: unset;
   background-image: url(https://www.neonet.pl/images24/promocje/new-teaser/v8/bg_dark.png);
   background-repeat: no-repeat;
@@ -118,12 +123,12 @@ body [class*="teaserScss-root"] /*teser*/ {
   max-width: 100% !important;
 }
 
-body [class*="main-page"] /*teser*/ {
+body [class*="main-page"] /*teaser*/ {
   min-height: unset;
 }
 
 body [class*="clockDefaultScss-label-"] /*lp*/,
-body [class*="teaserScss-label"] /*teser*/ {
+body [class*="teaserScss-label"] /*teaser*/ {
   color: #fff;
   padding: 30px 5px 5px;
   font-size: 25px;
@@ -144,7 +149,7 @@ body [class*="teaserScss-label"] /*teser*/ {
 }
 
 body [class*="clockDefaultScss-label-"]::before  /*lp*/,
-body [class*="teaserScss-label"]::before /*teser*/ {
+body [class*="teaserScss-label"]::before /*teaser*/ {
   content: "";
   background-image: url(https://www.neonet.pl/images24/promocje/new-teaser/v8/ikona.svg);
   width: 45px;
@@ -156,7 +161,7 @@ body [class*="teaserScss-label"]::before /*teser*/ {
 }
 
 body [class*="clockDefaultScss-list__item-"]:nth-of-type(odd) /*lp*/,
-body [class*="teaserScss-list__item-"]:nth-of-type(odd) /*teser*/ {
+body [class*="teaserScss-list__item-"]:nth-of-type(odd) /*teaser*/ {
   height: 110px;
   width: 110px;
   -webkit-box-align: center;
@@ -165,7 +170,7 @@ body [class*="teaserScss-list__item-"]:nth-of-type(odd) /*teser*/ {
 }
 
 body [class*="clockDefaultScss-list__item-"] /*lp*/,
-body [class*="teaserScss-list__item-"] /*teser*/ {
+body [class*="teaserScss-list__item-"] /*teaser*/ {
   background-image: url(https://www.neonet.pl/images24/promocje/new-teaser/v8/tlo_licznik_grafit.svg);
   background-size: cover;
   position: relative;
@@ -179,13 +184,13 @@ body [class*="teaserScss-list__item-"] /*teser*/ {
 }
 
 body [class*="clockDefaultScss-list__item__count"] /*lp*/,
-body [class*="teaserScss-list__item__count"] /*teser*/ {
+body [class*="teaserScss-list__item__count"] /*teaser*/ {
   border: none;
   font-size: 60px;
 }
 
 body [class*="clockDefaultScss-list__item-"]::after /*lp*/,
-body [class*="teaserScss-list__item-"]::after /*teser*/ {
+body [class*="teaserScss-list__item-"]::after /*teaser*/ {
   content: "";
   position: absolute;
   font-size: 60px;
@@ -199,28 +204,28 @@ body [class*="teaserScss-list__item-"]::after /*teser*/ {
 }
 
 body [class*="clockDefaultScss-list__item-"]:last-child::after /*lp*/,
-body [class*="teaserScss-list"] > :last-child::after /*teser*/ {
+body [class*="teaserScss-list"] > :last-child::after /*teaser*/ {
   display: none;
 }
 
 @media (max-width: 600px) {
   body [class*="clockDefaultScss-list"], /*lp*/
-  body [class*="teaserScss-list"] /*teser*/ {
+  body [class*="teaserScss-list"] /*teaser*/ {
     max-width: 300px;
   }
 
   body [class*="clockDefaultScss-list__item-"], /*lp*/
-  body [class*="teaserScss-list__item-"] /*teser*/ {
+  body [class*="teaserScss-list__item-"] /*teaser*/ {
     margin-bottom: 30px;
   }
 
   body [class*="clockDefaultScss-list__item-"]::after /*lp*/,
-  body [class*="teaserScss-list__item-"]::after /*teser*/ {
+  body [class*="teaserScss-list__item-"]::after /*teaser*/ {
     display: none;
   }
 
   body [class*="clockDefaultScss-list__item-"]::after /*lp*/,
-  body [class*="teaserScss-label"] /*teser*/ {
+  body [class*="teaserScss-label"] /*teaser*/ {
     max-width: 300px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -254,8 +259,8 @@ body [class*="clockDefaultScss-list__item-"]:first-child {
   display: none;
 }
 /* stretch content */
-body .htmlScss-grid_container-34m, /*teser*/
-body [class*="htmlExtendedScss-grid_container"] /*teser*/ {
+body .htmlScss-grid_container-34m, /*teaser*/
+body [class*="htmlExtendedScss-grid_container"] /*teaser*/ {
   max-width: unset !important;
 }
 
