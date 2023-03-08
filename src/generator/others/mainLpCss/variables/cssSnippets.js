@@ -3,17 +3,17 @@ const cssSnippets = {
 /* >> mainCss start v11 >> >> >> */
 
 /* justify availability buttons */
-[class*="availabilityButtonCss-btn-"]{
+[class*=availabilityButtonCss-btn-]{
   width: unset;
 }
 /* fix style for step without img */
-[class^="promotionInfoScss-wrapper-"] > div [class^="promotionInfoScss-text"] {
+[class^="promotionInfoScss-wrapper-] > div [class^="promotionInfoScss-text] {
   padding-left: 97px;
 }
 @media (min-width: 1024px) {
-  [class^="promotionInfoScss-wrapper-"]
+  [class^="promotionInfoScss-wrapper-]
     > div
-    [class^="promotionInfoScss-text"] {
+    [class^="promotionInfoScss-text] {
     padding-left: 112px;
     font-size: 16px;
     line-height: 22px;
@@ -21,37 +21,37 @@ const cssSnippets = {
 }
 
 /* add "Sprawdź" before terms and condition link */
-body a[class*="termsAndConditionScss-link"]{
+body a[class*=termsAndConditionScss-link]{
     font-size: 0px;
 }
-body a[class*="termsAndConditionScss-link"]::before {
+body a[class*=termsAndConditionScss-link]::before {
   content: "Sprawdź ";  
   color: #383838;
   font-weight: lighter;
   cursor: default;
   font-size: 12px;
 }
-body a[class*="termsAndConditionScss-link"]::after {
+body a[class*=termsAndConditionScss-link]::after {
   content: "regulamin";  
   font-size: 12px;
 }
-body a[class*="termsAndConditionScss-link"]:hover {
+body a[class*=termsAndConditionScss-link]:hover {
     text-decoration: none;
 }
-body a[class*="termsAndConditionScss-link"]:hover::after {
+body a[class*=termsAndConditionScss-link]:hover::after {
   text-decoration: underline;
 }
 @media (min-width: 1024px) {
-  body a[class*="termsAndConditionScss-link"]::before {
+  body a[class*=termsAndConditionScss-link]::before {
     font-size: 14px;
   }
-  body a[class*="termsAndConditionScss-link"]::after {
+  body a[class*=termsAndConditionScss-link]::after {
     font-size: 14px;
   }
 }
 
 /* increase letter-spacing in tabs */
-body [class*="tabScss-root"] {
+body [class*=tabScss-root] {
     letter-spacing: 0.6px;
 }
 
@@ -82,12 +82,12 @@ body [class*="tabScss-root"] {
 }
 
 /* center buttons in benner hero */
-body [class*="heroBannerScss-banner__promotion"] {
+body [class*=heroBannerScss-banner__promotion] {
   justify-content: center;
 }
 /* uppercase for menu */
-.primaryItemDesktopCss-root-b1p,
-.secondaryItemDesktopCss-root-p6v {
+[class*=primaryItemDesktopCss-root],
+[class*=secondaryItemDesktopCss-root]{
   text-transform: uppercase;
 }
 
@@ -105,15 +105,15 @@ body [class*="heroBannerScss-banner__promotion"] {
 
 /* no idea what it is */
 @media (min-width: 1600px) {
-  body .productAttributesCss-attribute_landing-2dT,
+  body [class*=productAttributesCss-attribute_landing],
   body .dataSectionCss-attribute-Web {
     max-height: unset;
   }
 }
 
 /* clock -  clock in teaser and lp */
-body [class*="clockDefaultScss-grid_container"] /*lp*/,
-body [class*="teaserScss-root"] /*teaser*/ {
+body [class*=clockDefaultScss-grid_container] /*lp*/,
+body [class*=teaserScss-root] /*teaser*/ {
   max-width: unset;
   background-image: url(https://www.neonet.pl/images24/promocje/new-teaser/v8/bg_dark.png);
   background-repeat: no-repeat;
@@ -123,12 +123,12 @@ body [class*="teaserScss-root"] /*teaser*/ {
   max-width: 100% !important;
 }
 
-body [class*="main-page"] /*teaser*/ {
+body [class*=main-page] /*teaser*/ {
   min-height: unset;
 }
 
-body [class*="clockDefaultScss-label-"] /*lp*/,
-body [class*="teaserScss-label"] /*teaser*/ {
+body [class*=clockDefaultScss-label-] /*lp*/,
+body [class*=teaserScss-label] /*teaser*/ {
   color: #fff;
   padding: 30px 5px 5px;
   font-size: 25px;
@@ -148,8 +148,8 @@ body [class*="teaserScss-label"] /*teaser*/ {
   align-items: center;
 }
 
-body [class*="clockDefaultScss-label-"]::before  /*lp*/,
-body [class*="teaserScss-label"]::before /*teaser*/ {
+body [class*=clockDefaultScss-label-]::before  /*lp*/,
+body [class*=teaserScss-label]::before /*teaser*/ {
   content: "";
   background-image: url(https://www.neonet.pl/images24/promocje/new-teaser/v8/ikona.svg);
   width: 45px;
@@ -160,8 +160,8 @@ body [class*="teaserScss-label"]::before /*teaser*/ {
   margin: 0 15px 5px 0px;
 }
 
-body [class*="clockDefaultScss-list__item-"]:nth-of-type(odd) /*lp*/,
-body [class*="teaserScss-list__item-"]:nth-of-type(odd) /*teaser*/ {
+body [class*=clockDefaultScss-list__item-]:nth-of-type(odd) /*lp*/,
+body [class*=teaserScss-list__item-]:nth-of-type(odd) /*teaser*/ {
   height: 110px;
   width: 110px;
   -webkit-box-align: center;
@@ -169,8 +169,8 @@ body [class*="teaserScss-list__item-"]:nth-of-type(odd) /*teaser*/ {
   align-items: center;
 }
 
-body [class*="clockDefaultScss-list__item-"] /*lp*/,
-body [class*="teaserScss-list__item-"] /*teaser*/ {
+body [class*=clockDefaultScss-list__item-] /*lp*/,
+body [class*=teaserScss-list__item-] /*teaser*/ {
   background-image: url(https://www.neonet.pl/images24/promocje/new-teaser/v8/tlo_licznik_grafit.svg);
   background-size: cover;
   position: relative;
@@ -183,14 +183,14 @@ body [class*="teaserScss-list__item-"] /*teaser*/ {
   align-items: center;
 }
 
-body [class*="clockDefaultScss-list__item__count"] /*lp*/,
-body [class*="teaserScss-list__item__count"] /*teaser*/ {
+body [class*=clockDefaultScss-list__item__count] /*lp*/,
+body [class*=teaserScss-list__item__count] /*teaser*/ {
   border: none;
   font-size: 60px;
 }
 
-body [class*="clockDefaultScss-list__item-"]::after /*lp*/,
-body [class*="teaserScss-list__item-"]::after /*teaser*/ {
+body [class*=clockDefaultScss-list__item-]::after /*lp*/,
+body [class*=teaserScss-list__item-]::after /*teaser*/ {
   content: "";
   position: absolute;
   font-size: 60px;
@@ -203,29 +203,29 @@ body [class*="teaserScss-list__item-"]::after /*teaser*/ {
   background-position: center;
 }
 
-body [class*="clockDefaultScss-list__item-"]:last-child::after /*lp*/,
-body [class*="teaserScss-list"] > :last-child::after /*teaser*/ {
+body [class*=clockDefaultScss-list__item-]:last-child::after /*lp*/,
+body [class*=teaserScss-list] > :last-child::after /*teaser*/ {
   display: none;
 }
 
 @media (max-width: 600px) {
-  body [class*="clockDefaultScss-list"], /*lp*/
-  body [class*="teaserScss-list"] /*teaser*/ {
+  body [class*=clockDefaultScss-list], /*lp*/
+  body [class*=teaserScss-list] /*teaser*/ {
     max-width: 300px;
   }
 
-  body [class*="clockDefaultScss-list__item-"], /*lp*/
-  body [class*="teaserScss-list__item-"] /*teaser*/ {
+  body [class*=clockDefaultScss-list__item-], /*lp*/
+  body [class*=teaserScss-list__item-] /*teaser*/ {
     margin-bottom: 30px;
   }
 
-  body [class*="clockDefaultScss-list__item-"]::after /*lp*/,
-  body [class*="teaserScss-list__item-"]::after /*teaser*/ {
+  body [class*=clockDefaultScss-list__item-]::after /*lp*/,
+  body [class*=teaserScss-list__item-]::after /*teaser*/ {
     display: none;
   }
 
-  body [class*="clockDefaultScss-list__item-"]::after /*lp*/,
-  body [class*="teaserScss-label"] /*teaser*/ {
+  body [class*=clockDefaultScss-list__item-]::after /*lp*/,
+  body [class*=teaserScss-label] /*teaser*/ {
     max-width: 300px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -234,47 +234,47 @@ body [class*="teaserScss-list"] > :last-child::after /*teaser*/ {
     margin-bottom: 30px;
   }
 }
-body [class*="clockDefaultScss-list__item__count"] /*lp*/ {
+body [class*=clockDefaultScss-list__item__count] /*lp*/ {
   color: #fff;
   background-color: transparent;
   height: 60px;
   width: 70px;
 }
 
-body [class*="clockDefaultScss-label-"] /*lp*/ {
+body [class*=clockDefaultScss-label-] /*lp*/ {
   font-size: 0;
 }
-body [class*="clockDefaultScss-label-"]::after /*lp*/ {
+body [class*=clockDefaultScss-label-]::after /*lp*/ {
   font-size: 25px;
   content: "Do zakończenia zostało:";
 }
-body [class*="clockDefaultScss-label-"] /*lp*/ {
+body [class*=clockDefaultScss-label-] /*lp*/ {
   padding: 0;
 }
 
 /* hide days in clock and in clock in header */
 
-body [class*="promotionTimerScss-content-"] > :first-child,
-body [class*="clockDefaultScss-list__item-"]:first-child {
+body [class*=promotionTimerScss-content-] > :first-child,
+body [class*=clockDefaultScss-list__item-]:first-child {
   display: none;
 }
 /* stretch content */
-body .htmlScss-grid_container-34m, /*teaser*/
-body [class*="htmlExtendedScss-grid_container"] /*teaser*/ {
+body [class*=htmlScss-grid_container], /*teaser*/
+body [class*=htmlExtendedScss-grid_container] /*teaser*/ {
   max-width: unset !important;
 }
 
 /* center promo regulations button */
 body
-  [class*="footerScss-container"]
-  [class*="footerScss-buttonContainer"]:not([class*="footerScss-textcontent"]
-    + [class*="footerScss-buttonContainer"]),
+  [class*=footerScss-container]
+  [class*=footerScss-buttonContainer]:not([class*=footerScss-textcontent]
+    + [class*=footerScss-buttonContainer]),
 body
-  [class*="footerScss-container"]
-  [class*="footerScss-buttonContainer"]
-  [class*="footerScss-button"]:not([class*="footerScss-textcontent"]
-    + [class*="footerScss-buttonContainer"]
-    [class*="footerScss-button"]) {
+  [class*=footerScss-container]
+  [class*=footerScss-buttonContainer]
+  [class*=footerScss-button]:not([class*=footerScss-textcontent]
+    + [class*=footerScss-buttonContainer]
+    [class*=footerScss-button]) {
   margin: auto;
 }
 
@@ -301,25 +301,25 @@ body
   `,
   hideNumbersInSideTips: `
 /* >> Hide numbers in side tips v1 >> >> >> */
-body [class*="promotionInfoScss-number"] {
+body [class*=promotionInfoScss-number] {
   display: none;
 }
 /* << << << Hide numbers in side tips end << */
 `,
   payback: `
 /* >> payback start v1 >> >> >> */
-[class*="savingsScss-discount__label"] {
+[class*=savingsScss-discount__label] {
   font-size: 0;
 }
-[class*="savingsScss-discount__label"]::after {
+[class*=savingsScss-discount__label]::after {
   content: "Punkty payback: ";
   font-size: 13px;
 }
 
-[class*="savingsScss-discount__value"] {
+[class*=savingsScss-discount__value] {
   position: relative;
 }
-[class*="savingsScss-discount__value"]::after {
+[class*=savingsScss-discount__value]::after {
   content: "";
   background: #fff;
   position: absolute;
@@ -332,24 +332,24 @@ body [class*="promotionInfoScss-number"] {
   `,
   greenApla: `
 /* >> greenApla start v1 >> >> >> */
-.savingsScss-discount__label-2nU,
-.savingsScss-discount__value-1UE {
+[class*=savingsScss-discount__label-],
+[class*=savingsScss-discount__value-]{
   background: rgb(150, 245, 59);
   padding: 3px 5px;
   font-weight: bold;
   margin-top: -3px;
 }
 
-.savingsScss-discount__label-2nU {
+[class*=savingsScss-discount__label] {
   margin-right: 0px;
 }
 /* << << << greenApla end << */
   `,
   bannerColor: `
 /* >> bannerColor start v1 >> >> >> */
-[class*="promotionTimerScss-title"],
-[class*="promotionCodeScss-title"],
-[class*="promotionBtnScss-cta-3wx"]{
+[class*=promotionTimerScss-title],
+[class*=promotionCodeScss-title],
+[class*=promotionBtnScss-cta-3wx]{
     color: #96f53b;
     border-color: #96f53b;
 }
