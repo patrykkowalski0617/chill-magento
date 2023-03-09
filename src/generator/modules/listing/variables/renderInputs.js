@@ -1,4 +1,9 @@
-import { clearTextAreaOnKey, formatExcel, excelHeaders } from "./";
+import {
+  clearTextAreaOnKey,
+  formatExcel,
+  excelHeaders,
+  minNumOfGidsForSorting,
+} from "./";
 import "./renderInputs.scss";
 const renderInputs = (module) => {
   const gidsInput = module.querySelector("textarea");
@@ -23,6 +28,27 @@ const renderInputs = (module) => {
           
           `
   );
+  const manageSorting = () => {
+    setTimeout(() => {
+      const numOfGids = gidsInput.value.split(";").length - 1;
+      const sortingInputVal = module.querySelector(
+        "[id^=products_sorting_]"
+      ).checked;
+      const sortingLabel = module.querySelector("[for^=products_sorting_]");
+      const templateSelectVal = module.querySelector(
+        "[id^=products_template_]"
+      ).value;
+      if (numOfGids <= minNumOfGidsForSorting && sortingInputVal) {
+        sortingLabel.click();
+      } else if (
+        numOfGids > minNumOfGidsForSorting &&
+        !sortingInputVal &&
+        templateSelectVal !== "slider"
+      ) {
+        sortingLabel.click();
+      }
+    }, 500);
+  };
   const validation = (listValue) => {
     const listValueArr = listValue.split(";").slice(1);
     const gidsOnly = listValueArr.map((el) => el.slice(0, el.indexOf(",")));
@@ -122,6 +148,7 @@ Walidacja wklejanej listy:
           isBug ? "Błędy na liście" : "Nie znaleziono błędów",
           isBug
         );
+        manageSorting();
       }, 100);
     });
   };
@@ -160,6 +187,7 @@ Walidacja wklejanej listy:
           alreadyOnList.length || isBug
         );
       }, 100);
+      manageSorting();
     });
   };
   addGids();
@@ -313,6 +341,7 @@ Gidy do usunięcia:
           `usunięto ${deletedGids.length} z ${gidsToDelete.length}`,
           notFoundGids.length
         );
+        manageSorting();
       }, 100);
     });
   };
