@@ -26,14 +26,6 @@ const topBar = () => {
       },
     ],
     [
-      "Zapisz moduły",
-      () => {
-        document
-          .querySelectorAll(".module .module__button_save")
-          .forEach((el) => el.click());
-      },
-    ],
-    [
       "Zapisz LP",
       () => {
         document.querySelector('button[data-index="save"]').click();
@@ -61,6 +53,14 @@ const topBar = () => {
       "Podgląd",
       () => {
         oryginalBtnPreview.click();
+      },
+    ],
+    [
+      "Zapisz moduły",
+      () => {
+        document
+          .querySelectorAll(".module .module__button_save")
+          .forEach((el) => el.click());
       },
     ],
     [

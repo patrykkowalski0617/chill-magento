@@ -11,10 +11,10 @@ const renderModuleTitles = (providedModule) => {
         module
           .querySelector(".chill-btn-container")
           .insertAdjacentHTML(
-            "afterbegin",
+            "beforebegin",
             `<span class="module__title"></span>`
           );
-        module.querySelector(".chill-btn-container .module__title").innerHTML =
+        module.querySelector(".module__form .module__title").innerHTML =
           modulOryginalTitle;
       } else {
         chillHeaderModuleTitle.innerHTML = modulOryginalTitle;

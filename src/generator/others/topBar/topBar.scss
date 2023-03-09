@@ -1,7 +1,7 @@
 .chill-ch-loaded {
   &.top-bar-added {
     .page-main-actions .chill-btn-container {
-      max-width: 1026px;
+      max-width: 838px;
       height: 40px;
       overflow: auto;
       margin-top: -6px;
@@ -22,19 +22,17 @@
     #lpGenerator > :first-child {
       display: none;
     }
-    // .page-main-actions._hidden .page-actions {
-    //   height: 52px;
-    //   overflow: auto;
-    // }
+
     .page-main-actions .page-actions._fixed .page-actions-inner::before {
-      font-size: 1.5rem;
-      max-width: 17%;
-      height: 41px;
+      font-size: 2.5rem;
+      max-width: 37%;
+      height: 43px;
+      top: 0;
+      left: 30px;
+      line-height: 43px;
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
       margin: 0;
-      white-space: initial;
+      white-space: nowrap;
     }
     #lpModules {
       margin-bottom: 0;

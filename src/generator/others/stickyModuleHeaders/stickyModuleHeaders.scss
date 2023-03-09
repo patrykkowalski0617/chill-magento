@@ -1,4 +1,5 @@
 @import "../../../chill/variables.scss";
+
 .chill-ch-loaded {
   #lpGenerator .module {
     .module__content {
@@ -12,10 +13,11 @@
         position: fixed;
         top: 45px;
         z-index: 20;
-        background: $base-color-mark;
-        left: 88px;
+        background: #00ad82;
+        left: 488px;
+        border-radius: 0 0 0 6px;
         padding: 0 5px 5px 5px;
-        width: calc(100% - 88px);
+        width: calc(100% - 488px);
         min-height: 45px;
         height: 45px;
         overflow-x: hidden;
@@ -23,17 +25,21 @@
         &:hover {
           height: auto;
         }
-        .module__title {
-          display: block;
-          padding-right: 10px;
-          height: 35px;
-          line-height: 35px;
-          margin: 5px 5px 0 0;
-          width: 323px;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
+      }
+      .module__form .module__title {
+        display: block;
+        position: fixed;
+        padding-left: 30px;
+        line-height: 45px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        top: 45px;
+        z-index: 20;
+        background: #00ad82;
+        left: 88px;
+        width: 400px;
+        height: 45px;
       }
       &.sticky-last-element {
         form.module__content.module__form {
@@ -41,7 +47,7 @@
         }
         .notice-message {
           position: fixed;
-          top: 97px;
+          top: 90px;
           z-index: 999;
           opacity: 0.8;
           left: 88px;
