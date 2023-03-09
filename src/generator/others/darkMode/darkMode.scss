@@ -11,12 +11,16 @@ body.chill-ch-loaded.chill-dark-mode {
       button.primary span,
       .custom-checkbox__slider,
       .btn_add-filter,
-      .btn_add-menu,
       .menu__btn_add-group,
       .menu__btn_add-subcategory,
       .menu__btn_add-subcomponent,
       .chill-version,
-      .message-text
+      .message-text,
+      .chill-mark td div,
+      .ui-slider-horizontal,
+      .ui-slider-handle,
+      .ui-datepicker table.ui-datepicker-calendar .ui-state-active,
+      .material-icons
     ),
   #lpGenerator .module form,
   .ui-datepicker:before,
@@ -45,6 +49,9 @@ body.chill-ch-loaded.chill-dark-mode {
 body.chill-ch-loaded.chill-dark-mode {
   .module__title {
     color: #f6fcbf;
+  }
+  .chill-mark td div {
+    color: #190025;
   }
   .page-actions._fixed,
   #lpGenerator .module .module__content {
@@ -138,12 +145,13 @@ body.chill-ch-loaded.chill-dark-mode {
     }
   }
   .btn_add-filter,
+  div.block_buttons a.btn_add-module,
   .btn_add-menu,
   .menu__btn_add-group,
   .menu__btn_add-subcategory,
   .menu__btn_add-subcomponent,
   .input__checkbox:checked + .custom-checkbox__slider {
-    background-color: #9d00e7;
+    background-color: #9d00e7 !important;
   }
   .module__filters {
     .menu__btn_remove-filter {

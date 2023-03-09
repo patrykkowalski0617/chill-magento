@@ -81,4 +81,8 @@ body.chill-ch-loaded {
   [id^="terms_and_condition_extended_terms_content_"] {
     height: 100px;
   }
+  .btn_save,
+  .module__button_find {
+    margin-right: 16px !important;
+  }
 }

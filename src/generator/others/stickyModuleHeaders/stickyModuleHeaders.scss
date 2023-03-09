@@ -15,7 +15,6 @@
         z-index: 20;
         background: #00ad82;
         left: 488px;
-        border-radius: 0 0 0 6px;
         padding: 0 5px 5px 5px;
         width: calc(100% - 488px);
         min-height: 45px;
@@ -24,6 +23,7 @@
         overflow-y: auto;
         &:hover {
           height: auto;
+          border-radius: 0 0 0 6px;
         }
       }
       .module__form .module__title {
@@ -38,7 +38,7 @@
         z-index: 20;
         background: #00ad82;
         left: 88px;
-        width: 400px;
+        width: 405px;
         height: 45px;
       }
       &.sticky-last-element {
