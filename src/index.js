@@ -40,6 +40,7 @@ import {
   pgUpPgDown,
   syntaxHighlight,
   teaserFix,
+  darkMode,
 } from "./generator/others";
 
 endVars(
@@ -107,5 +108,6 @@ endVars(
     onElementReady(l110, syntaxHighlight);
     onElementReady(l111, mainLpCss);
     onElementReady(l104, teaserFix);
+    darkMode();
   }
 );

@@ -1,5 +1,14 @@
 .chill-ch-loaded {
   &.top-bar-added {
+    .page-main-actions .chill-btn-container {
+      max-width: 1026px;
+      height: 40px;
+      overflow: auto;
+      margin-top: -6px;
+      &:hover {
+        height: auto;
+      }
+    }
     #back,
     #delete,
     #clone,
@@ -13,10 +22,10 @@
     #lpGenerator > :first-child {
       display: none;
     }
-    .page-main-actions._hidden .page-actions {
-      height: 52px;
-      overflow: auto;
-    }
+    // .page-main-actions._hidden .page-actions {
+    //   height: 52px;
+    //   overflow: auto;
+    // }
     .page-main-actions .page-actions._fixed .page-actions-inner::before {
       font-size: 1.5rem;
       max-width: 17%;
@@ -31,8 +40,16 @@
       margin-bottom: 0;
     }
   }
-  .page-actions-buttons .chill-btn {
-    margin-top: 2px;
+  &.chill-dark-mode {
+    .page-actions-buttons .chill-btn-container {
+      & > :nth-child(10) {
+        font-size: 0;
+        &::before {
+          font-size: 1.6rem;
+          content: "Dark mode: tak";
+        }
+      }
+    }
   }
   &.module-order-change-mode {
     .page-actions-buttons .chill-btn-container {
@@ -54,7 +71,7 @@
   }
   &[class*="chill-syntax-highlight"] {
     .page-actions-buttons .chill-btn-container {
-      & > :nth-child(2) {
+      & > :nth-child(9) {
         font-size: 0;
         &::before {
           font-size: 1.6rem;
@@ -70,7 +87,7 @@
       display: block;
     }
     .page-actions-buttons .chill-btn-container {
-      & > :nth-child(2) {
+      & > :nth-child(9) {
         &::before {
           content: "Kolorowa skłania: nie";
         }
@@ -85,7 +102,7 @@
       display: none;
     }
     .page-actions-buttons .chill-btn-container {
-      & > :nth-child(2) {
+      & > :nth-child(9) {
         &::before {
           content: "Kolorowa skłania: tak";
         }
@@ -100,7 +117,7 @@
       display: block;
     }
     .page-actions-buttons .chill-btn-container {
-      & > :nth-child(2) {
+      & > :nth-child(9) {
         &::before {
           content: "Kolorowa skłania: tester";
         }

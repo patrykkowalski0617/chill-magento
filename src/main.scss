@@ -1,4 +1,5 @@
 @import "./chill/variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=New+Rocker&display=swap");
 
 body.chill-ch-loaded {
   .sticky-header {
@@ -37,7 +38,7 @@ body.chill-ch-loaded {
     top: 40%;
   }
   #lpGenerator {
-    background: honeydew !important;
+    background: honeydew;
     textarea {
       max-width: 90%;
     }
@@ -81,11 +82,3 @@ body.chill-ch-loaded {
     height: 100px;
   }
 }
-
-// *:not(.chill-btn, i, .module__title),
-// body.chill-ch-loaded #lpGenerator .module form,
-// .page-main-actions:not(._hidden),
-// .page-actions._fixed {
-//   color: #fff;
-//   background: #190025;
-// }

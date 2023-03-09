@@ -1,19 +1,18 @@
 const cssSnippets = {
-  mainCss: `
-/* >> mainCss start v11 >> >> >> */
+  mainCss: `/* >> mainCss start v11 >> >> >> */
 
 /* justify availability buttons */
-[class*=availabilityButtonCss-btn-]{
+[class*="availabilityButtonCss-btn-"] {
   width: unset;
 }
 /* fix style for step without img */
-[class^="promotionInfoScss-wrapper-] > div [class^="promotionInfoScss-text] {
+[class^="promotionInfoScss-wrapper-"] > div [class^="promotionInfoScss-text"] {
   padding-left: 97px;
 }
 @media (min-width: 1024px) {
-  [class^="promotionInfoScss-wrapper-]
+  [class^="promotionInfoScss-wrapper-"]
     > div
-    [class^="promotionInfoScss-text] {
+    [class^="promotionInfoScss-text"] {
     padding-left: 112px;
     font-size: 16px;
     line-height: 22px;
@@ -21,38 +20,38 @@ const cssSnippets = {
 }
 
 /* add "Sprawdź" before terms and condition link */
-body a[class*=termsAndConditionScss-link]{
-    font-size: 0px;
+body a[class*="termsAndConditionScss-link"] {
+  font-size: 0px;
 }
-body a[class*=termsAndConditionScss-link]::before {
-  content: "Sprawdź ";  
+body a[class*="termsAndConditionScss-link"]::before {
+  content: "Sprawdź ";
   color: #383838;
   font-weight: lighter;
   cursor: default;
   font-size: 12px;
 }
-body a[class*=termsAndConditionScss-link]::after {
-  content: "regulamin";  
+body a[class*="termsAndConditionScss-link"]::after {
+  content: "regulamin";
   font-size: 12px;
 }
-body a[class*=termsAndConditionScss-link]:hover {
-    text-decoration: none;
+body a[class*="termsAndConditionScss-link"]:hover {
+  text-decoration: none;
 }
-body a[class*=termsAndConditionScss-link]:hover::after {
+body a[class*="termsAndConditionScss-link"]:hover::after {
   text-decoration: underline;
 }
 @media (min-width: 1024px) {
-  body a[class*=termsAndConditionScss-link]::before {
+  body a[class*="termsAndConditionScss-link"]::before {
     font-size: 14px;
   }
-  body a[class*=termsAndConditionScss-link]::after {
+  body a[class*="termsAndConditionScss-link"]::after {
     font-size: 14px;
   }
 }
 
 /* increase letter-spacing in tabs */
-body [class*=tabScss-root] {
-    letter-spacing: 0.6px;
+body [class*="tabScss-root"] {
+  letter-spacing: 0.6px;
 }
 
 /* asterisks */
@@ -82,12 +81,12 @@ body [class*=tabScss-root] {
 }
 
 /* center buttons in benner hero */
-body [class*=heroBannerScss-banner__promotion] {
+body [class*="heroBannerScss-banner__promotion"] {
   justify-content: center;
 }
 /* uppercase for menu */
-[class*=primaryItemDesktopCss-root],
-[class*=secondaryItemDesktopCss-root]{
+[class*="primaryItemDesktopCss-root"],
+[class*="secondaryItemDesktopCss-root"] {
   text-transform: uppercase;
 }
 
@@ -99,13 +98,13 @@ body [class*=heroBannerScss-banner__promotion] {
 }
 
 /* streach lp content */
-[class*=menuDesktopScss-grid_container]{
+[class*="menuDesktopScss-grid_container"] {
   max-width: unset !important;
 }
 
 /* no idea what it is */
 @media (min-width: 1600px) {
-  body [class*=productAttributesCss-attribute_landing],
+  body [class*="productAttributesCss-attribute_landing"],
   body .dataSectionCss-attribute-Web {
     max-height: unset;
   }
@@ -254,8 +253,8 @@ body [class*=clockDefaultScss-label-] /*lp*/ {
 
 /* hide days in clock and in clock in header */
 
-body [class*=promotionTimerScss-content-] > :first-child,
-body [class*=clockDefaultScss-list__item-]:first-child {
+body [class*="promotionTimerScss-content-"] > :first-child,
+body [class*="clockDefaultScss-list__item-"]:first-child {
   display: none;
 }
 /* stretch content */
@@ -266,15 +265,18 @@ body [class*=htmlExtendedScss-grid_container] /*teaser*/ {
 
 /* center promo regulations button */
 body
-  [class*=footerScss-container]
-  [class*=footerScss-buttonContainer]:not([class*=footerScss-textcontent]
-    + [class*=footerScss-buttonContainer]),
+  [class*="footerScss-container"]
+  [class*="footerScss-buttonContainer"]:not(
+    [class*="footerScss-textcontent"] + [class*="footerScss-buttonContainer"]
+  ),
 body
-  [class*=footerScss-container]
-  [class*=footerScss-buttonContainer]
-  [class*=footerScss-button]:not([class*=footerScss-textcontent]
-    + [class*=footerScss-buttonContainer]
-    [class*=footerScss-button]) {
+  [class*="footerScss-container"]
+  [class*="footerScss-buttonContainer"]
+  [class*="footerScss-button"]:not(
+    [class*="footerScss-textcontent"]
+      + [class*="footerScss-buttonContainer"]
+      [class*="footerScss-button"]
+  ) {
   margin: auto;
 }
 
@@ -297,8 +299,8 @@ body
   }
 }
 
-/* << << << mainCss end << */
-  `,
+/* << << << mainCss end << */  
+`,
   hideNumbersInSideTips: `
 /* >> Hide numbers in side tips v1 >> >> >> */
 body [class*=promotionInfoScss-number] {

@@ -10,3 +10,4 @@ export { default as mainLpCss } from "./mainLpCss/mainLpCss";
 export { default as pgUpPgDown } from "./pgUpPgDown/pgUpPgDown";
 export { default as syntaxHighlight } from "./syntaxHighlight/syntaxHighlight";
 export { default as teaserFix } from "./teaserFix/teaserFix";
+export { default as darkMode } from "./darkMode/darkMode";

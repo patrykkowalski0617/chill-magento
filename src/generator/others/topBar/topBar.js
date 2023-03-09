@@ -15,23 +15,7 @@ const topBar = () => {
         document.body.classList.toggle("module-order-change-mode");
       },
     ],
-    [
-      "Kolorowa skłania: -",
-      () => {
-        let syntaxMode = JSON.parse(
-          localStorage.getItem("magentoChill_syntaxMode")
-        );
 
-        document.body.classList.remove(`chill-syntax-highlight-${syntaxMode}`);
-        if (syntaxMode < 2) {
-          syntaxMode++;
-        } else {
-          syntaxMode = 0;
-        }
-        document.body.classList.add(`chill-syntax-highlight-${syntaxMode}`);
-        localStorage.setItem("magentoChill_syntaxMode", syntaxMode);
-      },
-    ],
     [
       "Dodaj moduł",
       () => {
@@ -77,6 +61,41 @@ const topBar = () => {
       "Podgląd",
       () => {
         oryginalBtnPreview.click();
+      },
+    ],
+    [
+      "Kolorowa skłania: -",
+      () => {
+        let syntaxMode = JSON.parse(
+          localStorage.getItem("magentoChill_syntaxMode")
+        );
+
+        document.body.classList.remove(`chill-syntax-highlight-${syntaxMode}`);
+        if (syntaxMode < 2) {
+          syntaxMode++;
+        } else {
+          syntaxMode = 0;
+        }
+        document.body.classList.add(`chill-syntax-highlight-${syntaxMode}`);
+        localStorage.setItem("magentoChill_syntaxMode", syntaxMode);
+      },
+    ],
+    [
+      "Dark mode &#128520;: nie",
+      () => {
+        let darkMode = JSON.parse(
+          localStorage.getItem("magentoChill_darkMode")
+        );
+
+        if (darkMode === false) {
+          document.body.classList.add("chill-dark-mode");
+          darkMode = true;
+        } else if (darkMode === true) {
+          document.body.classList.remove("chill-dark-mode");
+          darkMode = false;
+        }
+
+        localStorage.setItem("magentoChill_darkMode", darkMode);
       },
     ],
   ];
