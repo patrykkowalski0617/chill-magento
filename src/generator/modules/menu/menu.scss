@@ -2,6 +2,16 @@
 
 // Product list
 .chill-ch-loaded {
+  .js-category-wrapper + div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 13px 0;
+  }
+  .module__menu .btn__wrapper {
+    justify-content: center;
+    display: flex;
+  }
   .ui-dialog .ui-dialog-content {
     max-height: 50vh;
     overflow-y: 50vh;
