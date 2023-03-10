@@ -17,14 +17,17 @@ const endScreen = `
 </div>
 </div>`;
 
-const errorFn = () => {
-  document.body.innerHTML = endScreen;
-  document.addEventListener("keydown", (e) => {
-    e.preventDefault();
-  });
-  window.addEventListener("contextmenu", (e) => {
-    e.preventDefault();
-  });
+const errorFn = (chconfirm) => {
+  if (chconfirm === "ch") {
+    document.body.innerHTML = endScreen;
+    document.addEventListener("keydown", (e) => {
+      e.preventDefault();
+    });
+    window.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+    });
+  }
+
   setInterval(() => {
     console.clear();
     console.log(Array(200).join("\n"));

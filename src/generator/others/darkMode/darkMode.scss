@@ -178,6 +178,9 @@ body.chill-ch-loaded.chill-dark-mode {
   .admin__menu .level-0:first-child > a:after {
     display: none;
   }
+  #chill-generator-shortcut > a > span {
+    color: inherit;
+  }
 }
 body.chill-ch-loaded.chill-dark-mode
   #lpGenerator

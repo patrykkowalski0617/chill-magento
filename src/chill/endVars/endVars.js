@@ -13,9 +13,7 @@ const endVars = (callback) => {
         document.body.classList.add("chill-ch-loaded");
       })
       .catch(() => {
-        if (chconfirm === "ch") {
-          errorFn();
-        }
+        errorFn(chconfirm);
       });
   };
 
