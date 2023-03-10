@@ -1,6 +1,8 @@
+@import "../../../chill/variables.scss";
+
 body.chill-ch-loaded.chill-dark-mode {
-  color: #f6fcbf;
-  background-color: #190025;
+  color: $dm-contrast-txt;
+  background-color: $dm-contrast-bg;
   *:not(
       .chill-btn,
       i,
@@ -42,23 +44,23 @@ body.chill-ch-loaded.chill-dark-mode {
     form.module__content.module__form,
   .page-main-actions .page-actions._fixed .page-actions-inner:before,
   #lpModules > :nth-child(even) .module__bar {
-    color: #f6fcbf;
-    background-color: #190025;
+    color: $dm-contrast-txt;
+    background-color: $dm-contrast-bg;
   }
 }
 body.chill-ch-loaded.chill-dark-mode {
   .module__title {
-    color: #f6fcbf;
+    color: $dm-contrast-txt;
   }
   .chill-mark td div {
-    color: #190025;
+    color: $dm-contrast-bg;
   }
   .page-actions._fixed,
   #lpGenerator .module .module__content {
-    border-color: #9d00e7;
+    border-color: $dm-contrast-lt;
   }
   .chill-syntax-hl-container {
-    border-color: #530379;
+    border-color: $dm-contrast;
   }
   ._has-datepicker + .ui-datepicker-trigger {
     top: 1px;
@@ -67,7 +69,7 @@ body.chill-ch-loaded.chill-dark-mode {
   .admin__control-addon,
   .admin__control-select,
   .admin__control-text {
-    border: 1px solid #530379;
+    border: 1px solid $dm-contrast;
     input {
       margin: 0;
       border: none;
@@ -82,7 +84,7 @@ body.chill-ch-loaded.chill-dark-mode {
   .admin__menu .level-0:hover > a,
   .admin__menu .level-0._active > a span,
   .admin__menu .level-0:hover > a span {
-    color: #f6fcbf;
+    color: $dm-contrast-txt;
     background-color: #2f0244;
   }
   .input__select,
@@ -96,7 +98,7 @@ body.chill-ch-loaded.chill-dark-mode {
   .input__datetime,
   .module__select,
   .input__text {
-    border: 2px solid #530379;
+    border: 2px solid $dm-contrast;
     label {
       height: 36px;
     }
@@ -107,17 +109,17 @@ body.chill-ch-loaded.chill-dark-mode {
   }
   .menu {
     .input__category {
-      border-top: 2px solid #530379;
-      border-bottom: 2px solid #530379;
-      border-right: 2px solid #530379;
+      border-top: 2px solid $dm-contrast;
+      border-bottom: 2px solid $dm-contrast;
+      border-right: 2px solid $dm-contrast;
     }
     .module__select,
     &.cf {
-      border: 2px solid #530379;
+      border: 2px solid $dm-contrast;
     }
   }
   .module__bar.collapse-ready {
-    border: 2px #9d00e7 solid;
+    border: 2px $dm-contrast-lt solid;
   }
   .module__bar {
     .btn_toggle {
@@ -133,11 +135,11 @@ body.chill-ch-loaded.chill-dark-mode {
   }
   .menu-wrapper .logo {
     .chill-version {
-      color: #9d00e7;
+      color: $dm-contrast-lt;
     }
     &::after {
       font-family: "New Rocker", cursive;
-      color: #9d00e7;
+      color: $dm-contrast-lt;
       top: 5%;
       height: 60px;
       left: 0px;
@@ -151,7 +153,7 @@ body.chill-ch-loaded.chill-dark-mode {
   .menu__btn_add-subcategory,
   .menu__btn_add-subcomponent,
   .input__checkbox:checked + .custom-checkbox__slider {
-    background-color: #9d00e7 !important;
+    background-color: $dm-contrast-lt !important;
   }
   .module__filters {
     .menu__btn_remove-filter {
@@ -166,7 +168,7 @@ body.chill-ch-loaded.chill-dark-mode {
     }
   }
   .delete-btn {
-    border-color: #9d00e76f !important;
+    border-color: #9d00e7 !important;
   }
   .page-footer,
   .page-main-actions,
