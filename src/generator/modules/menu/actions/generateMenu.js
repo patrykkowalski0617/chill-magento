@@ -16,6 +16,10 @@ const generateMenu = ({ module }) => {
   const allCategories = areAnimatedIcons
     ? menuCategories_newMenu
     : menuCategories;
+  const maxProducts = module.querySelector(
+    ".chill-maxProducts-input input"
+  ).value;
+  console.log(maxProducts);
   // 1. Blur page
 
   document.body.classList.add("chill-is-working");
@@ -163,6 +167,7 @@ const generateMenu = ({ module }) => {
             .map((subcategory, subcategoryId) => {
               const { subcategoryName, codes } = subcategory;
               return menuTemplate.subcategory(
+                maxProducts,
                 moduleId,
                 categoryId,
                 subcategoryId,
