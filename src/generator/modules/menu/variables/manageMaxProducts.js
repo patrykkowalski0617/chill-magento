@@ -7,7 +7,7 @@ const manageMaxProducts = (module) => {
     width: 33%;
 ">
     <label class="module__label">
-        Maksymalna liczba produktów
+        Maksymalna liczba produktów przy generowaniu
     </label>
     <input class="input__text input__category" type="number" value="7">
 </div>`;

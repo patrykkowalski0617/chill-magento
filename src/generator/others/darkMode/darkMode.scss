@@ -118,6 +118,8 @@ body.chill-ch-loaded.chill-dark-mode {
       border: 2px solid $dm-contrast;
     }
   }
+  .modal-inner-wrap,
+  #messages .message,
   .module__bar.collapse-ready {
     border: 2px $dm-contrast-lt solid;
   }
