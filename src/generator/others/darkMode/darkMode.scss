@@ -49,6 +49,12 @@ body.chill-ch-loaded.chill-dark-mode {
   }
 }
 body.chill-ch-loaded.chill-dark-mode {
+  .delete-btn {
+    &::after {
+      background-color: $dm-contrast-warn;
+    }
+  }
+
   .module__title {
     color: $dm-contrast-txt;
   }

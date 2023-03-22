@@ -1,3 +1,5 @@
+@import "../../../chill/variables.scss";
+
 .chill-ch-loaded {
   .chill-header-added {
     .module__button_remove,
@@ -7,5 +9,36 @@
   }
   .delete-btn {
     border-color: #ff00006f !important;
+    width: 72px;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background-color: $base-color-warn;
+      width: 0%;
+    }
+    &.chill-delete-delay {
+      font-size: 0;
+      &::before {
+        font-size: 15px;
+        content: "anuluj";
+        position: relative;
+        z-index: 1;
+      }
+      &::after {
+        animation: load 2s linear;
+      }
+    }
+  }
+}
+@keyframes load {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
   }
 }
