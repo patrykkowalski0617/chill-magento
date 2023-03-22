@@ -27,7 +27,12 @@ const mainLpCss = () => {
     }
 
     if (!inputVal.includes(newCss) || onLoad) {
-      input.value = newCss.trim() + input.value;
+      input.value =
+        newCss.trim() +
+        `
+
+` +
+        input.value;
     } else {
       input.value = inputVal.replace(newCss, "");
     }

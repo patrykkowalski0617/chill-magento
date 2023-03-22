@@ -1,5 +1,5 @@
 const cssSnippets = {
-  mainCss: `/* >> mainCss start v11 >> >> >> */
+  mainCss: `/* >> mainCss start v12 >> >> >> */
 
 /* justify availability buttons */
 [class*="availabilityButtonCss-btn-"] {
