@@ -5,7 +5,7 @@ const renderModuleTitles = (providedModule) => {
       const modulOryginalTitle =
         module.querySelector(".module__title").innerText;
       const chillHeaderModuleTitle = module.querySelector(
-        ".chill-btn-container .module__title"
+        ".module__form > .module__title"
       );
       if (!chillHeaderModuleTitle) {
         module
@@ -14,7 +14,7 @@ const renderModuleTitles = (providedModule) => {
             "beforebegin",
             `<span class="module__title"></span>`
           );
-        module.querySelector(".module__form .module__title").innerHTML =
+        module.querySelector(".module__form > .module__title").innerHTML =
           modulOryginalTitle;
       } else {
         chillHeaderModuleTitle.innerHTML = modulOryginalTitle;

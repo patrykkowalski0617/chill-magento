@@ -76,7 +76,6 @@ const syntaxHighlight = () => {
         e.code !== "Enter" &&
         e.code !== "NumpadEnter"
       ) {
-        console.log("hls");
         // manage paste event
         if (e.type === "paste") {
           const selection = window.getSelection();
@@ -163,7 +162,6 @@ const syntaxHighlight = () => {
         e.key === "Backspace" ||
         e.key === "Delete"
       ) {
-        console.log("hls 2");
         codeTextarea.value = replaceNbsps(codeDiv.innerText);
       }
     };
