@@ -196,3 +196,8 @@ body.chill-ch-loaded.chill-dark-mode
   .btn_drag-and-drop {
   background-color: initial;
 }
+#maintenance-mode,
+#maintenance-mode * {
+  background-color: #fff;
+  color: #525d7d;
+}
