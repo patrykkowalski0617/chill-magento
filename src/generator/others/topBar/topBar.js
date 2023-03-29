@@ -9,35 +9,10 @@ const topBar = () => {
   const actions = [
     [
       "Zmień kolejność modułów",
-      (btn) => {
+      () => {
         document.querySelector(".btn_toggle-all").click();
         document.querySelectorAll(".module")[0].scrollIntoView();
-        // btn.classList.toggle("change-module-order-alter-txt");
-        // document
-        //   .querySelector(".chill-generator-synopsis")
-        //   .classList.toggle("hidden");
         document.body.classList.toggle("module-order-change-mode");
-        // document.querySelectorAll(".module__bar").forEach((el) => {
-        //   el.classList.toggle("block-collapse");
-        //   el.querySelector(".btn_toggle").classList.toggle("hidden");
-        // });
-      },
-    ],
-    [
-      "Kolorowa skłania: -",
-      () => {
-        let syntaxMode = JSON.parse(
-          localStorage.getItem("magentoChill_syntaxMode")
-        );
-
-        document.body.classList.remove(`chill-syntax-highlight-${syntaxMode}`);
-        if (syntaxMode < 2) {
-          syntaxMode++;
-        } else {
-          syntaxMode = 0;
-        }
-        document.body.classList.add(`chill-syntax-highlight-${syntaxMode}`);
-        localStorage.setItem("magentoChill_syntaxMode", syntaxMode);
       },
     ],
 
@@ -78,6 +53,49 @@ const topBar = () => {
       "Podgląd",
       () => {
         oryginalBtnPreview.click();
+      },
+    ],
+    [
+      "Zapisz moduły",
+      () => {
+        document
+          .querySelectorAll(".module .module__button_save")
+          .forEach((el) => el.click());
+      },
+    ],
+    [
+      "Kolorowa skłania: -",
+      () => {
+        let syntaxMode = JSON.parse(
+          localStorage.getItem("magentoChill_syntaxMode")
+        );
+
+        document.body.classList.remove(`chill-syntax-highlight-${syntaxMode}`);
+        if (syntaxMode < 2) {
+          syntaxMode++;
+        } else {
+          syntaxMode = 0;
+        }
+        document.body.classList.add(`chill-syntax-highlight-${syntaxMode}`);
+        localStorage.setItem("magentoChill_syntaxMode", syntaxMode);
+      },
+    ],
+    [
+      "Dark mode &#128520;: nie",
+      () => {
+        let darkMode = JSON.parse(
+          localStorage.getItem("magentoChill_darkMode")
+        );
+
+        if (darkMode === false) {
+          document.body.classList.add("chill-dark-mode");
+          darkMode = true;
+        } else if (darkMode === true) {
+          document.body.classList.remove("chill-dark-mode");
+          darkMode = false;
+        }
+
+        localStorage.setItem("magentoChill_darkMode", darkMode);
       },
     ],
   ];

@@ -1,11 +1,44 @@
 @import "./chill/variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=New+Rocker&display=swap");
 
-body {
+body.chill-ch-loaded {
   .sticky-header {
     top: 58px;
   }
+  .btn_remove-file,
+  .menu__btn_remove-category,
+  .menu__btn_remove-filter,
+  .menu__btn_remove-group,
+  .menu__btn_remove-subcategory,
+  .menu__btn_remove-subcomponent {
+    transform: translateY(-50%);
+    width: 37px;
+    height: 32px;
+    border-radius: inherit;
+    background-color: #ff2300;
+    right: 1px;
+    font-weight: 400;
+    line-height: 32px;
+    margin: 0 !important;
+    text-align: center;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    > i {
+      display: none;
+    }
+    &::after {
+      content: "x";
+    }
+    &:hover {
+      background-color: #a61700;
+    }
+  }
+
+  .menu__btn_remove-subcomponent.js-remove-category-component {
+    top: 40%;
+  }
   #lpGenerator {
-    background: honeydew !important;
+    background: honeydew;
     textarea {
       max-width: 90%;
     }
@@ -47,5 +80,9 @@ body {
   [id^="terms_and_condition_content_"],
   [id^="terms_and_condition_extended_terms_content_"] {
     height: 100px;
+  }
+  .btn_save,
+  .module__button_find {
+    margin-right: 16px !important;
   }
 }

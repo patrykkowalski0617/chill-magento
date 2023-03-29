@@ -1,101 +1,124 @@
-.top-bar-added {
-  #back,
-  #delete,
-  #clone,
-  #preview,
-  button[data-index="save"] {
-    display: none;
-  }
-  #lpModules + .block.block_buttons {
-    display: none;
-  }
-  #lpGenerator > :first-child {
-    display: none;
-  }
-  .page-main-actions._hidden .page-actions {
-    height: 52px;
-    overflow: auto;
-  }
-  .page-main-actions .page-actions._fixed .page-actions-inner::before {
-    font-size: 1.6rem;
-    max-width: 23%;
-    position: relative;
-    top: 8px;
-  }
-  #lpModules {
-    margin-bottom: 0;
-  }
-}
-.module-order-change-mode {
-  .page-actions-buttons .chill-btn-container {
-    & > :first-child {
-      // .change-module-order-alter-txt {
-      font-size: 0;
-      &::before {
-        content: "Wróć do edycji modułów";
-        font-size: 1.6rem;
+.chill-ch-loaded {
+  &.top-bar-added {
+    .page-main-actions .chill-btn-container {
+      max-width: 846px;
+      height: 40px;
+      overflow: auto;
+      margin-top: -6px;
+      &:hover {
+        height: auto;
       }
     }
-  }
-}
+    #back,
+    #delete,
+    #clone,
+    #preview,
+    button[data-index="save"] {
+      display: none;
+    }
+    #lpModules + .block.block_buttons {
+      display: none;
+    }
+    #lpGenerator > :first-child {
+      display: none;
+    }
 
-.btn_toggle,
-.chill-generator-synopsis {
-  &.hidden {
-    display: none;
+    .page-main-actions .page-actions._fixed .page-actions-inner::before {
+      font-size: 2.5rem;
+      width: calc(100vw - 1000px);
+      height: 43px;
+      top: 0;
+      left: 30px;
+      line-height: 43px;
+      position: absolute;
+      margin: 0;
+      white-space: nowrap;
+    }
+    #lpModules {
+      margin-bottom: 0;
+    }
   }
-}
-[class*="chill-syntax-highlight"] {
-  .page-actions-buttons .chill-btn-container {
-    & > :nth-child(2) {
-      font-size: 0;
-      &::before {
-        font-size: 1.6rem;
+  &.chill-dark-mode {
+    .page-actions-buttons .chill-btn-container {
+      & > :nth-child(10) {
+        font-size: 0;
+        &::before {
+          font-size: 1.6rem;
+          content: "Dark mode: tak";
+        }
       }
     }
   }
-}
-.chill-syntax-highlight-0 {
-  .chill-syntax-hl-container {
-    display: none;
-  }
-  .oryginal-code-input {
-    display: block;
-  }
-  .page-actions-buttons .chill-btn-container {
-    & > :nth-child(2) {
-      &::before {
-        content: "Kolorowa skłania: nie";
+  &.module-order-change-mode {
+    .page-actions-buttons .chill-btn-container {
+      & > :first-child {
+        font-size: 0;
+        &::before {
+          content: "Wróć do edycji modułów";
+          font-size: 1.6rem;
+        }
       }
     }
   }
-}
-.chill-syntax-highlight-1 {
-  .chill-syntax-hl-container {
-    display: block;
+
+  .btn_toggle,
+  .chill-generator-synopsis {
+    &.hidden {
+      display: none;
+    }
   }
-  .oryginal-code-input {
-    display: none;
-  }
-  .page-actions-buttons .chill-btn-container {
-    & > :nth-child(2) {
-      &::before {
-        content: "Kolorowa skłania: tak";
+  &[class*="chill-syntax-highlight"] {
+    .page-actions-buttons .chill-btn-container {
+      & > :nth-child(9) {
+        font-size: 0;
+        &::before {
+          font-size: 1.6rem;
+        }
       }
     }
   }
-}
-.chill-syntax-highlight-2 {
-  .chill-syntax-hl-container {
-    display: block;
+  &.chill-syntax-highlight-0 {
+    .chill-syntax-hl-container {
+      display: none;
+    }
+    .oryginal-code-input {
+      display: block;
+    }
+    .page-actions-buttons .chill-btn-container {
+      & > :nth-child(9) {
+        &::before {
+          content: "Kolorowa skłania: nie";
+        }
+      }
+    }
   }
-  .oryginal-code-input {
-    display: block;
+  &.chill-syntax-highlight-1 {
+    .chill-syntax-hl-container {
+      display: block;
+    }
+    .oryginal-code-input {
+      display: none;
+    }
+    .page-actions-buttons .chill-btn-container {
+      & > :nth-child(9) {
+        &::before {
+          content: "Kolorowa skłania: tak";
+        }
+      }
+    }
   }
-  .page-actions-buttons .chill-btn-container {
-    & > :nth-child(2) {
-      &::before {
-        content: "Kolorowa skłania: tester";
+  &.chill-syntax-highlight-2 {
+    .chill-syntax-hl-container {
+      display: block;
+    }
+    .oryginal-code-input {
+      display: block;
+    }
+    .page-actions-buttons .chill-btn-container {
+      & > :nth-child(9) {
+        &::before {
+          content: "Kolorowa skłania: tester";
+        }
       }
     }
   }

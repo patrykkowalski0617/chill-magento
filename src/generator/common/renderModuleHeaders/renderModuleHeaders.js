@@ -2,10 +2,23 @@ import { renderFixButtons } from "../../../chill";
 import "./renderModuleHeaders.scss";
 
 const renderModuleHeaders = (providedModule) => {
+  let timeoutId;
   const modules = document.querySelectorAll(".module:not(.module_new)");
   if (modules.length) {
     const deleteModule = (module) => {
-      module.querySelector(".module__button_remove").click();
+      const delayeClassName = "chill-delete-delay";
+      const btnMagento = module.querySelector(".module__button_remove");
+      const btnChill = module.querySelector(".delete-btn");
+
+      if (!btnChill.classList.contains(delayeClassName)) {
+        btnChill.classList.add("chill-delete-delay");
+        timeoutId = setTimeout(() => {
+          btnMagento.click();
+        }, 2000);
+      } else {
+        btnChill.classList.remove("chill-delete-delay");
+        clearTimeout(timeoutId);
+      }
     };
 
     const saveModule = (module) => {

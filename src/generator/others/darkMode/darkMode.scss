@@ -1,0 +1,198 @@
+@import "../../../chill/variables.scss";
+
+body.chill-ch-loaded.chill-dark-mode {
+  color: $dm-contrast-txt;
+  background-color: $dm-contrast-bg;
+  *:not(
+      .chill-btn,
+      i,
+      .module__title,
+      .chill-gids-input,
+      .chill-generator-synopsis-btn,
+      button.primary,
+      button.primary span,
+      .custom-checkbox__slider,
+      .btn_add-filter,
+      .menu__btn_add-group,
+      .menu__btn_add-subcategory,
+      .menu__btn_add-subcomponent,
+      .chill-version,
+      .message-text,
+      .chill-mark td div,
+      .ui-slider-horizontal,
+      .ui-slider-handle,
+      .ui-datepicker table.ui-datepicker-calendar .ui-state-active,
+      .material-icons
+    ),
+  #lpGenerator .module form,
+  .ui-datepicker:before,
+  .page-main-actions:not(._hidden),
+  .page-actions._fixed,
+  .admin__control-addon [class*="admin__control-"][class],
+  .admin__addon-suffix,
+  .menu-wrapper:before,
+  .menu-wrapper .logo::after,
+  #lpGenerator,
+  #lpGenerator .block_buttons,
+  ._has-datepicker + .ui-datepicker-trigger:after,
+  #lpGenerator .module form.module__content,
+  .admin__control-addon
+    [class*="admin__control-"][class]
+    ~ [class*="admin__addon-"]:last-child:before,
+  #lpGenerator
+    .module.sticky:not(.sortable-chosen).sticky-last-element
+    form.module__content.module__form,
+  .page-main-actions .page-actions._fixed .page-actions-inner:before,
+  #lpModules > :nth-child(even) .module__bar {
+    color: $dm-contrast-txt;
+    background-color: $dm-contrast-bg;
+  }
+}
+body.chill-ch-loaded.chill-dark-mode {
+  .delete-btn {
+    &::after {
+      background-color: $dm-contrast-warn;
+    }
+  }
+
+  .module__title {
+    color: $dm-contrast-txt;
+  }
+  .chill-mark td div {
+    color: $dm-contrast-bg;
+  }
+  .page-actions._fixed,
+  #lpGenerator .module .module__content {
+    border-color: $dm-contrast-lt;
+  }
+  .chill-syntax-hl-container {
+    border-color: $dm-contrast;
+  }
+  ._has-datepicker + .ui-datepicker-trigger {
+    top: 1px;
+    height: 26px;
+  }
+  .admin__control-addon,
+  .admin__control-select,
+  .admin__control-text {
+    border: 1px solid $dm-contrast;
+    input {
+      margin: 0;
+      border: none;
+    }
+  }
+  .admin__control-addon
+    [class*="admin__control-"][class]
+    ~ [class*="admin__addon-"]:last-child:before {
+    border: none;
+  }
+  .admin__menu .level-0._active > a,
+  .admin__menu .level-0:hover > a,
+  .admin__menu .level-0._active > a span,
+  .admin__menu .level-0:hover > a span {
+    color: $dm-contrast-txt;
+    background-color: #2f0244;
+  }
+  .input__select,
+  .input__text,
+  .input__textarea,
+  .input__wrapper {
+    font-weight: 300;
+  }
+  textarea,
+  .input__wrapper,
+  .input__datetime,
+  .module__select,
+  .input__text {
+    border: 2px solid $dm-contrast;
+    label {
+      height: 36px;
+    }
+    input {
+      border: none;
+      height: 36px;
+    }
+  }
+  .menu {
+    .input__category {
+      border-top: 2px solid $dm-contrast;
+      border-bottom: 2px solid $dm-contrast;
+      border-right: 2px solid $dm-contrast;
+    }
+    .module__select,
+    &.cf {
+      border: 2px solid $dm-contrast;
+    }
+  }
+  .modal-inner-wrap,
+  #messages .message,
+  .module__bar.collapse-ready {
+    border: 2px $dm-contrast-lt solid;
+  }
+  .module__bar {
+    .btn_toggle {
+      position: absolute;
+      right: 5px;
+      height: 30px;
+      top: 2px;
+    }
+  }
+  .page-actions._fixed,
+  #lpGenerator .module .module__content {
+    border-top: none;
+  }
+  .menu-wrapper .logo {
+    .chill-version {
+      color: $dm-contrast-lt;
+    }
+    &::after {
+      font-family: "New Rocker", cursive;
+      color: $dm-contrast-lt;
+      top: 5%;
+      height: 60px;
+      left: 0px;
+      font-size: 40px;
+    }
+  }
+  .btn_add-filter,
+  div.block_buttons a.btn_add-module,
+  .btn_add-menu,
+  .menu__btn_add-group,
+  .menu__btn_add-subcategory,
+  .menu__btn_add-subcomponent,
+  .input__checkbox:checked + .custom-checkbox__slider {
+    background-color: $dm-contrast-lt !important;
+  }
+  .module__filters {
+    .menu__btn_remove-filter {
+      transform: translateY(-113%);
+      height: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .filter__header .btn_drag-and-drop {
+      transform: translateY(-35%);
+    }
+  }
+  .delete-btn {
+    border-color: #9d00e7 !important;
+  }
+  .page-footer,
+  .page-main-actions,
+  .fieldset-wrapper.fieldset_50.admin__collapsible-block-wrapper._show {
+    border: none;
+  }
+  .admin__menu .level-0:first-child > a:after {
+    display: none;
+  }
+  #chill-generator-shortcut > a > span {
+    color: inherit;
+  }
+}
+body.chill-ch-loaded.chill-dark-mode
+  #lpGenerator
+  .module__bar
+  .btn_drag-and-drop {
+  background-color: initial;
+}

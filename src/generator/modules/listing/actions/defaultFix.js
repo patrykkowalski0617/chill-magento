@@ -19,18 +19,18 @@ const defaultFix = ({ module }) => {
     }
   });
 
-  const el = module.querySelector(selectors.sorting);
-  const setCheckbox = (el, shouldBeOff) => {
-    if (shouldBeOff) {
-      el.click();
-      markInputs([el]);
-    }
-  };
-  if (module.querySelector('[id^="products_template"]').value !== "slider") {
-    setCheckbox(el, !el.checked);
-  } else {
-    setCheckbox(el, el.checked);
-  }
+  // const el = module.querySelector(selectors.sorting);
+  // const setCheckbox = (el, shouldBeOff) => {
+  //   if (shouldBeOff) {
+  //     el.click();
+  //     markInputs([el]);
+  //   }
+  // };
+  // if (module.querySelector('[id^="products_template"]').value !== "slider") {
+  //   setCheckbox(el, !el.checked);
+  // } else {
+  //   setCheckbox(el, el.checked);
+  // }
 
   const redInputs = module.querySelectorAll(
     `${selectors.priceColor}, ${selectors.couponColorBg}, ${selectors.sortingArrow}`

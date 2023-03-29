@@ -1,4 +1,4 @@
-const templateNowyTestFl_subCat = (categoryId, subcategoryId) => `
+const templateNowyTestFl_subCat = (categoryId, subcategoryId, maxProducts) => `
 <div class="menu__row">
 <label class="module__label">Szablon</label>
 <div style="position: relative">
@@ -18,11 +18,11 @@ const templateNowyTestFl_subCat = (categoryId, subcategoryId) => `
   type="number"
   min="0"
   name="parameters[menu][${categoryId}][submenu][${subcategoryId}][max_products]"
-  value="7"
+  value="${maxProducts}"
 />
 </div>
 `;
-const templateNowyTestFl_cat = (categoryId) => `
+const templateNowyTestFl_cat = (categoryId, maxProducts) => `
 <div class="menu__row">
   <label class="module__label">Szablon</label>
   <div style="position: relative">
@@ -52,7 +52,7 @@ const templateNowyTestFl_cat = (categoryId) => `
     min="0"
     name="parameters[menu][${categoryId}][max_products]"
     data-input-name="maxProducts"
-    value="7"
+    value="${maxProducts}"
   />
 </div>
 
@@ -111,6 +111,7 @@ const menuTemplate = {
       </div>
     `,
   subcategory: (
+    maxProducts = 7,
     moduleId,
     categoryId,
     subcategoryId,
@@ -143,7 +144,7 @@ const menuTemplate = {
             />
             ${codes}
           </div>
-          ${templateNowyTestFl_subCat(categoryId, subcategoryId)}
+          ${templateNowyTestFl_subCat(categoryId, subcategoryId, maxProducts)}
         </div>
       </div>
     `
@@ -157,7 +158,7 @@ const menuTemplate = {
     />
     <div class="menu__category js-components-cat visible">
       <div class="menu__row cf js-components">${codes}</div>
-      ${templateNowyTestFl_cat(categoryId)}
+      ${templateNowyTestFl_cat(categoryId, maxProducts)}
     </div>
   `,
   code: (

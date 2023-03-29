@@ -20,43 +20,69 @@ const mainLpCss = () => {
   });
 
   const input = cssContainer.querySelector(".admin__control-textarea");
-  const updateInput = (btn, input, newHTML, begin = false) => {
-    if (!input.value.includes(newHTML)) {
-      if (!begin) {
-        input.value += newHTML;
-      } else {
-        input.value = newHTML + input.value;
-      }
-      btn.classList.add("isOn");
+  const inputVal = input.value;
+  const updateInput = ({ newCss, previousVersion, onLoad }) => {
+    if (previousVersion && inputVal.includes(previousVersion)) {
+      input.value = inputVal.replace(previousVersion, "");
+    }
+
+    if (!inputVal.includes(newCss) || onLoad) {
+      input.value =
+        newCss.trim() +
+        `
+
+` +
+        input.value;
     } else {
-      input.value = input.value.replace(newHTML, "");
-      btn.classList.remove("isOn");
+      input.value = inputVal.replace(newCss, "");
     }
     const e = new Event("change");
     const element = document.querySelector(".admin__control-textarea");
     element.dispatchEvent(e);
   };
+  const mainCss_currVers = cssSnippets.mainCss.match(/\d+/g)[0];
+  const mainCss_lpVers = inputVal
+    .substr(inputVal.indexOf("mainCss start v"), 50)
+    .match(/\d+/g)[0];
+  const mainCssPreviousVersion_Start = `/* >> mainCss start v${mainCss_lpVers} >> >> >> */`;
+  const mainCssPreviousVersion_End = `/* << << << mainCss end << */`;
+  const mainCss_previousVersion = inputVal.substring(
+    inputVal.indexOf(mainCssPreviousVersion_Start),
+    inputVal.indexOf(mainCssPreviousVersion_End) +
+      mainCssPreviousVersion_End.length
+  );
+  if (mainCss_lpVers < mainCss_currVers || inputVal === "") {
+    updateInput({
+      newCss: cssSnippets.mainCss,
+      previousVersion: mainCss_previousVersion,
+      onLoad: true,
+    });
+  }
+
   chillBtns.forEach((btn, i) => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
       if (i === 0) {
-        updateInput(btn, input, cssSnippets.mainCss);
+        updateInput({
+          newCss: cssSnippets.mainCss,
+          previousVersion: mainCss_previousVersion,
+        });
       } else if (i === 1) {
-        updateInput(btn, input, cssSnippets.hideNumbersInSideTips);
+        updateInput({ newCss: cssSnippets.hideNumbersInSideTips });
       } else if (i === 2) {
-        updateInput(btn, input, cssSnippets.greenApla);
+        updateInput({ newCss: cssSnippets.greenApla });
       } else if (i === 3) {
-        updateInput(btn, input, cssSnippets.payback);
+        updateInput({ newCss: cssSnippets.payback });
       } else if (i === 4) {
-        updateInput(btn, input, cssSnippets.singleCategoryInOldMenu);
+        updateInput({
+          newCss: cssSnippets.singleCategoryInOldMenu,
+        });
       } else if (i === 5) {
-        updateInput(btn, input, cssSnippets.bannerColor);
+        updateInput({ newCss: cssSnippets.bannerColor });
       }
-      input.classList.add("filled");
     });
   });
   if (document.querySelector(".admin__collapsible-title._changed")) {
-    chillBtns[0].click();
     const startDateInput = document.querySelector(
       ".admin__control-text._has-datepicker"
     );

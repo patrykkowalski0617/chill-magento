@@ -1,79 +1,67 @@
 @import "../../../chill/variables.scss";
-
-// .synopsis-tip {
-//   background-image: url(https://www.neonet.pl/images24/promocje/chill-magento/img/synopsis_tip.PNG);
-//   height: 212px;
-//   width: 87px;
-//   position: absolute;
-//   right: 1px;
-//   top: 31px;
-//   display: none;
-// }
-.chill-generator-synopsis {
-  position: relative;
-  z-index: 999;
-  max-height: calc(100vh - 480px);
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding-top: 1px;
-  min-width: 100%;
-  &:hover {
-    // .synopsis-tip {
-    //   display: block;
-    // }
-    width: fit-content;
-    overflow-x: visible;
-    // padding-right: 87px;
-    .chill-generator-synopsis-btn {
+.chill-ch-loaded {
+  .chill-generator-synopsis {
+    position: relative;
+    z-index: 999;
+    max-height: calc(100vh - 445px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 1px;
+    min-width: 100%;
+    &:hover {
+      width: fit-content;
+      overflow-x: visible;
+      .chill-generator-synopsis-btn {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+  .chill-generator-synopsis-btn {
+    position: relative;
+    &.page-top {
+      z-index: 999999;
+      text-decoration: none;
+      border: 1px $base-color-txt solid;
+      border-bottom: 3px $base-color-txt solid;
+      font-weight: 600;
+      &:hover {
+        text-decoration: none;
+        color: $base-color-txt;
+      }
       &::after {
         display: none;
       }
     }
-  }
-}
-.chill-generator-synopsis-btn {
-  position: relative;
-  &.page-top {
-    z-index: 999999;
-    text-decoration: none;
-    border: 1px $base-color-txt solid;
-    border-bottom: 3px $base-color-txt solid;
-    font-weight: 600;
-    &:hover {
-      text-decoration: none;
+    &:focus {
+      background-color: $base-color;
       color: $base-color-txt;
     }
-    &::after {
-      display: none;
+    &:hover {
+      background-color: $base-color-mark;
+      &::after {
+        box-shadow: $base-color-mark -7px 0px 16px inset;
+      }
     }
-  }
-  &:focus {
+    &::after {
+      content: "";
+      position: absolute;
+      right: -1px;
+      top: 0;
+      bottom: 0;
+      width: 15px;
+      box-shadow: $base-color -7px 0px 16px inset;
+    }
+    margin-top: -1px;
     background-color: $base-color;
+    border-color: $base-color-txt;
     color: $base-color-txt;
+    display: block;
+    width: 100%;
+    min-width: 88px;
+    padding: 5px;
+    text-align: left;
+    white-space: nowrap;
   }
-  &:hover {
-    background-color: $base-color-mark;
-    &::after {
-      box-shadow: $base-color-mark -7px 0px 16px inset;
-    }
-  }
-  &::after {
-    content: "";
-    position: absolute;
-    right: -1px;
-    top: 0;
-    bottom: 0;
-    width: 15px;
-    box-shadow: $base-color -7px 0px 16px inset;
-  }
-  margin-top: -1px;
-  background-color: $base-color;
-  border-color: $base-color-txt;
-  color: $base-color-txt;
-  display: block;
-  width: 100%;
-  min-width: 88px;
-  padding: 5px;
-  text-align: left;
-  white-space: nowrap;
 }

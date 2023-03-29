@@ -7,16 +7,11 @@ body .scroll-top {
   z-index: 9;
   padding: 20px;
   text-decoration: none;
-  width: auto;
-  height: auto;
+  width: 70px;
+  height: 50px !important;
   color: $base-color-txt;
   &:hover {
     text-decoration: none;
     color: $base-color-txt;
-  }
-  &:focus {
-    padding: 20px;
-    width: auto;
-    height: auto;
   }
 }

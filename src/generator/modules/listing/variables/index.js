@@ -8,3 +8,5 @@ export { default as bezpiecznikDateDefaultValue } from "./bezpiecznikDateDefault
 export { default as textAreaDefaultText } from "./textAreaDefaultText";
 export { default as excelHeaders } from "./excelHeaders";
 export { default as fillCouponCode } from "./fillCouponCode";
+export { default as templateSelect } from "./templateSelect";
+export { default as minNumOfGidsForSorting } from "./minNumOfGidsForSorting";

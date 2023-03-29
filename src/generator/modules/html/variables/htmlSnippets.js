@@ -302,7 +302,7 @@ const htmlSnippets = {
       };
       iterator();
     };
-    onElementLoad("._4columnsCss-root-Fv2", (selector) => {
+    onElementLoad("[class^=_4columnsCss-root]", (selector) => {
       document
         .querySelectorAll(selector)
         [listingIDNumber].classList.add("custom-slider");

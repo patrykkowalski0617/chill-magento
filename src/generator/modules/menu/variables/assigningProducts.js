@@ -92,15 +92,7 @@ const assigningProducts = (module) => {
 
       const copyCategoryBtnActions = () => {
         document.querySelectorAll(".missing-category").forEach((el) => {
-          //   const filtersIdData = chilledFiltersAssignedMenuId.filter(
-          //     (value) => value.moduleId === module.dataset.moduleId
-          //   );
-          //   if (filtersIdData.length) {
-          //     document
-          //       .querySelectorAll(".missing-category button")
-          //       .forEach((el) => el.classList.add("add-filters"));
-          //   }
-
+   
           el.querySelector("button").addEventListener("click", (e) => {
             const btn = e.target;
             const txt = btn.parentNode.innerText;

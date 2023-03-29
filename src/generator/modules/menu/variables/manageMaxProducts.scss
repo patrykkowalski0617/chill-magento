@@ -1,0 +1,14 @@
+.chill-ch-loaded {
+  .module__menu .module__content.module__form > .cf {
+    > :nth-child(1),
+    > :nth-child(2) {
+      width: 33%;
+    }
+    > :nth-child(2) {
+      .input__icon {
+        bottom: unset;
+        top: 32px;
+      }
+    }
+  }
+}
