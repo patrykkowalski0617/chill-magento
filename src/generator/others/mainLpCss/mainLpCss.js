@@ -33,6 +33,7 @@ const mainLpCss = () => {
 
 ` +
         input.value;
+      input.classList.add("chilled-element-mark");
     } else {
       input.value = inputVal.replace(newCss, "");
     }
@@ -40,10 +41,14 @@ const mainLpCss = () => {
     const element = document.querySelector(".admin__control-textarea");
     element.dispatchEvent(e);
   };
-  const mainCss_currVers = cssSnippets.mainCss.match(/\d+/g)[0];
-  const mainCss_lpVers = inputVal
-    .substr(inputVal.indexOf("mainCss start v"), 50)
-    .match(/\d+/g)[0];
+
+  const mainCss_currVers = cssSnippets.mainCss.match(/\d+/g)
+    ? cssSnippets.mainCss.match(/\d+/g)[0]
+    : false;
+  console.log("inputVal :>> ", inputVal.length);
+  const mainCss_lpVers = inputVal.length
+    ? inputVal.substr(inputVal.indexOf("mainCss start v"), 50).match(/\d+/g)[0]
+    : "";
   const mainCssPreviousVersion_Start = `/* >> mainCss start v${mainCss_lpVers} >> >> >> */`;
   const mainCssPreviousVersion_End = `/* << << << mainCss end << */`;
   const mainCss_previousVersion = inputVal.substring(
