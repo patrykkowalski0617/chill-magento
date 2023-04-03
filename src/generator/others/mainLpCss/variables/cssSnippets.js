@@ -1,5 +1,5 @@
 const cssSnippets = {
-  mainCss: `/* >> mainCss start v12 >> >> >> */
+  mainCss: `/* >> mainCss start v14 >> >> >> */
 
 /* justify availability buttons */
 [class*="availabilityButtonCss-btn-"] {
@@ -98,8 +98,29 @@ body [class*="heroBannerScss-banner__promotion"] {
 }
 
 /* streach lp content */
-[class*="menuDesktopScss-grid_container"] {
-  max-width: unset !important;
+/**/
+
+/* streach lp menu */
+body{
+  overflow-x: hidden;
+}
+[class*="menuDesktopScss-root"]{
+  position: relative;
+}
+[class*="menuDesktopScss-root"]::before,
+[class*="menuDesktopScss-root"]::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: #f2f2f2;
+  content: "";
+  width: 100vw;
+}
+[class*="menuDesktopScss-root"]::before{
+  left: -99vw;
+}
+[class*="menuDesktopScss-root"]::after {
+  right: -99vw;
 }
 
 /* no idea what it is */
