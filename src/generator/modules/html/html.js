@@ -88,6 +88,24 @@ const html = moduleFix({
         updateHtml("max5InRow", module);
       },
     },
+    {
+      btnName: "heroNewListingTitle",
+      callback: ({ module }) => {
+        updateHtml("heroNewListingTitle", module);
+      },
+    },
+    {
+      btnName: "promoSquaresAndBorder",
+      callback: ({ module }) => {
+        updateHtml("promoSquaresAndBorder", module);
+      },
+    },
+    {
+      btnName: "animatedBorder",
+      callback: ({ module }) => {
+        updateHtml("animatedBorder", module);
+      },
+    },
   ],
   newModuleCallback,
   existingModuleCallback,
