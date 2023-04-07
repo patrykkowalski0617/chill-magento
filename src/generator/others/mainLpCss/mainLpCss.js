@@ -1,5 +1,5 @@
 import { cssSnippets } from "./variables";
-import { renderFixButtons } from "../../../chill";
+import { forceChangeEvent, renderFixButtons } from "../../../chill";
 
 const mainLpCss = () => {
   const cssContainer = document.querySelector(
@@ -22,30 +22,38 @@ const mainLpCss = () => {
   const input = cssContainer.querySelector(".admin__control-textarea");
   const inputVal = input.value;
   const updateInput = ({ newCss, previousVersion, onLoad }) => {
-    if (previousVersion && inputVal.includes(previousVersion)) {
-      input.value = inputVal.replace(previousVersion, "");
-    }
+    console.log(
+      " :>> ",
+      input.value.includes(newCss.trim()),
+      newCss.trim(),
+      input.value
+    );
+    if (!input.value.includes(newCss.trim())) {
+      if (previousVersion && inputVal.includes(previousVersion)) {
+        input.value = inputVal.replace(previousVersion, "");
+      }
 
-    if (!inputVal.includes(newCss) || onLoad) {
-      input.value =
-        newCss.trim() +
-        `
+      if (!inputVal.includes(newCss) || onLoad) {
+        input.value =
+          newCss.trim() +
+          `
 
 ` +
-        input.value;
-      input.classList.add("chilled-element-mark");
+          input.value;
+        input.classList.add("chilled-element-mark");
+      } else {
+        input.value = inputVal.replace(newCss, "");
+      }
+      forceChangeEvent(".admin__control-textarea");
     } else {
-      input.value = inputVal.replace(newCss, "");
+      input.value = input.value.replace(newCss.trim(), "").trim();
     }
-    const e = new Event("change");
-    const element = document.querySelector(".admin__control-textarea");
-    element.dispatchEvent(e);
   };
 
   const mainCss_currVers = cssSnippets.mainCss.match(/\d+/g)
     ? cssSnippets.mainCss.match(/\d+/g)[0]
     : false;
-  console.log("inputVal :>> ", inputVal.length);
+
   const mainCss_lpVers = inputVal.length
     ? inputVal.substr(inputVal.indexOf("mainCss start v"), 50).match(/\d+/g)[0]
     : "";
