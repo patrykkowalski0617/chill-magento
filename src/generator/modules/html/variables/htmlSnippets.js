@@ -386,5 +386,214 @@ const htmlSnippets = {
   }, 2500);
 </script>
   `,
+  heroNewListingTitle: `
+  <script>
+  const heroTitle = document.querySelector(".dealOfTheWeekWrapperScss-title-1hy");
+  heroTitle.innerHTML = "Your title!"
+  </script`,
+  promoSquaresAndBorder: `
+
+<div style="text-align: center">
+  <div
+    class="lp-asterisk"
+    style="
+      font-size: 2.3rem;
+      margin: 20px auto;
+      padding: 16px 32px;
+      font-weight: bold;
+      border: #ff444f solid 3px;
+      border-radius: 5px;
+      max-width: unset;
+      display: inline-block;
+      letter-spacing: 2px;
+      line-height: 1.4;
+      width: auto;
+    "
+  >
+    Rabat 12% udzielany jest w koszyku z kodem RABAT12
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="child">
+      <img
+        class="promotionsCss-promotion-3Mh"
+        src="https://cdn-img.neonet.pl/eyJidWNrZXQiOiJodHRwczovL2Nkbi1tMi5uZW9uZXQucGwiLCJrZXkiOiJtZWRpYS9tYXJrZXRpbmcvY2FtcGFpZ24vbS9iL21iYW5lcl8zMTV4MjAwMTY4MDUzMTA0NmNvcHkwLnBuZyIsImVkaXRzIjp7IndlYnAiOnsicXVhbGl0eSI6ODB9fX0=/mbaner_315x2001680531046copy0.png"
+        alt="lodowki"
+        data-layer-click-set="true"
+      />
+      <a
+        target="_blank"
+        class="promotionsCss-buttonPromotion-2zE"
+        href="https://www.neonet.pl/lpage/promo-pralki-lodowki-suszarki-taniej-m5.html?kwplcm=banner_promo_home"
+      >
+        Sprawdź promocję
+      </a>
+  </div>
+
+<!--
+ <div class="child">
+      <img
+        class="promotionsCss-promotion-3Mh"
+        src="https://cdn-img.neonet.pl/eyJidWNrZXQiOiJodHRwczovL2Nkbi1tMi5uZW9uZXQucGwiLCJrZXkiOiJtZWRpYS9tYXJrZXRpbmcvY2FtcGFpZ24vbS9iL21iYW5lcl8zMTV4MjAwMTY3OTM4NDk1MWNvcHkwLnBuZyIsImVkaXRzIjp7IndlYnAiOnsicXVhbGl0eSI6ODB9fX0=/mbaner_315x2001679384951copy0.png"
+        alt="banner wyprzedaz duzego agd"
+        data-layer-click-set="true"
+      />
+      <a
+        target="_blank"
+        class="promotionsCss-buttonPromotion-2zE"
+        href="https://www.neonet.pl/lpage/promo-wyprzedaz-duzego-agd.html?kwplcm=banner_promo_home"
+      >
+        Sprawdź promocję
+      </a>
+  </div>
+  -->
+</div>
+
+<style>
+   .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .child {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 20px;
+      border: 1px solid rgb(222, 222, 222);
+    }
+
+    .child a {
+      font-weight: 500;
+      padding: 14px 20px;
+      display: inline-block;
+      color: rgb(56, 56, 56);
+      font-size: 16px;
+      border: 0;
+      line-height: 18px;
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+      position: relative;
+      text-decoration: none;
+    }
+
+    .child a::after {
+      content: "";
+      display: block;
+      width: 6px;
+      height: 6px;
+      right: 4px;
+      border-top: 2px solid rgb(255, 68, 79);
+      border-right: 2px solid rgb(255, 68, 79);
+      -moz-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+      transform: rotate(45deg);
+      transition: transform 0.2s;
+      margin: 0 auto;
+      position: absolute;
+      top: 19px;
+    }
+    </style>
+  `,
+
+  animatedBorder: `
+  <div style="text-align: center; max-width: 750px; margin: 0 auto;">
+  <div
+    class="box"
+    "
+  >
+  <p>Akcja łączy się z innymi promocjami.<br/>Rabat 6% udzielany jest od poniżej obowiązujących cen.<br/>Aby skorzystać z obu promocji, należy w koszyku zaznaczyć
+oba kafle promocyjne lub wpisać dodatkowy kod LODOWKA.</p>
+  </div>
+</div>
+<style>
+  @import url("https://fonts.googleapis.com/css?family=Raleway:400");
+
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: '<percentage>';
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: true;
+}
+
+
+
+:root {
+	--d: 2500ms;
+	--angle: 60deg;
+	--gradX: 100%;
+	--gradY: 50%;
+	--c1: rgba(255,68,79,1);
+	--c2: rgba(255,68,79,0.02);
+}
+
+
+.box {
+	font-size: 1.2rem;
+max-width: 700px;
+	 margin: 20px auto;
+	border: 0.4rem solid;
+	padding: 16px 32px;
+	border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.4turn, var(--c1) 0.55turn, var(--c2) 0.7turn) 30;
+animation: borderRotate var(--d) linear infinite forwards;
+}
+
+
+
+@keyframes borderRotate {
+	100% {
+		--angle: 420deg;
+	}
+}
+
+@keyframes borderRadial {
+	20% {
+		--gradX: 100%;
+		--gradY: 50%;
+	}
+	40% {
+		--gradX: 100%;
+		--gradY: 100%;
+	}
+	60% {
+		--gradX: 50%;
+		--gradY: 100%;
+	}
+	80% {
+		--gradX: 0%;
+		--gradY: 50%;
+	}
+	100% {
+		--gradX: 50%;
+		--gradY: 0%;
+	}
+}
+.box p{
+    font-size: 1.2rem;
+      font-weight: bold;
+letter-spacing: 1.2px;
+      line-height: 1.4;
+}
+</style>
+  `,
 };
 export default htmlSnippets;

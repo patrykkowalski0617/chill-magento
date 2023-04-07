@@ -1,3 +1,4 @@
+import { update } from "immutable";
 import { w3CodeColor } from "../../../others/syntaxHighlight/variables";
 import { htmlSnippets } from "../variables";
 
@@ -57,6 +58,15 @@ const updateHtml = (action, module) => {
       break;
     case "lpIframe":
       updateContent(htmlSnippets.lpIframe, module);
+      break;
+    case "heroNewListingTitle":
+      updateContent(htmlSnippets.heroNewListingTitle, module);
+      break;
+    case "promoSquaresAndBorder":
+      updateContent(htmlSnippets.promoSquaresAndBorder, module);
+      break;
+    case "animatedBorder":
+      updateContent(htmlSnippets.animatedBorder, module);
       break;
 
     default:
