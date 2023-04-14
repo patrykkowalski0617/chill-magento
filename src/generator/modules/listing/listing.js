@@ -7,6 +7,7 @@ import {
   hideElements,
   onSave,
 } from "./actions";
+import getFromStoreEndOfListing from "./actions/getFromStoreEndOfListing";
 
 const listing = moduleFix({
   moduleClass: "module__products",
@@ -14,6 +15,7 @@ const listing = moduleFix({
     { btnName: "defaultFix", callback: defaultFix },
     { btnName: "bezpiecznik", callback: bezpiecznik },
     { btnName: "hideElements", callback: hideElements },
+    { btnName: "getFromShop", callback: getFromStoreEndOfListing },
   ],
   newModuleCallback,
   existingModuleCallback,

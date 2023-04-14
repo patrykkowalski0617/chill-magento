@@ -4,6 +4,7 @@ import {
   excelHeaders,
   minNumOfGidsForSorting,
 } from "./";
+
 import "./renderInputs.scss";
 const renderInputs = (module) => {
   const gidsInput = module.querySelector("textarea");
@@ -25,8 +26,7 @@ const renderInputs = (module) => {
           ${headersMarks}"></textarea>
           <textarea class="chill-gids-input gids-to-update" placeholder="Gidy do aktualizacji" title="Skopiuj i wklej tabelę z Excela. Oznaczenia kolumn:
           ${headersMarks}"></textarea>
-          
-          `
+    `
   );
   const manageSorting = () => {
     setTimeout(() => {
@@ -224,6 +224,8 @@ Walidacja wklejanej listy:
 
       const listArrOfObj = makeObjects(actualGids);
       const listWithChangesArrOfObj = makeObjects(listWithChanges);
+      console.log(listArrOfObj);
+      console.log(listWithChangesArrOfObj);
       const changedGids = [];
       const notChangedGids = [];
       const newListArrOfObj = listArrOfObj.map((el, i) => {
