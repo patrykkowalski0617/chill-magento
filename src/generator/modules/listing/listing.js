@@ -15,7 +15,7 @@ const listing = moduleFix({
     { btnName: "defaultFix", callback: defaultFix },
     { btnName: "bezpiecznik", callback: bezpiecznik },
     { btnName: "hideElements", callback: hideElements },
-    { btnName: "getFromShop", callback: getFromStoreEndOfListing },
+    { btnName: "onlyFromShop", callback: getFromStoreEndOfListing },
   ],
   newModuleCallback,
   existingModuleCallback,
