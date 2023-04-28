@@ -1280,7 +1280,7 @@ const menuCategories_newMenu = [
       {
         subcategoryName: "Radia i budziki",
         subcategoryOther: "not-allowed",
-        codes: [{ categoryCode: "100137", codeName: "Radia i budziki" }],
+        codes: [{ categoryCode: "101683", codeName: "Radia i budziki" }],
       },
       {
         subcategoryName: "Kina domowe",
