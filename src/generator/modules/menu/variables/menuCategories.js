@@ -1191,11 +1191,6 @@ const menuCategories = [
         codes: [{ categoryCode: "101266", codeName: "Soundbary" }],
       },
       {
-        subcategoryName: "Boomboxy",
-        subcategoryOther: "allowed",
-        codes: [{ categoryCode: "100139", codeName: "Boomboxy" }],
-      },
-      {
         subcategoryName: "Kontrolery DJ",
         subcategoryOther: "allowed",
         codes: [{ categoryCode: "101532", codeName: "Kontrolery DJ" }],
