@@ -1148,6 +1148,21 @@ const menuCategories = [
     icon: "ico_rtv",
     subcategories: [
       {
+        subcategoryName: "High Power Audio",
+        subcategoryOther: "allowed",
+        codes: [{ categoryCode: "101421", codeName: "High Power Audio" }],
+      },
+      {
+        subcategoryName: "Mikro i Mini Wieże",
+        subcategoryOther: "allowed",
+        codes: [{ categoryCode: "100130", codeName: "Mikro i Mini Wieże" }],
+      },
+      {
+        subcategoryName: "Radia i budziki",
+        subcategoryOther: "allowed",
+        codes: [{ categoryCode: "100137", codeName: "Radia i budziki" }],
+      },
+      {
         subcategoryName: "Kina domowe",
         subcategoryOther: "allowed",
         codes: [{ categoryCode: "100115", codeName: "Kina domowe" }],
@@ -1171,29 +1186,9 @@ const menuCategories = [
         ],
       },
       {
-        subcategoryName: "Radioodtwarzacze",
-        subcategoryOther: "allowed",
-        codes: [{ categoryCode: "100137", codeName: "Radioodtwarzacze" }],
-      },
-      {
-        subcategoryName: "Radiobudziki",
-        subcategoryOther: "allowed",
-        codes: [{ categoryCode: "100138", codeName: "Radiobudziki" }],
-      },
-      {
-        subcategoryName: "High Power Audio",
-        subcategoryOther: "allowed",
-        codes: [{ categoryCode: "101421", codeName: "High Power Audio" }],
-      },
-      {
         subcategoryName: "Soundbary",
         subcategoryOther: "allowed",
         codes: [{ categoryCode: "101266", codeName: "Soundbary" }],
-      },
-      {
-        subcategoryName: "Radia DAB",
-        subcategoryOther: "allowed",
-        codes: [{ categoryCode: "101129", codeName: "Radia DAB" }],
       },
       {
         subcategoryName: "Boomboxy",
@@ -1219,11 +1214,6 @@ const menuCategories = [
         subcategoryName: "Inteligentne głośniki",
         subcategoryOther: "allowed",
         codes: [{ categoryCode: "101584", codeName: "Inteligentne głośniki" }],
-      },
-      {
-        subcategoryName: "Mikro i Mini Wieże",
-        subcategoryOther: "allowed",
-        codes: [{ categoryCode: "100130", codeName: "Mikro i Mini Wieże" }],
       },
       {
         subcategoryName: "Amplitunery",
