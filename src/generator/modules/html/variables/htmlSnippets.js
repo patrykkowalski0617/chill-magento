@@ -386,11 +386,13 @@ const htmlSnippets = {
   }, 2500);
 </script>
   `,
-  heroNewListingTitle: `
-  <script>
-  const heroTitle = document.querySelector(".dealOfTheWeekWrapperScss-title-1hy");
-  heroTitle.innerHTML = "Your title!"
-  </script`,
+  heroNewListingTitle: `[class*="dealOfTheWeekWrapperScss-title-"] {
+  font-size: 0;
+}
+[class*="dealOfTheWeekWrapperScss-title-"]::before {
+  font-size: 26px;
+  content: "Your_title!";
+}`,
   promoSquaresAndBorder: `
 
 <div style="text-align: center">
