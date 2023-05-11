@@ -386,15 +386,20 @@ const htmlSnippets = {
   }, 2500);
 </script>
   `,
-  heroNewListingTitle: `[class*="dealOfTheWeekWrapperScss-title-"] {
-  font-size: 0;
-}
-[class*="dealOfTheWeekWrapperScss-title-"]::before {
-  font-size: 26px;
-  content: "Your_title!";
-}`,
+  heroNewListingTitle: `
+<!-- heroNewListingTitle -->
+<style>
+  [class*="dealOfTheWeekWrapperScss-title-"] {
+    font-size: 0;
+  }
+  [class*="dealOfTheWeekWrapperScss-title-"]::before {
+    font-size: 26px;
+    content: "Hit Dnia!";
+  }
+</style>
+`,
   promoSquaresAndBorder: `
-
+<!-- promoSquaresAndBorder -->
 <div style="text-align: center">
   <div
     class="lp-asterisk"
@@ -506,6 +511,7 @@ const htmlSnippets = {
   `,
 
   animatedBorder: `
+<!-- animatedBorder -->
   <div style="text-align: center; max-width: 750px; margin: 0 auto;">
   <div
     class="box"
