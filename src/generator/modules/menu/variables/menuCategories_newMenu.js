@@ -98,6 +98,11 @@ const menuCategories_newMenu = [
         codes: [{ categoryCode: "100034", codeName: "Suszarki" }],
       },
       {
+        subcategoryName: "Ekspresy do kawy",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "100027", codeName: "Ekspresy do kawy" }],
+      },
+      {
         subcategoryName: "Kuchnie mikrofalowe",
         subcategoryOther: "not-allowed",
         codes: [
@@ -188,7 +193,6 @@ const menuCategories_newMenu = [
         subcategoryName: "Ekspresy do kawy",
         subcategoryOther: "not-allowed",
         codes: [
-          { categoryCode: "100027", codeName: "Ekspresy do kawy" },
           { categoryCode: "100046", codeName: "Ekspresy do kawy" },
           { categoryCode: "100047", codeName: "Przelewowe" },
         ],
