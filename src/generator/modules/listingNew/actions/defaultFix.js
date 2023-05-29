@@ -12,7 +12,7 @@ const defaultFix = ({ module }) => {
     "[id^=products_new_max_products_per_category_]"
   );
 
-  maximumItemsInput.value = 7;
+  maximumItemsInput.value = 9999;
 
   markInputs([maximumItemsInput]);
 
