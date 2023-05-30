@@ -22,7 +22,7 @@ const generateMenu = ({ module }) => {
 
   // 1. Blur page
 
-  document.body.classList.add("chill-is-working");
+  // document.body.classList.add("chill-is-working");
 
   sessionStorage.setItem("menuSaved", menuWrapper.innerHTML);
   // 2. If menu has notice message - remover it
@@ -66,11 +66,7 @@ const generateMenu = ({ module }) => {
               const codeCompare = el.code === code.categoryCode;
               //  allow only categories with quantity more than one when areAnimatedIcons == true
               const isQuantityCorrect =
-                !areAnimatedIcons ||
-                (areAnimatedIcons &&
-                  (el.quantity === 2 ||
-                    el.quantity === 3 ||
-                    el.quantity === 6));
+                !areAnimatedIcons || (areAnimatedIcons && el.quantity > 1);
               return codeCompare && isQuantityCorrect;
             });
           });
@@ -213,7 +209,7 @@ const generateMenu = ({ module }) => {
         noticeMsg.remove();
       }
       onElementReady(".notice-message", () => {
-        location.reload();
+        // location.reload();
       });
 
       // 8. New menu is ready
