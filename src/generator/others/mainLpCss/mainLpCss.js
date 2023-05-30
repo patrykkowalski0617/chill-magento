@@ -22,12 +22,6 @@ const mainLpCss = () => {
   const input = cssContainer.querySelector(".admin__control-textarea");
   const inputVal = input.value;
   const updateInput = ({ newCss, previousVersion, onLoad }) => {
-    console.log(
-      " :>> ",
-      input.value.includes(newCss.trim()),
-      newCss.trim(),
-      input.value
-    );
     if (!input.value.includes(newCss.trim())) {
       if (previousVersion && inputVal.includes(previousVersion)) {
         input.value = inputVal.replace(previousVersion, "");

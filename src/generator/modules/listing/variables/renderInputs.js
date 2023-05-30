@@ -224,8 +224,7 @@ Walidacja wklejanej listy:
 
       const listArrOfObj = makeObjects(actualGids);
       const listWithChangesArrOfObj = makeObjects(listWithChanges);
-      console.log(listArrOfObj);
-      console.log(listWithChangesArrOfObj);
+
       const changedGids = [];
       const notChangedGids = [];
       const newListArrOfObj = listArrOfObj.map((el, i) => {

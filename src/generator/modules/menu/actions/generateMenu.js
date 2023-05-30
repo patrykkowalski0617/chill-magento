@@ -19,10 +19,10 @@ const generateMenu = ({ module }) => {
   const maxProducts = module.querySelector(
     ".chill-maxProducts-input input"
   ).value;
-  console.log(maxProducts);
+
   // 1. Blur page
 
-  document.body.classList.add("chill-is-working");
+  // document.body.classList.add("chill-is-working");
 
   sessionStorage.setItem("menuSaved", menuWrapper.innerHTML);
   // 2. If menu has notice message - remover it
@@ -63,7 +63,11 @@ const generateMenu = ({ module }) => {
           // filter codes
           const filtredCodes = codesWithQuntity.filter((code) => {
             return categoriesList.find((el) => {
-              return el.code === code.categoryCode;
+              const codeCompare = el.code === code.categoryCode;
+
+              const isQuantityCorrect =
+                !areAnimatedIcons || (areAnimatedIcons && el.quantity > 1);
+              return codeCompare && isQuantityCorrect;
             });
           });
           return filtredCodes;
@@ -205,7 +209,7 @@ const generateMenu = ({ module }) => {
         noticeMsg.remove();
       }
       onElementReady(".notice-message", () => {
-        location.reload();
+        // location.reload();
       });
 
       // 8. New menu is ready
