@@ -64,7 +64,7 @@ const generateMenu = ({ module }) => {
           const filtredCodes = codesWithQuntity.filter((code) => {
             return categoriesList.find((el) => {
               const codeCompare = el.code === code.categoryCode;
-
+              //  allow only categories with quantity more than one when areAnimatedIcons == true
               const isQuantityCorrect =
                 !areAnimatedIcons || (areAnimatedIcons && el.quantity > 1);
               return codeCompare && isQuantityCorrect;
