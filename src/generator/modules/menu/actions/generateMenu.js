@@ -22,7 +22,7 @@ const generateMenu = ({ module }) => {
 
   // 1. Blur page
 
-  // document.body.classList.add("chill-is-working");
+  document.body.classList.add("chill-is-working");
 
   sessionStorage.setItem("menuSaved", menuWrapper.innerHTML);
   // 2. If menu has notice message - remover it
@@ -209,7 +209,7 @@ const generateMenu = ({ module }) => {
         noticeMsg.remove();
       }
       onElementReady(".notice-message", () => {
-        // location.reload();
+        location.reload();
       });
 
       // 8. New menu is ready
