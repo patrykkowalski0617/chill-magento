@@ -203,14 +203,24 @@ const menuCategories_newMenu = [
         codes: [{ categoryCode: "100062", codeName: "Odkurzacze" }],
       },
       {
-        subcategoryName: "Roboty, blendery, miksery",
+        subcategoryName: "Blendery kielichowe",
         subcategoryOther: "not-allowed",
-        codes: [
-          { categoryCode: "100042", codeName: "Blendery kielichowe" },
-          { categoryCode: "100043", codeName: "Blendery ręczne" },
-          { categoryCode: "100067", codeName: "Roboty kuchenne" },
-          { categoryCode: "100060", codeName: "Miksery ręczne" },
-        ],
+        codes: [{ categoryCode: "100042", codeName: "Blendery kielichowe" }],
+      },
+      {
+        subcategoryName: "Blendery ręczne",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "100043", codeName: "Blendery ręczne" }],
+      },
+      {
+        subcategoryName: "Roboty kuchenne",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "100067", codeName: "Roboty kuchenne" }],
+      },
+      {
+        subcategoryName: "Miksery ręczne",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "100060", codeName: "Miksery ręczne" }],
       },
       {
         subcategoryName: "Czajniki",
@@ -256,14 +266,26 @@ const menuCategories_newMenu = [
         ],
       },
       {
-        subcategoryName: "Golenie męskie",
+        subcategoryName: "Golarki",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "100049", codeName: "Golarki" }],
+      },
+      {
+        subcategoryName: "Trymery",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "100078", codeName: "Trymery" }],
+      },
+      {
+        subcategoryName: "Maszynki do strzyżenia włosów",
         subcategoryOther: "not-allowed",
         codes: [
-          { categoryCode: "100049", codeName: "Golarki" },
-          { categoryCode: "100078", codeName: "Trymery" },
           { categoryCode: "100057", codeName: "Maszynki do strzyżenia włosów" },
-          { categoryCode: "101435", codeName: "Akcesoria do golarek" },
         ],
+      },
+      {
+        subcategoryName: "Akcesoria do golarek",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "101435", codeName: "Akcesoria do golarek" }],
       },
       {
         subcategoryName: "Żelazka",
@@ -271,12 +293,24 @@ const menuCategories_newMenu = [
         codes: [{ categoryCode: "100083", codeName: "Żelazka" }],
       },
       {
-        subcategoryName: "Stylizacja włosów",
+        subcategoryName: "Lokówki",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "100055", codeName: "Lokówki" }],
+      },
+      {
+        subcategoryName: "Suszarki do włosów",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "100071", codeName: "Suszarki do włosów" }],
+      },
+      {
+        subcategoryName: "Suszarko-lokówki",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "100072", codeName: "Suszarko-lokówki" }],
+      },
+      {
+        subcategoryName: "Prostownice i karbownice",
         subcategoryOther: "not-allowed",
         codes: [
-          { categoryCode: "100055", codeName: "Lokówki" },
-          { categoryCode: "100071", codeName: "Suszarki do włosów" },
-          { categoryCode: "100072", codeName: "Suszarko-lokówki" },
           { categoryCode: "100066", codeName: "Prostownice i karbownice" },
         ],
       },
@@ -586,25 +620,66 @@ const menuCategories_newMenu = [
         subcategoryOther: "not-allowed",
         codes: [{ categoryCode: "101459", codeName: "Sztućce" }],
       },
+
       {
         subcategoryName: "Patelnie i garnki",
         subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "100065", codeName: "Patelnie i garnki" }],
+      },
+      {
+        subcategoryName: "Patelnie grillowe",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "101641", codeName: "Patelnie grillowe" }],
+      },
+      {
+        subcategoryName: "Zestawy garnków",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "101643", codeName: "Zestawy garnków" }],
+      },
+      {
+        subcategoryName: "Woki",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "101642", codeName: "Woki" }],
+      },
+      {
+        subcategoryName: "Patelnie",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "101638", codeName: "Patelnie" }],
+      },
+      {
+        subcategoryName: "Rondle",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "101645", codeName: "Rondle" }],
+      },
+      {
+        subcategoryName: "Patelnie z pokrywką",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "101639", codeName: "Patelnie z pokrywką" }],
+      },
+      {
+        subcategoryName: "Pokrywki",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "101637", codeName: "Pokrywki" }],
+      },
+      {
+        subcategoryName: "Patelnie do naleśników",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "101640", codeName: "Patelnie do naleśników" }],
+      },
+      {
+        subcategoryName: "Brytfanny i naczynia żaroodpor",
+        subcategoryOther: "not-allowed",
         codes: [
-          { categoryCode: "100065", codeName: "Patelnie i garnki" },
-          { categoryCode: "101641", codeName: "Patelnie grillowe" },
-          { categoryCode: "101643", codeName: "Zestawy garnków" },
-          { categoryCode: "101642", codeName: "Woki" },
-          { categoryCode: "101638", codeName: "Patelnie" },
-          { categoryCode: "101645", codeName: "Rondle" },
-          { categoryCode: "101639", codeName: "Patelnie z pokrywką" },
-          { categoryCode: "101637", codeName: "Pokrywki" },
-          { categoryCode: "101640", codeName: "Patelnie do naleśników" },
           {
             categoryCode: "101606",
             codeName: "Brytfanny i naczynia żaroodporne",
           },
-          { categoryCode: "101644", codeName: "Garnki" },
         ],
+      },
+      {
+        subcategoryName: "Garnki",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "101644", codeName: "Garnki" }],
       },
 
       {

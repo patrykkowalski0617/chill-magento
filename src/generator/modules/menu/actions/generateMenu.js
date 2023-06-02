@@ -16,7 +16,7 @@ const generateMenu = ({ module }) => {
   const allCategories = areAnimatedIcons
     ? menuCategories_newMenu
     : menuCategories;
-  const maxProducts = module.querySelector(
+  const maxProductInputVal = module.querySelector(
     ".chill-maxProducts-input input"
   ).value;
 
@@ -64,10 +64,8 @@ const generateMenu = ({ module }) => {
           const filtredCodes = codesWithQuntity.filter((code) => {
             return categoriesList.find((el) => {
               const codeCompare = el.code === code.categoryCode;
-              //  allow only categories with quantity more than one when areAnimatedIcons == true
-              const isQuantityCorrect =
-                !areAnimatedIcons || (areAnimatedIcons && el.quantity > 1);
-              return codeCompare && isQuantityCorrect;
+
+              return codeCompare;
             });
           });
           return filtredCodes;
@@ -166,10 +164,16 @@ const generateMenu = ({ module }) => {
               );
             })
             .join();
+
         const subcategoriesMap = (categoryId, subcategories, direct) =>
           subcategories
             .map((subcategory, subcategoryId) => {
-              const { subcategoryName, codes } = subcategory;
+              const { subcategoryName, codes, itemsQuantity } = subcategory;
+              const itemsQuantityValid = itemsQuantity === 4 ? 3 : 7;
+              const maxProducts = maxProductInputVal
+                ? maxProductInputVal
+                : itemsQuantityValid;
+
               return menuTemplate.subcategory(
                 maxProducts,
                 moduleId,

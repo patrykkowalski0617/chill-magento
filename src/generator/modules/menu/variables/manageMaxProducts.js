@@ -9,7 +9,7 @@ const manageMaxProducts = (module) => {
     <label class="module__label">
         Maksymalna liczba produktów przy generowaniu
     </label>
-    <input class="input__text input__category" type="number" value="7">
+    <input class="input__text input__category" type="number" value="">
 </div>`;
   const inputBefore = module.querySelector(
     ".module__content.module__form > .cf > :nth-child(2)"
