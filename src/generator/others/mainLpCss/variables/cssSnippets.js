@@ -331,18 +331,23 @@ body [class*=promotionInfoScss-number] {
 `,
   payback: `
 /* >> payback start v1 >> >> >> */
-[class*=savingsScss-discount__label] {
+[class*="savingsScss-discount__label"],
+[class*="savingsScss-neo24-discount__label"] {
   font-size: 0;
 }
-[class*=savingsScss-discount__label]::after {
+[class*="savingsScss-discount__label"]::after,
+[class*="savingsScss-neo24-discount__label"]::after {
   content: "Punkty payback: ";
   font-size: 13px;
 }
 
-[class*=savingsScss-discount__value] {
+[class*="savingsScss-discount__value"],
+[class*="savingsScss-neo24-discount__value"] {
   position: relative;
 }
-[class*=savingsScss-discount__value]::after {
+
+[class*="savingsScss-discount__value"]::after,
+[class*="savingsScss-neo24-discount__value"]::after {
   content: "";
   background: #fff;
   position: absolute;
@@ -352,7 +357,7 @@ body [class*=promotionInfoScss-number] {
   height: 100%;
 }
 /* << << << payback end << */
-  `,
+`,
   greenApla: `
 /* >> greenApla start v1 >> >> >> */
 [class*=savingsScss-discount__label-],
