@@ -356,6 +356,11 @@ body [class*=promotionInfoScss-number] {
   z-index: 1;
   height: 100%;
 }
+/* n24 */
+[class*=savingsScss-neo24-discount__value]::after {
+    width: 32px;
+    top: 2px;
+}
 /* << << << payback end << */
 `,
   greenApla: `
