@@ -7,13 +7,6 @@
   }
 }
 
-// .module__banner_hero .module__form div:nth-of-type(5),
-// .module__banner_hero .module__form div:nth-of-type(6),
-// .module__banner_hero .module__form div:nth-of-type(11),
-// .module__banner_hero .module__form div:nth-of-type(15){
-//   display: none !important;
-// }
-
 .module__banner_hero:not(.bannerHero-show-hidden-elements)
   .chill-btn-container
   button:nth-child(4) {

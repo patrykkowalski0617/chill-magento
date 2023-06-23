@@ -7,7 +7,6 @@ const markElementsForHideElements = (module) => {
   };
   markInputs(inputContainers[2]);
   markInputs(inputContainers[3]);
-  markInputs(inputContainers[8]);
   markInputs(inputContainers[12]);
 };
 
