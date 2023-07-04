@@ -5,7 +5,7 @@ const bgVariant = (module) => {
   const oryginalInput = module.querySelector(
     ".module__banner_hero .module__content.module__form > div:nth-child(14)"
   );
-  console.log("oryginalInput :>> ", oryginalInput);
+
   const oryginalInputHTML = oryginalInput.innerHTML;
 
   inputContainers[4].style.width = "43%";
