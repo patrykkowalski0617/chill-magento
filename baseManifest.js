@@ -8,6 +8,7 @@ module.exports = {
       matches: [
         "https://www.neonet.pl/admin_x90nun/*",
         "https://dev.neonet.pl/*",
+        "https://qa-pwa.neonet.pl/*",
       ],
     },
   ],

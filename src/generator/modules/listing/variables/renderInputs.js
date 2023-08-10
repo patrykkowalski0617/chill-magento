@@ -3,9 +3,11 @@ import {
   formatExcel,
   excelHeaders,
   minNumOfGidsForSorting,
+  _clearTextAreaOnKey,
 } from "./";
 
 import "./renderInputs.scss";
+
 const renderInputs = (module) => {
   const gidsInput = module.querySelector("textarea");
   const headersMarks = JSON.stringify(excelHeaders)
@@ -18,10 +20,10 @@ const renderInputs = (module) => {
   module.querySelector(".chill-btn-container").insertAdjacentHTML(
     "beforeend",
     `
-          <textarea class="chill-gids-input new-gids" placeholder="Nowe gidy" title="Skopiuj i wklej tabelę z Excela. Oznaczenia kolumn: 
-          ${headersMarks}"></textarea>
-          <textarea class="chill-gids-input gids-to-delete" placeholder="Gidy do usunięcia" title="Wklej gidy do usunięcia odzielone przecinkami (akceptowalne białe znaki) lub tabelę z Excela. Oznaczenia kolumny: 
-          ${excelHeaders[0].gid}"></textarea>
+    <button class="chill-btn gid-list-taker new-gids" title="Skopiuj i wklej tabelę z Excela. Oznaczenia kolumn: 
+          ${headersMarks}">Nowe gidy</button>
+    <button class="chill-btn gid-list-taker gids-to-delete" title="Gidy do usunięcia" title="Wklej gidy do usunięcia odzielone przecinkami (akceptowalne białe znaki) lub tabelę z Excela. Oznaczenia kolumny:  
+          ${excelHeaders[0].gid}">Gidy do usunięcia</button>
           <textarea class="chill-gids-input gids-to-add" placeholder="Gidy do dodania" title="Skopiuj i wklej tabelę z Excela. Oznaczenia kolumn: 
           ${headersMarks}"></textarea>
           <textarea class="chill-gids-input gids-to-update" placeholder="Gidy do aktualizacji" title="Skopiuj i wklej tabelę z Excela. Oznaczenia kolumn:
@@ -30,22 +32,23 @@ const renderInputs = (module) => {
   );
   const manageSorting = () => {
     setTimeout(() => {
-      const numOfGids = gidsInput.value.split(";").length - 1;
-      const sortingInputVal = module.querySelector(
-        "[id^=products_sorting_]"
-      ).checked;
-      const sortingLabel = module.querySelector("[for^=products_sorting_]");
-      const templateSelectVal = module.querySelector(
-        "[id^=products_template_]"
-      ).value;
-      if (numOfGids <= minNumOfGidsForSorting && sortingInputVal) {
-        sortingLabel.click();
-      } else if (
-        numOfGids > minNumOfGidsForSorting &&
-        !sortingInputVal &&
-        templateSelectVal !== "slider"
-      ) {
-        sortingLabel.click();
+      const sortingInput = module.querySelector("[id^=products_sorting_]");
+      if (sortingInput) {
+        const numOfGids = gidsInput.value.split(";").length - 1;
+        const sortingInputVal = sortingInput.checked;
+        const sortingLabel = module.querySelector("[for^=products_sorting_]");
+        const templateSelectVal = module.querySelector(
+          "[id^=products_template_]"
+        ).value;
+        if (numOfGids <= minNumOfGidsForSorting && sortingInputVal) {
+          sortingLabel.click();
+        } else if (
+          numOfGids > minNumOfGidsForSorting &&
+          !sortingInputVal &&
+          templateSelectVal !== "slider"
+        ) {
+          sortingLabel.click();
+        }
       }
     }, 500);
   };
@@ -135,21 +138,24 @@ Walidacja wklejanej listy:
       !_noMinPrice.length
     );
   };
-  const newGids = () => {
-    const customGidsInput = module.querySelector(".chill-gids-input.new-gids");
-    customGidsInput.addEventListener("paste", (e) => {
-      const newValue = formatExcel(e.clipboardData.getData("Text"));
 
-      const isBug = !validation(newValue);
-      setTimeout(() => {
-        gidsInput.value = newValue;
-        clearTextAreaOnKey(
-          customGidsInput,
-          isBug ? "Błędy na liście" : "Nie znaleziono błędów",
-          isBug
-        );
-        manageSorting();
-      }, 100);
+  const newGids = () => {
+    const customGidsInput = module.querySelector(".chill-btn.new-gids");
+    customGidsInput.addEventListener("click", (e) => {
+      e.preventDefault();
+      navigator.clipboard.readText().then((clipText) => {
+        const newValue = formatExcel(clipText);
+        const isBug = !validation(newValue);
+        setTimeout(() => {
+          gidsInput.value = newValue;
+          _clearTextAreaOnKey(
+            customGidsInput,
+            isBug ? "Błędy na liście" : "Nie znaleziono błędów",
+            isBug
+          );
+          manageSorting();
+        }, 100);
+      });
     });
   };
   newGids();
@@ -288,62 +294,67 @@ Gidy do aktualizacji:
   updatingGids();
 
   const deletingGids = () => {
-    const customGidsInput = module.querySelector(
-      ".chill-gids-input.gids-to-delete"
-    );
-    customGidsInput.addEventListener("paste", (e) => {
-      const pastedData = e.clipboardData.getData("Text");
+    const customGidsInput = module.querySelector(".chill-btn.gids-to-delete");
+    customGidsInput.addEventListener("click", (e) => {
+      e.preventDefault();
+      navigator.clipboard.readText().then((clipText) => {
+        const pastedData = clipText;
 
-      const gidsToDelete =
-        !pastedData.toLowerCase().includes("g") &&
-        !pastedData.toLowerCase().includes("neo")
-          ? pastedData
-              .trim()
-              .replace(/\s/g, "")
-              .split(",")
-              .filter((el) => el.length)
-              .map((item) => item.replace(";", ""))
-          : formatExcel(pastedData)
-              .split(",,,,,,")
-              .map((el) => el.replace(";", ""))
-              .filter((el) => el.length)
-              .slice(1);
-      const deletedGids = [];
+        const gidsToDelete =
+          !pastedData.toLowerCase().includes("g") &&
+          !pastedData.toLowerCase().includes("neo")
+            ? pastedData
+                .trim()
+                .replace(/\s/g, "")
+                .split(",")
+                .filter((el) => el.length)
+                .map((item) => item.replace(";", ""))
+            : formatExcel(pastedData)
+                .split(",,,,,,")
+                .map((el) => el.replace(";", ""))
+                .filter((el) => el.length)
+                .slice(1);
+        const deletedGids = [];
 
-      const actualGidsData = gidsInput.value.split(";");
-      const actualGids = actualGidsData
-        .map((item) => item.substring(0, item.indexOf(",")))
-        .filter((item) => Number(item));
-      const newGids = actualGidsData.filter((item) => {
-        const gid = Number(item) ? item : item.substring(0, item.indexOf(","));
-        const condition = !gidsToDelete.some((i) => gid === i);
-        if (!condition) {
-          deletedGids.push(gid);
-        }
-        return condition;
-      });
-      const notFoundGids = gidsToDelete.filter((x) => !actualGids.includes(x));
+        const actualGidsData = gidsInput.value.split(";");
+        const actualGids = actualGidsData
+          .map((item) => item.substring(0, item.indexOf(",")))
+          .filter((item) => Number(item));
+        const newGids = actualGidsData.filter((item) => {
+          const gid = Number(item)
+            ? item
+            : item.substring(0, item.indexOf(","));
+          const condition = !gidsToDelete.some((i) => gid === i);
+          if (!condition) {
+            deletedGids.push(gid);
+          }
+          return condition;
+        });
+        const notFoundGids = gidsToDelete.filter(
+          (x) => !actualGids.includes(x)
+        );
 
-      console.log(
-        `
+        console.log(
+          `
 Gidy do usunięcia:
 - usunięto ${deletedGids.length} z ${gidsToDelete.length}: ${deletedGids.join(
-          ","
-        )}
+            ","
+          )}
 - nie znaleziono:  ${notFoundGids.join(",")}
 `,
-        { deletedGids, notFoundGids }
-      );
-
-      setTimeout(() => {
-        gidsInput.value = newGids.join(";");
-        clearTextAreaOnKey(
-          customGidsInput,
-          `usunięto ${deletedGids.length} z ${gidsToDelete.length}`,
-          notFoundGids.length
+          { deletedGids, notFoundGids }
         );
-        manageSorting();
-      }, 100);
+
+        setTimeout(() => {
+          gidsInput.value = newGids.join(";");
+          clearTextAreaOnKey(
+            customGidsInput,
+            `usunięto ${deletedGids.length} z ${gidsToDelete.length}`,
+            notFoundGids.length
+          );
+          manageSorting();
+        }, 100);
+      });
     });
   };
   deletingGids();

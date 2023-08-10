@@ -69,7 +69,10 @@ body.chill-ch-loaded {
     padding-bottom: 5px;
   }
   // "do not forget" inputs
-  .module__banner_hero .module__content.module__form > div:nth-of-type(7) > div,
+  .module__banner_hero
+    .module__content.module__form
+    > div:nth-of-type(7)
+    > div.input__wrapper,
   .module__banner_hero .module__content.module__form > div:nth-of-type(8) > div,
   [id^="products_new_promotion_id_"],
   [id^="banner_hero_promo_code_"] {

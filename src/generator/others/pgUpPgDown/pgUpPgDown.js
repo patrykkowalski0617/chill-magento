@@ -20,7 +20,6 @@ const pgUpPgDown = () => {
       } else if (e.keyCode === 34 && index < modules.length - 1) {
         modules[index + 1].scrollIntoView();
       }
-      console.log("index", index);
     }
   });
 };
