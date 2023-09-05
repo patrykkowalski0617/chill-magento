@@ -1,6 +1,6 @@
 @import "../../../../chill/variables.scss";
 
-.chill-ch-loaded .chill-gids-input {
+body .chill-gids-input {
   background-color: $base-color;
   height: 35px;
   font-weight: 600;
@@ -33,7 +33,7 @@
     color: #ff0000 !important;
   }
 }
-.chill-ch-loaded .gid-list-taker {
+body .gid-list-taker {
   &.custom-input-warn {
     outline: #ff0000 2px solid;
     color: #440000 !important;

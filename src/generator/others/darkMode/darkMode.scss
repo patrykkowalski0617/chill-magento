@@ -1,6 +1,6 @@
 @import "../../../chill/variables.scss";
 
-body.chill-ch-loaded.chill-dark-mode {
+body.chill-dark-mode {
   color: $dm-contrast-txt;
   background-color: $dm-contrast-bg;
   *:not(
@@ -48,7 +48,7 @@ body.chill-ch-loaded.chill-dark-mode {
     background-color: $dm-contrast-bg;
   }
 }
-body.chill-ch-loaded.chill-dark-mode {
+body.chill-dark-mode {
   .delete-btn {
     &::after {
       background-color: $dm-contrast-warn;
@@ -190,10 +190,7 @@ body.chill-ch-loaded.chill-dark-mode {
     color: inherit;
   }
 }
-body.chill-ch-loaded.chill-dark-mode
-  #lpGenerator
-  .module__bar
-  .btn_drag-and-drop {
+body.chill-dark-mode #lpGenerator .module__bar .btn_drag-and-drop {
   background-color: initial;
 }
 #maintenance-mode,
