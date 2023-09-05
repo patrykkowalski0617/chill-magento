@@ -1,5 +1,5 @@
 import "./main.scss";
-import { endVars, onElementReady } from "./chill";
+import { onElementReady } from "./chill";
 import {
   sortLpList,
   openLpAndEditLp,
@@ -43,71 +43,77 @@ import {
   darkMode,
 } from "./generator/others";
 
-endVars(
-  ({ l51, l66, l62, l70, l94, l110, l111, l99, l102, l101, l53, l104 }) => {
-    // others
-    onElementReady(l51, () => {
-      if (
-        document.querySelector(l53).innerText === "Zarządzaj Landig Page`ami"
-      ) {
-        sortLpList();
-        openLpAndEditLp();
-        copyTableCellContent();
-      }
-    });
+const l51 = ".data-row .action-menu";
+const l66 = "[data-action=grid-filter-apply]";
+const l62 = "[name=url]";
+const l70 = ".module__content";
+const l94 = ".btn_add-module";
+const l110 = ".module textarea.input__textarea";
+const l111 = ".admin__control-textarea[name=custom_css]";
+const l99 = "#container";
+const l102 = ".module__content";
+const l101 = ".module__bar";
+const l53 = ".page-title";
+const l104 = "[name=use_teaser]";
 
-    onElementReady(l62, () => {
-      manageFilterURL();
-    });
-    generatorShortcut();
-    onElementReady(l66, markExectResult);
-    version();
-
-    // generator/modules
-    onElementReady(l70, () => {
-      setTimeout(
-        () => {
-          renderModuleHeaders();
-
-          const isN24 = isN24Fn();
-
-          listing({ isN24 });
-          listingNew({ isN24 });
-          filters({ isN24 });
-          menu({ isN24 });
-          html({ isN24 });
-          footer({ isN24 });
-          bannerHero({ isN24 });
-          banner({ isN24 });
-          htmlExtended({ isN24 });
-          tips({ isN24 });
-          tabs({ isN24 });
-
-          renderModuleTitles();
-        },
-        // settimeout becouce in isN24 element .admin__control-select is undefined from time to time
-        100
-      );
-    });
-    onElementReady(l94, () => {
-      addNewModule();
-    });
-
-    // generator/others
-    onElementReady(l99, scrollToTopBtn);
-
-    onElementReady(l101, clickBarToCollapse);
-    onElementReady(l102, () => {
-      addAdjustedModule();
-      addSynopsis();
-      topBar();
-      stickyModuleHeaders();
-      draggableModuleFix();
-      pgUpPgDown();
-    });
-    onElementReady(l110, syntaxHighlight);
-    onElementReady(l111, mainLpCss);
-    onElementReady(l104, teaserFix);
-    darkMode();
+onElementReady(l51, () => {
+  if (document.querySelector(l53).innerText === "Zarządzaj Landig Page`ami") {
+    sortLpList();
+    openLpAndEditLp();
+    copyTableCellContent();
   }
-);
+});
+
+onElementReady(l62, () => {
+  manageFilterURL();
+});
+generatorShortcut();
+onElementReady(l66, markExectResult);
+version();
+
+// generator/modules
+onElementReady(l70, () => {
+  setTimeout(
+    () => {
+      renderModuleHeaders();
+
+      const isN24 = isN24Fn();
+
+      listing({ isN24 });
+      listingNew({ isN24 });
+      filters({ isN24 });
+      menu({ isN24 });
+      html({ isN24 });
+      footer({ isN24 });
+      bannerHero({ isN24 });
+      banner({ isN24 });
+      htmlExtended({ isN24 });
+      tips({ isN24 });
+      tabs({ isN24 });
+
+      renderModuleTitles();
+    },
+    // settimeout becouce in isN24 element .admin__control-select is undefined from time to time
+    100
+  );
+});
+onElementReady(l94, () => {
+  addNewModule();
+});
+
+// generator/others
+onElementReady(l99, scrollToTopBtn);
+
+onElementReady(l101, clickBarToCollapse);
+onElementReady(l102, () => {
+  addAdjustedModule();
+  addSynopsis();
+  topBar();
+  stickyModuleHeaders();
+  draggableModuleFix();
+  pgUpPgDown();
+});
+onElementReady(l110, syntaxHighlight);
+onElementReady(l111, mainLpCss);
+onElementReady(l104, teaserFix);
+darkMode();
