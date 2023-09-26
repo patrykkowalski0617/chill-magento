@@ -54,7 +54,10 @@ body.chill-dark-mode {
     }
   }
 
-  #lpGenerator .module.sticky:not(.sortable-chosen) .module__title::after {
+  #lpGenerator
+    .module.sticky:not(.sortable-chosen)
+    form
+    > .module__title::after {
     content: "";
     border-bottom: 2px $dm-contrast solid;
     width: 100vw;
