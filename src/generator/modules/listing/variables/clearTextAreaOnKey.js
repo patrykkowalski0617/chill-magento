@@ -1,23 +1,25 @@
-const clearTextAreaOnKey = (textarea, txt = "", isBug) => {
+const clearTextAreaOnKey = (btn, txt = "", isBug) => {
+  const oryginalBtnTxt = btn.innerHTML;
   if (txt.length) {
+    btn.innerHTML = txt;
     setTimeout(() => {
-      textarea.value = txt;
+      btn.innerHTML = txt;
       if (isBug) {
-        textarea.classList.add("custom-input-warn");
+        btn.classList.add("custom-input-warn");
       }
     }, 200);
     setTimeout(() => {
-      textarea.value = "szczegóły: F12";
+      btn.innerHTML = "szczegóły: F12";
     }, 2000);
     setTimeout(() => {
-      textarea.value = "";
+      btn.innerHTML = oryginalBtnTxt;
       if (isBug) {
-        textarea.classList.remove("custom-input-warn");
+        btn.classList.remove("custom-input-warn");
       }
     }, 3800);
   } else {
     setTimeout(() => {
-      textarea.value = "";
+      btn.innerHTML = oryginalBtnTxt;
     }, 200);
   }
 };

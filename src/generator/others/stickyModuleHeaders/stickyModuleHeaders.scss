@@ -13,7 +13,7 @@ body {
         position: fixed;
         top: 45px;
         z-index: 20;
-        background: #00ad82;
+        background: $base-color-bg;
         left: 488px;
         padding: 0 5px 5px 5px;
         width: calc(100% - 488px);
@@ -32,11 +32,10 @@ body {
         padding-left: 30px;
         line-height: 45px;
         white-space: nowrap;
-        overflow: hidden;
         text-overflow: ellipsis;
         top: 45px;
         z-index: 20;
-        background: #00ad82;
+        background: $base-color-bg;
         left: 88px;
         width: 405px;
         height: 45px;

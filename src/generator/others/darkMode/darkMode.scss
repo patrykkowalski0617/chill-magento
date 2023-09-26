@@ -7,7 +7,6 @@ body.chill-dark-mode {
       .chill-btn,
       i,
       .module__title,
-      .chill-gids-input,
       .chill-generator-synopsis-btn,
       button.primary,
       button.primary span,
@@ -55,8 +54,21 @@ body.chill-dark-mode {
     }
   }
 
+  #lpGenerator .module.sticky:not(.sortable-chosen) .module__title::after {
+    content: "";
+    border-bottom: 2px $dm-contrast solid;
+    width: 100vw;
+    display: block;
+    left: -50px;
+    position: relative;
+  }
+
+  .module.sticky:not(.sortable-chosen) .chill-btn-container {
+    background-color: #2c2c2c !important;
+  }
   .module__title {
     color: $dm-contrast-txt;
+    background-color: #2c2c2c !important;
   }
   .chill-mark td div {
     color: $dm-contrast-bg;
@@ -91,7 +103,7 @@ body.chill-dark-mode {
   .admin__menu .level-0._active > a span,
   .admin__menu .level-0:hover > a span {
     color: $dm-contrast-txt;
-    background-color: #2f0244;
+    background-color: $dm-contrast-bg;
   }
   .input__select,
   .input__text,
@@ -176,7 +188,7 @@ body.chill-dark-mode {
     }
   }
   .delete-btn {
-    border-color: #9d00e7 !important;
+    border-color: $dm-contrast-lt !important;
   }
   .page-footer,
   .page-main-actions,

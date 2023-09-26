@@ -2,10 +2,10 @@ import { renderFixButtons } from "../../../chill";
 import "./topBar.scss";
 
 const topBar = () => {
-  const oryginalBtnBack = document.querySelector("#back");
-  const oryginalBtnDelete = document.querySelector("#delete");
-  const oryginalBtnClone = document.querySelector("#clone");
-  const oryginalBtnPreview = document.querySelector("#preview");
+  const originBtnBack = document.querySelector("#back");
+  const originBtnDelete = document.querySelector("#delete");
+  const originBtnClone = document.querySelector("#clone");
+  const originBtnPreview = document.querySelector("#preview");
   const actions = [
     [
       "Zmień kolejność modułów",
@@ -34,25 +34,25 @@ const topBar = () => {
     [
       "Powrót",
       () => {
-        oryginalBtnBack.click();
+        originBtnBack.click();
       },
     ],
     [
       "Usuń LP",
       () => {
-        oryginalBtnDelete.click();
+        originBtnDelete.click();
       },
     ],
     [
       "Klonuj LP",
       () => {
-        oryginalBtnClone.click();
+        originBtnClone.click();
       },
     ],
     [
       "Podgląd",
       () => {
-        oryginalBtnPreview.click();
+        originBtnPreview.click();
       },
     ],
     [
@@ -86,7 +86,7 @@ const topBar = () => {
         let darkMode = JSON.parse(
           localStorage.getItem("magentoChill_darkMode")
         );
-
+        console.log("darkMode", darkMode);
         if (darkMode === false) {
           document.body.classList.add("chill-dark-mode");
           darkMode = true;

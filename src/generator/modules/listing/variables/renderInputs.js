@@ -1,9 +1,8 @@
 import {
-  clearTextAreaOnKey,
   formatExcel,
   excelHeaders,
   minNumOfGidsForSorting,
-  _clearTextAreaOnKey,
+  clearTextAreaOnKey,
 } from "./";
 
 import "./renderInputs.scss";
@@ -21,13 +20,13 @@ const renderInputs = (module) => {
     "beforeend",
     `
     <button class="chill-btn gid-list-taker new-gids" title="Skopiuj i wklej tabelę z Excela. Oznaczenia kolumn: 
-          ${headersMarks}">Nowe gidy</button>
-    <button class="chill-btn gid-list-taker gids-to-delete" title="Gidy do usunięcia" title="Wklej gidy do usunięcia odzielone przecinkami (akceptowalne białe znaki) lub tabelę z Excela. Oznaczenia kolumny:  
-          ${excelHeaders[0].gid}">Gidy do usunięcia</button>
-          <textarea class="chill-gids-input gids-to-add" placeholder="Gidy do dodania" title="Skopiuj i wklej tabelę z Excela. Oznaczenia kolumn: 
-          ${headersMarks}"></textarea>
-          <textarea class="chill-gids-input gids-to-update" placeholder="Gidy do aktualizacji" title="Skopiuj i wklej tabelę z Excela. Oznaczenia kolumn:
-          ${headersMarks}"></textarea>
+          ${headersMarks}">Zastąp</button>
+    <button class="chill-btn gid-list-taker gids-to-delete" title="Wklej gidy do usunięcia odzielone przecinkami (akceptowalne białe znaki) lub tabelę z Excela. Oznaczenia kolumny:  
+          ${excelHeaders[0].gid}">Usuń</button>
+          <button class="chill-btn gid-list-taker gids-to-add" title="Skopiuj i wklej tabelę z Excela. Oznaczenia kolumn: 
+          ${headersMarks}">Dodaj</button>
+          <button class="chill-btn gid-list-taker gids-to-update" title="Skopiuj i wklej tabelę z Excela. Oznaczenia kolumn:
+          ${headersMarks}">Aktualizuj</button>
     `
   );
   const manageSorting = () => {
@@ -148,7 +147,7 @@ Walidacja wklejanej listy:
         const isBug = !validation(newValue);
         setTimeout(() => {
           gidsInput.value = newValue;
-          _clearTextAreaOnKey(
+          clearTextAreaOnKey(
             customGidsInput,
             isBug ? "Błędy na liście" : "Nie znaleziono błędów",
             isBug
@@ -161,134 +160,138 @@ Walidacja wklejanej listy:
   newGids();
 
   const addGids = () => {
-    const customGidsInput = module.querySelector(
-      ".chill-gids-input.gids-to-add"
-    );
-    customGidsInput.addEventListener("paste", (e) => {
-      const oldValue = String(gidsInput.value);
-      const newValue = formatExcel(e.clipboardData.getData("Text"), true);
-      const newValueForValidation = formatExcel(
-        e.clipboardData.getData("Text")
-      );
+    const customGidsInput = module.querySelector(".chill-btn.gids-to-add");
+    customGidsInput.addEventListener("click", (e) => {
+      e.preventDefault();
+      navigator.clipboard.readText().then((clipText) => {
+        const oldValue = String(gidsInput.value);
+        const newValue = formatExcel(clipText, true);
+        const newValueForValidation = formatExcel(clipText);
 
-      const alreadyOnList = newValue
-        .split(";")
-        .map((item) => item.substring(0, item.indexOf(",")))
-        .filter((item) => (Number(item) ? oldValue.includes(item) : false));
+        const alreadyOnList = newValue
+          .split(";")
+          .map((item) => item.substring(0, item.indexOf(",")))
+          .filter((item) => (Number(item) ? oldValue.includes(item) : false));
 
-      console.log(
-        `Gidy [${
-          alreadyOnList.length
-        }] są już na lp i zostały dodane ponownie:  ${alreadyOnList.join(",")}`,
-        { alreadyOnList }
-      );
-      const isBug = !validation(newValueForValidation);
-      setTimeout(() => {
-        gidsInput.value = oldValue + ";" + newValue;
-        clearTextAreaOnKey(
-          customGidsInput,
-          isBug
-            ? `Błędy i ${alreadyOnList.length} doubli`
-            : `${alreadyOnList.length} doubli`,
-          alreadyOnList.length || isBug
+        console.log(
+          `Gidy [${
+            alreadyOnList.length
+          }] są już na lp i zostały dodane ponownie:  ${alreadyOnList.join(
+            ","
+          )}`,
+          { alreadyOnList }
         );
-      }, 100);
-      manageSorting();
+        const isBug = !validation(newValueForValidation);
+        setTimeout(() => {
+          gidsInput.value = oldValue + ";" + newValue;
+          clearTextAreaOnKey(
+            customGidsInput,
+            isBug
+              ? `Błędy i ${alreadyOnList.length} doubli`
+              : `${alreadyOnList.length} doubli`,
+            alreadyOnList.length || isBug
+          );
+        }, 100);
+        manageSorting();
+      });
     });
   };
   addGids();
 
   const updatingGids = () => {
-    const customGidsInput = module.querySelector(
-      ".chill-gids-input.gids-to-update"
-    );
+    const customGidsInput = module.querySelector(".chill-btn.gids-to-update");
 
-    customGidsInput.addEventListener("paste", (e) => {
-      const listWithChanges = formatExcel(e.clipboardData.getData("Text"));
+    customGidsInput.addEventListener("click", (e) => {
+      e.preventDefault();
+      navigator.clipboard.readText().then((clipText) => {
+        const listWithChanges = formatExcel(clipText);
 
-      const actualGids = gidsInput.value;
+        const actualGids = gidsInput.value;
 
-      const makeObjects = (actualGids) => {
-        const listArr = actualGids
-          .replace(/\s/g, ";")
-          .split(";")
-          .filter((el) => el.length);
-        const listArrOfObj = listArr.map((el) => {
-          const _el = el.split(",");
-          return {
-            gid: _el[0],
-            proc: _el[1],
-            disc: _el[2],
-            price: _el[3],
-            lp: _el[4],
-            code: _el[5],
-            min: _el[6],
-          };
-        });
-        return listArrOfObj;
-      };
+        const makeObjects = (actualGids) => {
+          const listArr = actualGids
+            .replace(/\s/g, ";")
+            .split(";")
+            .filter((el) => el.length);
+          const listArrOfObj = listArr.map((el) => {
+            const _el = el.split(",");
+            return {
+              gid: _el[0],
+              proc: _el[1],
+              disc: _el[2],
+              price: _el[3],
+              lp: _el[4],
+              code: _el[5],
+              min: _el[6],
+            };
+          });
+          return listArrOfObj;
+        };
 
-      const listArrOfObj = makeObjects(actualGids);
-      const listWithChangesArrOfObj = makeObjects(listWithChanges);
+        const listArrOfObj = makeObjects(actualGids);
+        const listWithChangesArrOfObj = makeObjects(listWithChanges);
 
-      const changedGids = [];
-      const notChangedGids = [];
-      const newListArrOfObj = listArrOfObj.map((el, i) => {
-        const newObj = listWithChangesArrOfObj.find(
-          (_el) => el.gid === _el.gid
-        );
-        if (newObj) {
-          const { gid, proc, disc, price, lp, code, min } = newObj;
-          if (Number(gid)) {
-            changedGids.push(gid);
+        const changedGids = [];
+        const notChangedGids = [];
+        const newListArrOfObj = listArrOfObj.map((el, i) => {
+          const newObj = listWithChangesArrOfObj.find(
+            (_el) => el.gid === _el.gid
+          );
+          if (newObj) {
+            const { gid, proc, disc, price, lp, code, min } = newObj;
+            if (Number(gid)) {
+              changedGids.push(gid);
+            }
+            return {
+              gid: gid !== "" ? gid : el.gid,
+              proc: proc !== "" ? proc : el.proc,
+              disc: disc !== "" ? disc : el.disc,
+              price: price !== "" ? price : el.price,
+              lp: lp !== "" ? lp : el.lp,
+              code: code !== "" ? code : el.code,
+              min: min !== "" ? min : el.min,
+            };
+          } else {
+            notChangedGids.push(el.gid);
+            return el;
           }
-          return {
-            gid: gid !== "" ? gid : el.gid,
-            proc: proc !== "" ? proc : el.proc,
-            disc: disc !== "" ? disc : el.disc,
-            price: price !== "" ? price : el.price,
-            lp: lp !== "" ? lp : el.lp,
-            code: code !== "" ? code : el.code,
-            min: min !== "" ? min : el.min,
-          };
-        } else {
-          notChangedGids.push(el.gid);
-          return el;
-        }
-      });
+        });
 
-      const newList = newListArrOfObj
-        .map((el) => {
-          const { gid, proc, disc, price, lp, code, min } = el;
-          return [gid, proc, disc, price, lp, code, min].join(",");
-        })
-        .join(";");
+        const newList = newListArrOfObj
+          .map((el) => {
+            const { gid, proc, disc, price, lp, code, min } = el;
+            return [gid, proc, disc, price, lp, code, min].join(",");
+          })
+          .join(";");
 
-      const notFoundGids = listWithChangesArrOfObj
-        .filter((a) => !listArrOfObj.some((b) => b.gid.includes(a.gid)))
-        .map((c) => c.gid);
+        const notFoundGids = listWithChangesArrOfObj
+          .filter((a) => !listArrOfObj.some((b) => b.gid.includes(a.gid)))
+          .map((c) => c.gid);
 
-      const isBug = !validation(newList);
+        const isBug = !validation(newList);
 
-      console.log(
-        `
-Gidy do aktualizacji:
-- zaktualizowano (niezależnie od tego czy stara warotość była taka sama czy nie) ${
-          changedGids.length
-        }: ${changedGids.join(",")}
-- nie znaleziono ${notFoundGids.length}: ${notFoundGids.join(",")}
-- nie zaktualizowano ${notChangedGids.length}: ${notChangedGids.join(",")}
-        `,
-        { changedGids, notChangedGids, notFoundGids }
-      );
-      setTimeout(() => {
-        gidsInput.value = newList;
-        clearTextAreaOnKey(
-          customGidsInput,
-          isBug ? `Błędy na liście` : `${changedGids.length} zaktualizowanych`,
-          notFoundGids.length || isBug
+        console.log(
+          `
+  Aktualizuj gidy:
+  - zaktualizowano (niezależnie od tego czy stara warotość była taka sama czy nie) ${
+    changedGids.length
+  }: ${changedGids.join(",")}
+  - nie znaleziono ${notFoundGids.length}: ${notFoundGids.join(",")}
+  - nie zaktualizowano ${notChangedGids.length}: ${notChangedGids.join(",")}
+          `,
+          { changedGids, notChangedGids, notFoundGids }
         );
-      }, 100);
+        setTimeout(() => {
+          gidsInput.value = newList;
+          clearTextAreaOnKey(
+            customGidsInput,
+            isBug
+              ? `Błędy na liście`
+              : `${changedGids.length} zaktualizowanych`,
+            notFoundGids.length || isBug
+          );
+        }, 100);
+      });
     });
   };
   updatingGids();
@@ -336,7 +339,7 @@ Gidy do aktualizacji:
 
         console.log(
           `
-Gidy do usunięcia:
+Usuń:
 - usunięto ${deletedGids.length} z ${gidsToDelete.length}: ${deletedGids.join(
             ","
           )}

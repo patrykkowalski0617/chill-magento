@@ -43,36 +43,26 @@ import {
   darkMode,
 } from "./generator/others";
 
-const l51 = ".data-row .action-menu";
-const l66 = "[data-action=grid-filter-apply]";
-const l62 = "[name=url]";
-const l70 = ".module__content";
-const l94 = ".btn_add-module";
-const l110 = ".module textarea.input__textarea";
-const l111 = ".admin__control-textarea[name=custom_css]";
-const l99 = "#container";
-const l102 = ".module__content";
-const l101 = ".module__bar";
-const l53 = ".page-title";
-const l104 = "[name=use_teaser]";
-
-onElementReady(l51, () => {
-  if (document.querySelector(l53).innerText === "Zarządzaj Landig Page`ami") {
+onElementReady(".data-row .action-menu", () => {
+  if (
+    document.querySelector(".page-title").innerText ===
+    "Zarządzaj Landig Page`ami"
+  ) {
     sortLpList();
     openLpAndEditLp();
     copyTableCellContent();
   }
 });
 
-onElementReady(l62, () => {
+onElementReady("[name=url]", () => {
   manageFilterURL();
 });
 generatorShortcut();
-onElementReady(l66, markExectResult);
+onElementReady("[data-action=grid-filter-apply]", markExectResult);
 version();
 
 // generator/modules
-onElementReady(l70, () => {
+onElementReady(".module__content", () => {
   setTimeout(
     () => {
       renderModuleHeaders();
@@ -97,15 +87,15 @@ onElementReady(l70, () => {
     100
   );
 });
-onElementReady(l94, () => {
+onElementReady(".btn_add-module", () => {
   addNewModule();
 });
 
 // generator/others
-onElementReady(l99, scrollToTopBtn);
+onElementReady("#container", scrollToTopBtn);
 
-onElementReady(l101, clickBarToCollapse);
-onElementReady(l102, () => {
+onElementReady(".module__bar", clickBarToCollapse);
+onElementReady(".module__content", () => {
   addAdjustedModule();
   addSynopsis();
   topBar();
@@ -113,7 +103,7 @@ onElementReady(l102, () => {
   draggableModuleFix();
   pgUpPgDown();
 });
-onElementReady(l110, syntaxHighlight);
-onElementReady(l111, mainLpCss);
-onElementReady(l104, teaserFix);
+onElementReady(".module textarea.input__textarea", syntaxHighlight);
+onElementReady(".admin__control-textarea[name=custom_css]", mainLpCss);
+onElementReady("[name=use_teaser]", teaserFix);
 darkMode();

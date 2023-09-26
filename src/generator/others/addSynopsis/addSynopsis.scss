@@ -23,8 +23,8 @@ body {
     &.page-top {
       z-index: 999999;
       text-decoration: none;
-      border: 1px $base-color-txt solid;
-      border-bottom: 3px $base-color-txt solid;
+      border: 1px $base-color-bg solid;
+      border-bottom: 3px $base-color-bg solid;
       font-weight: 600;
       &:hover {
         text-decoration: none;
@@ -55,7 +55,7 @@ body {
     }
     margin-top: -1px;
     background-color: $base-color;
-    border-color: $base-color-txt;
+    border-color: $base-color-bg;
     color: $base-color-txt;
     display: block;
     width: 100%;

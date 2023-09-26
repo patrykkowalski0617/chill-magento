@@ -4,8 +4,9 @@ const darkMode = () => {
   let darkMode = JSON.parse(localStorage.getItem("magentoChill_darkMode"));
 
   if (darkMode === null) {
-    darkMode = false;
+    darkMode = true;
     localStorage.setItem("magentoChill_darkMode", darkMode);
+    document.body.classList.add("chill-dark-mode");
   } else if (darkMode === true) {
     document.body.classList.add("chill-dark-mode");
   }
