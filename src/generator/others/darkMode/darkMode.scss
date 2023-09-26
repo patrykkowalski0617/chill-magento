@@ -159,14 +159,22 @@ body.chill-dark-mode {
   .menu-wrapper .logo {
     .chill-version {
       color: $dm-contrast-lt;
+      bottom: 4px;
     }
     &::after {
-      font-family: "New Rocker", cursive;
-      color: $dm-contrast-lt;
-      top: 5%;
-      height: 60px;
-      left: 0px;
-      font-size: 40px;
+      // font-family: "New Rocker", cursive;
+      // color: $dm-contrast-lt;
+      // top: 5%;
+      // height: 60px;
+      // left: 0px;
+      // font-size: 40px;
+      color: #6a9be0;
+      top: -10%;
+      height: 80px;
+      display: flex;
+      font-size: 22px;
+      justify-content: center;
+      align-items: center;
     }
   }
   .btn_add-filter,
