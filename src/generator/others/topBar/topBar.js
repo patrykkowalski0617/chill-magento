@@ -6,6 +6,25 @@ const topBar = () => {
   const originBtnDelete = document.querySelector("#delete");
   const originBtnClone = document.querySelector("#clone");
   const originBtnPreview = document.querySelector("#preview");
+  const saveLp = (callback) => {
+    const lpModuleSaveBtns = document.querySelectorAll(
+      ".module .module__button_save"
+    );
+    const lpSaveBtn = document.querySelector('button[data-index="save"]');
+    if (lpModuleSaveBtns) {
+      lpModuleSaveBtns.forEach((el) => el.click());
+      setTimeout(() => {
+        lpSaveBtn.click();
+      }, 1000);
+    } else {
+      lpSaveBtn.click();
+    }
+    if (callback) {
+      setTimeout(() => {
+        callback();
+      }, 1200);
+    }
+  };
   const actions = [
     [
       "Zmień kolejność modułów",
@@ -25,18 +44,7 @@ const topBar = () => {
         document.querySelector(".btn_add-module").click();
       },
     ],
-    [
-      "Zapisz LP",
-      () => {
-        document.querySelector('button[data-index="save"]').click();
-      },
-    ],
-    [
-      "Powrót",
-      () => {
-        originBtnBack.click();
-      },
-    ],
+    ["Zapisz LP", saveLp],
     [
       "Usuń LP",
       () => {
@@ -46,7 +54,9 @@ const topBar = () => {
     [
       "Klonuj LP",
       () => {
-        originBtnClone.click();
+        saveLp(() => {
+          originBtnClone.click();
+        });
       },
     ],
     [
@@ -56,32 +66,7 @@ const topBar = () => {
       },
     ],
     [
-      "Zapisz moduły",
-      () => {
-        document
-          .querySelectorAll(".module .module__button_save")
-          .forEach((el) => el.click());
-      },
-    ],
-    [
-      "Kolorowa skłania: -",
-      () => {
-        let syntaxMode = JSON.parse(
-          localStorage.getItem("magentoChill_syntaxMode")
-        );
-
-        document.body.classList.remove(`chill-syntax-highlight-${syntaxMode}`);
-        if (syntaxMode < 2) {
-          syntaxMode++;
-        } else {
-          syntaxMode = 0;
-        }
-        document.body.classList.add(`chill-syntax-highlight-${syntaxMode}`);
-        localStorage.setItem("magentoChill_syntaxMode", syntaxMode);
-      },
-    ],
-    [
-      "Dark mode &#128520;: nie",
+      "DM: nie",
       () => {
         let darkMode = JSON.parse(
           localStorage.getItem("magentoChill_darkMode")

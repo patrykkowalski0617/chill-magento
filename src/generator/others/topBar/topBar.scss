@@ -40,11 +40,11 @@ body {
   }
   &.chill-dark-mode {
     .page-actions-buttons .chill-btn-container {
-      & > :nth-child(10) {
+      & > :last-child {
         font-size: 0;
         &::before {
           font-size: 1.6rem;
-          content: "Dark mode: tak";
+          content: "DM: tak";
         }
       }
     }
