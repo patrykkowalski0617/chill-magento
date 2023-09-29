@@ -27,6 +27,24 @@ const topBar = () => {
   };
   const actions = [
     [
+      "DM: nie",
+      () => {
+        let darkMode = JSON.parse(
+          localStorage.getItem("magentoChill_darkMode")
+        );
+        console.log("darkMode", darkMode);
+        if (darkMode === false) {
+          document.body.classList.add("chill-dark-mode");
+          darkMode = true;
+        } else if (darkMode === true) {
+          document.body.classList.remove("chill-dark-mode");
+          darkMode = false;
+        }
+
+        localStorage.setItem("magentoChill_darkMode", darkMode);
+      },
+    ],
+    [
       "Zmień kolejność modułów",
       () => {
         document.querySelector(".btn_toggle-all").click();
@@ -69,24 +87,6 @@ const topBar = () => {
       "Podgląd",
       () => {
         originBtnPreview.click();
-      },
-    ],
-    [
-      "DM: nie",
-      () => {
-        let darkMode = JSON.parse(
-          localStorage.getItem("magentoChill_darkMode")
-        );
-        console.log("darkMode", darkMode);
-        if (darkMode === false) {
-          document.body.classList.add("chill-dark-mode");
-          darkMode = true;
-        } else if (darkMode === true) {
-          document.body.classList.remove("chill-dark-mode");
-          darkMode = false;
-        }
-
-        localStorage.setItem("magentoChill_darkMode", darkMode);
       },
     ],
   ];

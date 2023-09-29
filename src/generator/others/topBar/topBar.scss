@@ -1,7 +1,7 @@
 body {
   &.top-bar-added {
     .page-main-actions .chill-btn-container {
-      max-width: 846px;
+      max-width: 911px;
       height: 40px;
       overflow: auto;
       margin-top: -6px;
@@ -25,7 +25,7 @@ body {
 
     .page-main-actions .page-actions._fixed .page-actions-inner::before {
       font-size: 2.5rem;
-      width: calc(100vw - 1000px);
+      width: calc(100vw - 1100px);
       height: 43px;
       top: 0;
       left: 30px;
@@ -40,7 +40,7 @@ body {
   }
   &.chill-dark-mode {
     .page-actions-buttons .chill-btn-container {
-      & > :last-child {
+      & > :first-child {
         font-size: 0;
         &::before {
           font-size: 1.6rem;
