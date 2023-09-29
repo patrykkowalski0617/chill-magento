@@ -60,6 +60,12 @@ const topBar = () => {
       },
     ],
     [
+      "Powrót",
+      () => {
+        originBtnBack.click();
+      },
+    ],
+    [
       "Podgląd",
       () => {
         originBtnPreview.click();
