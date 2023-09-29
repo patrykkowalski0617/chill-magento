@@ -1,0 +1,10 @@
+body {
+  .admin__data-grid-filters-wrap {
+    opacity: 1;
+    visibility: visible;
+  }
+  .admin__data-grid-filters-wrap .admin__data-grid-filters-footer,
+  .admin__data-grid-filters-wrap .admin__data-grid-filters {
+    display: block;
+  }
+}

@@ -69,9 +69,11 @@ body.chill-dark-mode {
   .module.sticky:not(.sortable-chosen) .chill-btn-container {
     background-color: #2c2c2c !important;
   }
+  form .module__title {
+    background-color: #2c2c2c !important;
+  }
   .module__title {
     color: $dm-contrast-txt;
-    background-color: #2c2c2c !important;
   }
   .chill-mark td div {
     color: $dm-contrast-bg;

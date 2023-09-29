@@ -1,4 +1,5 @@
 import "./main.scss";
+import "./others/showFiltresInLpSearch/showFiltresInLpSearch.scss";
 import { onElementReady } from "./chill";
 import {
   sortLpList,
