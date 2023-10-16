@@ -1,7 +1,6 @@
 body {
   &.top-bar-added {
     .page-main-actions .chill-btn-container {
-      max-width: 911px;
       height: 40px;
       overflow: auto;
       margin-top: -6px;
@@ -51,7 +50,7 @@ body {
   }
   &.module-order-change-mode {
     .page-actions-buttons .chill-btn-container {
-      & > :first-child {
+      & > :nth-child(2) {
         font-size: 0;
         &::before {
           content: "Wróć do edycji modułów";

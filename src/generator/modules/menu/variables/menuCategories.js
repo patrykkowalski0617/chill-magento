@@ -195,7 +195,7 @@ const menuCategories = [
         subcategoryOther: "not-allowed",
         codes: [
           { categoryCode: "100046", codeName: "Ekspresy do kawy" },
-          { categoryCode: "100047", codeName: "Przelewowe" },
+          { categoryCode: "100047", codeName: "Ekspresy przelewowe" },
         ],
       },
       {
@@ -1302,9 +1302,9 @@ const menuCategories = [
     icon: "ico_entertainment",
     subcategories: [
       {
-        subcategoryName: "Hulajnogi",
+        subcategoryName: "Hulajnogi i deskorolki",
         subcategoryOther: "not-allowed",
-        codes: [{ categoryCode: "101482", codeName: "Hulajnogi" }],
+        codes: [{ categoryCode: "101482", codeName: "Hulajnogi i deskorolki" }],
       },
       {
         subcategoryName: "Rowery elektryczne",
