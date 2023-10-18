@@ -88,4 +88,13 @@ body {
   .module__button_find {
     margin-right: 16px !important;
   }
+  &#html-body button[data-index="save"] {
+    display: block;
+  }
+  .menu__btn_remove-category:hover {
+    transform: translateY(-50%);
+  }
+  .menu__btn_remove-category {
+    top: 52%;
+  }
 }
