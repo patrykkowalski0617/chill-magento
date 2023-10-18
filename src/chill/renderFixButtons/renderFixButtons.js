@@ -16,6 +16,9 @@ const renderFixButtons = ({
     if (action === "defaultFixInvisible") {
       btn.classList.add("chill-btn-invisible");
     }
+    if (action === "defaultFix") {
+      btn.classList.add("chill-btn-defaultFix");
+    }
     btn.innerHTML = action;
     container.appendChild(btn);
     btns.push(btn);
