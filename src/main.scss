@@ -11,7 +11,7 @@ body {
   .menu__btn_remove-group,
   .menu__btn_remove-subcategory,
   .menu__btn_remove-subcomponent {
-    transform: translateY(-50%);
+    transform: translateY(-50%) rotate(0deg);
     width: 37px;
     height: 32px;
     border-radius: inherit;
@@ -31,6 +31,7 @@ body {
     }
     &:hover {
       background-color: #a61700;
+      transform: translateY(-50%) rotate(0deg);
     }
   }
 
