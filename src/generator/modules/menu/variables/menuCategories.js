@@ -369,12 +369,12 @@ const menuCategories = [
         ],
       },
       {
-        subcategoryName: "Dodatkowe wyposażenie do pralek",
+        subcategoryName: "Dodatkowe wyposażenie pralek",
         subcategoryOther: "allowed",
         codes: [
           {
             categoryCode: "101469",
-            codeName: "Dodatkowe wyposażenie do pralek",
+            codeName: "Dodatkowe wyposażenie pralek",
           },
         ],
       },
