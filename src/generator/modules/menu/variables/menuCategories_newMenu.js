@@ -194,7 +194,7 @@ const menuCategories_newMenu = [
         subcategoryOther: "not-allowed",
         codes: [
           { categoryCode: "100046", codeName: "Ekspresy do kawy" },
-          { categoryCode: "100047", codeName: "Ekspresy i przelewowe" },
+          { categoryCode: "100047", codeName: "Ekspresy przelewowe" },
         ],
       },
       {
