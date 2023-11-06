@@ -56,6 +56,7 @@ const renderInputs = (module) => {
     const gidsOnly = listValueArr.map((el) => el.slice(0, el.indexOf(",")));
 
     const duplicates = () => {
+      console.log(listValueArr, gidsOnly, new Set(gidsOnly));
       return gidsOnly.length - Array.from(new Set(gidsOnly)).length;
     };
 
@@ -268,7 +269,7 @@ Walidacja wklejanej listy:
           .filter((a) => !listArrOfObj.some((b) => b.gid.includes(a.gid)))
           .map((c) => c.gid);
 
-        const isBug = !validation(newList);
+        const isBug = !validation(listWithChanges);
 
         console.log(
           `
