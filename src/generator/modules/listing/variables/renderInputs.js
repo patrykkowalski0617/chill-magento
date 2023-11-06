@@ -56,7 +56,6 @@ const renderInputs = (module) => {
     const gidsOnly = listValueArr.map((el) => el.slice(0, el.indexOf(",")));
 
     const duplicates = () => {
-      console.log(listValueArr, gidsOnly, new Set(gidsOnly));
       return gidsOnly.length - Array.from(new Set(gidsOnly)).length;
     };
 
