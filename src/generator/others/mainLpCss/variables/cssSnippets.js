@@ -1,5 +1,5 @@
 const cssSnippets = {
-  mainCss: `/* >> mainCss start v14 >> >> >> */
+  mainCss: `/* >> mainCss start v15 >> >> >> */
 
 /* justify availability buttons */
 [class*="availabilityButtonCss-btn-"] {
@@ -56,13 +56,13 @@ body [class*="tabScss-root"] {
 
 /* asterisks */
 .lp-asterisk {
-  text-align: center;
   padding: 20px 10px;
-  max-width: 760px;
   margin: auto;
-  font-size: 14px;
-  line-height: 21px;
   color: rgb(56, 56, 56);
+  text-align: justify;
+  font-size: 12px;
+  line-height: 1.2;
+  max-width: 1000px;
 }
 
 /* titles */
