@@ -171,12 +171,16 @@ const menuCategories_newMenu = [
         codes: [{ categoryCode: "100129", codeName: "Telewizory" }],
       },
       {
+        subcategoryName: "Kable HDMI",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "101360", codeName: "Kable HDMI" }],
+      },
+      {
         subcategoryName: "Akcesoria",
         subcategoryOther: "not-allowed",
         codes: [
           { categoryCode: "100777", codeName: "Anteny" },
           { categoryCode: "100134", codeName: "Kable" },
-          { categoryCode: "101360", codeName: "Kable HDMI" },
           { categoryCode: "100127", codeName: "Akcesoria do TV" },
           { categoryCode: "100769", codeName: "Tunery DVB-T" },
           { categoryCode: "101650", codeName: "Uchwyty" },
@@ -872,6 +876,11 @@ const menuCategories_newMenu = [
             codeName: "Akcesoria do robotów kuchennych",
           },
         ],
+      },
+      {
+        subcategoryName: "Odkamieniacze",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "101661", codeName: "Odkamieniacze" }],
       },
       {
         subcategoryName: "Dodatkowe wyposażenie do okapów",
