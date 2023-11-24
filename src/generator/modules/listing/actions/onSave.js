@@ -1,4 +1,4 @@
-import { updateModuleTitle } from "../variables";
+import { updateModuleTitle } from "../../html/variables";
 
 const onSave = ({ module }) => {
   updateModuleTitle(module);

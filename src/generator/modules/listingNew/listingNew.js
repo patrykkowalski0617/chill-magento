@@ -4,8 +4,8 @@ import {
   defaultFix,
   existingModuleCallback,
   newModuleCallback,
+  onSave,
 } from "./actions";
-import { onSave } from "../listing/actions";
 
 const listingNew = moduleFix({
   moduleClass: "module__products_new",

@@ -41,6 +41,9 @@ const renderModuleHeaders = (providedModule) => {
         if (i === 0) {
           btn.classList.add("delete-btn");
         }
+        if (i === 1) {
+          btn.classList.add("save-btn");
+        }
         btn.addEventListener("click", (e) => {
           e.preventDefault();
           btnsFunctions[i](module);

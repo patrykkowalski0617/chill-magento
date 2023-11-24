@@ -72,9 +72,7 @@ const topBar = () => {
     [
       "Klonuj LP",
       () => {
-        saveLp(() => {
-          originBtnClone.click();
-        });
+        originBtnClone.click();
       },
     ],
     [
