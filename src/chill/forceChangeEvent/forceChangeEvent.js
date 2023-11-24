@@ -1,6 +1,6 @@
 const forceChangeEvent = (selector) => {
   const e = new Event("change");
-  const element = document.querySelector(selector);
-  element.dispatchEvent(e);
+  const elements = document.querySelectorAll(selector);
+  elements.forEach((element) => element.dispatchEvent(e));
 };
 export default forceChangeEvent;

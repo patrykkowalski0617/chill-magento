@@ -7,6 +7,7 @@ const listingId = (module) => {
   const weekDealInput = module.querySelector(
     "[id^=products_new_is_week_deal_]"
   );
+  promotionIdInput.classList.remove("chill-mark-listing-id");
   if (!promotionIdInput.value && !weekDealInput.checked) {
     promotionIdInput.classList.add("chill-mark-listing-id");
     const isEmptyInput = alert("Pusty input 'promotion_id'!");

@@ -4,6 +4,7 @@ import {
   defaultFix,
   existingModuleCallback,
   newModuleCallback,
+  onSave,
   generateMenu,
   hideElements,
   categoryList,
@@ -19,6 +20,7 @@ const menu = moduleFix({
   ],
   newModuleCallback,
   existingModuleCallback,
+  onSave,
 });
 
 export default menu;
