@@ -8,8 +8,8 @@ const listingId = (module) => {
     "[id^=products_new_is_week_deal_]"
   );
   if (!promotionIdInput.value && !weekDealInput.checked) {
-    const isEmptyInput = alert("Pusty input 'promotion_id'!");
     promotionIdInput.classList.add("chill-mark-listing-id");
+    const isEmptyInput = alert("Pusty input 'promotion_id'!");
     return isEmptyInput;
   }
 };

@@ -1,12 +1,10 @@
-import personal from "../../../../chill/personal";
-import listingId from "../../../../chill/personal/listingId/listingId";
+import { isLogin } from "../../../../chill";
 import { updateModuleTitle } from "../../listing/variables";
+import { listingId } from "../variables";
 
 const onSave = ({ module }) => {
   updateModuleTitle(module);
-  personal(() => {
-    listingId(module);
-  });
+  if (isLogin()) listingId(module);
 };
 
 export default onSave;
