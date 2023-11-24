@@ -1,10 +1,9 @@
-const isLogin = (callback) => {
-  const userName = "patkowalski";
+import personalSettings from "../../personalSettings";
+
+const isLogin = () => {
   const accountText = document.querySelector(".admin-user-account-text");
-  const isLogin = accountText && accountText.textContent === userName;
-  if (callback && isLogin) {
-    callback();
-  }
+  const isLogin =
+    accountText && accountText.textContent === personalSettings.userName;
   return isLogin;
 };
 
