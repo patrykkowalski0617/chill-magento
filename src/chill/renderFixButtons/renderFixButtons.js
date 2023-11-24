@@ -20,6 +20,7 @@ const renderFixButtons = ({
       btn.classList.add("chill-btn-defaultFix");
     }
     btn.innerHTML = action;
+    btn.classList.add(action.split("-").join().split(" ").join());
     container.appendChild(btn);
     btns.push(btn);
   });
