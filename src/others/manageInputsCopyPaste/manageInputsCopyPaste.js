@@ -4,7 +4,7 @@ import "./manageInputsCopyPaste.scss";
 const manageInputsCopyPaste = () => {
   setTimeout(() => {
     const inputs = Array.from(document.querySelectorAll("input, textarea"));
-    const copyFn = (input) => {
+    const addListeners = (input) => {
       input.addEventListener("click", (e) => {
         if (e.altKey) {
           copyContent(e.target);
@@ -20,7 +20,7 @@ const manageInputsCopyPaste = () => {
     };
 
     inputs.forEach((input) => {
-      copyFn(input);
+      addListeners(input);
     });
   }, 2000);
 };
