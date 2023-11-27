@@ -1,0 +1,6 @@
+@import "../../chill/variables.scss";
+body {
+  .chill-copied {
+    outline: $base-color-mark 6px solid !important;
+  }
+}

@@ -1,6 +1,3 @@
-import { copyContent } from "../../chill";
-import "./manageFilterURL.scss";
-
 const manageFilterURL = () => {
   const urlInput = document.querySelector('[name="url"]');
 
@@ -16,12 +13,6 @@ const manageFilterURL = () => {
         setTimeout(() => {
           urlInput.value = newValue;
         }, 0);
-      }
-    });
-    urlInput.title = "'Alt + click' to copy";
-    urlInput.addEventListener("click", (e) => {
-      if (e.altKey) {
-        copyContent(e.target);
       }
     });
   }

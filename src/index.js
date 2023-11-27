@@ -6,6 +6,7 @@ import {
   openLpAndEditLp,
   generatorShortcut,
   manageFilterURL,
+  manageInputsCopyPaste,
   markExectResult,
   copyTableCellContent,
   version,
@@ -58,6 +59,10 @@ onElementReady(".data-row .action-menu", () => {
 onElementReady("[name=url]", () => {
   manageFilterURL();
 });
+onElementReady("input, textarea", () => {
+  manageInputsCopyPaste();
+});
+
 generatorShortcut();
 onElementReady("[data-action=grid-filter-apply]", markExectResult);
 version();

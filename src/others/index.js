@@ -5,3 +5,4 @@ export { default as manageFilterURL } from "./manageFilterURL/manageFilterURL";
 export { default as markExectResult } from "./markExectResult/markExectResult";
 export { default as copyTableCellContent } from "./copyTableCellContent/copyTableCellContent";
 export { default as version } from "./version/version";
+export { default as manageInputsCopyPaste } from "./manageInputsCopyPaste/manageInputsCopyPaste";

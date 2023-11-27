@@ -5,5 +5,6 @@ export { default as nnColors } from "./nnColors/nnColors";
 export { default as eventThrottle } from "./eventThrottle/eventThrottle";
 export { default as markInputs } from "./markInputs/markInputs";
 export { default as copyContent } from "./copyContent/copyContent";
+export { default as pasteContent } from "./pasteContent/pasteContent";
 export { default as n24Colors } from "./n24Colors/n24Colors";
 export { default as isLogin } from "./isLogin/isLogin";
