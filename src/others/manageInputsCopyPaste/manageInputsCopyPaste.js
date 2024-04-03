@@ -14,9 +14,11 @@ const manageInputsCopyPaste = () => {
         e.preventDefault();
         copyContent(e.target);
       });
-      input.addEventListener("dblclick", (e) => {
-        pasteContent(e.target);
-      });
+      // input.addEventListener("dblclick", (e) => {
+      //   pasteContent(e.target);
+      //   const event = new Event("change");
+      //   e.target.dispatchEvent(event);
+      // });
     };
 
     inputs.forEach((input) => {

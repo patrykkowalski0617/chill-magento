@@ -10,3 +10,4 @@ export { default as excelHeaders } from "./excelHeaders";
 export { default as fillCouponCode } from "./fillCouponCode";
 export { default as templateSelect } from "./templateSelect";
 export { default as minNumOfGidsForSorting } from "./minNumOfGidsForSorting";
+export { default as checkCouponCode } from "./checkCouponCode";

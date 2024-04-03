@@ -1,9 +1,10 @@
 import { isLogin } from "../../../../chill";
-import { updateModuleTitle } from "../../listing/variables";
+import { checkCouponCode, updateModuleTitle } from "../../listing/variables";
 import { listingId } from "../variables";
 
 const onSave = ({ module }) => {
   updateModuleTitle(module);
+  checkCouponCode(module);
   if (isLogin()) listingId(module);
 };
 

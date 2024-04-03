@@ -98,4 +98,9 @@ body {
   .menu__btn_remove-category {
     top: 52%;
   }
+
+  .chill-mark-input-strong {
+    outline: 20px $base-color-mark solid;
+    z-index: 9;
+  }
 }
