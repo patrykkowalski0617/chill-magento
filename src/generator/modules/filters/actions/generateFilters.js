@@ -66,13 +66,13 @@ const generateFilters = ({ module }) => {
         // 7. Save filters
         saveFiltersBtn.click();
         // 8. Reload page
-        // const noticeMsg = module.querySelector(".notice-message");
-        // if (noticeMsg) {
-        //   noticeMsg.remove();
-        // }
-        // onElementReady(".notice-message", () => {
-        //   location.reload();
-        // });
+        const noticeMsg = module.querySelector(".notice-message");
+        if (noticeMsg) {
+          noticeMsg.remove();
+        }
+        onElementReady(".notice-message", () => {
+          location.reload();
+        });
       });
     };
     onElementReady(".notice-message", generateFiltres);
