@@ -1,4 +1,4 @@
-import { updateModuleTitle } from "../../html/variables";
+import { updateModuleTitle } from "../variables";
 import checkCouponCode from "../variables/checkCouponCode";
 
 const onSave = ({ module }) => {

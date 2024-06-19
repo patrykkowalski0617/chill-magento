@@ -103,4 +103,10 @@ body {
     outline: 20px $base-color-mark solid;
     z-index: 9;
   }
+  #nav:not(:hover) {
+    max-height: 375px;
+    overflow: hidden;
+    position: relative;
+    z-index: 999;
+  }
 }

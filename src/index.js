@@ -2,7 +2,7 @@ import "./main.scss";
 import "./others/showFiltresInLpSearch/showFiltresInLpSearch.scss";
 import { onElementReady } from "./chill";
 import {
-  sortLpList,
+  sortList,
   openLpAndEditLp,
   generatorShortcut,
   manageFilterURL,
@@ -48,9 +48,11 @@ import {
 onElementReady(".data-row .action-menu", () => {
   if (
     document.querySelector(".page-title").innerText ===
-    "Zarządzaj Landig Page`ami"
+      "Zarządzaj Landig Page`ami" ||
+    document.querySelector(".page-title").innerText ===
+      "Zarządzaj cyklicznymi Landing Page'ami"
   ) {
-    sortLpList();
+    sortList();
     openLpAndEditLp();
     copyTableCellContent();
   }

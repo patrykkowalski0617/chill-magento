@@ -3,7 +3,7 @@ import { checkCouponCode, updateModuleTitle } from "../../listing/variables";
 import { listingId } from "../variables";
 
 const onSave = ({ module }) => {
-  updateModuleTitle(module);
+  updateModuleTitle(module, true);
   checkCouponCode(module);
   if (isLogin()) listingId(module);
 };

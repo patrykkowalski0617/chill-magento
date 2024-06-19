@@ -9,8 +9,9 @@ import {
 
 const generateFilters = ({ module }) => {
   const dependencyMenu = module.querySelector(
-    "[id^='menu_select_menu_dependency'] option"
+    "[id^='menu_select_menu_dependency']"
   );
+
   const menuModule = dependencyMenu
     ? document.querySelector(`[data-module-id="${dependencyMenu.value}"]`)
     : null;
@@ -65,13 +66,13 @@ const generateFilters = ({ module }) => {
         // 7. Save filters
         saveFiltersBtn.click();
         // 8. Reload page
-        const noticeMsg = module.querySelector(".notice-message");
-        if (noticeMsg) {
-          noticeMsg.remove();
-        }
-        onElementReady(".notice-message", () => {
-          location.reload();
-        });
+        // const noticeMsg = module.querySelector(".notice-message");
+        // if (noticeMsg) {
+        //   noticeMsg.remove();
+        // }
+        // onElementReady(".notice-message", () => {
+        //   location.reload();
+        // });
       });
     };
     onElementReady(".notice-message", generateFiltres);

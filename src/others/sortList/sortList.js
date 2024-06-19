@@ -1,7 +1,7 @@
 import { onElementReady } from "../../chill";
 
-const sortLpList = () => {
-  const sortLpList = () => {
+const sortList = () => {
+  const sortList = () => {
     const lpSort = document.querySelector(
       "#container > div > div.admin__data-grid-wrap > table > thead > tr > th.data-grid-th._sortable._draggable._ascend"
     );
@@ -10,7 +10,7 @@ const sortLpList = () => {
 
   onElementReady(
     "#container > div > div.admin__data-grid-wrap > table > tbody > tr:nth-child(1) > td:nth-child(2) > div",
-    sortLpList
+    sortList
   );
 };
-export default sortLpList;
+export default sortList;
