@@ -24,9 +24,10 @@ const assigningProducts = (module) => {
       const productsContainer = document.querySelector(
         ".missing-product__dialog-box.ui-dialog-content"
       );
-
+      // second selector is for magento update
       const productsWidget = document.querySelector(
-        ".ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable.ui-resizable"
+        `.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable.ui-resizable, 
+        .ui-dialog.dialog-box.ui-widget.ui-widget-content.ui-front.ui-draggable.ui-resizable`
       );
 
       const widgetPosition = () => {
@@ -92,7 +93,6 @@ const assigningProducts = (module) => {
 
       const copyCategoryBtnActions = () => {
         document.querySelectorAll(".missing-category").forEach((el) => {
-   
           el.querySelector("button").addEventListener("click", (e) => {
             const btn = e.target;
             const txt = btn.parentNode.innerText;
@@ -158,8 +158,11 @@ const assigningProducts = (module) => {
       ".btn.btn_rect.btn_center.btn_find.module__button.module__button_find"
     )
     .addEventListener("click", () => {
+      // magento update
       const closeBtn = document.querySelector(
-        ".ui-dialog-titlebar-close.ui-corner-all"
+        `.ui-dialog-titlebar-close.ui-corner-all, 
+        .ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-close
+        `
       );
       if (closeBtn) {
         closeBtn.click();
