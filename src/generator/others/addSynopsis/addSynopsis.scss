@@ -1,23 +1,30 @@
 @import "../../../chill/variables.scss";
 body {
+  .entry-edit {
+    max-width: calc(100% - 132px);
+  }
+
   .chill-generator-synopsis {
-    position: relative;
+    position: fixed;
+    max-width: 100px;
+    width: 100%;
+    top: 201px;
+    right: 0;
     z-index: 999;
-    max-height: calc(100vh - 445px);
+    max-height: 480px;
     overflow-y: auto;
     overflow-x: hidden;
     padding-top: 1px;
-    min-width: 100%;
-    &:hover {
-      width: fit-content;
-      overflow-x: visible;
-      border-radius: 0px 8px 8px 0;
-      .chill-generator-synopsis-btn {
-        &::after {
-          display: none;
-        }
+    // &:hover {
+    overflow-x: visible;
+    max-width: 300px;
+    border-radius: 8px 0px 0px 8px;
+    .chill-generator-synopsis-btn {
+      &::after {
+        display: none;
       }
     }
+    // }
   }
   .chill-generator-synopsis-btn {
     position: relative;

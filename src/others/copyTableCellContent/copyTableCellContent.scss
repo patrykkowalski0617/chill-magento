@@ -2,6 +2,7 @@
 body {
   .data-grid-cell-content {
     position: relative;
+    min-height: 77px;
     &::after {
       position: absolute;
       content: "'Alt + click' to copy";
@@ -11,6 +12,7 @@ body {
       border-bottom: $base-color-mark 1px solid;
       opacity: 0.4;
     }
+
     // &:hover {
     //   &::after {
     //     display: block;

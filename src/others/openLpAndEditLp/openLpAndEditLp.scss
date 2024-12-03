@@ -48,3 +48,17 @@ body {
     position: relative;
   }
 }
+
+#container
+  > div
+  > div.admin__data-grid-wrap
+  > table
+  > tbody
+  > tr
+  > td.data-grid-actions-cell {
+  position: relative !important;
+}
+
+.data-grid td .action-select-wrap {
+  position: static !important;
+}

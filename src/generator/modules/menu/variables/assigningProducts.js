@@ -178,9 +178,7 @@ const assigningProducts = (module) => {
             .addEventListener("click", (e) => {
               setTimeout(() => {
                 document
-                  .querySelector(
-                    ".ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable.ui-resizable"
-                  )
+                  .querySelector(".ui-dialog.ui-widget.ui-widget-content")
                   .remove();
               }, 50);
             });

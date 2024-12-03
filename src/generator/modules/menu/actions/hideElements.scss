@@ -24,7 +24,7 @@ body {
   }
   .module__menu:not(.menu-show-hidden-elements)
     .chill-btn-container
-    button:nth-child(5) {
+    button.hideElements {
     font-size: 0;
     &::before {
       content: "Show Hidden Elements";

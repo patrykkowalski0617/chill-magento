@@ -15,6 +15,12 @@ const menu = moduleFix({
   actions: [
     { btnName: "defaultFix", callback: defaultFix },
     { btnName: "generateMenu", callback: generateMenu },
+    {
+      btnName: "generateMenu_noSubCategory",
+      callback: (actionsProps) => {
+        generateMenu(actionsProps, true);
+      },
+    },
     { btnName: "hideElements", callback: hideElements },
     { btnName: "categoryList", callback: categoryList },
   ],

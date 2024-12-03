@@ -6,7 +6,8 @@ import {
 } from "../variables";
 import { onElementReady } from "../../../../chill";
 
-const generateMenu = ({ module }) => {
+const generateMenu = ({ module }, generateMenuWithNoSubcategory) => {
+  console.log("generateMenuWithNoSubcategory", generateMenuWithNoSubcategory);
   const { menuWrapper, saveModuleBtn, noticeMsg } = getModuleElements(module);
   const moduleId = module.dataset.moduleId;
   const minItemsQuantityInSubcategory = 4;
@@ -188,10 +189,11 @@ const generateMenu = ({ module }) => {
         const categories = newCategories
           .map((category, categoryId) => {
             const { categoryName, icon, subcategories } = category;
-            const _subcategories =
-              subcategories.length > 1
-                ? subcategoriesMap(categoryId, subcategories, false)
-                : subcategoriesMap(categoryId, subcategories, true);
+            const _subcategories = generateMenuWithNoSubcategory
+              ? subcategoriesMap(categoryId, subcategories, true)
+              : subcategories.length > 1
+              ? subcategoriesMap(categoryId, subcategories, false)
+              : subcategoriesMap(categoryId, subcategories, true);
             return menuTemplate.category(
               moduleId,
               categoryId,

@@ -1008,7 +1008,12 @@ const menuCategories = [
           { categoryCode: "100387", codeName: "Gry Xbox One" },
           { categoryCode: "100487", codeName: "Gry na PC" },
           { categoryCode: "100391", codeName: "Gry Nintendo" },
-          { categoryCode: "101022", codeName: "Konsole i gry" },
+          { categoryCode: "100000207", codeName: "Playstation 4" },
+          { categoryCode: "100000224", codeName: "Konsole" },
+          { categoryCode: "100000205", codeName: "Konsole PS4" },
+          { categoryCode: "100000210", codeName: "Xbox ONE" },
+          { categoryCode: "100000362", codeName: "Nintendo Switch" },
+          // { categoryCode: "101022", codeName: "Konsole i gry" },
         ],
       },
       {

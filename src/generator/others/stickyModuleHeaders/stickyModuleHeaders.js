@@ -3,7 +3,14 @@ import { eventThrottle } from "../../../chill";
 
 const stickyModuleHeaders = () => {
   const modules = document.querySelectorAll(".module");
-
+  window.addEventListener("keydown", (e) => {
+    if (e.ctrlKey && e.key === "s") {
+      e.preventDefault();
+      document
+        .querySelector(".sticky-last-element .chill-btn.save.save-btn")
+        .click();
+    }
+  });
   function manageSticky() {
     modules.forEach((module, i) => {
       const moduleContent = module.querySelector(".module__content");

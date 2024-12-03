@@ -104,8 +104,8 @@ body {
     z-index: 9;
   }
   #nav:not(:hover) {
-    max-height: 375px;
-    overflow: hidden;
+    // max-height: 375px;
+    // overflow: hidden;
     position: relative;
     z-index: 999;
   }
