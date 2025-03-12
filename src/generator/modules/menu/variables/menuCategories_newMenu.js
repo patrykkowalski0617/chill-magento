@@ -1538,6 +1538,17 @@ const menuCategories_newMenu = [
       },
     ],
   },
+  {
+    categoryName: "Klocki LEGO",
+    icon: "ico_lego",
+    subcategories: [
+      {
+        subcategoryName: "Klocki LEGO",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "100721", codeName: "Klocki LEGO" }],
+      },
+    ],
+  },
 ];
 
 export default menuCategories_newMenu;
