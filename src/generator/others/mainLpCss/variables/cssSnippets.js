@@ -1,5 +1,14 @@
 const cssSnippets = {
-  mainCss: `/* >> mainCss start v15 >> >> >> */
+  mainCss: `/* >> mainCss start v16 >> >> >> */
+
+/* add margin in terms and condition */
+
+[class*="termsAndConditionScss-sidepanel_content_wrapper-"] [class*="termsAndConditionScss-sidepanel_content-"] p,
+[class*="termsAndConditionScss-sidepanel_content_wrapper-"] [class*="termsAndConditionScss-sidepanel_content-"] ul,
+[class*="termsAndConditionScss-sidepanel_content_wrapper-"] [class*="termsAndConditionScss-sidepanel_content-"] ol{
+  display: block;
+  margin-bottom: 15px;
+}
 
 /* justify availability buttons */
 [class*="availabilityButtonCss-btn-"] {

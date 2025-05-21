@@ -6,24 +6,6 @@ const menuCategories = [
     icon: "ico_mda1",
     subcategories: [
       {
-        subcategoryName: "Lodówki i zamrażarki",
-        subcategoryOther: "not-allowed",
-        codes: [
-          { categoryCode: "100000095", codeName: "Lodówki jednodrzwiowe" },
-          { categoryCode: "100000096", codeName: "Lodówko-zamrażarki" },
-          { categoryCode: "100000097", codeName: "Lodówki Side by Side" },
-          { categoryCode: "100000373", codeName: "Lodówki retro" },
-          { categoryCode: "100000411", codeName: "Lodówki turystyczne" },
-          { categoryCode: "100013", codeName: "Lodówki i zamrażarki" },
-          { categoryCode: "101071", codeName: "Lady i witryny chłodnicze" },
-        ],
-      },
-      {
-        subcategoryName: "Zamrażarki",
-        subcategoryOther: "not-allowed",
-        codes: [{ categoryCode: "100021", codeName: "Zamrażarki" }],
-      },
-      {
         subcategoryName: "Pralki",
         subcategoryOther: "not-allowed",
         codes: [
@@ -40,6 +22,24 @@ const menuCategories = [
         subcategoryName: "Suszarki",
         subcategoryOther: "not-allowed",
         codes: [{ categoryCode: "100020", codeName: "Suszarki" }],
+      },
+      {
+        subcategoryName: "Lodówki i zamrażarki",
+        subcategoryOther: "not-allowed",
+        codes: [
+          { categoryCode: "100000095", codeName: "Lodówki jednodrzwiowe" },
+          { categoryCode: "100000096", codeName: "Lodówko-zamrażarki" },
+          { categoryCode: "100000097", codeName: "Lodówki Side by Side" },
+          { categoryCode: "100000373", codeName: "Lodówki retro" },
+          { categoryCode: "100000411", codeName: "Lodówki turystyczne" },
+          { categoryCode: "100013", codeName: "Lodówki i zamrażarki" },
+          { categoryCode: "101071", codeName: "Lady i witryny chłodnicze" },
+        ],
+      },
+      {
+        subcategoryName: "Zamrażarki",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "100021", codeName: "Zamrażarki" }],
       },
       {
         subcategoryName: "Kuchenki",
