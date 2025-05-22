@@ -106,6 +106,12 @@ const html = moduleFix({
         updateHtml("animatedBorder", module);
       },
     },
+    {
+      btnName: "znajdzSklep",
+      callback: ({ module }) => {
+        updateHtml("znajdzSklep", module);
+      },
+    },
   ],
   newModuleCallback,
   existingModuleCallback,

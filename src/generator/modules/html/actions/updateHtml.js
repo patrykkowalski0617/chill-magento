@@ -68,6 +68,9 @@ const updateHtml = (action, module) => {
     case "animatedBorder":
       updateContent(htmlSnippets.animatedBorder, module);
       break;
+    case "znajdzSklep":
+      updateContent(htmlSnippets.znajdzSklep, module);
+      break;
 
     default:
       break;

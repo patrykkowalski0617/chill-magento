@@ -603,5 +603,42 @@ letter-spacing: 1.2px;
 }
 </style>
   `,
+
+  znajdzSklep: `
+  <!-- znajdzSklep -->
+  <div class="lp-wrapper">
+    <a
+      href="https://www.neonet.pl/najblizszy-sklep.html"
+      target="_blank"
+      class="btn"
+      >Znajdź najbliższy sklep stacjonarny</a
+    >
+  </div>
+  <style>
+    .lp-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 2rem auto;
+    }
+
+    .btn {
+      background-color: #ff444f;
+      padding: 20px 30px;
+      color: #fff;
+      border-radius: 3px;
+    }
+
+    @media (min-width: 1024px) {
+      #root .footerScss-root-11I {
+        margin-bottom: -42px;
+      }
+    }
+
+    body .footerScss-container-32t .footerScss-buttonContainer-3nK {
+      width: 100%;
+    }
+  </style>
+  
+  `,
 };
 export default htmlSnippets;
