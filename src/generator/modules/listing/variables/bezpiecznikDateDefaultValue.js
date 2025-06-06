@@ -14,6 +14,10 @@ const bezpiecznikDateDefaultValue = (module) => {
   timeInput.value = dateFrom.substr(11);
   timeInput.classList.add("filled");
   markInputs([timeInput, dateInput]);
+
+  setTimeout(() => {
+    module.querySelector(".chill-btn.bezpiecznik").click();
+  }, 1000);
 };
 
 export default bezpiecznikDateDefaultValue;

@@ -27,6 +27,8 @@ const renderInputs = (module) => {
           ${headersMarks}">Dodaj</button>
           <button class="chill-btn gid-list-taker gids-to-update" title="Skopiuj i wklej tabelę z Excela. Oznaczenia kolumn:
           ${headersMarks}">Aktualizuj</button>
+          <button class="chill-btn gid-list-taker the-biggest-priority" title="Skopiuj i wklej tabelę z Excela. Oznaczenia kolumn:
+          ${headersMarks}">Wartość najw. priorytetu</button>
     `
   );
   const manageSorting = () => {
@@ -361,5 +363,48 @@ Usuń:
     });
   };
   deletingGids();
+
+  const getTheBiggestPriority = () => {
+    const customGidsInput = module.querySelector(
+      ".chill-btn.the-biggest-priority"
+    );
+
+    customGidsInput.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const actualGids = gidsInput.value;
+
+      const makeObjects = (actualGids) => {
+        const listArr = actualGids
+          .replace(/\s/g, ";")
+          .split(";")
+          .filter((el) => el.length);
+        const listArrOfObj = listArr.map((el) => {
+          const _el = el.split(",");
+          return {
+            gid: _el[0],
+            proc: _el[1],
+            disc: _el[2],
+            price: _el[3],
+            lp: _el[4],
+            code: _el[5],
+            min: _el[6],
+          };
+        });
+        return listArrOfObj;
+      };
+      const priorities = makeObjects(actualGids)
+        .map((el) => Number(el.lp))
+        .filter((el) => !isNaN(el));
+      const maxPriority = Math.max(...priorities);
+
+      customGidsInput.innerHTML = `${maxPriority} (copied)`;
+      navigator.clipboard.writeText(maxPriority);
+      setTimeout(() => {
+        customGidsInput.innerHTML = "Wartość najw. priorytetu";
+      }, 3000);
+    });
+  };
+  getTheBiggestPriority();
 };
 export default renderInputs;
