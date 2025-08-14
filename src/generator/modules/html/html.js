@@ -107,7 +107,7 @@ const html = moduleFix({
       },
     },
     {
-      btnName: "znajdzSklep",
+      btnName: "znajdzSklep/btn",
       callback: ({ module }) => {
         updateHtml("znajdzSklep", module);
       },

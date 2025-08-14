@@ -9,3 +9,4 @@ export { default as banner } from "./banner/banner";
 export { default as htmlExtended } from "./htmlExtended/htmlExtended";
 export { default as tips } from "./tips/tips";
 export { default as tabs } from "./tabs/tabs";
+export { default as terms } from "./terms/terms";

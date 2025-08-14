@@ -6,7 +6,7 @@ const copyContent = (el) => {
   el.classList.add("chill-copied");
   setTimeout(() => {
     el.classList.remove("chill-copied");
-  }, 2000);
+  }, 3000);
 };
 
 export default copyContent;

@@ -28,6 +28,7 @@ import {
   htmlExtended,
   tips,
   tabs,
+  terms,
 } from "./generator/modules";
 import {
   scrollToTopBtn,
@@ -88,6 +89,7 @@ onElementReady(".module__content", () => {
       htmlExtended({ isN24 });
       tips({ isN24 });
       tabs({ isN24 });
+      terms();
 
       renderModuleTitles();
     },

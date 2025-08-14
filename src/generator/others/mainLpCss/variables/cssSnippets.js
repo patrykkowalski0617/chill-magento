@@ -1,5 +1,10 @@
 const cssSnippets = {
-  mainCss: `/* >> mainCss start v16 >> >> >> */
+  mainCss: `/* >> mainCss start v17 >> >> >> */
+
+ /* fix grafika_krokow width */
+[alt*="grafika_krokow"] {
+  width: auto;
+}
 
 /* add margin in terms and condition */
 

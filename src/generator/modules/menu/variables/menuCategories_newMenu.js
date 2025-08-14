@@ -994,6 +994,28 @@ const menuCategories_newMenu = [
     ],
   },
   {
+    categoryName: "Konsole i gry",
+    icon: "ico_gaming",
+    subcategories: [
+      {
+        subcategoryName: "Konsole i gry",
+        subcategoryOther: "not-allowed",
+        codes: [
+          { categoryCode: "100381", codeName: "Gry PS5" },
+          { categoryCode: "100387", codeName: "Gry Xbox One" },
+          { categoryCode: "100487", codeName: "Gry na PC" },
+          { categoryCode: "100391", codeName: "Gry Nintendo" },
+          { categoryCode: "100000207", codeName: "Playstation 4" },
+          { categoryCode: "100000224", codeName: "Konsole" },
+          { categoryCode: "100000205", codeName: "Konsole PS4" },
+          { categoryCode: "100000210", codeName: "Xbox ONE" },
+          { categoryCode: "100000362", codeName: "Nintendo Switch" },
+          { categoryCode: "101022", codeName: "Konsole i gry" },
+        ],
+      },
+    ],
+  },
+  {
     categoryName: "Akcesoria IT",
     icon: "ico_it_accessories",
     subcategories: [
@@ -1204,23 +1226,7 @@ const menuCategories_newMenu = [
         subcategoryOther: "not-allowed",
         codes: [{ categoryCode: "100407", codeName: "Tusze" }],
       },
-      {
-        subcategoryName: "Konsole i gry",
-        subcategoryOther: "not-allowed",
-        codes: [
-          { categoryCode: "100381", codeName: "Gry PS5" },
-          { categoryCode: "100387", codeName: "Gry Xbox One" },
-          { categoryCode: "100487", codeName: "Gry na PC" },
-          { categoryCode: "100391", codeName: "Gry Nintendo" },
-          { categoryCode: "100000207", codeName: "Playstation 4" },
-          { categoryCode: "100000224", codeName: "Konsole" },
-          { categoryCode: "100000205", codeName: "Konsole PS4" },
-          { categoryCode: "100000210", codeName: "Xbox ONE" },
-          { categoryCode: "100000362", codeName: "Nintendo Switch" },
-          // { categoryCode: "101022", codeName: "Konsole i gry" },
-          // { categoryCode: "101022", codeName: "Konsole i gry" },
-        ],
-      },
+
       {
         subcategoryName: "Karty sieciowe",
         subcategoryOther: "not-allowed",
@@ -1258,6 +1264,18 @@ const menuCategories_newMenu = [
         subcategoryOther: "not-allowed",
         codes: [
           { categoryCode: "100329", codeName: "UPS (Zasilanie awaryjne)" },
+        ],
+      },
+      {
+        subcategoryName: "Części do komputerów",
+        subcategoryOther: "allowed",
+        codes: [
+          { categoryCode: "100201", codeName: "Pamięci RAM" },
+          { categoryCode: "100215", codeName: "Płyty główne" },
+          { categoryCode: "100154", codeName: "Karty graficzne" },
+          { categoryCode: "100216", codeName: "Procesory" },
+          { categoryCode: "100210", codeName: "Obudowy" },
+          { categoryCode: "100287", codeName: "Wentylatory" },
         ],
       },
       {
