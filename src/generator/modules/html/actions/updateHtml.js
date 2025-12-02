@@ -35,6 +35,12 @@ const updateHtml = (action, module) => {
     case "fakeMenu":
       updateContent(htmlSnippets.fakeMenu, module);
       break;
+    case "fakeMenuForSets":
+      updateContent(htmlSnippets.fakeMenuForSets, module);
+      break;
+    case "zobaczOnline":
+      updateContent(htmlSnippets.zobaczOnline, module);
+      break;
     case "YTIframe":
       updateContent(htmlSnippets.YT, module);
       break;
@@ -70,6 +76,12 @@ const updateHtml = (action, module) => {
       break;
     case "znajdzSklep":
       updateContent(htmlSnippets.znajdzSklep, module);
+      break;
+    case "showHideBasedOnDate":
+      updateContent(htmlSnippets.showHideBasedOnDate, module);
+      break;
+    case "lpList":
+      updateContent(htmlSnippets.lpList, module);
       break;
 
     default:

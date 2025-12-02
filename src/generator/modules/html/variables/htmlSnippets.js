@@ -135,18 +135,18 @@ const htmlSnippets = {
 <!-- fake-Menu -->
 <div class="menuDesktopScss-root-3xn menuDesktopScss-grid_container-5Vr">
   <div class="menuDesktopScss-inner-1GU">
-    <button class="secondaryItemDesktopCss-root-p6v">Listing A</button>
-    <button class="secondaryItemDesktopCss-root-p6v">Listing B</button>
+    <button class="secondaryItemDesktopCss-root-p6v">ListingA</button>
+    <button class="secondaryItemDesktopCss-root-p6v">ListingB</button>
   </div>
 </div>
 
 <!-- WARNING! When there is more than one fake menu script and style should be attached once. -->
 
 <style>
-  [class*=productsScss-root_slider-] {
+  [class*=productsScss-root-] {
     display: none;
   }
-  [class*=productsScss-root_slider-].show {
+  [class*=productsScss-root-].show {
     display: block;
   }
 </style>
@@ -154,7 +154,7 @@ const htmlSnippets = {
 <script>
 (function () {
   const lists = document.querySelectorAll(
-    "[class*=productsScss-root_slider-]"
+    "[class*=productsScss-root-]"
   );
   const btnsContainers = document.querySelectorAll(
     ".menuDesktopScss-inner-1GU"
@@ -198,13 +198,119 @@ const htmlSnippets = {
     });
     document
       .querySelectorAll(
-        '[class*="productsScss-root_slider-"]:not(.fake-menu-list)'
+        '[class*="productsScss-root"]:not(.fake-menu-list)'
       )
       .forEach((el) => el.classList.add("show"));
   };
   fakeMenu();
 })();
 </script>  
+`,
+
+  fakeMenuForSets: `
+<!-- fake-Menu for sets -->
+<div class="lp-title">Przykładowe zestawy</div>
+
+<style>
+  [class*="multirabatScss-container-"] {
+    display: none;
+  }
+  [class*="multirabatScss-container-"].show {
+    display: block;
+  }
+</style>
+
+<div class="menuDesktopScss-root-3xn menuDesktopScss-grid_container-5Vr">
+  <div class="menuDesktopScss-inner-1GU set-fake-menu">
+    <button class="secondaryItemDesktopCss-root-p6v" data-target="GORENJE">
+      GORENJE
+    </button>
+    <button class="secondaryItemDesktopCss-root-p6v" data-target="ELECTROLUX">
+      ELECTROLUX
+    </button>
+    <button class="secondaryItemDesktopCss-root-p6v" data-target="BOSCH">
+      BOSCH
+    </button>
+    <button class="secondaryItemDesktopCss-root-p6v" data-target="SAMSUNG">
+      SAMSUNG
+    </button>
+    <button class="secondaryItemDesktopCss-root-p6v" data-target="TCL">
+      TCL
+    </button>
+  </div>
+</div>
+
+<script>
+  setTimeout(() => {
+    const sets = document.querySelectorAll(
+      "[class*=multirabatScss-container-]"
+    );
+    const btnsContainer = document.querySelector(
+      ".menuDesktopScss-inner-1GU.set-fake-menu"
+    );
+    const btns = btnsContainer.querySelectorAll(
+      ".secondaryItemDesktopCss-root-p6v"
+    );
+
+    // show first set
+    btns[0].classList.add("secondaryItemDesktopCss-selected-2pA");
+
+    sets.forEach((set) => {
+      if (set.querySelector("[alt=GORENJE)]")) {
+        set.classList.add("show");
+      }
+    });
+
+    const fakeMenu = () => {
+      btns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          const targetSet = btn.dataset.target;
+          // remove classes
+          document
+            .querySelectorAll("[class*=multirabatScss-container-].show")
+            .forEach((el) => el.classList.remove("show"));
+          document
+            .querySelectorAll(".secondaryItemDesktopCss-selected-2pA")
+            .forEach((el) =>
+              el.classList.remove("secondaryItemDesktopCss-selected-2pA")
+            );
+
+          // add classes
+          btn.classList.add("secondaryItemDesktopCss-selected-2pA");
+          sets.forEach((set) => {
+            if (set.querySelector("[alt=" + targetSet)) {
+              set.classList.add("show");
+            }
+          });
+        });
+      });
+    };
+    fakeMenu();
+  }, 3000);
+</script>
+
+  `,
+  zobaczOnline: `
+
+<!-- zobaczOnline style -->
+<style>
+  [class*="cartButtonCss-cart"],
+  [class*="priceSectionCss-productprice"] {
+    display: none;
+  }
+  [class*="redirectButtonScss-kplink_white"] {
+    font-size: 0;     margin-top: 20px;
+  }
+  [class*="redirectButtonScss-kplink_white"]::before {
+    font-size: 15px;
+    content: "Zobacz online";
+  }
+
+  [class*="defaultCss-root"] {
+    height: 520px !important;
+  }
+</style>
+
 `,
   script: `
 <!-- script -->
@@ -376,6 +482,16 @@ const htmlSnippets = {
   `,
   nbspFix: `
 <!-- nbspFix -->
+
+<!-- Każdy tekst musi być w osobnym kontenerze.
+
+    Nie zadziała:
+    <div><sup>1</sup>Lorem ipsum</div>
+
+    Zadziała:
+    <div><sup>1</sup><span>Lorem ipsum</span></div>
+-->
+
 <script src="https://www.neonet.pl/images24/promocje/lib/nbsp_fix/nbsp_fix_3.js"></script>
 <script>
   setTimeout(() => {
@@ -639,6 +755,111 @@ letter-spacing: 1.2px;
     }
   </style>
   
+  `,
+  showHideBasedOnDate: `
+
+    <!-- Show and hide elements based on date -->
+    <!-- Example:
+      <a
+        class="anchor-banner use-script-to-show"
+        href=""
+        data-start-date="2025-10-10T00:00:00"
+        data-end-date="2025-12-10T23:59:00"
+        ><img src=""
+      /></a>
+    -->
+
+    <style>
+      .use-script-to-show {
+        display: none;
+      }
+      .niezdara-alert {
+        background: #ddd;
+      }
+    </style>
+    <script>
+      document.querySelectorAll(".use-script-to-show").forEach((el) => {
+        const startDate = el.dataset.startDate;
+        const endDate = el.dataset.endDate;
+        const isStartDatePast = sprawdzDateCzas(startDate);
+        const isEndDatePast = sprawdzDateCzas(endDate);
+
+        if (isStartDatePast && !isEndDatePast) {
+          el.style.display = "block";
+        }
+        if (isEndDatePast) {
+          el.remove();
+        }
+      });
+
+      function sprawdzDateCzas(targetDateTime) {
+        const docelowyCzas = new Date(targetDateTime);
+
+        if (isNaN(docelowyCzas.getTime())) {
+          const htmlContainer = document.querySelector("[data-module-type*=html]");
+          if (htmlContainer) {
+            htmlContainer.classList.add("niezdara-alert");
+          }
+          console.error(
+            "Błąd: Podana wartość " +
+              targetDateTime +
+              " nie jest prawidłowym formatem daty."
+          );
+
+          return;
+        }
+
+        const aktualnyCzas = new Date();
+
+        if (docelowyCzas.getTime() < aktualnyCzas.getTime()) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script> 
+  `,
+  lpList: `
+<!-- lp-list -->
+<div class="lp-title">Tytuł</div>
+
+<div class="list-cont">
+  <ol class="lp-list">
+    <li>XXXXXXXXXXXX</li>
+    <ul class="lp-list">
+      <li>XXXXXXXXXXXX</li>
+      <li>XXXXXXXXXXXX</li>
+    </ul>
+    <li>XXXXXXXXXXXX</li>
+  </ol>
+</div>
+<style>
+  ol.lp-list {
+    list-style-type: decimal;
+  }
+  ul.lp-list {
+    list-style-type: disc;
+  }
+  .lp-list {
+    margin: 0;
+    padding: 0;
+  }
+  .list-cont {
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 900px;
+    border: #ff444f 5px solid;
+    border-radius: 10px;
+  }
+  .lp-list .lp-list {
+    padding-left: 20px;
+  }
+  .lp-list li {
+    margin-bottom: 10px;
+    margin-left: 20px;
+  }
+</style>
+
   `,
 };
 export default htmlSnippets;

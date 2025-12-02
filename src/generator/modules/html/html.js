@@ -64,12 +64,12 @@ const html = moduleFix({
         updateHtml("nbspFix", module);
       },
     },
-    {
-      btnName: "tipBtn",
-      callback: ({ module }) => {
-        updateHtml("tipBtn", module);
-      },
-    },
+    // {
+    //   btnName: "tipBtn",
+    //   callback: ({ module }) => {
+    //     updateHtml("tipBtn", module);
+    //   },
+    // },
     {
       btnName: "bannerUpd",
       callback: ({ module }) => {
@@ -83,11 +83,23 @@ const html = moduleFix({
       },
     },
     {
-      btnName: "max5InRow",
+      btnName: "fakeMenuForSets",
       callback: ({ module }) => {
-        updateHtml("max5InRow", module);
+        updateHtml("fakeMenuForSets", module);
       },
     },
+    {
+      btnName: "zobaczOnline",
+      callback: ({ module }) => {
+        updateHtml("zobaczOnline", module);
+      },
+    },
+    // {
+    //   btnName: "max5InRow",
+    //   callback: ({ module }) => {
+    //     updateHtml("max5InRow", module);
+    //   },
+    // },
     {
       btnName: "heroNewListingTitle",
       callback: ({ module }) => {
@@ -110,6 +122,18 @@ const html = moduleFix({
       btnName: "znajdzSklep/btn",
       callback: ({ module }) => {
         updateHtml("znajdzSklep", module);
+      },
+    },
+    {
+      btnName: "showHideBasedOnDate",
+      callback: ({ module }) => {
+        updateHtml("showHideBasedOnDate", module);
+      },
+    },
+    {
+      btnName: "lpList",
+      callback: ({ module }) => {
+        updateHtml("lpList", module);
       },
     },
   ],

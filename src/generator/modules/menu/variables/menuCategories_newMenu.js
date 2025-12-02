@@ -37,6 +37,16 @@ const menuCategories_newMenu = [
         ],
       },
       {
+        subcategoryName: "Panele do lodówek Samsung BESPOKE",
+        subcategoryOther: "not-allowed",
+        codes: [
+          {
+            categoryCode: "101609",
+            codeName: "Panele do lodówek Samsung BESPOKE",
+          },
+        ],
+      },
+      {
         subcategoryName: "Zamrażarki",
         subcategoryOther: "not-allowed",
         codes: [{ categoryCode: "100021", codeName: "Zamrażarki" }],
@@ -136,16 +146,6 @@ const menuCategories_newMenu = [
         subcategoryName: "Zlewozmywaki",
         subcategoryOther: "not-allowed",
         codes: [{ categoryCode: "101263", codeName: "Zlewozmywaki" }],
-      },
-      {
-        subcategoryName: "Panele do lodówek Samsung BESPOKE",
-        subcategoryOther: "not-allowed",
-        codes: [
-          {
-            categoryCode: "101609",
-            codeName: "Panele do lodówek Samsung BESPOKE",
-          },
-        ],
       },
       {
         subcategoryName: "Zestawy AGD do zabudowy",
@@ -975,6 +975,43 @@ const menuCategories_newMenu = [
         codes: [{ categoryCode: "100159", codeName: "Tablety graficzne" }],
       },
       {
+        subcategoryName: "Mikrofony",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "100198", codeName: "Mikrofony" }],
+      },
+      {
+        subcategoryName: "Stacje dokujące",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "101562", codeName: "Stacje dokujące" }],
+      },
+
+      {
+        subcategoryName: "Okulary VR ",
+        subcategoryOther: "allowed",
+        codes: [{ categoryCode: "101426", codeName: "Okulary VR " }],
+      },
+      {
+        subcategoryName: "Uchwyty do monitorów",
+        subcategoryOther: "allowed",
+        codes: [{ categoryCode: "101712", codeName: "Uchwyty do monitorów" }],
+      },
+      {
+        subcategoryName: "Podzespoły komputerowe",
+        subcategoryOther: "allowed",
+        codes: [{ categoryCode: "100397", codeName: "Podzespoły komputerowe" }],
+      },
+
+      {
+        subcategoryName: "Huby",
+        subcategoryOther: "allowed",
+        codes: [{ categoryCode: "100404", codeName: "Huby" }],
+      },
+      {
+        subcategoryName: "Drukarki 3D",
+        subcategoryOther: "not-allowed",
+        codes: [{ categoryCode: "101348", codeName: "Drukarki 3D" }],
+      },
+      {
         subcategoryName: "Drukarki atramentowe",
         subcategoryOther: "not-allowed",
         codes: [{ categoryCode: "100279", codeName: "Drukarki atramentowe" }],
@@ -1564,6 +1601,19 @@ const menuCategories_newMenu = [
         subcategoryName: "Klocki LEGO",
         subcategoryOther: "not-allowed",
         codes: [{ categoryCode: "100721", codeName: "Klocki LEGO" }],
+      },
+    ],
+  },
+  {
+    categoryName: "Aparaty",
+    icon: "ico_foto",
+    subcategories: [
+      {
+        subcategoryName: "Aparaty",
+        subcategoryOther: "not-allowed",
+        codes: [
+          { categoryCode: "101603", codeName: "Aparaty z wymienną optyką" },
+        ],
       },
     ],
   },

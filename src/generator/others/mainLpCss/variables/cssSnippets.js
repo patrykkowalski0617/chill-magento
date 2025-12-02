@@ -1,7 +1,12 @@
 const cssSnippets = {
-  mainCss: `/* >> mainCss start v17 >> >> >> */
+  mainCss: `/* >> mainCss start v18 >> >> >> */
 
- /* fix grafika_krokow width */
+/* fix line-heigh in side panel */
+[class*="termsAndConditionScss-sidepanel_content"] {
+  line-height: 1.3;
+}
+
+/* fix grafika_krokow width */
 [alt*="grafika_krokow"] {
   width: auto;
 }

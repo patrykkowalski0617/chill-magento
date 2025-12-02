@@ -22,7 +22,26 @@ const renderModuleHeaders = (providedModule) => {
     };
 
     const saveModule = (module) => {
-      module.querySelector(".module__button_save").click();
+      // solution for listings - start
+      const downloadprodukts = module.querySelector(
+        "[id*=download_products_csv_products]"
+      );
+      const currentVal =
+        module.querySelector("[id*=products_products]")?.value ||
+        module.querySelector("[id*=products_new_products]")?.value;
+      if (
+        false &&
+        downloadprodukts &&
+        currentVal !== "CHILL" &&
+        currentVal?.length
+      ) {
+        downloadprodukts.click();
+        setTimeout(() => {
+          module.querySelector(".module__button_save").click();
+        }, 1000);
+      } else {
+        module.querySelector(".module__button_save").click();
+      }
     };
     const btnsFunctions = [deleteModule, saveModule];
 
