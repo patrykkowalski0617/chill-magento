@@ -27,6 +27,7 @@ const renderInputs = (module) => {
           ${headersMarks}">Dodaj</button>
           <button class="chill-btn gid-list-taker gids-to-update" title="Skopiuj i wklej tabelę z Excela. Oznaczenia kolumn:
           ${headersMarks}">Aktualizuj</button>
+          <button class="chill-btn gid-list-taker gids-to-place" title="g: gidy, l: miejsce">Wstaw na miejsce</button>
           <button class="chill-btn gid-list-taker the-biggest-priority" title="Skopiuj i wklej tabelę z Excela. Oznaczenia kolumn:
           ${headersMarks}">Wartość najw. priorytetu</button>
     `
@@ -363,6 +364,60 @@ Usuń:
     });
   };
   deletingGids();
+
+  const placingGids = () => {
+    const customGidsInput = module.querySelector(".chill-btn.gids-to-place");
+    customGidsInput.addEventListener("click", (e) => {
+      e.preventDefault();
+      navigator.clipboard.readText().then((clipText) => {
+        const oldValue = String(gidsInput.value);
+        const newValue = formatExcel(clipText, true);
+        const newValueForValidation = formatExcel(clipText);
+        const oldValueArr = oldValue.split(";");
+        const newValueArr = newValue.split(";");
+        const header = oldValueArr.shift();
+        const oldValueArrOfArr = oldValueArr
+          .map((el) => el.split(","))
+          .sort((a, b) => {
+            const wartoscA = a[4];
+            const wartoscB = b[4];
+            if (wartoscA === "" && wartoscB !== "") {
+              return 1;
+            }
+
+            if (wartoscA !== "" && wartoscB === "") {
+              return -1;
+            }
+            const liczbaA = parseInt(wartoscA);
+            const liczbaB = parseInt(wartoscB);
+
+            return liczbaB - liczbaA;
+          });
+
+        newValueArr
+          .map((el) => el.split(","))
+          .forEach((el) => {
+            const index = el[4];
+            oldValueArrOfArr.splice(index - 1, 0, el);
+          });
+        let newValueArrOfArr = oldValueArrOfArr
+          .map((el, i) => {
+            el[4] = 10000 - i;
+
+            return el.join(",");
+          })
+          .join(";");
+        newValueArrOfArr = header + ";" + newValueArrOfArr;
+
+        gidsInput.value = newValueArrOfArr;
+        const isBug = !validation(newValueForValidation);
+        setTimeout(() => {
+          clearTextAreaOnKey(customGidsInput, isBug ? `Błędy` : ``, isBug);
+        }, 100);
+      });
+    });
+  };
+  placingGids();
 
   const getTheBiggestPriority = () => {
     const customGidsInput = module.querySelector(
