@@ -28,6 +28,7 @@ const renderInputs = (module) => {
           <button class="chill-btn gid-list-taker gids-to-update" title="Skopiuj i wklej tabelę z Excela. Oznaczenia kolumn:
           ${headersMarks}">Aktualizuj</button>
           <button class="chill-btn gid-list-taker gids-to-place" title="g: gidy, l: miejsce">Wstaw na miejsce</button>
+          <button class="chill-btn gid-list-taker removeDuplications" title="g: gidy, l: miejsce">removeDuplications</button>
           <button class="chill-btn gid-list-taker the-biggest-priority" title="Skopiuj i wklej tabelę z Excela. Oznaczenia kolumn:
           ${headersMarks}">Wartość najw. priorytetu</button>
     `
@@ -171,11 +172,6 @@ Walidacja wklejanej listy:
         const newValue = formatExcel(clipText, true);
         const newValueForValidation = formatExcel(clipText);
 
-        const alreadyOnList = newValue
-          .split(";")
-          .map((item) => item.substring(0, item.indexOf(",")))
-          .filter((item) => (Number(item) ? oldValue.includes(item) : false));
-
         console.log(
           `Gidy [${
             alreadyOnList.length
@@ -298,6 +294,31 @@ Walidacja wklejanej listy:
     });
   };
   updatingGids();
+
+  const removeDuplications = () => {
+    const customGidsInput = module.querySelector(
+      ".chill-btn.removeDuplications"
+    );
+    customGidsInput.addEventListener("click", (e) => {
+      e.preventDefault();
+      navigator.clipboard.readText().then((clipText) => {
+        const newGids = formatExcel(clipText, true)
+          .split(";")
+          .map((el) => {
+            return el.split(",")[0];
+          });
+
+        const noDuplicats = gidsInput.value
+          .split(";")
+          .filter((el) => {
+            return !newGids.includes(el.split(",")[0]);
+          })
+          .join(";");
+        gidsInput.value = noDuplicats;
+      });
+    });
+  };
+  removeDuplications();
 
   const deletingGids = () => {
     const customGidsInput = module.querySelector(".chill-btn.gids-to-delete");

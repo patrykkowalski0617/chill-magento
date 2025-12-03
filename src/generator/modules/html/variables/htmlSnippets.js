@@ -256,7 +256,7 @@ const htmlSnippets = {
     btns[0].classList.add("secondaryItemDesktopCss-selected-2pA");
 
     sets.forEach((set) => {
-      if (set.querySelector("[alt=GORENJE)]")) {
+      if (set.querySelector("[alt=GORENJE]")) {
         set.classList.add("show");
       }
     });
