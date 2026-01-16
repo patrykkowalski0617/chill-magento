@@ -172,6 +172,11 @@ Walidacja wklejanej listy:
         const newValue = formatExcel(clipText, true);
         const newValueForValidation = formatExcel(clipText);
 
+        const alreadyOnList = newValue
+          .split(";")
+          .map((item) => item.substring(0, item.indexOf(",")))
+          .filter((item) => (Number(item) ? oldValue.includes(item) : false));
+
         console.log(
           `Gidy [${
             alreadyOnList.length
