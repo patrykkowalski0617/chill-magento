@@ -1,5 +1,7 @@
 const bezpiecznikDateDefaultValue = (module) => {
-  module.querySelector('.chill-btn.bezpiecznik').click();
+  setTimeout(() => {
+    module.querySelector('.chill-btn.bezpiecznik').click();
+  }, 1000);
 };
 
 export default bezpiecznikDateDefaultValue;
